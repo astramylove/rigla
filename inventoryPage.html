@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система управления запасами аптеки РИГЛА</title>
+    <link rel="stylesheet" href="meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="cap">
+        <div class="cap-space"></div>
+        <ul class="nav-menu roboto-regular">
+            <li class="page page__cancellation">Списание</li>
+            <li class="page page__inventory roboto-bold">Запасы</li>
+            <li class="page page__users">Пользователи</li>
+            <li class="page page__receipt-log">Журнал чеков</li>
+            <li class="page page__order">Заказ</li>
+        </ul>
+        <div class="cap-container">
+            <img src="icons/notify.svg" class="cap-container__notify">
+            <div class="cap-container__log-out roboto-bold">
+                <img src="icons/Person.svg" alt="">
+                <p id="name-user">Шувалов В.</p>
+                <img src="icons/strela-bottom.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="gebrid-menu">
+        <div class="gebrid-menu__container">
+            <img src="icons/rigla.svg" alt="" class="gebrid-menu__logo">
+        </div>
+
+        <div class="gebrid-menu__form-container"></div>
+    </section>
+
+    <section class="table-position inventory-page__admin">
+        <div class="container__btn-search">
+            <button class="btn add-product roboto-bold">Добавить продукт</button>
+            <div class="search-filter">
+                <div class="search-container">
+                    <input class="search" placeholder="Поиск" type="text">
+                    <button class="search-loop"><img src="icons/search.svg" alt=""></button>
+                </div>
+                <img src="icons/filter.svg" alt="" class="filter">
+            </div>
+        </div>
+
+        <div class="container__inventory-table table">
+            <table>
+                <thead class="roboto-bold">
+                    <tr>
+                        <td class="id-inventory">ID</td>
+                        <td class="title">Наименование</td>
+                        <td class="description">Описание</td>
+                        <td class="dosage">Дозировка</td>
+                        <td class="supplier">Поставщик</td>
+                        <td class="shelflife">Срок годности</td>
+                        <td class="shelf">Полка/Стеллаж</td>
+                        <td class="price">Цена</td>
+                        <td class="stock">В наличии</td>
+                        <td class="icons"></td>
+                    </tr>
+                </thead>
+
+                <tbody class="roboto-regular">
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">710241</td>
+                        <td class="title">Парацетамол</td>
+                        <td class="description">Обезболивающее средство. Применяется при...</td>
+                        <td class="dosage">2т. в день</td>
+                        <td class="supplier">ООО "ДИАМЕД"</td>
+                        <td class="shelflife">07.10.2025</td>
+                        <td class="shelf">3/4</td>
+                        <td class="price">50.00</td>
+                        <td class="stock">100</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot class="roboto-bold">
+                    <tr>
+                        <td>На странице: <span id="ten" class="roboto-regular">10</span> <span class="roboto-regular"
+                                id="twenty">20</span></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="container__users-table table">
+            <table>
+                <thead class="roboto-bold">
+                    <tr>
+                        <td class="id-inventory">ID</td>
+                        <td class="name">ФИО</td>
+                        <td class="role">Роль</td>
+                        <td class="login">Логин</td>
+                        <td class="password">Пароль</td>
+                        <td class="phone">Телефон</td>
+                        <td class="icons"></td>
+                    </tr>
+                </thead>
+
+                <tbody class="roboto-regular">
+
+                    <tr>
+                        <td class="id-inventory">1209</td>
+                        <td class="name">Шувалов Владислав Андреевич</td>
+                        <td class="role">Супер
+                            Администратор</td>
+                        <td class="login">vladshuvalovAdmin</td>
+                        <td class="password">El1234bd</td>
+                        <td class="phone">+7 (999) 987 90 70</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">1209</td>
+                        <td class="name">Шувалов Владислав Андреевич</td>
+                        <td class="role">Супер
+                            Администратор</td>
+                        <td class="login">vladshuvalovAdmin</td>
+                        <td class="password">El1234bd</td>
+                        <td class="phone">+7 (999) 987 90 70</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="id-inventory">1209</td>
+                        <td class="name">Шувалов Владислав Андреевич</td>
+                        <td class="role">Супер
+                            Администратор</td>
+                        <td class="login">vladshuvalovAdmin</td>
+                        <td class="password">El1234bd</td>
+                        <td class="phone">+7 (999) 987 90 70</td>
+                        <td class="icons">
+                            <img src="icons/editor.svg" alt="">
+                            <img src="icons/delete.svg" alt="">
+                        </td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot class="roboto-bold">
+                    <tr>
+                        <td>На странице: <span id="ten" class="roboto-regular">10</span> <span class="roboto-regular"
+                                id="twenty">20</span></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,421 @@
+.roboto-thin
+    font-family: "Roboto", sans-serif
+    font-weight: 100
+    font-style: normal
+
+.roboto-light
+    font-family: "Roboto", sans-serif
+    font-weight: 300
+    font-style: normal
+
+.roboto-regular
+    font-family: "Roboto", sans-serif
+    font-weight: 400
+    font-style: normal
+
+.roboto-medium
+    font-family: "Roboto", sans-serif
+    font-weight: 500
+    font-style: normal
+
+.roboto-bold
+    font-family: "Roboto", sans-serif
+    font-weight: 700
+    font-style: normal
+
+.roboto-black
+    font-family: "Roboto", sans-serif
+    font-weight: 900
+    font-style: normal
+
+body
+    display: flex
+    flex-direction: column
+    background: #fff
+    overflow: hidden
+
+//Авторизация 
+
+#authorization
+    background-image: url('../img/fon.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+
+.authorization
+    display: none
+    display: flex
+    width: 100%
+    height: 100vh
+    justify-content: center
+    align-items: center
+    align-content: center
+    &-container
+        display: flex
+        width: 100%
+        height: 100%
+        justify-content: center
+        align-items: center
+        align-content: center
+        flex-direction: column
+        &__logo
+            &-container
+                width: 50%
+                display: flex
+                justify-content: center
+                margin-bottom: -57px
+                z-index: 3
+            &-background
+                display: flex
+                width: 115px
+                height: 115px
+                border-radius: 100px
+                background: #2C6369
+                justify-content: center
+                align-items: center
+                & img
+                    width: 80px
+                    height: 69px
+        &__block
+            display: flex
+            &-one
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                background: #2C6369
+                width: 520px
+                height: 600px
+                border-radius: 10px 0 0 10px
+                box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.30)
+                & .block-one__title
+                    color: #D5FAF0
+                    font-size: 32px
+                    text-transform: uppercase
+                    text-align: center
+                    margin-bottom: 10px
+                    font-family: 'Roboto'
+                    font-weight: 600
+                & .block-one__text
+                    color: #A2D6CA
+                    font-size: 16px
+                    text-align: center
+            &-two
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                // background: rgba(44, 99, 105, 0.2)
+                background: radial-gradient(rgba(44, 99, 105, 0.2), rgba(44, 99, 105, 0.4))
+                width: 518px
+                height: 596px
+                border-radius: 0 10px 10px 0
+                border: 2px solid rgba(44, 99, 105, 0.3)
+                border-left: none
+                box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.30)
+                & .block-two__container-form
+                    margin-top: 118px
+                    & form
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        align-items: center
+                        gap: 22px
+                        & input
+                            width: 315px
+                            height: 51px
+                            background: #00000000
+                            border: none
+                            border: 1px solid #D5FAF0
+                            border-radius: 30px
+                            padding-left: 15px
+                            padding-top: 3px
+                            color: #D5FAF0
+                        & input::placeholder
+                            color: rgba(213, 250, 240, 0.3)
+                            font-size: 20px
+                        & input[type='text']
+                            outline: none
+                            transition: transform 0.3s ease
+                        & input[type='text']:hover
+                            box-shadow: 0 0 0 0.5px #D5FAF0
+                        & input[type='text']:focus
+                            box-shadow: 0 0 0 1px #D5FAF0
+                        & input[type='button']
+                            background: #2C6369
+                            border: none
+                            width: 315px
+                            height: 59px
+                            font-size: 24px
+                            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3)
+                        & input[type='button']:hover
+                            box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25)
+                        & input[type='button']:active
+                            box-shadow: inset 4px 4px 15px rgba(0, 0, 0, 0.6)
+                    & p
+                        display: flex
+                        justify-content: center
+                        font-size: 32px
+                        color: #D5FAF0
+                        margin-bottom: 37px
+                & .block-two__container-text
+                    position: relative
+                    display: flex
+                    & p
+                        color: #A2D6CA
+                        text-align: center
+                        margin-top: 118px
+
+// Таблица Запасы
+
+.btn
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3)
+    &:hover
+        box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25)
+    &:active
+        box-shadow: inset 4px 4px 15px rgba(0, 0, 0, 0.6)
+
+.cap
+    display: flex
+    width: 100%
+    height: 100px
+    background: #66A8A6
+    justify-content: space-between
+    align-items: center
+    color: #D5FAF0
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)
+    .nav-menu
+        display: flex
+        list-style: none
+        font-size: 24px
+        gap: 46px
+    .cap-space
+        width: 250px
+    .cap-container
+        display: flex
+        align-items: center
+        gap: 39px
+        padding-right: 33px
+        &__log-out
+            display: flex
+            align-items: center
+            gap: 12px
+
+.gebrid-menu
+    display: flex
+    position: fixed
+    left: 0
+    // width: 878px
+    width: 133px
+    height: 100%
+    background: #21484D
+    justify-content: left
+    &__container
+        padding: 24px 0 0 27px
+
+.table-position
+    margin: 53px 83px 0 202px
+    .container__btn-search
+        display: flex
+        justify-content: space-between
+        .btn
+            padding: 0 23px
+            width: auto
+            height: 63px
+            background: #2C6369
+            color: #fff
+            font-size: 24px
+            border-radius: 10px
+            border: none
+        .search-filter
+            display: flex
+            gap: 46px
+            .search-container
+                display: flex
+                position: relative
+                height: 63px
+                .search
+                    width: 590px
+                    height: 63px
+                    border: none
+                    border: 1px solid #66A8A6
+                    border-radius: 30px
+                    font-size: 20px
+                    padding-right: 60px
+                    padding-left: 23px
+                    outline: none
+                    color: #2C6369
+                    &::placeholder
+                        color: #66A8A6
+                        font-size: 20px
+                & input[type='text']:hover
+                    box-shadow: 0 0 0 0.5px #66A8A6
+                & input[type='text']:focus
+                    box-shadow: 0 0 0 1px #66A8A6
+                button
+                    border: none
+                    background: #ffffff00
+                    position: absolute
+                    right: 10px
+                    top: 15%
+
+    .table
+        width: 100%
+        margin-top: 26px
+        table
+            box-sizing: border-box
+            width: 100%
+            display: flex
+            flex-direction: column
+            gap: 10px
+            height: 100%
+            height: 774px
+            .id-inventory
+                display: flex
+                justify-content: center
+                width: 80px
+                white-space: normal
+                text-align: center
+            .title
+                display: flex
+                justify-content: center
+                width: 230px
+                white-space: normal
+                text-align: center
+            .description
+                display: flex
+                justify-content: center
+                width: 280px
+                white-space: normal
+                text-align: left
+            .dosage
+                display: flex
+                justify-content: center
+                width: 123px
+                white-space: normal
+                text-align: center
+            .supplier
+                display: flex
+                justify-content: center
+                width: 144px
+                white-space: normal
+                text-align: center
+            .shelflife
+                display: flex
+                justify-content: center
+                width: 162px
+                white-space: normal
+                text-align: center
+            .shelf
+                display: flex
+                justify-content: center
+                width: 105px
+                white-space: normal
+                text-align: center
+            .price
+                display: flex
+                justify-content: center
+                width: 105px
+                white-space: normal
+                text-align: center
+            .stock
+                display: flex
+                justify-content: center
+                width: 115px
+                white-space: normal
+                text-align: center
+            .name
+                display: flex
+                justify-content: center
+                width: 400px
+                white-space: normal
+                text-align: center
+            .role
+                display: flex
+                justify-content: center
+                width: 240px
+                white-space: normal
+                text-align: center
+            .login
+                display: flex
+                justify-content: center
+                width: 210px
+                white-space: normal
+                text-align: center
+            .password
+                display: flex
+                justify-content: center
+                width: 190px
+                white-space: normal
+                text-align: center
+            .phone
+                display: flex
+                justify-content: center
+                width: 290px
+                white-space: normal
+                text-align: center
+            thead
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                padding-top: 5px
+                gap: auto
+                background: #66A8A6
+                border-radius: 10px
+                height: 58px
+                color: #D5FAF0
+                tr
+                    width: 100%
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    & td:last-child
+                        width: 100px
+            tbody
+                height: 70%
+                width: 100%
+                color: #2c6369
+                overflow-y: auto
+                &::-webkit-scrollbar
+                    width: 7px
+                &::-webkit-scrollbar-track
+                    background: #f1f1f1
+                    border-radius: 10px
+                &::-webkit-scrollbar-thumb
+                    background: #66A8A6
+                    border-radius: 10px
+                &::-webkit-scrollbar-thumb:hover
+                    background: #4a8e8c
+
+                tr
+                    width: 100%
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    height: 67px
+                    margin-bottom: 10px
+                    &:last-child
+                        margin-bottom: 0
+                    & td:last-child
+                        display: flex
+                        gap: 20px
+                        padding-right: 5px
+                tr:hover
+                    background: rgba(102, 168, 166, 0.3)
+                    border-radius: 10px
+            tfoot
+                box-sizing: border-box
+                width: 100%
+                display: flex
+                justify-content: space-between
+                padding: 5px 0 0 24px
+                align-items: center
+                background: #66A8A6
+                border-radius: 10px
+                height: 58px
+                color: #D5FAF0
+                td
+                    display: flex
+                    gap: 19px

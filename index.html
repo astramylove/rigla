@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система управления запасами аптеки РИГЛА</title>
+    <link rel="stylesheet" href="meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+    </style>
+</head>
+
+<body id="authorization">
+    <section class="authorization">
+        <div class="authorization-container">
+            <div class="authorization-container__logo-container">
+                <div class="authorization-container__logo-background">
+                    <img src="icons/rigla.svg" alt="" class="authorization-container__logo-img">
+                </div>
+            </div>
+            <div class="authorization-container__block">
+                <div class="authorization-container__block-one block-one">
+                    <span class="block-one__title roboto-black">система управления запасами аптеки
+                        РИГЛА</span>
+                    <span class="block-one__text roboto-bold">Для дальнейшей работы с данной системой необходимо
+                        авторизироваться</span>
+                </div>
+                <div class="authorization-container__block-two">
+                    <div class="block-two__container-form">
+                        <p class="roboto-bold">Авторизация</p>
+                        <form action="" method="post">
+                            <input type="text" placeholder="Логин:">
+                            <input type="text" id="PasswordInput" placeholder="Пароль:">
+                            <input type="button" value="Войти" class="roboto-bold button-login">
+                            <script>
+                                const buttonLogIn = document.querySelector('.button-login')
+                                console.log(buttonLogIn);
+
+                                buttonLogIn.addEventListener('click', () => {
+                                    window.location.href = 'inventoryPage.html';
+                                })
+                            </script>
+                        </form>
+                    </div>
+                    <div class="block-two__container-text roboto-regular">
+                        <p>Если у вас нет учетной записи, обратитесь к администратору системы для получения доступа.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=""></section>
+</body>
+
+</html>
