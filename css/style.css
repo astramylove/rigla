@@ -224,6 +224,9 @@ body {
   font-size: 24px;
   gap: 46px;
 }
+.cap .nav-menu .page {
+  cursor: pointer;
+}
 .cap .cap-space {
   width: 250px;
 }
@@ -258,16 +261,6 @@ body {
 .table-position .container__btn-search {
   display: flex;
   justify-content: space-between;
-}
-.table-position .container__btn-search .btn {
-  padding: 0 23px;
-  width: auto;
-  height: 63px;
-  background: #2C6369;
-  color: #fff;
-  font-size: 24px;
-  border-radius: 10px;
-  border: none;
 }
 .table-position .container__btn-search .search-filter {
   display: flex;
@@ -311,6 +304,46 @@ body {
   right: 10px;
   top: 15%;
 }
+.table-position .container__btn-search .add-users {
+  display: none;
+}
+.table-position .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 23px;
+  width: auto;
+  height: 63px;
+  background: #2C6369;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+}
+.table-position .container__order-btn {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-position .container__order-btn .order-sum {
+  font-size: 20px;
+  color: #2C6369;
+}
+.table-position .container__order-btn .order-sum span {
+  padding-left: 20px;
+}
+.table-position .container__order-check {
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: #2C6369;
+}
+.table-position .container__order-check .order-check__cap {
+  display: flex;
+  gap: 30px;
+  padding-right: 20px;
+}
 .table-position .table {
   width: 100%;
   margin-top: 26px;
@@ -321,106 +354,98 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 100%;
-  height: 774px;
+  height: 85vh;
 }
-.table-position .table table .id-inventory {
+.table-position .table table .id,
+.table-position .table table .title,
+.table-position .table table .description,
+.table-position .table table .dosage,
+.table-position .table table .supplier,
+.table-position .table table .supplier-contact,
+.table-position .table table .shelflife,
+.table-position .table table .shelf,
+.table-position .table table .price,
+.table-position .table table .stock,
+.table-position .table table .name,
+.table-position .table table .role,
+.table-position .table table .login,
+.table-position .table table .password,
+.table-position .table table .phone,
+.table-position .table table .data,
+.table-position .table table .order,
+.table-position .table table .icons,
+.table-position .table table .total-amount,
+.table-position .table table .order-cap {
   display: flex;
   justify-content: center;
-  width: 80px;
   white-space: normal;
   text-align: center;
+}
+.table-position .table table .id {
+  width: 80px;
 }
 .table-position .table table .title {
-  display: flex;
-  justify-content: center;
   width: 230px;
-  white-space: normal;
-  text-align: center;
 }
 .table-position .table table .description {
-  display: flex;
-  justify-content: center;
   width: 280px;
-  white-space: normal;
   text-align: left;
 }
 .table-position .table table .dosage {
-  display: flex;
-  justify-content: center;
   width: 123px;
-  white-space: normal;
-  text-align: center;
 }
 .table-position .table table .supplier {
-  display: flex;
-  justify-content: center;
   width: 144px;
-  white-space: normal;
-  text-align: center;
+}
+.table-position .table table .supplier-contact {
+  width: 290px;
 }
 .table-position .table table .shelflife {
-  display: flex;
-  justify-content: center;
   width: 162px;
-  white-space: normal;
-  text-align: center;
 }
-.table-position .table table .shelf {
-  display: flex;
-  justify-content: center;
-  width: 105px;
-  white-space: normal;
-  text-align: center;
-}
+.table-position .table table .shelf,
 .table-position .table table .price {
-  display: flex;
-  justify-content: center;
   width: 105px;
-  white-space: normal;
-  text-align: center;
 }
 .table-position .table table .stock {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 115px;
-  white-space: normal;
-  text-align: center;
+}
+.table-position .table table .stock .minus,
+.table-position .table table .stock .plus {
+  cursor: pointer;
 }
 .table-position .table table .name {
-  display: flex;
-  justify-content: center;
-  width: 400px;
-  white-space: normal;
-  text-align: center;
+  width: 300px;
 }
 .table-position .table table .role {
-  display: flex;
-  justify-content: center;
   width: 240px;
-  white-space: normal;
-  text-align: center;
 }
 .table-position .table table .login {
-  display: flex;
-  justify-content: center;
   width: 210px;
-  white-space: normal;
-  text-align: center;
 }
 .table-position .table table .password {
-  display: flex;
-  justify-content: center;
   width: 190px;
-  white-space: normal;
-  text-align: center;
 }
 .table-position .table table .phone {
-  display: flex;
-  justify-content: center;
   width: 290px;
-  white-space: normal;
-  text-align: center;
+}
+.table-position .table table .data {
+  width: 200px;
+}
+.table-position .table table .order,
+.table-position .table table .order-cap {
+  width: 310px;
+}
+.table-position .table table .order {
+  cursor: pointer;
+}
+.table-position .table table .icons {
+  width: 95px;
+}
+.table-position .table table .total-amount {
+  width: 220px;
 }
 .table-position .table table thead {
   width: 100%;
@@ -488,14 +513,30 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 5px 0 0 24px;
+  padding: 5px 24px 0 24px;
   align-items: center;
   background: #66A8A6;
   border-radius: 10px;
   height: 58px;
   color: #D5FAF0;
 }
+.table-position .table table tfoot tr {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .table-position .table table tfoot td {
+  box-sizing: border-box;
   display: flex;
   gap: 19px;
+}
+.table-position .table table tfoot td:nth-child(2) {
+  padding-right: 120px;
+}
+
+.container__users-table,
+.container__cancellation-table,
+.container__order-log-table,
+.container__order-check {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

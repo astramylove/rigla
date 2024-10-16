@@ -190,6 +190,8 @@ body
         list-style: none
         font-size: 24px
         gap: 46px
+        .page
+            cursor: pointer
     .cap-space
         width: 250px
     .cap-container
@@ -219,15 +221,7 @@ body
     .container__btn-search
         display: flex
         justify-content: space-between
-        .btn
-            padding: 0 23px
-            width: auto
-            height: 63px
-            background: #2C6369
-            color: #fff
-            font-size: 24px
-            border-radius: 10px
-            border: none
+
         .search-filter
             display: flex
             gap: 46px
@@ -259,6 +253,39 @@ body
                     position: absolute
                     right: 10px
                     top: 15%
+        .add-users
+            display: none
+    .btn
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0 23px
+        width: auto
+        height: 63px
+        background: #2C6369
+        color: #fff
+        font-size: 24px
+        border-radius: 10px
+        border: none
+    .container__order-btn
+        display: none
+        justify-content: space-between
+        align-items: center
+        .order-sum
+            font-size: 20px
+            color: #2C6369
+            span
+                padding-left: 20px
+    .container__order-check
+        box-sizing: border-box
+        justify-content: space-between
+        align-items: center
+        font-size: 20px
+        color: #2C6369
+        .order-check__cap
+            display: flex
+            gap: 30px
+            padding-right: 20px
 
     .table
         width: 100%
@@ -269,92 +296,78 @@ body
             display: flex
             flex-direction: column
             gap: 10px
-            height: 100%
-            height: 774px
-            .id-inventory
+            height: 85vh
+            // max-height: 774px
+            .id,
+            .title,
+            .description,
+            .dosage,
+            .supplier,
+            .supplier-contact,
+            .shelflife,
+            .shelf,
+            .price,
+            .stock,
+            .name,
+            .role,
+            .login,
+            .password,
+            .phone,
+            .data,
+            .order,
+            .icons,
+            .total-amount,
+            .order-cap
                 display: flex
                 justify-content: center
+                white-space: normal
+                text-align: center
+            .id
                 width: 80px
-                white-space: normal
-                text-align: center
             .title
-                display: flex
-                justify-content: center
                 width: 230px
-                white-space: normal
-                text-align: center
             .description
-                display: flex
-                justify-content: center
                 width: 280px
-                white-space: normal
                 text-align: left
             .dosage
-                display: flex
-                justify-content: center
                 width: 123px
-                white-space: normal
-                text-align: center
             .supplier
-                display: flex
-                justify-content: center
                 width: 144px
-                white-space: normal
-                text-align: center
+            .supplier-contact
+                width: 290px
             .shelflife
-                display: flex
-                justify-content: center
                 width: 162px
-                white-space: normal
-                text-align: center
-            .shelf
-                display: flex
-                justify-content: center
-                width: 105px
-                white-space: normal
-                text-align: center
+            .shelf,
             .price
-                display: flex
-                justify-content: center
                 width: 105px
-                white-space: normal
-                text-align: center
             .stock
                 display: flex
-                justify-content: center
+                justify-content: space-evenly
                 width: 115px
-                white-space: normal
-                text-align: center
+                .minus,
+                .plus
+                    cursor: pointer
             .name
-                display: flex
-                justify-content: center
-                width: 400px
-                white-space: normal
-                text-align: center
+                width: 300px
             .role
-                display: flex
-                justify-content: center
                 width: 240px
-                white-space: normal
-                text-align: center
             .login
-                display: flex
-                justify-content: center
                 width: 210px
-                white-space: normal
-                text-align: center
             .password
-                display: flex
-                justify-content: center
                 width: 190px
-                white-space: normal
-                text-align: center
             .phone
-                display: flex
-                justify-content: center
                 width: 290px
-                white-space: normal
-                text-align: center
+            .data
+                width: 200px
+            .order,
+            .order-cap
+                width: 310px
+            .order
+                cursor: pointer
+            .icons
+                width: 95px
+            .total-amount
+                width: 220px
             thead
                 width: 100%
                 display: flex
@@ -410,12 +423,25 @@ body
                 width: 100%
                 display: flex
                 justify-content: space-between
-                padding: 5px 0 0 24px
+                padding: 5px 24px 0 24px
                 align-items: center
                 background: #66A8A6
                 border-radius: 10px
                 height: 58px
                 color: #D5FAF0
+                tr
+                    display: flex
+                    justify-content: space-between
+                    width: 100%
                 td
+                    box-sizing: border-box
                     display: flex
                     gap: 19px
+                td:nth-child(2)
+                    padding-right: 120px
+
+.container__users-table,
+.container__cancellation-table,
+.container__order-log-table,
+.container__order-check
+    display: none
