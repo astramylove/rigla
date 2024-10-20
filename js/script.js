@@ -8,8 +8,6 @@ const pageOrderLog = document.querySelector(".page__receipt-log");
 const pageOrder = document.querySelector(".page__order");
 const pageOrderView = document.querySelectorAll(".order");
 
-console.log(pageOrderView);
-
 // Элементы 
 const navMenu = document.querySelectorAll(".nav-menu .page");
 
@@ -27,6 +25,7 @@ const containerOrderCheck = document.querySelector(".container__order-check");
 // Кнопки 
 const addProductBtn = document.querySelector(".add-product");
 const addUsersBtn = document.querySelector(".add-users");
+const backReceiptBtn = document.querySelector(".back-receipt");
 
 // document.addEventListener('wheel', function(e) {
 //   if (e.ctrlKey) {
@@ -202,6 +201,36 @@ pageOrderView.forEach((el) => {
       }
     })
   });
+})
 
+// Действия с кнопками
 
+backReceiptBtn.addEventListener("click", () => {
+  orderLogTable.style.display = "flex"
+  containerBtnSearch.style.justifyContent = 'right'
+  containerBtnSearch.style.display = "flex";
+
+  usersTable.style.display = "none";
+  addUsersBtn.style.display = "none"
+  inventoryTable.style.display = "none";
+  addProductBtn.style.display = "none";
+  cancellationTable.style.display = "none"
+  containerOrderBtn.style.display = "none";
+  orderStaffTable.style.display = "none"
+  containerOrderCheck.style.display = "none"
+  orderChekTable.style.display = "none"
+
+  navMenu.forEach((el) => {
+    if (el.textContent == 'Журнал чеков') {
+      el.classList.add('roboto-bold')
+      el.classList.remove('roboto-light')
+    } else {
+      el.classList.remove('roboto-bold')
+      el.classList.add('roboto-light')
+    }
+  })
+});
+
+addProductBtn.addEventListener('click', ()  => {
+  
 })

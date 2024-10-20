@@ -28,7 +28,7 @@
             <li class="page page__order roboto-light">Оформить заказ</li>
         </ul>
         <div class="cap-container">
-            <img src="icons/notify.svg" class="cap-container__notify">
+            <img src="icons/notify.svg" class="cap-container__notify" alt="">
             <div class="cap-container__log-out roboto-bold">
                 <img src="icons/Person.svg" alt="">
                 <p id="name-user">Шувалов В.</p>
@@ -39,10 +39,183 @@
 
     <section class="gebrid-menu">
         <div class="gebrid-menu__container">
-            <img src="icons/rigla.svg" alt="" class="gebrid-menu__logo">
+            <img src="icons/rigla.svg" alt="логотип аптеки ригла" class="gebrid-menu__logo">
+            <img src="icons/crest.svg" alt="">
         </div>
 
-        <div class="gebrid-menu__form-container"></div>
+        <div class="gebrid-menu__form-container">
+
+            <span class="form-title roboto-bold">Новый продукт</span>
+
+            <!-- Форма продуктов -->
+
+            <form action="" class="form__add-product roboto-regular">
+
+                <div class="input-group">
+
+                    <label for="addproduct-form__name" class="label label__add-product">Наименование:
+                        <input type="text" name="addproduct-form__name" id="addproduct-form__name"
+                            class="input input__add-product">
+                    </label>
+
+                    <label for="addproduct-form__dosage" class="label label__add-product">Дозировка:
+                        <input type="text" name="addproduct-form__dosage" id="addproduct-form__dosage"
+                            class="input input__add-product">
+                    </label>
+
+                </div>
+
+                <label for="addproduct-form__description" class="label label__add-product">Описание:
+                    <textarea name="addproduct-form__description" id="addproduct-form__description"
+                        class="input input__add-product"></textarea>
+                </label>
+
+
+                <div class="input-group">
+
+                    <label for="addproduct-form__date-of-manufacture" class="label label__add-product">Дата
+                        изготовления:
+                        <input type="text" name="addproduct-form__date-of-manufacture"
+                            id="addproduct-form__date-of-manufacture" class="input input__add-product">
+                    </label>
+
+                    <label for="addproduct-form__expiration-date" class="label label__add-product">Дата истечения срока:
+                        <input type="text" name="addproduct-form__expiration-date" id="addproduct-form__expiration-date"
+                            class="input input__add-product">
+                    </label>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="addproduct-form__quantity" class="label label__add-product">Количество:
+                        <input type="number" name="addproduct-form__quantity" id="addproduct-form__quantity"
+                            class="input input__add-product">
+                    </label>
+
+                    <div class="input-group__into">
+
+                        <label for="addproduct-form__rack" class="label label__add-product">Стеллаж:
+                            <input type="text" name="addproduct-form__rack" id="addproduct-form__rack"
+                                class="input input__add-product">
+                        </label>
+
+                        <label for="addproduct-form__shelf" class="label label__add-product">Полка:
+                            <input type="text" name="addproduct-form__shelf" id="addproduct-form__shelf"
+                                class="input input__add-product">
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="input-group">
+
+                    <label for="addproduct-form__price" class="label label__add-product">Цена:
+                        <input type="text" name="addproduct-form__price" id="addproduct-form__price"
+                            class="input input__add-product">
+                    </label>
+
+                    <label for="addproduct-form__provider" class="label label__add-product">Поставщик:
+                        <select type="text" name="addproduct-form__provider" id="addproduct-form__provider"
+                            class="input input__add-product">
+                            <option value="">Выберите поставщика</option>
+                            <option value="diamed">ООО "ДИАМЕД"</option>
+                            <option value="diamed">ООО "ДИАМЕД"</option>
+                            <option value="diamed">ООО "ДИАМЕД"</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <div class="input-group provider-add">
+
+                    <label for="addproduct-form__provider-name" class="label label__add-product">Название поставщика:
+                        <input type="text" name="addproduct-form__provider-name" id="addproduct-form__provider-name"
+                            class="input input__add-product">
+                    </label>
+
+                    <label for="addproduct-form__provider-phone" class="label label__add-product">Телефон поставщика:
+                        <input type="text" name="addproduct-form__provider-phone" id="addproduct-form__provider-phone"
+                            class="input input__add-product">
+                    </label>
+
+
+                </div>
+
+                <fieldset>
+                    <span class="roboto-regular">Рецепт:</span>
+                    <div>
+                        <input type="radio" id="addproduct-form__recept1" name="addproduct-form__recept" value="yes" />
+                        <label for="addproduct-form__recept1">Нужен</label>
+
+                        <input type="radio" id="addproduct-form__recept2" name="addproduct-form__recept" value="no" />
+                        <label for="addproduct-form__recept2">Не нужен</label>
+                    </div>
+                </fieldset>
+
+                <div class="input-group">
+                    <button class="btn" type="submit">Добавить продукт</button>
+                </div>
+            </form>
+
+            <!-- Форма пользователей -->
+
+            <form action="" class="form__add-user roboto-regular">
+
+                <div class="input-group">
+                    <div class="input-group__group">
+                        <label for="user-name" class="label label__add-user">Имя:
+                            <input type="text" name="user-name" id="user-name" class="input input__add-user">
+                        </label>
+
+                        <label for="user-surname" class="label label__add-user">Фамилия:
+                            <input type="text" name="user-surname" id="user-surname" class="input input__add-user">
+                        </label>
+                    </div>
+
+                    <div class="input-group__group">
+
+                        <label for="user-role" class="label label__add-user">Роль:
+                            <div class="bg-role">
+                                <div>
+                                    <input type="radio" id="roleAdmin" name="user-role" value="admin" />
+                                    <label for="roleAdmin">Администратор</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="roleUser" name="user-role" value="user" />
+                                    <label for="roleUser">Пользователь</label>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="user-patronymic" class="label label__add-user">Отчество:
+                        <input type="text" name="user-patronymic" id="user-patronymic" class="input input__add-user">
+                    </label>
+
+                    <label for="user-password" class="label label__add-user">Пароль:
+                        <input type="password" name="user-password" id="user-password" class="input input__add-user">
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label for="user-phone" class="label label__add-user">Телефон:
+                        <input type="tel" name="user-phone" id="user-phone" class="input input__add-user">
+                    </label>
+
+                    <label for="user-login" class="label label__add-user">Логин:
+                        <input type="text" name="user-login" id="user-login" class="input input__add-user">
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <button class="btn" type="submit">Добавить пользователя</button>
+                </div>
+            </form>
+
+        </div>
     </section>
 
     <section class="table-position inventory-page__admin">
@@ -66,7 +239,7 @@
         </div>
 
         <div class="container__order-check">
-            <button class="btn delete-order roboto-bold">Вернуться к чеку</button>
+            <button class="btn  back-receipt roboto-bold">Вернуться к чекам</button>
             <div class="order-check__cap roboto-regular">Информация о чеке:
                 <span class="roboto-bold">710241</span>
                 <span class="roboto-bold">Галенко Виталий Русланович</span>
@@ -329,7 +502,12 @@
                 <tfoot class="roboto-bold">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span></td>
+                                class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <span></span>
                             <span>1</span>
@@ -337,6 +515,9 @@
                             <span>...</span>
                             <span>5</span>
                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
                             <img src="icons/strela-right.svg" alt="">

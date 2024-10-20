@@ -243,16 +243,174 @@ body {
 }
 
 .gebrid-menu {
+  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   position: fixed;
   left: 0;
-  width: 133px;
+  width: 878px;
   height: 100%;
   background: #21484D;
-  justify-content: left;
+  align-items: center;
+  z-index: 99;
 }
 .gebrid-menu__container {
-  padding: 24px 0 0 27px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 27px 0 27px;
+  margin-bottom: 0;
+}
+.gebrid-menu__form-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+.gebrid-menu__form-container .form__add-product {
+  display: flex;
+}
+.gebrid-menu__form-container .form__add-product .provider-add {
+  display: flex;
+}
+.gebrid-menu__form-container .form__add-user {
+  display: none;
+}
+.gebrid-menu__form-container .form__add-user .input-group__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gebrid-menu__form-container .form__add-user .bg-role {
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid #66A8A6;
+  width: 340px;
+  height: 144px;
+  border-radius: 30px;
+  margin-left: -15px;
+  margin-top: 11px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 25px;
+  background: #fff;
+}
+.gebrid-menu__form-container .form__add-user .bg-role label {
+  color: #2C6369;
+}
+.gebrid-menu__form-container .form__add-user .bg-role div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.gebrid-menu__form-container .form__add-user .bg-role input {
+  width: 21px;
+  height: 21px;
+  margin: 0;
+  padding: 0;
+}
+.gebrid-menu__form-container .form-title {
+  color: #ffffff;
+  font-size: 32px;
+}
+.gebrid-menu__form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 715px;
+  max-height: 609px;
+}
+.gebrid-menu__form-container form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: #fff;
+  padding-left: 15px;
+}
+.gebrid-menu__form-container form #addproduct-form__description {
+  width: 715px;
+  height: 138px;
+  padding: 14px 20px 0 20px;
+}
+.gebrid-menu__form-container form input,
+.gebrid-menu__form-container form select,
+.gebrid-menu__form-container form textarea {
+  box-sizing: border-box;
+  outline: none;
+  width: 340px;
+  height: 53px;
+  border: none;
+  border: 1px solid #66A8A6;
+  border-radius: 30px;
+  margin-left: -15px;
+  margin-top: 11px;
+  padding: 14px 20px;
+  color: #2C6369;
+}
+.gebrid-menu__form-container form fieldset {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+  gap: 30px;
+  height: 30px;
+  margin-top: 7px;
+}
+.gebrid-menu__form-container form fieldset div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.gebrid-menu__form-container form fieldset div input {
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  margin: 0;
+}
+.gebrid-menu__form-container form fieldset div label {
+  padding: 0;
+}
+.gebrid-menu__form-container form fieldset div label:first-child {
+  padding-right: 40px;
+}
+.gebrid-menu__form-container form fieldset span {
+  height: 21px;
+}
+.gebrid-menu__form-container form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 88px;
+  width: auto;
+  height: 63px;
+  background: #66A8A6;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 35px;
+}
+.gebrid-menu__form-container form .input-group {
+  display: flex;
+  gap: 35px;
+}
+.gebrid-menu__form-container form .input-group__into {
+  display: flex;
+  gap: 10px;
+}
+.gebrid-menu__form-container form .input-group__into input {
+  width: 165px;
 }
 
 .table-position {
