@@ -8,6 +8,8 @@ const pageOrderLog = document.querySelector(".page__receipt-log");
 const pageOrder = document.querySelector(".page__order");
 const pageOrderView = document.querySelectorAll(".order");
 
+const gebridMenu = document.querySelector(".gebrid-menu");
+
 // Элементы 
 const navMenu = document.querySelectorAll(".nav-menu .page");
 
@@ -22,29 +24,22 @@ const containerBtnSearch = document.querySelector(".container__btn-search");
 const containerOrderBtn = document.querySelector(".container__order-btn");
 const containerOrderCheck = document.querySelector(".container__order-check");
 
+const formTitle = document.querySelector(".form-title");
+
 // Кнопки 
 const addProductBtn = document.querySelector(".add-product");
 const addUsersBtn = document.querySelector(".add-users");
 const backReceiptBtn = document.querySelector(".back-receipt");
 
-// document.addEventListener('wheel', function(e) {
-//   if (e.ctrlKey) {
-//       e.preventDefault(); 
-//   }
-// }, { passive: false });
+const editBtnProduct = document.querySelectorAll(".edit-btn__product");
+const editBtnUser = document.querySelectorAll(".edit-btn__user");
+const deleteBtn = document.querySelectorAll(".delete-btn");
+const gebridMenuClose = document.querySelector(".gebrid-menu__close");
 
-// // Для поддержки старых браузеров
-// document.addEventListener('mousewheel', function(e) {
-//   if (e.ctrlKey) {
-//       e.preventDefault();
-//   }
-// }, { passive: false });
+// Формы
+const formAddProduct = document.querySelector(".form__add-product");
+const formAddUser = document.querySelector(".form__add-user");
 
-// document.addEventListener('DOMMouseScroll', function(e) {
-//   if (e.ctrlKey) {
-//       e.preventDefault();
-//   }
-// }, { passive: false });
 
 // Переключение страниц
 
@@ -61,6 +56,8 @@ pageInventory.addEventListener("click", () => {
   orderLogTable.style.display = "none"
   containerOrderBtn.style.display = "none";
   orderStaffTable.style.display = "none"
+  backReceiptBtn.style.display = 'none'
+  containerOrderCheck.style.display = 'none'
 
   navMenu.forEach((el) => {
     if (el.textContent == 'Запасы') {
@@ -85,6 +82,8 @@ pageUsers.addEventListener("click", () => {
   orderLogTable.style.display = "none"
   containerOrderBtn.style.display = "none";
   orderStaffTable.style.display = "none"
+  backReceiptBtn.style.display = 'none'
+  containerOrderCheck.style.display = 'none'
 
   navMenu.forEach((el) => {
     if (el.textContent == 'Пользователи') {
@@ -113,6 +112,7 @@ pageCancellation.addEventListener("click", () => {
   orderStaffTable.style.display = "none"
   containerOrderCheck.style.display = "none"
   orderChekTable.style.display = "none"
+  backReceiptBtn.style.display = 'none'
 
   navMenu.forEach((el) => {
     if (el.textContent == 'Списание') {
@@ -139,6 +139,7 @@ pageOrderLog.addEventListener("click", () => {
   orderStaffTable.style.display = "none"
   containerOrderCheck.style.display = "none"
   orderChekTable.style.display = "none"
+  backReceiptBtn.style.display = 'none'
 
   navMenu.forEach((el) => {
     if (el.textContent == 'Журнал чеков') {
@@ -164,6 +165,7 @@ pageOrder.addEventListener("click", () => {
   orderLogTable.style.display = "none"
   containerOrderCheck.style.display = "none"
   orderChekTable.style.display = "none"
+  backReceiptBtn.style.display = 'none'
 
   navMenu.forEach((el) => {
     if (el.textContent == 'Оформить заказ') {
@@ -180,6 +182,7 @@ pageOrderView.forEach((el) => {
   el.addEventListener("click", () => {
     containerOrderCheck.style.display = "flex"
     orderChekTable.style.display = "flex"
+    backReceiptBtn.style.display = 'flex'
 
     orderStaffTable.style.display = "none"
     containerOrderBtn.style.display = "none";
@@ -192,7 +195,7 @@ pageOrderView.forEach((el) => {
     orderLogTable.style.display = "none"
 
     navMenu.forEach((el) => {
-      if (el.textContent == 'Заказ') {
+      if (el.textContent == 'Журнал чеков') {
         el.classList.add('roboto-bold')
         el.classList.remove('roboto-light')
       } else {
@@ -231,6 +234,54 @@ backReceiptBtn.addEventListener("click", () => {
   })
 });
 
-addProductBtn.addEventListener('click', ()  => {
-  
+
+editBtnUser.forEach(el => {
+  el.addEventListener('click', ()  => {
+    gebridMenu.style.width = '878px'
+    gebridMenuClose.style.display = 'block'
+    formAddUser.style.display = 'flex'
+    formTitle.style.display = 'flex'
+
+    formTitle.textContent = 'Редактирование информации о пользователе'
+  })
 })
+
+editBtnProduct.forEach(el => {
+  el.addEventListener('click', () => {
+    gebridMenu.style.width = '878px'
+    gebridMenuClose.style.display = 'block'
+    formAddProduct.style.display = 'flex'
+    formTitle.style.display = 'flex'
+
+    formTitle.textContent = 'Редактирование информации о продукте'
+  })
+})
+
+addUsersBtn.addEventListener('click', ()  => {
+  gebridMenu.style.width = '878px'
+  gebridMenuClose.style.display = 'block'
+  formAddUser.style.display = 'flex'
+  formTitle.style.display = 'flex'
+
+  formTitle.textContent = 'Новый пользователь'
+})
+
+addProductBtn.addEventListener('click', () => {
+  gebridMenu.style.width = '878px'
+  gebridMenuClose.style.display = 'block'
+  formAddProduct.style.display = 'flex'
+  formTitle.style.display = 'flex'
+
+  formTitle.textContent = 'Новый продукт'
+})
+
+gebridMenuClose.addEventListener('click', () => {
+  gebridMenu.style.width = '133px'
+  gebridMenuClose.style.display = 'none'
+  formAddProduct.style.display = 'none'
+  formAddUser.style.display = 'none'
+  formTitle.style.display = 'none'
+
+})
+
+

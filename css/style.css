@@ -248,11 +248,15 @@ body {
   flex-direction: column;
   position: fixed;
   left: 0;
-  width: 878px;
+  width: 133px;
   height: 100%;
   background: #21484D;
   align-items: center;
   z-index: 99;
+}
+.gebrid-menu__close {
+  display: none;
+  cursor: pointer;
 }
 .gebrid-menu__container {
   box-sizing: border-box;
@@ -264,21 +268,26 @@ body {
 }
 .gebrid-menu__form-container {
   width: 100%;
-  height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  max-height: 1080px;
+  height: 100%;
   gap: 35px;
 }
 .gebrid-menu__form-container .form__add-product {
-  display: flex;
+  display: none;
 }
 .gebrid-menu__form-container .form__add-product .provider-add {
-  display: flex;
+  display: none;
 }
 .gebrid-menu__form-container .form__add-user {
   display: none;
+}
+.gebrid-menu__form-container .form__add-user .input-group:last-child {
+  margin-top: 35px;
 }
 .gebrid-menu__form-container .form__add-user .input-group__group {
   display: flex;
@@ -319,6 +328,8 @@ body {
 .gebrid-menu__form-container .form-title {
   color: #ffffff;
   font-size: 32px;
+  display: none;
+  margin-bottom: 20px;
 }
 .gebrid-menu__form-container form {
   display: flex;
@@ -326,7 +337,6 @@ body {
   align-items: center;
   gap: 10px;
   width: 715px;
-  max-height: 609px;
 }
 .gebrid-menu__form-container form label {
   display: flex;
@@ -334,26 +344,70 @@ body {
   font-size: 20px;
   color: #fff;
   padding-left: 15px;
+  position: relative;
 }
 .gebrid-menu__form-container form #addproduct-form__description {
   width: 715px;
   height: 138px;
   padding: 14px 20px 0 20px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .gebrid-menu__form-container form input,
 .gebrid-menu__form-container form select,
 .gebrid-menu__form-container form textarea {
+  position: relative;
   box-sizing: border-box;
   outline: none;
   width: 340px;
-  height: 53px;
+  height: 45px;
   border: none;
   border: 1px solid #66A8A6;
   border-radius: 30px;
   margin-left: -15px;
   margin-top: 11px;
-  padding: 14px 20px;
+  padding: 10px 20px;
   color: #2C6369;
+  resize: none;
+}
+.gebrid-menu__form-container form input::-webkit-scrollbar,
+.gebrid-menu__form-container form select::-webkit-scrollbar,
+.gebrid-menu__form-container form textarea::-webkit-scrollbar {
+  width: 10px;
+}
+.gebrid-menu__form-container form input::-webkit-scrollbar-track,
+.gebrid-menu__form-container form select::-webkit-scrollbar-track,
+.gebrid-menu__form-container form textarea::-webkit-scrollbar-track {
+  background: #EBE9E9;
+  border-radius: 50px;
+}
+.gebrid-menu__form-container form input::-webkit-scrollbar-thumb,
+.gebrid-menu__form-container form select::-webkit-scrollbar-thumb,
+.gebrid-menu__form-container form textarea::-webkit-scrollbar-thumb {
+  background: #66A8A6;
+  border-radius: 50px;
+  height: 10px;
+}
+.gebrid-menu__form-container form #addproduct-form__description::-webkit-scrollbar-thumb {
+  height: 10px;
+}
+.gebrid-menu__form-container form input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #ffffff;
+}
+.gebrid-menu__form-container form input[type=radio]:checked::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #66A8A6;
 }
 .gebrid-menu__form-container form fieldset {
   border: none;
@@ -399,7 +453,6 @@ body {
   font-size: 24px;
   border-radius: 10px;
   border: none;
-  margin-top: 35px;
 }
 .gebrid-menu__form-container form .input-group {
   display: flex;
