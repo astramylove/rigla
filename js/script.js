@@ -25,6 +25,8 @@ const containerOrderBtn = document.querySelector(".container__order-btn");
 const containerOrderCheck = document.querySelector(".container__order-check");
 
 const formTitle = document.querySelector(".form-title");
+const capContainerNotify = document.querySelector(".cap-container__notify");
+const containerNotifications = document.querySelector(".container__notifications");
 
 // Кнопки 
 const addProductBtn = document.querySelector(".add-product");
@@ -236,43 +238,55 @@ backReceiptBtn.addEventListener("click", () => {
 
 
 editBtnUser.forEach(el => {
-  el.addEventListener('click', ()  => {
+  el.addEventListener('click', () => {
     gebridMenu.style.width = '878px'
-    gebridMenuClose.style.display = 'block'
-    formAddUser.style.display = 'flex'
-    formTitle.style.display = 'flex'
 
-    formTitle.textContent = 'Редактирование информации о пользователе'
+    setTimeout(() => {
+      gebridMenuClose.style.display = 'block'
+      formAddUser.style.display = 'flex'
+      formTitle.style.display = 'flex'
+
+      formTitle.textContent = 'Редактирование информации о пользователе'
+    }, 500);
   })
 })
 
 editBtnProduct.forEach(el => {
   el.addEventListener('click', () => {
     gebridMenu.style.width = '878px'
-    gebridMenuClose.style.display = 'block'
-    formAddProduct.style.display = 'flex'
-    formTitle.style.display = 'flex'
 
-    formTitle.textContent = 'Редактирование информации о продукте'
+    setTimeout(() => {
+      gebridMenuClose.style.display = 'block'
+      formAddProduct.style.display = 'flex'
+      formTitle.style.display = 'flex'
+
+      formTitle.textContent = 'Редактирование информации о продукте'
+    }, 500);
   })
 })
 
-addUsersBtn.addEventListener('click', ()  => {
+addUsersBtn.addEventListener('click', () => {
   gebridMenu.style.width = '878px'
-  gebridMenuClose.style.display = 'block'
-  formAddUser.style.display = 'flex'
-  formTitle.style.display = 'flex'
 
-  formTitle.textContent = 'Новый пользователь'
+  setTimeout(() => {
+    gebridMenuClose.style.display = 'block'
+    formAddUser.style.display = 'flex'
+    formTitle.style.display = 'flex'
+
+    formTitle.textContent = 'Новый пользователь'
+  }, 500);
 })
 
 addProductBtn.addEventListener('click', () => {
   gebridMenu.style.width = '878px'
-  gebridMenuClose.style.display = 'block'
-  formAddProduct.style.display = 'flex'
-  formTitle.style.display = 'flex'
 
-  formTitle.textContent = 'Новый продукт'
+  setTimeout(() => {
+    gebridMenuClose.style.display = 'block'
+    formAddProduct.style.display = 'flex'
+    formTitle.style.display = 'flex'
+
+    formTitle.textContent = 'Новый продукт'
+  }, 500);
 })
 
 gebridMenuClose.addEventListener('click', () => {
@@ -284,4 +298,14 @@ gebridMenuClose.addEventListener('click', () => {
 
 })
 
+capContainerNotify.addEventListener('click', () => {
+  console.log(11);
+  if (containerNotifications.style.height == '0px') {
+    containerNotifications.style.height = 'auto'
+    capContainerNotify.parentElement.style.background = '#75C1BF'
+  } else {
+    containerNotifications.style.height = '0px'
+    capContainerNotify.parentElement.style.background = '#66A8A6'
+  }
+})
 

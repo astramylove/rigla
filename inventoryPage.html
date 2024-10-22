@@ -28,12 +28,44 @@
             <li class="page page__order roboto-light">Оформить заказ</li>
         </ul>
         <div class="cap-container">
-            <img src="icons/notify.svg" class="cap-container__notify" alt="">
+            <div style="height: 100%; padding: 0 15px; display: flex; justify-content: center; ">
+                <img src="icons/notify.svg" class="cap-container__notify" alt="">
+            </div>
             <div class="cap-container__log-out roboto-bold">
                 <img src="icons/Person.svg" alt="">
                 <p id="name-user">Шувалов В.</p>
                 <img src="icons/strela-bottom.svg" alt="">
             </div>
+        </div>
+
+
+        <div class="container__notifications">
+            <table>
+                <thead class="roboto-bold">
+                    <tr>
+                        <td>Уведомления</td>
+                        <td>3</td>
+                    </tr>
+                </thead>
+
+                <tbody class="roboto-regular">
+                    <tr>
+                        <td>У препарата “Парацетамол“ закончился срок годности! <br> <span
+                                class="notifications-date">10.10.2024</span></td>
+                        <td><img src="icons/crest.svg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>У препарата “Парацетамол“ закончился срок годности! <br> <span
+                                class="notifications-date">10.10.2024</span></td>
+                        <td><img src="icons/crest.svg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>У препарата “Парацетамол“ закончился срок годности! <br> <span
+                                class="notifications-date">10.10.2024</span></td>
+                        <td><img src="icons/crest.svg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -220,9 +252,6 @@
 
     <section class="table-position inventory-page__admin">
 
-        <div class="container__notifications">
-
-        </div>
 
         <div class="container__btn-search">
             <button class="btn add-product roboto-bold">Добавить продукт</button>
@@ -874,7 +903,6 @@
                         <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
                         <td class="price">200.00</td>
                         <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
                     </tr>

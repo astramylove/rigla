@@ -233,13 +233,55 @@ body {
 .cap .cap-container {
   display: flex;
   align-items: center;
-  gap: 39px;
+  gap: 19px;
   padding-right: 33px;
+  height: 100%;
 }
 .cap .cap-container__log-out {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.container__notifications {
+  overflow: hidden;
+  transform: 1s;
+  transition: height 2s;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  z-index: 87;
+  max-width: 630px;
+  width: 100%;
+  height: 0px;
+  background: #75C1BF;
+  color: #fff;
+}
+.container__notifications table {
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.container__notifications table tr {
+  border-bottom: 2px solid #A2D6CA;
+}
+.container__notifications table td {
+  padding: 10px;
+  font-size: 20px;
+}
+.container__notifications table td:last-child {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+.container__notifications table img {
+  width: 15px;
+  height: 15px;
+}
+.container__notifications table .notifications-date {
+  font-size: 14p;
+  padding: 10px 5px;
 }
 
 .gebrid-menu {
@@ -253,6 +295,8 @@ body {
   background: #21484D;
   align-items: center;
   z-index: 99;
+  transition: width 1s;
+  overflow: hidden;
 }
 .gebrid-menu__close {
   display: none;
@@ -467,6 +511,7 @@ body {
 }
 
 .table-position {
+  position: relative;
   margin: 53px 83px 0 202px;
 }
 .table-position .container__btn-search {
