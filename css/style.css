@@ -244,18 +244,20 @@ body {
 }
 
 .container__notifications {
-  overflow: hidden;
+  box-sizing: border-box;
+  overflow-y: auto;
   transform: 1s;
-  transition: height 2s;
   position: absolute;
   right: 0;
   top: 100px;
   z-index: 87;
   max-width: 630px;
   width: 100%;
-  height: 0px;
+  max-height: 400px;
+  height: 0;
   background: #75C1BF;
   color: #fff;
+  transition: max-height 0.5s ease;
 }
 .container__notifications table {
   box-sizing: border-box;
@@ -295,7 +297,7 @@ body {
   background: #21484D;
   align-items: center;
   z-index: 99;
-  transition: width 1s;
+  transition: width 0.5s;
   overflow: hidden;
 }
 .gebrid-menu__close {
@@ -508,6 +510,17 @@ body {
 }
 .gebrid-menu__form-container form .input-group__into input {
   width: 165px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 93;
+  transition: width 3s;
 }
 
 .table-position {

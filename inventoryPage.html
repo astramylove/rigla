@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Система управления запасами аптеки РИГЛА</title>
-    <link rel="stylesheet" href="meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/script.js"></script>
@@ -65,9 +64,18 @@
                         <td><img src="icons/crest.svg" alt=""></td>
                     </tr>
                 </tbody>
+
+                <tfoot class="roboto-regular">
+                    <tr>
+                        <td></td>
+                        <td>Очистить</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </section>
+
+    <div id="overlay" class="overlay" style="display: none;"></div>
 
     <section class="gebrid-menu">
         <div class="gebrid-menu__container">
@@ -284,7 +292,7 @@
 
         <!-- Запасы -->
 
-        <div class="container__inventory-table table">
+        <div class="container__inventory-table table" style="display: none;">
             <table>
                 <thead class="roboto-bold">
                     <tr>
@@ -563,7 +571,7 @@
 
         <!-- Пользователи -->
 
-        <div class="container__users-table table">
+        <div class="container__users-table table" style="display: none;">
             <table>
                 <thead class="roboto-bold">
                     <tr>
@@ -645,7 +653,7 @@
 
         <!-- Списание -->
 
-        <div class="container__cancellation-table table">
+        <div class="container__cancellation-table table" style="display: none;">
             <table>
                 <thead class="roboto-bold">
                     <tr>
@@ -762,7 +770,7 @@
 
         <!-- Журнал заказов -->
 
-        <div class="container__order-log-table table">
+        <div class="container__order-log-table table" style="display: none;">
             <table>
                 <thead class="roboto-bold">
                     <tr>
@@ -817,7 +825,7 @@
 
         <!-- Заказ (сотрудники) -->
 
-        <div class="container__order-staff-table table">
+        <div class="container__order-staff-table table" style="display: none;">
             <table>
                 <thead class="roboto-bold">
                     <tr>
@@ -874,7 +882,7 @@
 
         <!-- Просмотр заказа (админ) -->
 
-        <div class="container__order-chek-table table">
+        <div class="container__order-chek-table table" style="display: none;">
             <table>
                 <thead class="roboto-bold">
                     <tr>

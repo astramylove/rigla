@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Система управления запасами аптеки РИГЛА</title>
-    <link rel="stylesheet" href="meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <style>
-    </style>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body id="authorization">
@@ -36,17 +34,9 @@
                     <div class="block-two__container-form">
                         <p class="roboto-bold">Авторизация</p>
                         <form action="" method="post">
-                            <input type="text" placeholder="Логин:">
+                            <input type="text" placeholder="Логин:" id="loginInput">
                             <input type="text" id="PasswordInput" placeholder="Пароль:">
-                            <input type="button" value="Войти" class="roboto-bold button-login">
-                            <script>
-                                const buttonLogIn = document.querySelector('.button-login')
-                                console.log(buttonLogIn);
-
-                                buttonLogIn.addEventListener('click', () => {
-                                    window.location.href = 'inventoryPage.html';
-                                })
-                            </script>
+                            <input type="button" value="Войти" class="roboto-bold button-login" onclick="buttonLogin()">
                         </form>
                     </div>
                     <div class="block-two__container-text roboto-regular">
