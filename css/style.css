@@ -58,6 +58,22 @@ body {
   align-items: center;
   align-content: center;
 }
+.authorization .error-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.authorization .error-message span {
+  background: radial-gradient(rgba(44, 99, 105, 0.2), rgba(44, 99, 105, 0.4));
+  border: 1px solid #2C6369;
+  padding: 5px 50px;
+  border-radius: 30px;
+  color: #D5FAF0;
+}
 .authorization-container {
   display: flex;
   width: 100%;
@@ -120,7 +136,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(rgba(44, 99, 105, 0.2), rgba(44, 99, 105, 0.4));
+  background: radial-gradient(rgba(44, 99, 105, 0.21), rgba(44, 99, 105, 0.4));
   width: 518px;
   height: 596px;
   border-radius: 0 10px 10px 0;
@@ -132,6 +148,7 @@ body {
   margin-top: 118px;
 }
 .authorization-container__block-two .block-two__container-form form {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -145,8 +162,7 @@ body {
   border: none;
   border: 1px solid #D5FAF0;
   border-radius: 30px;
-  padding-left: 15px;
-  padding-top: 3px;
+  padding: 3px 15px 0;
   color: #D5FAF0;
 }
 .authorization-container__block-two .block-two__container-form form input::-moz-placeholder {
@@ -186,7 +202,7 @@ body {
   justify-content: center;
   font-size: 32px;
   color: #D5FAF0;
-  margin-bottom: 37px;
+  margin: 0 0 20px;
 }
 .authorization-container__block-two .block-two__container-text {
   position: relative;
@@ -233,14 +249,16 @@ body {
 .cap .cap-container {
   display: flex;
   align-items: center;
-  gap: 19px;
-  padding-right: 33px;
   height: 100%;
 }
 .cap .cap-container__log-out {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  width: 240px;
+  height: 100%;
+  background: #66A8A6;
 }
 
 .container__notifications {
@@ -286,6 +304,41 @@ body {
   padding: 10px 5px;
 }
 
+.container__exit {
+  box-sizing: border-box;
+  overflow-y: auto;
+  transition: 0.5s;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  z-index: 87;
+  max-width: 240px;
+  width: 100%;
+  max-height: 400px;
+  height: 0px;
+  background: #75C1BF;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 0 10px;
+  font-size: 20px;
+}
+.container__exit span {
+  padding: 30px 20px;
+  transform: 1s;
+}
+
+#error-message__user {
+  position: absolute;
+  top: 20px;
+  left: 33%;
+  display: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  background: #75C1BF;
+}
+
 .gebrid-menu {
   box-sizing: border-box;
   display: flex;
@@ -299,6 +352,10 @@ body {
   z-index: 99;
   transition: width 0.5s;
   overflow: hidden;
+}
+.gebrid-menu__logo {
+  width: 73px;
+  height: 62px;
 }
 .gebrid-menu__close {
   display: none;

@@ -27,13 +27,13 @@
             <li class="page page__order roboto-light">Оформить заказ</li>
         </ul>
         <div class="cap-container">
-            <div style="height: 100%; padding: 0 15px; display: flex; justify-content: center; ">
+            <div style="height: 100%; padding: 0 30px; display: flex; justify-content: center; ">
                 <img src="icons/notify.svg" class="cap-container__notify" alt="">
             </div>
             <div class="cap-container__log-out roboto-bold">
                 <img src="icons/Person.svg" alt="">
                 <p id="name-user">Шувалов В.</p>
-                <img src="icons/strela-bottom.svg" alt="">
+                <img src="icons/strela-bottom.svg" alt="" class="open__exit">
             </div>
         </div>
 
@@ -72,6 +72,10 @@
                     </tr>
                 </tfoot>
             </table>
+        </div>
+
+        <div class="container__exit roboto-medium">
+            <span class="exit">Выйти из системы</span>
         </div>
     </section>
 
@@ -200,30 +204,29 @@
 
             <!-- Форма пользователей -->
 
-            <form action="" class="form__add-user roboto-regular">
-
+            <form action="" class="form__add-user roboto-regular" id="addUserForm">
                 <div class="input-group">
                     <div class="input-group__group">
                         <label for="user-name" class="label label__add-user">Имя:
-                            <input type="text" name="user-name" id="user-name" class="input input__add-user">
+                            <input type="text" name="user-name" id="user-name" class="input input__add-user" required>
                         </label>
 
                         <label for="user-surname" class="label label__add-user">Фамилия:
-                            <input type="text" name="user-surname" id="user-surname" class="input input__add-user">
+                            <input type="text" name="user-surname" id="user-surname" class="input input__add-user"
+                                required>
                         </label>
                     </div>
 
                     <div class="input-group__group">
-
                         <label for="user-role" class="label label__add-user">Роль:
                             <div class="bg-role">
                                 <div>
-                                    <input type="radio" id="roleAdmin" name="user-role" value="admin" />
+                                    <input type="radio" id="roleAdmin" name="user-role" value="admin" required />
                                     <label for="roleAdmin">Администратор</label>
                                 </div>
                                 <div>
-                                    <input type="radio" id="roleUser" name="user-role" value="user" />
-                                    <label for="roleUser">Пользователь</label>
+                                    <input type="radio" id="roleStaff" name="user-role" value="staff" required />
+                                    <label for="roleStaff">Фармацевт</label>
                                 </div>
                             </div>
                         </label>
@@ -236,23 +239,28 @@
                     </label>
 
                     <label for="user-password" class="label label__add-user">Пароль:
-                        <input type="password" name="user-password" id="user-password" class="input input__add-user">
+                        <input type="password" name="user-password" id="user-password" class="input input__add-user"
+                            maxlength="25" required>
                     </label>
                 </div>
 
                 <div class="input-group">
                     <label for="user-phone" class="label label__add-user">Телефон:
-                        <input type="tel" name="user-phone" id="user-phone" class="input input__add-user">
+                        <input type="tel" name="user-phone" id="user-phone" class="input input__add-user"
+                            placeholder="">
                     </label>
 
                     <label for="user-login" class="label label__add-user">Логин:
-                        <input type="text" name="user-login" id="user-login" class="input input__add-user">
+                        <input type="text" name="user-login" id="user-login" class="input input__add-user"
+                            maxlength="40" required>
                     </label>
                 </div>
 
                 <div class="input-group">
                     <button class="btn" type="submit">Добавить пользователя</button>
                 </div>
+
+                <div id="error-message__user"></div>
             </form>
 
         </div>
@@ -549,7 +557,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                         <td>
                             <span></span>
                             <span>1</span>
@@ -557,6 +564,7 @@
                             <span>...</span>
                             <span>5</span>
                         </td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

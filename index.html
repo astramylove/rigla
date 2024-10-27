@@ -33,9 +33,12 @@
                 <div class="authorization-container__block-two">
                     <div class="block-two__container-form">
                         <p class="roboto-bold">Авторизация</p>
+                        <div class="error-message">
+                            <span class="error roboto-medium"></span>
+                        </div>
                         <form action="" method="post">
-                            <input type="text" placeholder="Логин:" id="loginInput">
-                            <input type="text" id="PasswordInput" placeholder="Пароль:">
+                            <input type="text" placeholder="Логин:" id="loginInput" maxlength="40" required>
+                            <input type="password" id="PasswordInput" placeholder="Пароль:" maxlength="25" required>
                             <input type="button" value="Войти" class="roboto-bold button-login" onclick="buttonLogin()">
                         </form>
                     </div>
