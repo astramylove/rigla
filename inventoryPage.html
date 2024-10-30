@@ -7,7 +7,7 @@
     <title>Система управления запасами аптеки РИГЛА</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
+    <script type="module" defer src="js/script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,12 +119,12 @@
 
                     <label for="addproduct-form__date-of-manufacture" class="label label__add-product">Дата
                         изготовления:
-                        <input type="text" name="addproduct-form__date-of-manufacture"
+                        <input type="date" name="addproduct-form__date-of-manufacture"
                             id="addproduct-form__date-of-manufacture" class="input input__add-product">
                     </label>
 
                     <label for="addproduct-form__expiration-date" class="label label__add-product">Дата истечения срока:
-                        <input type="text" name="addproduct-form__expiration-date" id="addproduct-form__expiration-date"
+                        <input type="date" name="addproduct-form__expiration-date" id="addproduct-form__expiration-date"
                             class="input input__add-product">
                     </label>
 
@@ -163,7 +163,7 @@
                         <select type="text" name="addproduct-form__provider" id="addproduct-form__provider"
                             class="input input__add-product">
                             <option value="">Выберите поставщика</option>
-                            <option value="diamed">ООО "ДИАМЕД"</option>
+                            <option value="newProvider">Добавить поставщика</option>
                             <option value="diamed">ООО "ДИАМЕД"</option>
                             <option value="diamed">ООО "ДИАМЕД"</option>
                         </select>
@@ -317,9 +317,9 @@
                     </tr>
                 </thead>
 
-                <tbody class="roboto-regular">
+                <tbody class="roboto-regular" id="medicines-table-body">
 
-                    <tr>
+                    <!-- <tr>
                         <td class="id id-inventory">710241</td>
                         <td class="title">Парацетамол</td>
                         <td class="description">Обезболивающее средство. Применяется при...</td>
@@ -333,219 +333,7 @@
                             <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-                            <img src="icons/delete.svg" alt="иконка удаления" class="edit-btn">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="description">Обезболивающее средство. Применяется при...</td>
-                        <td class="dosage">2т. в день</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">100</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
+                    </tr> -->
 
                 </tbody>
 
@@ -593,9 +381,9 @@
                     </tr>
                 </thead>
 
-                <tbody class="roboto-regular">
+                <tbody class="roboto-regular" id="users-table-body">
 
-                    <tr>
+                    <!-- <tr>
                         <td class="id id-inventory">1209</td>
                         <td class="name">Шувалов Владислав Андреевич</td>
                         <td class="role">Супер
@@ -607,35 +395,7 @@
                             <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__user">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">1209</td>
-                        <td class="name">Шувалов Владислав Андреевич</td>
-                        <td class="role">Супер
-                            Администратор</td>
-                        <td class="login">vladshuvalovAdmin</td>
-                        <td class="password">El1234bd</td>
-                        <td class="phone">+7 (999) 987 90 70</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">1209</td>
-                        <td class="name">Шувалов Владислав Андреевич</td>
-                        <td class="role">Супер
-                            Администратор</td>
-                        <td class="login">vladshuvalovAdmin</td>
-                        <td class="password">El1234bd</td>
-                        <td class="phone">+7 (999) 987 90 70</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
+                    </tr> -->
 
                 </tbody>
 
@@ -792,9 +552,9 @@
                     </tr>
                 </thead>
 
-                <tbody class="roboto-regular">
+                <tbody class="roboto-regular" id="order-log-table-body">
 
-                    <tr>
+                    <!-- <tr>
                         <td class="id id-inventory">710241</td>
                         <td class="name">Галенко Виталий Русланович</td>
                         <td class="data">07.10.2024 10:31</td>
@@ -805,9 +565,7 @@
                             <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
-                    </tr>
-
-
+                    </tr> -->
 
                 </tbody>
 
@@ -896,10 +654,7 @@
                     <tr>
                         <td class="id id-orderlog">ID</td>
                         <td class="title">Наименование</td>
-                        <td class="shelflife">Срок годности</td>
-                        <td class="supplier">Поставщик</td>
                         <td class="price">Цена(за ед.)</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
                         <td class="stock">Количество</td>
                         <td class="price">Цена</td>
                         <td class="icons"></td>
@@ -909,79 +664,18 @@
                 <tbody class="roboto-regular">
 
 
-                    <tr>
+                    <!-- <tr>
                         <td class="id id-orderlog">432</td>
                         <td class="title">Парацетамол</td>
                         <td class="shelflife">07.10.2025</td>
-                        <td class="supplier">ООО “ДИАМЕД”</td>
                         <td class="price">50.00</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
                         <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
                         <td class="price">200.00</td>
                         <td class="icons">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
-                    </tr>
+                    </tr> -->
 
-
-                    <tr>
-                        <td class="id id-orderlog">432</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="supplier">ООО “ДИАМЕД”</td>
-                        <td class="price">50.00</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
-                        <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
-                        <td class="price">200.00</td>
-                        <td class="icons">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-orderlog">432</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="supplier">ООО “ДИАМЕД”</td>
-                        <td class="price">50.00</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
-                        <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
-                        <td class="price">200.00</td>
-                        <td class="icons">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-orderlog">432</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="supplier">ООО “ДИАМЕД”</td>
-                        <td class="price">50.00</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
-                        <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
-                        <td class="price">200.00</td>
-                        <td class="icons">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="id id-orderlog">432</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="supplier">ООО “ДИАМЕД”</td>
-                        <td class="price">50.00</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
-                        <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
-                        <td class="price">200.00</td>
-                        <td class="icons">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
 
                 </tbody>
 

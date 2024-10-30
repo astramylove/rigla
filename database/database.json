@@ -1,0 +1,136 @@
+{
+    "Users": [
+        {
+            "ID": 1,
+            "Username": "staff123",
+            "Password": "admin123",
+            "Role": "admin",
+            "FullName": "Семёнов Семён Семёнович",
+            "Phone": "+7 (123) 456-88-90"
+        },
+        {
+            "ID": 2,
+            "Username": "adminUser",
+            "Password": "admin123",
+            "Role": "admin",
+            "FullName": "Иванов Иван Иванович",
+            "Phone": "+7 (433) 456-88-90"
+        },
+        {
+            "ID": 3,
+            "Username": "superAdminUser",
+            "Password": "super123",
+            "Role": "superAdmin",
+            "FullName": "Петров Петр Петрович",
+            "Phone": "+7 (123) 432-88-90"
+        }
+    ],
+    "Suppliers": [
+        {
+            "ID": 1,
+            "Name": "ООО 'ДИАМЕД'",
+            "ContactInfo": "+7 (123) 456-78-90"
+        },
+        {
+            "ID": 2,
+            "Name": "ООО 'ДИАМЕД'",
+            "ContactInfo": "+7 (098) 765-43-21"
+        }
+    ],
+    "Medicines": [
+        {
+            "ID": 1,
+            "Name": "Аспирин",
+            "Dosage": "500 мг",
+            "StartDate": "2023-01-01",
+            "EndDate": "2025-01-01",
+            "Quantity": 100,
+            "Description": "Обезболивающее средство.",
+            "SupplierID": 1,
+            "PrescriptionRequired": false,
+            "Price": 50.00,
+            "Shelf": "A",
+            "Rack": "1"
+        },
+        {
+            "ID": 2,
+            "Name": "Парацетамол",
+            "Dosage": "500 мг",
+            "StartDate": "2023-06-01",
+            "EndDate": "2025-06-01",
+            "Quantity": 200,
+            "Description": "Жаропонижающее средство.",
+            "SupplierID": 2,
+            "PrescriptionRequired": false,
+            "Price": 30.00,
+            "Shelf": "B",
+            "Rack": "2"
+        }
+    ],
+    "Orders": [
+        {
+            "ID": 1,
+            "Medicines": [
+                {
+                    "MedicineName": "Парацетамол",
+                    "Price": 30.00,
+                    "Quantity": 2
+                },
+                {
+                    "MedicineName": "Аспирин",
+                    "Price": 50.00,
+                    "Quantity": 2
+                }
+            ]
+        },
+        {
+            "ID": 2,
+            "Medicines": [
+                {
+                    "MedicineName": "Парацетамол",
+                    "Price": 30.00,
+                    "Quantity": 2
+                },
+                {
+                    "MedicineName": "Аспирин",
+                    "Price": 50.00,
+                    "Quantity": 2
+                }
+            ]
+        }
+    ],
+    "ReceiptJournal": [
+        {
+            "ID": 1,
+            "OrderID": 1,
+            "UserID": 1,
+            "Date": "2024-10-29",
+            "Time": "12:00:00",
+            "TotalAmount": 160.00
+        },
+        {
+            "ID": 2,
+            "OrderID": 2,
+            "UserID": 1,
+            "Date": "2024-10-29",
+            "Time": "12:00:00",
+            "TotalAmount": 160.00
+        }
+    ],
+    "Notifications": [
+        {
+            "ID": 1,
+            "MedicineID": 1,
+            "UserID": 2,
+            "Message": "У препарата 'Парацетамол' закончился срок годности!",
+            "Priority": "red"
+        },
+        {
+            "ID": 2,
+            "MedicineID": 1,
+            "UserID": 2,
+            "Message": "У препарата 'Парацетамол' закончился срок годности!",
+            "Priority": "red"
+        }
+    ]
+}

@@ -568,6 +568,29 @@ body {
 .gebrid-menu__form-container form .input-group__into input {
   width: 165px;
 }
+.gebrid-menu__form-container form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.gebrid-menu__form-container form select option {
+  border: 1px solid #66A8A6;
+  border-top: 0;
+  border-radius: 30px;
+  padding: 10px;
+  color: #2C6369;
+  background-color: #ffffff;
+  resize: none;
+  cursor: pointer;
+}
+.gebrid-menu__form-container form select::after {
+  content: "";
+  background-image: url("/icons/strela-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
 
 .overlay {
   position: fixed;
