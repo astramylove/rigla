@@ -43,7 +43,7 @@
                 <thead class="roboto-bold">
                     <tr>
                         <td>Уведомления</td>
-                        <td>3</td>
+                        <td class="notify-len">3</td>
                     </tr>
                 </thead>
 
@@ -99,19 +99,19 @@
 
                     <label for="addproduct-form__name" class="label label__add-product">Наименование:
                         <input type="text" name="addproduct-form__name" id="addproduct-form__name"
-                            class="input input__add-product">
+                            class="input input__add-product" required>
                     </label>
 
                     <label for="addproduct-form__dosage" class="label label__add-product">Дозировка:
                         <input type="text" name="addproduct-form__dosage" id="addproduct-form__dosage"
-                            class="input input__add-product">
+                            class="input input__add-product" required>
                     </label>
 
                 </div>
 
                 <label for="addproduct-form__description" class="label label__add-product">Описание:
                     <textarea name="addproduct-form__description" id="addproduct-form__description"
-                        class="input input__add-product"></textarea>
+                        class="input input__add-product" required></textarea>
                 </label>
 
 
@@ -120,12 +120,12 @@
                     <label for="addproduct-form__date-of-manufacture" class="label label__add-product">Дата
                         изготовления:
                         <input type="date" name="addproduct-form__date-of-manufacture"
-                            id="addproduct-form__date-of-manufacture" class="input input__add-product">
+                            id="addproduct-form__date-of-manufacture" class="input input__add-product" required>
                     </label>
 
                     <label for="addproduct-form__expiration-date" class="label label__add-product">Дата истечения срока:
                         <input type="date" name="addproduct-form__expiration-date" id="addproduct-form__expiration-date"
-                            class="input input__add-product">
+                            class="input input__add-product" required>
                     </label>
 
                 </div>
@@ -134,19 +134,19 @@
 
                     <label for="addproduct-form__quantity" class="label label__add-product">Количество:
                         <input type="number" name="addproduct-form__quantity" id="addproduct-form__quantity"
-                            class="input input__add-product">
+                            class="input input__add-product" required>
                     </label>
 
                     <div class="input-group__into">
 
                         <label for="addproduct-form__rack" class="label label__add-product">Стеллаж:
                             <input type="text" name="addproduct-form__rack" id="addproduct-form__rack"
-                                class="input input__add-product">
+                                class="input input__add-product" required>
                         </label>
 
                         <label for="addproduct-form__shelf" class="label label__add-product">Полка:
                             <input type="text" name="addproduct-form__shelf" id="addproduct-form__shelf"
-                                class="input input__add-product">
+                                class="input input__add-product" required>
                         </label>
 
                     </div>
@@ -156,16 +156,12 @@
 
                     <label for="addproduct-form__price" class="label label__add-product">Цена:
                         <input type="text" name="addproduct-form__price" id="addproduct-form__price"
-                            class="input input__add-product">
+                            class="input input__add-product" required>
                     </label>
 
                     <label for="addproduct-form__provider" class="label label__add-product">Поставщик:
                         <select type="text" name="addproduct-form__provider" id="addproduct-form__provider"
-                            class="input input__add-product">
-                            <option value="">Выберите поставщика</option>
-                            <option value="newProvider">Добавить поставщика</option>
-                            <option value="diamed">ООО "ДИАМЕД"</option>
-                            <option value="diamed">ООО "ДИАМЕД"</option>
+                            class="input input__add-product" required>
                         </select>
                     </label>
 
@@ -189,10 +185,12 @@
                 <fieldset>
                     <span class="roboto-regular">Рецепт:</span>
                     <div>
-                        <input type="radio" id="addproduct-form__recept1" name="addproduct-form__recept" value="yes" />
+                        <input type="radio" id="addproduct-form__recept1" name="addproduct-form__recept" value="yes"
+                            required />
                         <label for="addproduct-form__recept1">Нужен</label>
 
-                        <input type="radio" id="addproduct-form__recept2" name="addproduct-form__recept" value="no" />
+                        <input type="radio" id="addproduct-form__recept2" name="addproduct-form__recept" value="no"
+                            required />
                         <label for="addproduct-form__recept2">Не нужен</label>
                     </div>
                 </fieldset>
@@ -277,7 +275,23 @@
                     <input class="search" placeholder="Поиск" type="text">
                     <button class="search-loop"><img src="icons/search.svg" alt=""></button>
                 </div>
-                <img src="icons/filter.svg" alt="" class="filter">
+                <div class="container__btn-filter">
+                    <img src="icons/filter.svg" alt="" class="filter">
+                </div>
+            </div>
+
+
+            <div class="container__filter">
+                <span class="roboto-medium">Фильтрация</span>
+                <select id="filter-column-select"></select>
+                <select id="sort-select">
+                    <option value="asc">Сортировка по возрастанию</option>
+                    <option value="desc">Сортировка по убыванию</option>
+                </select>
+                <div>
+                    <button id="apply-filter-sort">Применить</button>
+                    <button id="reset-filter-sort">Сбросить</button>
+                </div>
             </div>
         </div>
 
@@ -291,17 +305,17 @@
         <div class="container__order-check">
             <button class="btn  back-receipt roboto-bold">Вернуться к чекам</button>
             <div class="order-check__cap roboto-regular">Информация о чеке:
-                <span class="roboto-bold">710241</span>
+                <!-- <span class="roboto-bold">710241</span>
                 <span class="roboto-bold">Галенко Виталий Русланович</span>
                 <span class="roboto-bold">07.10.2024 10:31</span>
-                <span class="roboto-bold">1200.00</span>
+                <span class="roboto-bold">1200.00</span> -->
             </div>
         </div>
 
         <!-- Запасы -->
 
         <div class="container__inventory-table table" style="display: none;">
-            <table>
+            <table id="medicines-table">
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-inventory">ID</td>
@@ -337,25 +351,17 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold">
+                <tfoot class="roboto-bold" id="pagination-inventory">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span>
+                                class="roboto-regular twenty">20</span></td>
+                        <td id="pagination-controls">
+                            <span class="previous-page" style="cursor:pointer;"></span>
+                            <span class="active-page"></span>
+                            <span class="next-page" style="cursor:pointer;"></span>
+                            <span class="ellipsis">...</span>
+                            <span class="last-page" style="cursor:pointer;"></span>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
                             <img src="icons/strela-right.svg" alt="">
@@ -368,7 +374,7 @@
         <!-- Пользователи -->
 
         <div class="container__users-table table" style="display: none;">
-            <table>
+            <table id="users-table">
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-inventory">ID</td>
@@ -399,7 +405,7 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold">
+                <tfoot class="roboto-bold" id="pagination-users">
                     <tr>
                         <td>На странице: <span id="ten" class="roboto-regular">10</span> <span class="roboto-regular"
                                 id="twenty">20</span></td>
@@ -422,7 +428,7 @@
         <!-- Списание -->
 
         <div class="container__cancellation-table table" style="display: none;">
-            <table>
+            <table id="cancellation-table">
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-inventory">ID</td>
@@ -437,9 +443,9 @@
                     </tr>
                 </thead>
 
-                <tbody class="roboto-regular">
+                <tbody class="roboto-regular" id="cancellation-table-body">
 
-                    <tr>
+                    <!-- <tr>
                         <td class="id id-inventory">710241</td>
                         <td class="title">Парацетамол</td>
                         <td class="supplier">ООО "ДИАМЕД"</td>
@@ -452,80 +458,20 @@
                             <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="supplier-contact">+7 (959) 790 43 22</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">0</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="supplier-contact">+7 (959) 790 43 22</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">0</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="supplier-contact">+7 (959) 790 43 22</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">0</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id id-inventory">710241</td>
-                        <td class="title">Парацетамол</td>
-                        <td class="supplier">ООО "ДИАМЕД"</td>
-                        <td class="supplier-contact">+7 (959) 790 43 22</td>
-                        <td class="shelflife">07.10.2025</td>
-                        <td class="shelf">3/4</td>
-                        <td class="price">50.00</td>
-                        <td class="stock">0</td>
-                        <td class="icons">
-                            <img src="icons/editor.svg" alt="">
-                            <img src="icons/delete.svg" alt="">
-                        </td>
-                    </tr>
+                    </tr> -->
 
                 </tbody>
 
-                <tfoot class="roboto-bold">
+                <tfoot class="roboto-bold" id="pagination-cancellation">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="previous-page"></span>
+                            <span class="active-page">1</span>
+                            <span class="next page">2</span>
+                            <span class="ellipsis">...</span>
+                            <span class="last-page">5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
@@ -539,7 +485,7 @@
         <!-- Журнал заказов -->
 
         <div class="container__order-log-table table" style="display: none;">
-            <table>
+            <table id="order-log-table">
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-orderlog">ID</td>
@@ -569,16 +515,16 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold">
+                <tfoot class="roboto-bold" id="pagination-orderlog">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="previous-page"></span>
+                            <span class="active-page">1</span>
+                            <span class="next page">2</span>
+                            <span class="ellipsis">...</span>
+                            <span class="last-page">5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
@@ -631,11 +577,11 @@
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="previous-page"></span>
+                            <span class="active-page">1</span>
+                            <span class="next page">2</span>
+                            <span class="ellipsis">...</span>
+                            <span class="last-page">5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
@@ -684,11 +630,11 @@
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="previous-page"></span>
+                            <span class="active-page">1</span>
+                            <span class="next page">2</span>
+                            <span class="ellipsis">...</span>
+                            <span class="last-page">5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">

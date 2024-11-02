@@ -553,7 +553,6 @@ body
                     top: 15%
         .add-users
             display: none
-
     .btn
         display: flex
         justify-content: center
@@ -738,6 +737,65 @@ body
                     gap: 19px
                 td:nth-child(2)
                     padding-right: 120px
+
+.container__btn-filter
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    height: 103%
+    padding: 0 20px
+    // border: 2px solid #2C6369
+    border-radius: 30px 30px 0 0
+    border-bottom: 0
+    z-index: 86
+    // background: #A2D6CA
+.container__filter
+    box-sizing: border-box
+    display: none
+    background: #A2D6CA
+    position: absolute
+    border: 2px solid #2C6369
+    flex-direction: column
+    padding: 40px 30px
+    // max-width: 400px
+    width: 30%
+    height: 0px
+    gap: 15px
+    top: 63px
+    right: 0
+    z-index: 85
+    border-radius: 30px 0 30px 30px
+    transform: 1s
+    div
+        box-sizing: border-box
+        display: flex
+        justify-content: space-between
+        gap: 20px
+        button
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 0 30px
+            width: auto
+            height: 30px
+            background: #21484D
+            color: #fff
+            font-size: 20px
+            border-radius: 10px
+            border: none
+    select
+        padding: 5px 10px
+        box-sizing: border-box
+        border-radius: 30px
+        outline: none
+        &::before
+            border-radius: 30px
+    span
+        display: flex
+        justify-content: center
+        width: 100%
+        font-size: 20px
+        color: #21484D
 
 .container__users-table,
 .container__cancellation-table,

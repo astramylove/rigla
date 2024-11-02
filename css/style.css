@@ -883,6 +883,70 @@ body {
   padding-right: 120px;
 }
 
+.container__btn-filter {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 103%;
+  padding: 0 20px;
+  border-radius: 30px 30px 0 0;
+  border-bottom: 0;
+  z-index: 86;
+}
+
+.container__filter {
+  box-sizing: border-box;
+  display: none;
+  background: #A2D6CA;
+  position: absolute;
+  border: 2px solid #2C6369;
+  flex-direction: column;
+  padding: 40px 30px;
+  width: 30%;
+  height: 0px;
+  gap: 15px;
+  top: 63px;
+  right: 0;
+  z-index: 85;
+  border-radius: 30px 0 30px 30px;
+  transform: 1s;
+}
+.container__filter div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.container__filter div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  width: auto;
+  height: 30px;
+  background: #21484D;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+}
+.container__filter select {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  outline: none;
+}
+.container__filter select::before {
+  border-radius: 30px;
+}
+.container__filter span {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+  color: #21484D;
+}
+
 .container__users-table,
 .container__cancellation-table,
 .container__order-log-table,
