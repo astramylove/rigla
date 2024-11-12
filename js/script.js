@@ -6,7 +6,7 @@ let data = {
       "Password": "staff123",
       "Role": "staff",
       "FullName": "Семёнов Семён Семёнович",
-      "Phone": "+7 (123) 456-88-90"
+      "Phone": "71234568890"
     },
     {
       "ID": 2,
@@ -14,7 +14,7 @@ let data = {
       "Password": "admin123",
       "Role": "admin",
       "FullName": "Иванов Иван Иванович",
-      "Phone": "+7 (433) 456-88-90"
+      "Phone": "74334568890"
     },
     {
       "ID": 3,
@@ -22,7 +22,7 @@ let data = {
       "Password": "super123",
       "Role": "superAdmin",
       "FullName": "Петров Петр Петрович",
-      "Phone": "+7 (123) 432-88-90"
+      "Phone": "71234328890"
     }
   ],
   "Suppliers": [
@@ -78,7 +78,7 @@ let data = {
     },
     {
       "ID": 3,
-      "Name": "Аспирин",
+      "Name": "Лотатин",
       "Dosage": "500 мг",
       "StartDate": "2022-01-01",
       "EndDate": "2024-10-30",
@@ -290,8 +290,8 @@ let data = {
       ID: 18,
       Name: "Кларитромицин",
       Dosage: "250 мг",
-      StartDate: "2024 -02 -01",
-      EndDate: "2026 -02 -01",
+      StartDate: "2024-02-01",
+      EndDate: "2026-02-01",
       Quantity: 100,
       Description: "Антибиотик.",
       SupplierID: 4,
@@ -304,8 +304,8 @@ let data = {
       ID: 19,
       Name: "Триметоприм",
       Dosage: "100 мг",
-      StartDate: "2024 -03 -01",
-      EndDate: "2026 -03 -01",
+      StartDate: "2024-03-01",
+      EndDate: "2026-03-01",
       Quantity: 90,
       Description: "Антибиотик.",
       SupplierID: 1,
@@ -318,8 +318,8 @@ let data = {
       ID: 20,
       Name: "Глюкозамин",
       Dosage: "500 мг",
-      StartDate: "2024 -04 -01",
-      EndDate: "2026 -04 -01",
+      StartDate: "2024-04-01",
+      EndDate: "2026-04-01",
       Quantity: 110,
       Description: "Средство для суставов.",
       SupplierID: 2,
@@ -332,8 +332,8 @@ let data = {
       ID: 21,
       Name: "Кальций Д3",
       Dosage: "500 мг",
-      StartDate: "2024 -05 -01",
-      EndDate: "2026 -05 -01",
+      StartDate: "2024-05-01",
+      EndDate: "2026-05-01",
       Quantity: 120,
       Description: "Добавка к пище.",
       SupplierID: 3,
@@ -394,26 +394,23 @@ let data = {
     {
       "ID": 1,
       "OrderID": 1,
-      "UserID": 1,
+      "User": 'Семёнов Семён Семёнович',
       "Date": "2024-10-29",
-      "Time": "12:00:00",
-      "TotalAmount": 160.00
+      "Time": "12:00:00"
     },
     {
       "ID": 2,
       "OrderID": 2,
-      "UserID": 1,
+      "User": 'Семёнов Семён Семёнович',
       "Date": "2024-10-29",
-      "Time": "12:30:00",
-      "TotalAmount": 160.00
+      "Time": "12:30:00"
     },
     {
       "ID": 3,
       "OrderID": 3,
-      "UserID": 1,
+      "User": 'Семёнов Семён Семёнович',
       "Date": "2024-10-29",
-      "Time": "12:50:00",
-      "TotalAmount": 360.00
+      "Time": "12:50:00"
     }
   ],
   "Notifications": [
@@ -428,7 +425,7 @@ let data = {
       "ID": 2,
       "MedicineID": 1,
       "UserID": 2,
-      "Message": "У препарата 'Парацетамол' закончился срок годности!",
+      "Message": "Ты чмо",
       "Priority": "red"
     }
   ]
@@ -488,6 +485,9 @@ const startProgram = (jsonData) => {
   const addUsersBtn = document.querySelector(".add-users");
   const backReceiptBtn = document.querySelector(".back-receipt");
 
+  const editBtnProduct = document.querySelectorAll(".edit-btn__product");
+  const editBtnUser = document.querySelectorAll(".edit-btn__user");
+  const deleteBtn = document.querySelectorAll(".delete-btn");
   const gebridMenuClose = document.querySelector(".gebrid-menu__close");
   const exitBtn = document.querySelector(".exit");
   // Формы
@@ -515,7 +515,7 @@ const startProgram = (jsonData) => {
     ]);
     highlightActivePage('Запасы');
     populateTable()
-    setupFilterAndSort('medicines-table', 'medicines-table-body');
+    document.querySelector('.search').value = ''
   });
 
   pageUsers.addEventListener("click", () => {
@@ -526,7 +526,8 @@ const startProgram = (jsonData) => {
     ]);
     highlightActivePage('Пользователи');
     populateUsersTable();
-    setupFilterAndSort('users-table', 'users-table-body');
+    sortUserOptionCreate()
+    document.querySelector('.search').value = ''
   });
 
   pageCancellation.addEventListener("click", () => {
@@ -538,12 +539,9 @@ const startProgram = (jsonData) => {
     ]);
     containerBtnSearch.style.justifyContent = 'end';
     highlightActivePage('Списание');
-
-    fillCancellationTable();
-    setupFilterAndSort('cancellation-table', 'cancellation-table-body');
+    populateWriteOffMedicines()
+    document.querySelector('.search').value = ''
   });
-
-
 
   pageOrderLog.addEventListener("click", () => {
     toggleVisibility([orderLogTable], [
@@ -555,9 +553,9 @@ const startProgram = (jsonData) => {
     containerBtnSearch.style.justifyContent = 'end';
     highlightActivePage('Журнал чеков');
     populateOrderLogTable()
-    setupFilterAndSort('order-log-table', 'order-log-table-body');
+    document.querySelector('.search').value = ''
+    sortReceiptOptionCreate()
   });
-
 
   pageOrder.addEventListener("click", (e) => {
     toggleVisibility([orderStaffTable, containerOrderBtn], [
@@ -568,8 +566,9 @@ const startProgram = (jsonData) => {
     ]);
     containerBtnSearch.style.display = 'none'
     highlightActivePage('Оформить заказ');
-    // setupFilterAndSort('order-staff-table', 'order-staff-table-body');
+    document.querySelector('.search').value = ''
   });
+
 
 
 
@@ -583,28 +582,6 @@ const startProgram = (jsonData) => {
     });
   };
 
-  // Открытие фильтра
-  const filterModal = document.querySelector('.container__filter')
-  const filterBtn = document.querySelector('.filter')
-  const containerFilterBtn = document.querySelector('.container__btn-filter')
-
-  filterBtn.addEventListener('click', () => {
-    if (filterModal.style.height == 'auto') {
-      containerFilterBtn.style.border = 'none'
-      containerFilterBtn.style.backgroundColor = '#fff'
-
-      filterModal.style.display = 'none'
-      filterModal.style.height = 0
-    } else {
-      containerFilterBtn.style.border = '2px solid #2C6369 '
-      containerFilterBtn.style.borderBottom = '0'
-      containerFilterBtn.style.backgroundColor = '#A2D6CA'
-
-      filterModal.style.display = 'flex'
-      filterModal.style.height = 'auto'
-    }
-  })
-
   // Действия с кнопками
   backReceiptBtn.addEventListener("click", () => {
     toggleVisibility([orderLogTable], [
@@ -617,6 +594,19 @@ const startProgram = (jsonData) => {
     highlightActivePage('Журнал чеков');
   });
 
+  // Обработчики для редактирования пользователей и продуктов
+  editBtnUser.forEach(el => {
+    el.addEventListener('click', (e) => {
+      gebridMenu.style.width = '878px';
+      setTimeout(() => {
+        gebridMenuClose.style.display = 'block';
+        formAddUser.style.display = 'flex';
+        formTitle.style.display = 'flex';
+        formTitle.textContent = 'Редактирование информации о пользователе';
+      }, 500);
+      overlay.style.display = 'block';
+    });
+  });
 
 
   // Обработчики для добавления пользователей и продуктов
@@ -646,12 +636,21 @@ const startProgram = (jsonData) => {
   gebridMenuClose.addEventListener('click', () => {
     gebridMenu.style.width = '133px';
     gebridMenuClose.style.display = 'none';
+    if (formAddUser.style.display == 'flex') {
+      document.querySelector('.btn-wrap .btn').textContent = 'Добавить пользователя'
+    } else {
+      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+    }
     formAddProduct.style.display = 'none';
     formAddUser.style.display = 'none';
     formTitle.style.display = 'none';
-    const providerNew = document.querySelector('.provider-add')
-    providerNew.style.display = 'none'
     overlay.style.display = 'none';
+    formAddUser.reset()
+    formAddProduct.reset()
+    document.getElementById('error-message__user').style.display = 'none';
+    formAddProduct.dataset.id = ''
+    formAddUser.dataset.id = ''
+
   });
 
   // Уведомления
@@ -660,7 +659,6 @@ const startProgram = (jsonData) => {
     containerExit.style.height = '0px';
     capContainerLogOut.style.backgroundColor = '#66A8A6'
     openExit.style.transform = 'rotate(0deg)'
-    generateNotifications()
   });
   const contNotifyFunction = () => {
     if (containerNotifications.style.height == 'auto') {
@@ -692,6 +690,29 @@ const startProgram = (jsonData) => {
       openExit.style.transform = 'rotate(180deg)'
     }
   }
+  // Открытие фильтра
+  const filterIcon = document.getElementById('filter-icon');
+  const filterModal = document.getElementById('filter-modal');
+  const closeModal = document.getElementById('close-modal');
+
+
+  // Открытие модального окна при клике на иконку фильтра
+  filterIcon.onclick = function () {
+    filterModal.style.display = "block";
+  }
+
+  // Закрытие модального окна при клике на крестик
+  closeModal.onclick = function () {
+    filterModal.style.display = "none";
+  }
+
+  // Закрытие модального окна при клике вне его
+  window.onclick = function (event) {
+    if (event.target === filterModal) {
+      filterModal.style.display = "none";
+    }
+  }
+
 
   // Получение данных из локального хранилища
   const getDataFromLocalStorage = () => {
@@ -699,65 +720,96 @@ const startProgram = (jsonData) => {
     return data ? JSON.parse(data) : null;
   }
 
-  // Получение имени поставщика
+
+  //                                                          ЗАПАСЫ ПОЛНАЯ РАБОТА
   const getSupplierName = (supplierId, suppliers) => {
-    const supplier = suppliers.find(s => s.ID === supplierId);
+    const supplier = suppliers.find(s => Number(s.ID) == Number(supplierId));
     return supplier ? supplier.Name : 'Неизвестный поставщик';
   }
 
-
-  // Заполнение уведомлений
-  function generateNotifications() {
-    const data = getDataFromLocalStorage();
-
-    if (!data || !data.Notifications) {
-      return;
-    }
-
-    const notificationsContainer = document.querySelector('.container__notifications tbody');
-
-    notificationsContainer.innerHTML = '';
-
-    data.Notifications.forEach(notification => {
-      const notificationRow = document.createElement('tr');
-
-      const medicine = data.Medicines.find(med => med.ID === notification.MedicineID);
-      const medicineName = medicine ? medicine.Name : null;
-
-      if (medicineName == null) {
-        return;
-      }
-
-      notificationRow.innerHTML = `
-            <td>${notification.Message.replace(`'${medicineName}'`)}<br>
-            <span class="notifications-date">${new Date().toLocaleDateString()}</span></td>
-            <td><img src="icons/crest.svg" alt=""></td>
-        `;
-
-      notificationsContainer.appendChild(notificationRow);
+  const addEventListenerCreateEdit = (btn) => {
+    btn.forEach(el => {
+      el.addEventListener('click', (e) => {
+        const targetButton = e.target;
+        const dataId = targetButton.dataset.id;
+        gebridMenu.style.width = '878px';
+        setTimeout(() => {
+          gebridMenuClose.style.display = 'block';
+          formAddProduct.style.display = 'flex';
+          formAddProduct.dataset.id = dataId;
+          formTitle.style.display = 'flex';
+          formTitle.textContent = 'Редактирование информации о продукте';
+          document.querySelector('.form__add-product .btn').textContent = 'Сохранить изменения'
+        }, 300);
+        overlay.style.display = 'block';
+        populateFormAddProduct(dataId);
+        populateWriteOffMedicines();
+      });
     });
-
-    if (notificationsContainer.children.length === 0) {
-      const noNotificationsRow = document.createElement('tr');
-      noNotificationsRow.innerHTML = `<td colspan="2">Нет уведомлений</td>`;
-      notificationsContainer.appendChild(noNotificationsRow);
-    }
-
-    const lenNotyfy = document.querySelector('.notify-len')
-    lenNotyfy.textContent = data.Notifications.length
   }
+
+  const populateFormAddProduct = (dataId) => {
+    const jsonData = getDataFromLocalStorage();
+    const medicine = jsonData.Medicines.find(medicine => medicine.ID == dataId);
+
+    if (medicine) {
+      document.querySelector('#addproduct-form__name').value = medicine.Name || '';
+      document.querySelector('#addproduct-form__dosage').value = medicine.Dosage || '';
+      document.querySelector('#addproduct-form__description').value = medicine.Description || '';
+      document.querySelector('#addproduct-form__date-of-manufacture').value = medicine.StartDate || '';
+      document.querySelector('#addproduct-form__expiration-date').value = medicine.EndDate || '';
+      document.querySelector('#addproduct-form__quantity').value = medicine.Quantity || '';
+      document.querySelector('#addproduct-form__rack').value = medicine.Rack || '';
+      document.querySelector('#addproduct-form__shelf').value = medicine.Shelf || '';
+      document.querySelector('#addproduct-form__price').value = medicine.Price.toFixed(2) || '';
+
+      console.log(medicine.SupplierID, jsonData.Suppliers);
+
+      const providerSelect = document.querySelector('#addproduct-form__provider');
+      providerSelect.value = medicine.SupplierID;
+
+      if (medicine.PrescriptionRequired) {
+        document.querySelector('#addproduct-form__recept1').checked = true; // Нужен
+        document.querySelector('#addproduct-form__recept2').checked = false; // Не нужен
+      } else {
+        document.querySelector('#addproduct-form__recept1').checked = false; // Нужен
+        document.querySelector('#addproduct-form__recept2').checked = true; // Не нужен
+      }
+    } else {
+      console.error('Медикамент не найден:', dataId);
+    }
+  }
+
+  const deleteMedicin = (dataId) => {
+    let jsonData = getDataFromLocalStorage();
+    jsonData.Medicines = jsonData.Medicines.filter(med => med.ID != dataId);
+    saveDataToLocalStorage(jsonData);
+    populateTable();
+    populateWriteOffMedicines();
+    userIdToDelete = null
+  };
+
+  const addEventListenerCreateDel = (btn) => {
+    btn.forEach(el => {
+      el.addEventListener('click', (e) => {
+        const targetButton = e.target;
+        const dataId = targetButton.dataset.id;
+
+        openConfirmationModal('medicin', dataId);
+      });
+    });
+  }
+
   // Заполнение таблицы медикаментов
   const populateTable = () => {
     const jsonData = getDataFromLocalStorage();
     if (!jsonData) return;
 
     const tableBody = document.getElementById('medicines-table-body');
-
-    tableBody.innerHTML = '';
+    tableBody.innerHTML = ''; // Очищаем предыдущие данные
 
     jsonData.Medicines.forEach(medicine => {
       const row = document.createElement('tr');
-
       row.innerHTML = `
             <td class="id id-inventory">${medicine.ID}</td>
             <td class="title">${medicine.Name}</td>
@@ -769,510 +821,479 @@ const startProgram = (jsonData) => {
             <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
             <td class="stock">${medicine.Quantity}</td> 
             <td class="icons">
-                <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product" data-id="${medicine.ID}">
-                <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
+                <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product" data-id='${medicine.ID}'>
+                <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__product" data-id='${medicine.ID}'>
             </td>
         `;
-
       tableBody.appendChild(row);
-
-      const editBtnProduct = row.querySelector(".edit-btn__product");
-      const deleteBtn = row.querySelector(".delete-btn");
-
-      editBtnProduct.addEventListener('click', () => {
-        populateForm(medicine);
-
-        gebridMenu.style.width = '878px';
-        setTimeout(() => {
-          gebridMenuClose.style.display = 'block';
-          formAddProduct.style.display = 'flex';
-          formTitle.style.display = 'flex';
-          formTitle.textContent = 'Редактирование информации о продукте';
-        }, 300);
-
-        overlay.style.display = 'block';
-      });
-
-      deleteBtn.addEventListener('click', () => {
-      });
     });
+
+    addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
+    addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
+    sortMedicineOptionCreate();
   }
 
   const populateSupplierDropdown = (suppliers) => {
     const providerSelect = document.getElementById('addproduct-form__provider');
-    const providerNew = document.querySelector('.provider-add')
-    console.log(providerNew);
-    
+    const providerNewSection = document.querySelector('.provider-add');
+
     providerSelect.innerHTML = `
         <option value="">Выберите поставщика</option>
         <option value="newProvider">Добавить поставщика</option>
     `;
 
     suppliers.forEach(supplier => {
-        const option = document.createElement('option');
-        option.value = supplier.ID;
-        option.textContent = supplier.Name; 
-        providerSelect.appendChild(option);
+      const option = document.createElement('option');
+      option.value = supplier.ID;
+      option.textContent = supplier.Name;
+      providerSelect.appendChild(option);
     });
 
     providerSelect.addEventListener('change', () => {
-      if (providerSelect.value == 'newProvider') {
-        providerNew.style.display = 'flex'
-      } else {
-        providerNew.style.display = 'none'
+      providerNewSection.style.display = providerSelect.value === 'newProvider' ? 'flex' : 'none';
+    });
+  }
+
+  const sortMedicineOptionCreate = () => {
+    const tableInventoryHead = document.getElementById('table-inventory').querySelectorAll('thead tr td');
+    const sortContainer = document.getElementById('filter-column-select');
+
+    sortContainer.innerHTML = '';
+
+    tableInventoryHead.forEach(name => {
+      if (name.textContent === '' || name.textContent === 'ID' || name.textContent === 'Описание' || name.textContent === 'Дозировка' || name.textContent === 'Полка/Стеллаж' || name.textContent === 'Поставщик') return;
+
+      const option = document.createElement('option');
+      option.value = name.dataset.name;
+      option.textContent = name.textContent;
+      sortContainer.append(option);
+    });
+
+    document.getElementById('apply-filter-sort').addEventListener('click', () => {
+      if (!document.querySelector('.page__inventory').classList.contains('roboto-bold')) return
+      const selectedColumn = sortContainer.value;
+      const selectedOrder = document.getElementById('sort-select').value;
+
+      let jsonData = getDataFromLocalStorage();
+
+      if (!jsonData || !jsonData.Medicines) {
+        console.error("Нет данных для сортировки");
+        return;
       }
-    })
-}
 
-const populateForm = (medicine) => {
-    document.getElementById('addproduct-form__name').value = medicine.Name;
-    document.getElementById('addproduct-form__dosage').value = medicine.Dosage;
-    document.getElementById('addproduct-form__description').value = medicine.Description;
-    
-    document.getElementById('addproduct-form__date-of-manufacture').value = new Date().toISOString().split('T')[0]; 
-    document.getElementById('addproduct-form__expiration-date').value = medicine.EndDate;
+      const sortedData = sortTableMedecine(jsonData.Medicines, selectedColumn, selectedOrder);
 
-    document.getElementById('addproduct-form__quantity').value = medicine.Quantity;
-    document.getElementById('addproduct-form__rack').value = medicine.Rack;
-    document.getElementById('addproduct-form__shelf').value = medicine.Shelf;
-    document.getElementById('addproduct-form__price').value = medicine.Price.toFixed(2);
-    
-    const providerSelect = document.getElementById('addproduct-form__provider');
-    providerSelect.value = medicine.SupplierID; 
+      jsonData.Medicines = sortedData;
 
-    const receptYes = document.getElementById('addproduct-form__recept1');
-    const receptNo = document.getElementById('addproduct-form__recept2');
-    
-    if (medicine.PrescriptionRequired) {
-        receptYes.checked = true;
-        receptNo.checked = false;
-    } else {
-        receptYes.checked = false;
-        receptNo.checked = true;
-    }
-}
+      saveDataToLocalStorage(jsonData);
+      populateTable();
+      filterModal.style.display = "none";
+    });
+
+    document.getElementById('reset-filter-sort').addEventListener('click', () => {
+      let jsonData = getDataFromLocalStorage();
+      const sortedData = sortTableMedecine(jsonData.Medicines, 'ID', 'asc');
+
+      jsonData.Medicines = sortedData;
+
+      saveDataToLocalStorage(jsonData);
+      populateTable();
+      filterModal.style.display = "none";
+    });
+  };
+
+  const sortTableMedecine = (medicines, column, order) => {
+    console.log(column);
+
+    return medicines.sort((a, b) => {
+      let aValue = a[column];
+      let bValue = b[column];
+
+
+      if (aValue === undefined || bValue === undefined) {
+        console.error(`Неизвестный столбец: ${column}`);
+        return 0;
+      }
+
+      if (typeof aValue === 'string') {
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+        return order === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+      } else if (typeof aValue === 'number') {
+        return order === 'asc' ? aValue - bValue : bValue - aValue;
+      }
+
+      return 0;
+    });
+  };
+
+  const searchMedicines = () => {
+    const searchInput = document.getElementById('search-input');
+    const filter = searchInput.value.toLowerCase().trim(); // Получаем текст для поиска
+    const tableBody = document.getElementById('medicines-table-body');
+    const rows = tableBody.getElementsByTagName('tr'); // Получаем все строки таблицы
+
+    // Перебираем строки и скрываем/показываем их в зависимости от соответствия
+    Array.from(rows).forEach(row => {
+      const cells = row.getElementsByTagName('td');
+      let rowContainsSearchTerm = false;
+
+      // Проверяем каждую ячейку в строке
+      Array.from(cells).forEach(cell => {
+        if (cell.textContent.toLowerCase().replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, '').includes(filter.replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, ''))) {
+          rowContainsSearchTerm = true; // Если найдено совпадение
+        }
+      });
+
+      // Показываем или скрываем строку в зависимости от результата поиска
+      row.style.display = rowContainsSearchTerm ? '' : 'none';
+    });
+  };
+
 
   if (window.location.pathname.includes('inventoryPage.html')) {
     populateTable();
     populateSupplierDropdown(getDataFromLocalStorage().Suppliers)
   }
 
+  const addOrUpdateMedicine = (event) => {
+    event.preventDefault();
+    let errorMessage = ''
+    if (errorMessage) {
+
+    } else {
+
+      setTimeout(() => {
+        gebridMenu.style.width = '133px';
+        gebridMenuClose.style.display = 'none';
+        formAddProduct.style.display = 'none';
+        formTitle.style.display = 'none';
+        overlay.style.display = 'none';
+        document.getElementById('error-message__user').style.display = 'none';
+        document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+        formAddProduct.reset()
+      }, 2000);
+
+      const jsonData = getDataFromLocalStorage();
+
+      const formElement = document.querySelector('.form__add-product');
+      const dataId = formElement.getAttribute('data-id');
+
+      const newMedicine = {
+        ID: dataId ? parseInt(dataId) : jsonData.Medicines.length + 1,
+        Name: document.querySelector('#addproduct-form__name').value,
+        Dosage: document.querySelector('#addproduct-form__dosage').value,
+        Description: document.querySelector('#addproduct-form__description').value,
+        StartDate: document.querySelector('#addproduct-form__date-of-manufacture').value,
+        EndDate: document.querySelector('#addproduct-form__expiration-date').value,
+        Quantity: parseInt(document.querySelector('#addproduct-form__quantity').value),
+        Rack: document.querySelector('#addproduct-form__rack').value,
+        Shelf: document.querySelector('#addproduct-form__shelf').value,
+        Price: parseFloat(document.querySelector('#addproduct-form__price').value),
+        SupplierID: parseInt(document.querySelector('#addproduct-form__provider').value),
+        PrescriptionRequired: document.querySelector('#addproduct-form__recept1').checked
+      };
+
+      if (dataId) {
+        const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
+        if (index !== -1) {
+          jsonData.Medicines[index] = newMedicine;
+          alert('Медикамент успешно обновлён!');
+        } else {
+          console.error('Медикамент не найден:', dataId);
+        }
+      } else {
+        jsonData.Medicines.push(newMedicine);
+        alert('Медикамент успешно добавлен!');
+      }
+
+      saveDataToLocalStorage(jsonData);
+
+      formElement.reset();
+      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+      formElement.removeAttribute('data-id');
+      populateTable()
+      searchMedicines()
+      populateWriteOffMedicines()
+    }
+  };
+
+  formAddProduct.addEventListener('submit', addOrUpdateMedicine)
+
+
+
+  //                                                   РАБОТА С ПОЛЬЗОВАТЕЛЯМИ ПОЛНАЯ
   // Заполнение таблицы пользователей
-  const populateUsersTable = () => {
-    const jsonData = getDataFromLocalStorage();
-    if (!jsonData) return;
 
-    const tableBody = document.getElementById('users-table-body');
+  const sortUserOptionCreate = () => {
+    const tableUsersHead = document.getElementById('users-table').querySelectorAll('thead tr td');
+    console.log(tableUsersHead);
 
-    // Очищаем предыдущие данные
-    tableBody.innerHTML = '';
+    const sortContainer = document.getElementById('filter-column-select');
+    console.log(sortContainer);
 
-    jsonData.Users.forEach(user => {
-      const row = document.createElement('tr');
+    sortContainer.innerHTML = ''; 
 
-      row.innerHTML = `
-          <td class="id id-inventory">${user.ID}</td>
-          <td class="name">${user.FullName}</td>
-          <td class="role">${user.Role}</td>
-          <td class="login">${user.Username}</td>
-          <td class="password">${user.Password}</td> 
-          <td class="phone">${user.Phone || 'Не указан'}</td>
-          <td class="icons">
-              <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product">
-              <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
-          </td> 
-      `;
+    tableUsersHead.forEach(name => {
+      if (name.textContent === '' || name.textContent === 'ID') {
+        return;
+      }
 
-      tableBody.appendChild(row);
+      const option = document.createElement('option');
+      option.value = name.dataset.name; 
+      option.textContent = name.textContent; 
+      sortContainer.append(option);
     });
 
-    const editBtnUser = document.querySelectorAll(".edit-btn__user");
+    document.getElementById('apply-filter-sort').addEventListener('click', () => {
+      if (!document.querySelector('.page__users').classList.contains('roboto-bold')) return
 
-    // Обработчики для редактирования пользователей и продуктов
-    editBtnUser.forEach(el => {
+      const selectedColumn = sortContainer.value;
+      console.log(selectedColumn);
+
+      const selectedOrder = document.getElementById('sort-select').value;
+
+      let jsonData = getDataFromLocalStorage();
+
+      if (!jsonData || !jsonData.Users) {
+        console.error("Нет данных для сортировки");
+        return;
+      }
+
+      const sortedData = sortTableUsers(jsonData.Users, selectedColumn, selectedOrder);
+
+      jsonData.Users = sortedData;
+
+      saveDataToLocalStorage(jsonData); 
+      populateUsersTable();
+      filterModal.style.display = "none";
+    });
+
+    document.getElementById('reset-filter-sort').addEventListener('click', () => {
+      let jsonData = getDataFromLocalStorage();
+      const sortedData = sortTableUsers(jsonData.Users, 'ID', 'asc'); 
+
+      jsonData.Users = sortedData;
+
+      saveDataToLocalStorage(jsonData); 
+      populateUsersTable();
+      filterModal.style.display = "none";
+    });
+  };
+
+  let userIdToDelete = null;
+  let medIdToDelete = null;
+  let receiptIdToDelete = null
+
+  const openConfirmationModal = (name, id) => {
+    const textConfirm = document.getElementById('text-confirm')
+    if (name === 'user') {
+      userIdToDelete = id;
+      textConfirm.textContent = 'Вы уверены, что хотите удалить этого пользователя?'
+    } else if (name === 'medicin') {
+      medIdToDelete = id
+      textConfirm.textContent = 'Вы уверены, что хотите удалить этот продукт?'
+    } else if (name === 'exit') {
+
+    } else if (name === 'receipt') {
+      receiptIdToDelete = id
+      textConfirm.textContent = 'Вы уверены, что хотите удалить этот чек?'
+    }
+    document.getElementById('confirmation-modal').style.display = 'block';
+  };
+
+  document.getElementById('modal-close').onclick = function () {
+    document.getElementById('confirmation-modal').style.display = 'none';
+    userIdToDelete = null;
+    medIdToDelete = null;
+    receiptIdToDelete = null;
+  };
+
+  document.getElementById('cancel-delete').onclick = function () {
+    document.getElementById('confirmation-modal').style.display = 'none';
+    userIdToDelete = null;
+    medIdToDelete = null;
+    receiptIdToDelete = null;
+  };
+
+  document.getElementById('confirm-delete').onclick = function () {
+    if (userIdToDelete) {
+      deleteUser(userIdToDelete);
+      document.getElementById('confirmation-modal').style.display = 'none';
+      userIdToDelete = null;
+    } else if (medIdToDelete) {
+      deleteMedicin(medIdToDelete);
+      document.getElementById('confirmation-modal').style.display = 'none';
+      medIdToDelete = null;
+    } else if (receiptIdToDelete) {
+      deleteReceipt(receiptIdToDelete);
+      document.getElementById('confirmation-modal').style.display = 'none';
+      receiptIdToDelete = null;
+    }
+  };
+
+  const deleteUser = (userId) => {
+    let jsonData = getDataFromLocalStorage();
+
+    console.log(userId);
+
+    jsonData.Users = jsonData.Users.filter(user => Number(user.ID) !== Number(userId));
+    console.log(jsonData.Users);
+
+
+    saveDataToLocalStorage(jsonData);
+    populateUsersTable();
+    userIdToDelete = null
+  };
+
+  // Обработчик событий для кнопок удаления в таблице пользователей
+  const addEventListenerDeleteUser = (btn) => {
+    btn.forEach(el => {
       el.addEventListener('click', (e) => {
-        gebridMenu.style.width = '878px';
+        const targetButton = e.target;
+        const dataId = targetButton.dataset.id;
+        openConfirmationModal('user', dataId);
+      });
+    });
+  };
+
+  // Функция сортировки пользователей
+  const sortTableUsers = (users, column, order) => {
+    return users.sort((a, b) => {
+      let aValue = a[column];
+      let bValue = b[column];
+
+      if (aValue === undefined || bValue === undefined) {
+        console.error(`Неизвестный столбец: ${column}`);
+        return 0;
+      }
+
+      if (typeof aValue === 'string') {
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+        return order === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+      } else if (typeof aValue === 'number') {
+        return order === 'asc' ? aValue - bValue : bValue - aValue;
+      }
+
+      return 0;
+    });
+  };
+
+  const searchUsers = () => {
+    const searchInput = document.getElementById('search-input');
+    const filter = searchInput.value.toLowerCase().trim(); // Получаем текст для поиска
+    const tableBody = document.getElementById('users-table-body');
+    const rows = tableBody.getElementsByTagName('tr');
+
+    // Перебираем строки и скрываем/показываем их в зависимости от соответствия
+    Array.from(rows).forEach(row => {
+      const cells = row.getElementsByTagName('td');
+      let rowContainsSearchTerm = false;
+
+      // Проверяем каждую ячейку в строке
+      Array.from(cells).forEach(cell => {
+        if (cell.textContent.toLowerCase().replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, '').includes(filter.replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, ''))) {
+          rowContainsSearchTerm = true; // Если найдено совпадение
+        }
+      });
+
+      // Показываем или скрываем строку в зависимости от результата поиска
+      row.style.display = rowContainsSearchTerm ? '' : 'none';
+    });
+  };
+
+  function formatPhoneNumberTable(phoneNumber) {
+    const cleaned = phoneNumber.replace(/\D/g, '');
+    // Форматируем номер
+    const formattedNumber = `+7 (${cleaned.slice(1, 4)}) ${cleaned.slice(4, 7)}-${cleaned.slice(7, 9)}-${cleaned.slice(9, 11)}`;
+    return formattedNumber;
+  }
+
+  const populateUsersTable = () => {
+    const jsonData = getDataFromLocalStorage(); // Получаем данные из локального хранилища
+    if (!jsonData) return; // Если данных нет, выходим из функции
+
+    const tableBody = document.getElementById('users-table-body'); // Получаем тело таблицы
+    tableBody.innerHTML = ''; // Очищаем предыдущие данные
+
+    jsonData.Users.forEach(user => {
+      const row = document.createElement('tr'); // Создаем новую строку
+
+      row.innerHTML = `
+            <td class="id id-inventory">${user.ID}</td>
+            <td class="name">${user.FullName}</td>
+            <td class="role">${user.Role}</td>
+            <td class="login">${user.Username}</td>
+            <td class="password">${user.Password}</td>
+            <td class="phone">${formatPhoneNumberTable(user.Phone)}</td>
+            <td class="icons">
+                <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__user" data-id='${user.ID}'>
+                <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__user" data-id='${user.ID}'>
+            </td>
+        `;
+
+      tableBody.appendChild(row); // Добавляем строку в тело таблицы
+    });
+
+    addEventListenerCreateEditUser(tableBody.querySelectorAll('.edit-btn__user')); // Добавляем обработчики событий для кнопок редактирования
+    addEventListenerDeleteUser(tableBody.querySelectorAll('.delete-btn__user')); // Добавляем обработчики событий для кнопок удаления
+  }
+
+  // Функция для добавления обработчиков событий на кнопки редактирования
+  const addEventListenerCreateEditUser = (btn) => {
+    btn.forEach(el => {
+      el.addEventListener('click', (e) => {
+        const targetButton = e.target;
+        const dataId = targetButton.dataset.id; // Получаем ID пользователя
+        gebridMenu.style.width = '878px'; // Пример изменения стиля меню
+        document.querySelector('.btn-wrap .btn').textContent = 'Добавить пользователя'
         setTimeout(() => {
           gebridMenuClose.style.display = 'block';
           formAddUser.style.display = 'flex';
+          formAddUser.dataset.id = dataId; // Устанавливаем ID в атрибут формы
           formTitle.style.display = 'flex';
           formTitle.textContent = 'Редактирование информации о пользователе';
-        }, 500);
-        overlay.style.display = 'block';
-      });
-    });
-  }
-
-  // Заполнение таблицы журнала заказов
-  const populateOrderLogTable = () => {
-    const jsonData = getDataFromLocalStorage();
-    if (!jsonData) return;
-
-    const tableBody = document.getElementById('order-log-table-body');
-
-    // Очищаем предыдущие данные
-    tableBody.innerHTML = '';
-
-    jsonData.ReceiptJournal.forEach(receipt => {
-      const row = document.createElement('tr');
-
-      row.innerHTML = `
-          <td class="id id-inventory">${receipt.ID}</td>
-          <td class="name">${getFullName(receipt.UserID, jsonData.Users)}</td> 
-          <td class="data">${receipt.Date} ${receipt.Time}</td>
-          <td class="total-amount">${receipt.TotalAmount.toFixed(2)} руб.</td> 
-          <td class="id id-order">${receipt.OrderID}</td> 
-          <td class="order">Перейти к заказу</td> 
-          <td class="icons">
-              <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-              <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
-          </td>
-      `;
-
-      tableBody.appendChild(row);
-    });
-
-    // Обработчик кликов по элементам "Перейти к заказу"
-    console.log(tableBody);
-
-    document.querySelectorAll(".order").forEach((el) => {
-      el.addEventListener('click', (event) => {
-        // Проверяем, что клик был по элементу с классом 'order'
-        if (event.target.classList.contains('order')) {
-          // Получаем ID заказа из строки таблицы
-          const orderId = event.target.closest('tr').querySelector('.id-order').textContent;// Загружаем данные о заказе по ID
-
-          // Отображаем нужные контейнеры и скрываем остальные
-          toggleVisibility([orderChekTable, containerOrderCheck], [
-            usersTable, addUsersBtn, inventoryTable,
-            addProductBtn, cancellationTable, containerOrderBtn,
-            orderStaffTable, , backReceiptBtn, orderLogTable
-          ]);
-
-          // Обновляем стиль кнопки поиска
-          containerBtnSearch.style.display = 'none';
-
-          // Обновляем активную страницу в навигации
-          highlightActivePage('Журнал чеков');
-
-          // Дополнительный код для отображения элементов
-          containerOrderCheck.style.display = "flex";
-          orderChekTable.style.display = "flex";
-          backReceiptBtn.style.display = 'flex';
-
-          loadOrderData(orderId);
-        }
-      });
-    });
-  }
-
-  // Функция для получения полного имени пользователя по его ID
-  const getFullName = (userId, users) => {
-    const user = users.find(u => u.ID === userId);
-    return user ? user.FullName : 'Неизвестный пользователь';
-  }
-
-  // Функция для загрузки данных в таблицу и информацию о чеке
-  const loadOrderData = (orderID) => {
-    const jsonData = getDataFromLocalStorage();
-    if (!jsonData) return;
-    console.log(jsonData);
-
-    // Находим заказ по ID
-    const order = jsonData.Orders.find(o => Number(o.ID) === Number(orderID));
-    const receipt = jsonData.ReceiptJournal.find(r => Number(r.OrderID) === Number(orderID));
-    console.log(order);
-
-
-    if (!order || !receipt) return;
-
-    const tableBody = document.querySelector('.container__order-chek-table tbody');
-    const orderCheckInfo = document.querySelector('.order-check__cap');
-    console.log(orderCheckInfo);
-
-
-    // Очищаем предыдущие данные в таблице чека
-    tableBody.innerHTML = '';
-
-    // Заполнение таблицы медикаментов
-    order.Medicines.forEach(medicine => {
-      const row = document.createElement('tr');
-
-      const totalPrice = (medicine.Price * medicine.Quantity).toFixed(2);
-
-      row.innerHTML = `
-          <td class="id id-orderlog">${medicine.MedicineName}</td>
-          <td class="title">${medicine.MedicineName}</td>
-          <td class="price">${medicine.Price.toFixed(2)} ₽</td>
-          <td class="stock">
-              <span class="minus">-</span> ${medicine.Quantity} <span class="plus">+</span>
-          </td>
-          <td class="price">${totalPrice} ₽</td>
-          <td class="icons">
-              <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
-          </td>
-      `;
-
-      tableBody.appendChild(row);
-    });
-
-    // Заполнение информации о чеке
-    const user = jsonData.Users.find(u => u.ID === receipt.UserID);
-    orderCheckInfo.innerHTML = `
-    Информация о чеке:
-    <span class="roboto-bold">${receipt.OrderID}</span>
-    <span class="roboto-bold">${user ? user.FullName : 'Неизвестный пользователь'}</span>
-    <span class="roboto-bold">${receipt.Date} ${receipt.Time}</span>
-    <span class="roboto-bold">${receipt.TotalAmount.toFixed(2)} ₽</span>
-`;
-
-    document.querySelector('.container__order-chek-table').style.display = 'block';
-  }
-
-
-  const fillCancellationTable = () => {
-    const data = getDataFromLocalStorage();
-    if (!jsonData) return;
-
-    const currentDate = new Date();
-    const formattedDate = currentDate.toISOString().split('T')[0];// Получение текущей даты
-    const cancellationTableBody = document.querySelector('.container__cancellation-table tbody'); // Находим тело таблицы
-
-    // Очищаем таблицу перед заполнением
-    cancellationTableBody.innerHTML = '';
-
-    // Фильтруем медикаменты по условиям
-    const expiredMedicines = data.Medicines.filter(medicine => {
-      const endDate = medicine.EndDate;
-
-
-      return endDate < formattedDate || medicine.Quantity === 0; // Проверяем срок годности и количество
-    });
-
-    // Заполнение таблицы данными
-    expiredMedicines.forEach(medicine => {
-      const supplier = data.Suppliers.find(s => s.ID === medicine.SupplierID); // Находим поставщика по ID
-
-      const row = document.createElement('tr'); // Создаем новую строку таблицы
-      row.innerHTML = `
-        <td class="id id-inventory">${medicine.ID}</td>
-        <td class="title">${medicine.Name}</td>
-        <td class="supplier">${supplier ? supplier.Name : 'Неизвестно'}</td>
-        <td class="supplier-contact">${supplier ? supplier.ContactInfo : 'Неизвестно'}</td>
-        <td class="shelflife">${medicine.EndDate.split('-').reverse().join('.')}</td> <!-- Форматируем дату -->
-        <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
-        <td class="price">${medicine.Price.toFixed(2)}</td>
-        <td class="stock">${medicine.Quantity}</td>
-        <td class="icons">
-          <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
-          <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
-        </td>
-      `;
-      cancellationTableBody.appendChild(row); // Добавляем строку в тело таблицы
-
-      const editBtnProduct = document.querySelector(".edit-btn__product");
-      const deleteBtn = document.querySelector(".delete-btn");
-
-
-      editBtnProduct.addEventListener('click', () => {
-        gebridMenu.style.width = '878px';
-        setTimeout(() => {
-          gebridMenuClose.style.display = 'block';
-          formAddProduct.style.display = 'flex';
-          formTitle.style.display = 'flex';
-          formTitle.textContent = 'Редактирование информации о продукте';
+          document.querySelector('.btn-wrap .btn').textContent = 'Сохранить пользователя' // Меняем заголовок формы
         }, 300);
-        overlay.style.display = 'block';
+        overlay.style.display = 'block'; // Показываем оверлей
+        populateFormEditUser(dataId); // Заполняем форму данными пользователя
       });
     });
-
-
   }
 
-  // Пагинация
+  // Функция для заполнения формы редактирования пользователя
+  const populateFormEditUser = (dataId) => {
+    const jsonData = getDataFromLocalStorage();
+    const user = jsonData.Users.find(user => user.ID == dataId);
+    document.getElementById('adduser-form').dataset.id = dataId
 
-
-  // Фильтрация
-
-  function setupFilterAndSort(tableId, tableBodyId) {
-    document.querySelector('.search').value = ''
-    const applyButton = document.getElementById('apply-filter-sort');
-    const resetButton = document.getElementById('reset-filter-sort');
-
-    const tableBody = document.querySelector(`#${tableBodyId}`);
-    const table = document.querySelector(`#${tableId}`);
-    console.log(tableId);
-
-    // Сохраняем оригинальные строки таблицы
-    const originalRows = Array.from(tableBody.rows);
-
-    const headerCells = table.querySelectorAll('thead tr td');
-
-    const filterSelect = document.getElementById('filter-column-select');
-    filterSelect.innerHTML = '';
-
-    headerCells.forEach((cell) => {
-      if (cell.textContent.trim() == 'ID' || cell.textContent.trim() == 'ID заказа') {
-
-      } else if (cell.textContent.trim() !== '') {
-        const option = document.createElement('option');
-        option.value = cell.className;
-        option.textContent = cell.textContent;
-        filterSelect.appendChild(option);
+    if (user) {
+      const fullName = user.FullName.split(' ');
+      if (fullName.length > 0) {
+        document.querySelector('#user-surname').value = fullName[0]; // Фамилия
       }
-    });
 
-    // Обработчик события для кнопки Применить
-    applyButton.addEventListener('click', function () {
-      const selectedColumn = filterSelect.value;
-      const sortOrder = document.getElementById('sort-select').value;
-
-      let rows = Array.from(originalRows);
-
-      // Фильтрация строк на основе выбранного столбца
-      rows = rows.filter(row => {
-        const cellValue = getCellValue(row, selectedColumn).toString().toLowerCase();
-        return cellValue !== '';
-      });
-
-      // Сортировка строк на основе выбранного столбца и порядка
-      rows.sort((a, b) => {
-        const valueA = getCellValue(a, selectedColumn);
-        const valueB = getCellValue(b, selectedColumn);
-        return sortOrder === 'asc' ? compareValues(valueA, valueB) : compareValues(valueB, valueA);
-      });
-
-      tableBody.innerHTML = '';
-      rows.forEach(row => tableBody.appendChild(row.cloneNode(true)));
-
-
-      containerFilterBtn.style.border = 'none'
-      containerFilterBtn.style.backgroundColor = '#fff'
-
-      filterModal.style.display = 'none'
-      filterModal.style.height = 0
-
-    });
-
-    resetButton.addEventListener('click', function () {
-      tableBody.innerHTML = '';
-      originalRows.forEach(row => tableBody.appendChild(row.cloneNode(true)));
-
-      filterSelect.value = '';
-      document.getElementById('sort-select').value = 'asc';
-
-      containerFilterBtn.style.border = 'none'
-      containerFilterBtn.style.backgroundColor = '#fff'
-
-      filterModal.style.display = 'none'
-      filterModal.style.height = 0
-
-    });
-
-    const searchInput = document.querySelector('.search');
-    const searchInputLoop = document.querySelector('.search-loop img'); // Получаем поле поиска
-
-    searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase(); // Получаем введенный текст и приводим к нижнему регистру
-
-      const filteredRows = originalRows.filter(row => {
-        return Array.from(row.cells).some(cell =>
-          cell.textContent.toLowerCase().includes(searchTerm) // Проверяем, содержится ли текст в ячейках строки
-        );
-      });
-
-      updateTableBody(tableBody, filteredRows);
-    });
-
-    searchInputLoop.addEventListener('input', function () {
-      const searchTerm = searchInput.value.toLowerCase(); // Получаем введенный текст и приводим к нижнему регистру
-
-      const filteredRows = originalRows.filter(row => {
-        return Array.from(row.cells).some(cell =>
-          cell.textContent.toLowerCase().includes(searchTerm) // Проверяем, содержится ли текст в ячейках строки
-        );
-      });
-
-      updateTableBody(tableBody, filteredRows);
-    });
-
-  }
-
-  const updateTableBody = (tableBody, rows) => {
-    tableBody.innerHTML = ''; // Очищаем текущее тело таблицы
-    rows.forEach(row => tableBody.appendChild(row.cloneNode(true))); // Добавляем клонированные строки
-  }
-
-  // Функция для получения значения ячейки на основе названия столбца
-  function getCellValue(row, columnName) {
-    for (let cell of row.cells) {
-      if (cell.classList.contains(columnName)) {
-        return parseCellValue(cell);
+      if (fullName.length > 1) {
+        document.querySelector('#user-name').value = fullName[1]; // Имя
       }
-    }
-    return '';
-  }
 
-  // Функция для обработки значений ячеек (числа, даты или строки)
-  function parseCellValue(cell) {
-    const textContent = cell.textContent.trim();
-
-    if (!isNaN(textContent)) {
-      return parseFloat(textContent);
-    } else if (Date.parse(textContent)) {
-      return new Date(textContent).getTime();
+      if (fullName.length > 2) {
+        document.querySelector('#user-patronymic').value = fullName[2]; // Отчество
+      }
+      const roleInputs = document.getElementsByName('user-role');
+      roleInputs.forEach(input => {
+        input.checked = input.value === user.Role; // Устанавливаем выбранную роль
+      });
+      document.querySelector('#user-login').value = user.Username || '';
+      document.querySelector('#user-password').value = user.Password || '';
+      document.querySelector('#user-phone').value = formatPhoneNumber(user.Phone) || '';
     } else {
-      return textContent;
+      console.error('Пользователь не найден:', dataId);
     }
   }
 
-  // Функция для сравнения значений при сортировке
-  function compareValues(a, b) {
-    if (a === b) return 0;
-    if (a == null || a === '') return -1;
-    if (b == null || b === '') return 1;
-    return a > b ? 1 : -1;
-  }
-
-  // Инициализация фильтрации и сортировки для таблицы медикаментов
-  setupFilterAndSort('medicines-table', 'medicines-table-body');
-
-
-
-
-  // Работа с формами
-  // Запасы
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    const medicineData = {
-      ID: Date.now(),
-      Name: formData.get('addproduct-form__name'),
-      Dosage: formData.get('addproduct-form__dosage'),
-      StartDate: formData.get('addproduct-form__date-of-manufacture'),
-      EndDate: formData.get('addproduct-form__expiration-date'),
-      Quantity: Number(formData.get('addproduct-form__quantity')),
-      Description: formData.get('addproduct-form__description'),
-      SupplierID: formData.get('addproduct-form__provider') === "newProvider" ? Date.now() : Number(formData.get('addproduct-form__provider')), // Example for new provider ID
-      PrescriptionRequired: formData.get('addproduct-form__recept') === 'yes',
-      Price: parseFloat(formData.get('addproduct-form__price')),
-      Shelf: formData.get('addproduct-form__shelf'),
-      Rack: formData.get('addproduct-form__rack')
-    };
-
-    saveDataToLocalStorage(medicineData);
-
-    event.target.reset();
-    alert("Продукт успешно добавлен!");
-  };
-
-  document.querySelector('.form__add-product').addEventListener('submit', handleFormSubmit);
-
-  // Пользователи 
-
-  document.getElementById('addUserForm').addEventListener('submit', function (event) {
-
+  document.getElementById('adduser-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const userName = document.getElementById('user-name').value.trim();
@@ -1298,8 +1319,15 @@ const populateForm = (medicine) => {
       errorMessage += 'Пароль должен содержать минимум 6 символов.<br>';
     }
 
-    if (storedUsers.some(user => user.login === userLogin)) {
-      errorMessage += 'Этот логин уже занят.<br>';
+    // Получаем данные пользователей из локального хранилища
+    let jsonData = getDataFromLocalStorage();
+
+    let existingUserIndex
+    // Проверяем, существует ли пользователь с данным логином
+    if (event.target.dataset.id) {
+      existingUserIndex = jsonData.Users.findIndex(user => user.ID == event.target.dataset.id);
+    } else {
+      existingUserIndex = -1
     }
 
     const errorDisplay = document.getElementById('error-message__user');
@@ -1312,28 +1340,48 @@ const populateForm = (medicine) => {
       const formattedName = capitalizeFirstLetter(userName);
       const formattedSurname = capitalizeFirstLetter(userSurname);
       const formattedPatronymic = capitalizeFirstLetter(userPatronymic);
+      document.getElementById('error-message__user').style.display = 'none';
+
 
       const newUser = {
-        ID: storedUsers.length + 1,
-        login: userLogin,
-        password: userPassword,
-        role: userRole.value,
-        fullName: `${formattedName} ${formattedSurname} ${formattedPatronymic}`
+        ID: existingUserIndex !== -1 ? jsonData.Users[existingUserIndex].ID : jsonData.Users.length + 1,
+        Username: userLogin,
+        Password: userPassword,
+        Role: userRole.value,
+        FullName: `${formattedSurname} ${formattedName} ${formattedPatronymic}`,
+        Phone: userPhone
       };
 
-      storedUsers.push(newUser);
-      localStorage.setItem('users', JSON.stringify(storedUsers));
+      if (existingUserIndex !== -1) {
+        jsonData.Users[existingUserIndex] = newUser;
+        setTimeout(() => {
+          gebridMenu.style.width = '133px';
+          gebridMenuClose.style.display = 'none';
+          formAddUser.style.display = 'none';
+          formTitle.style.display = 'none';
+          overlay.style.display = 'none';
+          document.getElementById('error-message__user').style.display = 'none';
+          document.querySelector('.btn-wrap .btn').textContent = 'Добавить пользователя'
+        }, 2000);
+      } else {
+        jsonData.Users.push(newUser)
+      }
 
-      errorDisplay.innerHTML = 'Пользователь успешно добавлен!';
+      saveDataToLocalStorage(jsonData)
+
+      errorDisplay.innerHTML = 'Операция выполнена успешно!';
       errorDisplay.style.display = 'flex';
       errorDisplay.style.color = 'white';
+      populateUsersTable()
+      searchUsers()
+      event.target.dataset.id = ''
 
-      this.reset();
+      this.reset(); // Очищаем форму
     }
   });
 
   // Функция для преобразования первой буквы в заглавную, остальные — строчные
-  function capitalizeFirstLetter(string) {
+  const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   }
 
@@ -1396,8 +1444,10 @@ const populateForm = (medicine) => {
   });
 
   // Функция для форматирования номера телефона
-  function formatPhoneNumber(value) {
+  const formatPhoneNumber = (value) => {
     let formattedValue = '+7 (';
+
+    console.log(value);
 
     if (value.length > 1) {
       formattedValue += value.substring(1, 4);
@@ -1419,92 +1469,355 @@ const populateForm = (medicine) => {
   }
 
 
-  // Валидация формы добавления пользователя
-  addUserForm.addEventListener('submit', (event) => {
-    let valid = true;
-    const errorMessage = [];
+  //   //                                                     РАБОТА С ЖУРНАЛОМ ПОЛНАЯ
+  // Заполнение таблицы журнала заказов
+  const populateOrderLogTable = () => {
+    const jsonData = getDataFromLocalStorage();
+    if (!jsonData) return;
 
-    // Проверка на пустые поля
-    const userRequiredFields = [
-      'user-name',
-      'user-surname',
-      'user-role',
-      'user-password',
-      'user-login'
-    ];
+    const tableBody = document.getElementById('order-log-table-body');
 
-    userRequiredFields.forEach(fieldId => {
-      const field = document.getElementById(fieldId);
-      if (!field.value) {
-        valid = false;
-        errorMessage.push(`${field.previousElementSibling.innerText} не может быть пустым.`);
-      }
+    // Очищаем предыдущие данные
+    tableBody.innerHTML = '';
+
+    jsonData.ReceiptJournal.forEach(receipt => {
+      const row = document.createElement('tr');
+      const order = jsonData.Orders.find((el) => el.ID == receipt.OrderID)
+      let TotalAmount = 0
+      order.Medicines.forEach((el) => {
+        TotalAmount += el.Price * el.Quantity
+      })
+
+      row.innerHTML = `
+          <td class="id id-inventory">${receipt.ID}</td>
+          <td class="name">${receipt.User}</td> 
+          <td class="data">${receipt.Date} ${receipt.Time}</td>
+          <td class="total-amount">${TotalAmount.toFixed(2)} руб.</td> 
+          <td class="id id-order">${receipt.OrderID}</td> 
+          <td class="order">Перейти к заказу</td> 
+          <td class="icons">
+              <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn" data-id='${receipt.ID}'>
+          </td>
+      `;
+
+      tableBody.appendChild(row);
     });
 
-    // Проверка на корректность телефона (если введен)
-    const phoneField = document.getElementById('user-phone');
-    if (phoneField.value && !/^\+?\d{10,15}$/.test(phoneField.value)) {
-      valid = false;
-      errorMessage.push('Телефон должен содержать от 10 до 15 цифр.');
-    }
-
-    // Если не валидно, предотвратить отправку и показать ошибки
-    if (!valid) {
-      event.preventDefault();
-      alert(errorMessage.join('\n'));
-    }
-  });
-};
-
-// Продукты
-
-document.addEventListener('DOMContentLoaded', function () {
-  const addProductForm = document.querySelector('.form__add-product');
-  const addUserForm = document.querySelector('#addUserForm');
-
-  // Валидация формы добавления продукта
-  addProductForm.addEventListener('submit', (event) => {
-    let valid = true;
-    const errorMessage = [];
-
-    // Проверка на пустые поля
-    const requiredFields = [
-      'addproduct-form__name',
-      'addproduct-form__dosage',
-      'addproduct-form__description',
-      'addproduct-form__date-of-manufacture',
-      'addproduct-form__expiration-date',
-      'addproduct-form__quantity',
-      'addproduct-form__rack',
-      'addproduct-form__shelf',
-      'addproduct-form__price',
-      'addproduct-form__provider'
-    ];
-
-    requiredFields.forEach(fieldId => {
-      const field = document.getElementById(fieldId);
-      if (!field.value) {
-        valid = false;
-        errorMessage.push(`${field.previousElementSibling.innerText} не может быть пустым.`);
-      }
+    tableBody.querySelectorAll('.delete-btn').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const targetButton = e.target;
+        const dataId = targetButton.dataset.id;
+        openConfirmationModal('receipt', dataId);
+      });
     });
 
-    // Проверка даты истечения срока
-    const manufactureDate = new Date(document.getElementById('addproduct-form__date-of-manufacture').value);
-    const expirationDate = new Date(document.getElementById('addproduct-form__expiration-date').value);
-    if (expirationDate <= manufactureDate) {
-      valid = false;
-      errorMessage.push('Дата истечения срока должна быть позже даты изготовления.');
-    }
+    document.getElementById('reset-filter-sort').addEventListener('click', () => {
+      let jsonData = getDataFromLocalStorage();
+      const sortedData = sortTableMedecine(jsonData.Medicines, 'ID', 'asc');
 
-    // Если не валидно, предотвратить отправку и показать ошибки
-    if (!valid) {
-      event.preventDefault();
-      alert(errorMessage.join('\n'));
-    }
+      jsonData.Medicines = sortedData;
+
+      saveDataToLocalStorage(jsonData);
+      populateTable();
+      populateWriteOffMedicines()
+      filterModal.style.display = "none";
+    });
+
+    // Обработчик кликов по элементам "Перейти к заказу"
+    document.querySelectorAll(".order").forEach((el) => {
+      el.addEventListener('click', (event) => {
+        if (event.target.classList.contains('order')) {
+          const orderId = event.target.closest('tr').querySelector('.id-order').textContent;
+
+          // Отображаем нужные контейнеры и скрываем остальные
+          toggleVisibility([orderChekTable, containerOrderCheck], [
+            usersTable, addUsersBtn, inventoryTable,
+            addProductBtn, cancellationTable, containerOrderBtn,
+            orderStaffTable, , backReceiptBtn, orderLogTable
+          ]);
+
+          // Обновляем стиль кнопки поиска
+          containerBtnSearch.style.display = 'none';
+
+          // Обновляем активную страницу в навигации
+          highlightActivePage('Журнал чеков');
+
+          // Дополнительный код для отображения элементов
+          containerOrderCheck.style.display = "flex";
+          orderChekTable.style.display = "flex";
+          backReceiptBtn.style.display = 'flex';
+          loadOrderData(orderId);
+        }
+      });
+    });
+
+    searchReceipt()
+  }
+
+  const deleteReceipt = (dataId) => {
+    let jsonData = getDataFromLocalStorage();
+    jsonData.ReceiptJournal = jsonData.ReceiptJournal.filter(rec => rec.ID != dataId);
+    saveDataToLocalStorage(jsonData);
+    populateOrderLogTable()
+    receiptIdToDelete = null
+  };
+
+  // Функция для получения полного имени пользователя по его ID
+  const getFullName = (userId, users) => {
+    const user = users.find(u => u.ID === userId);
+    return user ? user.FullName : 'Удаленный пользователь';
+  }
+
+  // Функция для загрузки данных в таблицу и информацию о чеке
+  const loadOrderData = (orderID) => {
+    const jsonData = getDataFromLocalStorage();
+    if (!jsonData) return;
+
+    // Находим заказ по ID
+    const order = jsonData.Orders.find(o => Number(o.ID) === Number(orderID));
+    const receipt = jsonData.ReceiptJournal.find(r => Number(r.OrderID) === Number(orderID));
+
+    if (!order || !receipt) return;
+
+    const tableBody = document.getElementById('order-chek-table-body')
+    const orderCheckInfo = document.querySelector('.order-check__cap');
+    
+
+    // Очищаем предыдущие данные в таблице чека
+    tableBody.innerHTML = '';
+
+    // Заполнение таблицы медикаментов
+    let totalPriceOrder = 0
+    order.Medicines.forEach(medicine => {
+      const row = document.createElement('tr');
+
+      const totalPrice = Number((medicine.Price * medicine.Quantity).toFixed(2));
+      totalPriceOrder += totalPrice
+      
+      row.innerHTML = `
+          <td class="title">${medicine.MedicineName}</td>
+          <td class="price">${medicine.Price} ₽</td>
+          <td class="stock">${medicine.Quantity}</td>
+          <td class="price">${totalPrice} ₽</td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+
+    // Заполнение информации о чеке
+    const user = jsonData.Users.find(u => u.ID === receipt.UserID);
+    orderCheckInfo.innerHTML = `
+    Информация о чеке:
+    <span class="roboto-bold">${receipt.OrderID}</span>
+    <span class="roboto-bold">${receipt.User}</span>
+    <span class="roboto-bold">${receipt.Date} ${receipt.Time}</span>
+    <span class="roboto-bold">${totalPriceOrder.toFixed(2)} ₽</span>
+`;
+
+    document.querySelector('.container__order-chek-table').style.display = 'block';
+  }
+
+  const searchReceipt = () => {
+    const searchInput = document.getElementById('search-input');
+    const filter = searchInput.value.toLowerCase().trim(); // Получаем текст для поиска
+    const tableBody = document.getElementById('order-log-table-body');
+    const rows = tableBody.getElementsByTagName('tr');
+
+    // Перебираем строки и скрываем/показываем их в зависимости от соответствия
+    Array.from(rows).forEach(row => {
+      const cells = row.getElementsByTagName('td');
+      let rowContainsSearchTerm = false;
+
+      // Проверяем каждую ячейку в строке
+      Array.from(cells).forEach(cell => {
+        if (cell.textContent.toLowerCase().replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, '').includes(filter.replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, ''))) {
+          rowContainsSearchTerm = true; // Если найдено совпадение
+        }
+      });
+
+      // Показываем или скрываем строку в зависимости от результата поиска
+      row.style.display = rowContainsSearchTerm ? '' : 'none';
+    });
+  };
+
+  const sortReceiptOptionCreate = () => {
+    const tableHead = document.querySelector('.container__order-log-table').querySelectorAll('table thead tr td');
+
+    const sortContainer = document.getElementById('filter-column-select');
+
+    sortContainer.innerHTML = ''; // Очищаем предыдущие опции
+
+    tableHead.forEach(name => {
+      if (name.textContent === '' || name.textContent === 'ID' || name.textContent === 'Общая сумма(руб.)' || name.textContent === 'Просмотр заказа') {
+        return; // Пропускаем пустые заголовки и ID
+      }
+
+      const option = document.createElement('option');
+      option.value = name.dataset.name; // Устанавливаем значение
+      option.textContent = name.textContent; // Устанавливаем текст
+      sortContainer.append(option); // Добавляем опцию в select
+      
+    });
+
+    document.getElementById('apply-filter-sort').addEventListener('click', () => {
+      if (!document.querySelector('.page__receipt-log').classList.contains('roboto-bold')) return
+
+      const selectedColumn = sortContainer.value;
+
+      const selectedOrder = document.getElementById('sort-select').value;
+
+      let jsonData = getDataFromLocalStorage();
+
+      if (!jsonData || !jsonData.ReceiptJournal) {
+        console.error("Нет данных для сортировки");
+        return;
+      }
+
+      const sortedData = sortTableMedecine(jsonData.ReceiptJournal, selectedColumn, selectedOrder);
+
+      jsonData.ReceiptJournal = sortedData;
+
+      saveDataToLocalStorage(jsonData); // Сохраняем отсортированные данные
+      populateOrderLogTable(); // Обновляем таблицу после сортировки
+      filterModal.style.display = "none"; // Закрываем модальное окно
+    });
+
+    document.getElementById('reset-filter-sort').addEventListener('click', () => {
+      let jsonData = getDataFromLocalStorage();
+      const sortedData = sortTableMedecine(jsonData.ReceiptJournal, 'ID', 'asc'); // Сортируем по ID по возрастанию
+
+      jsonData.ReceiptJournal = sortedData;
+
+      saveDataToLocalStorage(jsonData); // Сохраняем данные
+      populateOrderLogTable(); // Обновляем таблицу пользователей
+      filterModal.style.display = "none"; // Закрываем модальное окно
+    });
+  };
+
+  //                                                         РАБОТА СО СПИСАНИЕМ ПОЛНАЯ
+
+  const populateWriteOffMedicines = () => {
+    const jsonData = getDataFromLocalStorage();
+    if (!jsonData) return;
+
+    const tableBody = document.getElementById('medicines-write-off-table-body');
+    tableBody.innerHTML = ''
+    const currentDate = new Date();
+
+    const filteredMedicines = jsonData.Medicines.filter(medicine => {
+      const expirationDate = new Date(medicine.EndDate);
+      return expirationDate < currentDate || medicine.Quantity === 0;
+    });
+
+    filteredMedicines.forEach(medicine => {
+      const row = document.createElement('tr');
+
+      row.innerHTML = `
+            <td class="id id-inventory">${medicine.ID}</td>
+            <td class="title">${medicine.Name}</td>
+            <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td>
+            <td class="supplier-contact">${jsonData.Suppliers.find((el) => medicine.SupplierID == el.ID).ContactInfo}</td>
+            <td class="shelflife">${medicine.EndDate}</td>
+            <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
+            <td class="price">${medicine.Price.toFixed(2)} ₽</td>
+            <td class="stock">${medicine.Quantity}</td>
+            <td class="icons">
+                <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn" data-id='${medicine.ID}'>
+                <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn"  data-id='${medicine.ID}'>
+            </td>
+        `;
+
+      if (medicine.Quantity == 0) {
+        row.querySelector('.stock').style.color = 'red'
+      } else {
+        row.querySelector('.shelflife').style.color = 'red'
+      }
+
+      tableBody.appendChild(row);
+    });
+
+    document.getElementById('apply-filter-sort').addEventListener('click', () => {
+      if (!document.querySelector('.page__cancellation').classList.contains('roboto-bold')) return
+      const sortContainer = document.getElementById('filter-column-select');
+      const selectedColumn = sortContainer.value;
+      const selectedOrder = document.getElementById('sort-select').value;
+
+      let jsonData = getDataFromLocalStorage();
+
+      if (!jsonData || !jsonData.Medicines) {
+        console.error("Нет данных для сортировки");
+        return;
+      }
+
+      const sortedData = sortTableMedecine(jsonData.Medicines, selectedColumn, selectedOrder);
+
+      jsonData.Medicines = sortedData;
+
+      saveDataToLocalStorage(jsonData);
+      populateWriteOffMedicines()
+      filterModal.style.display = "none";
+    });
+
+    document.getElementById('reset-filter-sort').addEventListener('click', () => {
+      let jsonData = getDataFromLocalStorage();
+      const sortedData = sortTableMedecine(jsonData.Medicines, 'ID', 'asc');
+
+      jsonData.Medicines = sortedData;
+
+      saveDataToLocalStorage(jsonData);
+      populateTable();
+      populateWriteOffMedicines()
+      filterModal.style.display = "none";
+    });
+
+    sortMedicineOptionCreate();
+    addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn'));
+    addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn'))
+  };
+
+  const searchMedicinesWriteOff = () => {
+    const searchInput = document.getElementById('search-input');
+    const filter = searchInput.value.toLowerCase(); // Получаем текст для поиска
+    const tableBody = document.getElementById('medicines-write-off-table-body');
+    const rows = tableBody.getElementsByTagName('tr'); // Получаем все строки таблицы
+
+    // Перебираем строки и скрываем/показываем их в зависимости от соответствия
+    Array.from(rows).forEach(row => {
+      const cells = row.getElementsByTagName('td');
+      let rowContainsSearchTerm = false;
+
+      // Проверяем каждую ячейку в строке
+      Array.from(cells).forEach(cell => {
+        if (cell.textContent.toLowerCase().includes(filter)) {
+          rowContainsSearchTerm = true; // Если найдено совпадение
+        }
+      });
+
+      // Показываем или скрываем строку в зависимости от результата поиска
+      row.style.display = rowContainsSearchTerm ? '' : 'none';
+    });
+  };
+
+  //                                                         РАБОТА С ЗАКАЗОМ
+
+  
+
+  // Работа с формами
+  // Пользователи 
+
+
+
+
+  // Запуск поиска
+  // Добавляем обработчик события для поля ввода
+  document.getElementById('search-input').addEventListener('input', () => {
+    searchMedicines()
+    searchUsers()
+    searchReceipt()
+    searchMedicinesWriteOff()
   });
-});
 
+}
 const buttonLogin = () => {
   const loginInput = document.getElementById('loginInput');
   const passwordInput = document.getElementById('PasswordInput'); // Исправлено имя переменной
@@ -1556,6 +1869,10 @@ const definingTheRole = (userNow) => {
   pages.forEach(el => el.style.display = 'none');
   tableClasses.forEach(el => el.style.display = 'none');
 
+  let parts = userNow.FullName.split(' '); // Разделяем строку по пробелам
+  let lastName = parts[0]; // Фамилия - первое слово
+  let firstInitial = parts[1][0]; 
+  document.getElementById('name-user').textContent = `${lastName} ${firstInitial}.`
   switch (userNow.Role) {
     case 'superAdmin':
       pages.forEach(el => {
@@ -1610,5 +1927,6 @@ const definingTheRole = (userNow) => {
     default:
       console.error('Неизвестная роль пользователя:', userNow.Role);
       break;
+
   }
 }

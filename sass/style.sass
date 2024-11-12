@@ -390,6 +390,7 @@ body
                 padding: 14px 20px 0 20px
                 box-sizing: border-box
                 appearance: none
+
             input,
             select,
             textarea
@@ -504,6 +505,72 @@ body
                     background-repeat: no-repeat
                     background-position: right 10px center
 
+#adduser-form .input-group .btn
+    margin-top: 40px
+
+.modal
+    display: none
+    position: fixed
+    z-index: 1000
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: rgba(0, 0, 0, 0.5)
+
+    &-content
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+
+        background-color: #fefefe
+        margin: 15% auto
+        padding: 20px
+        border: 1px solid #888
+        width: 25%
+        border-radius: 8px
+        .container__filter
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 25px
+            span
+                font-size: 22px
+            div
+                display: flex
+                width: 100%
+                flex-direction: column
+                justify-content: space-around
+                align-items: center
+                gap: 20px
+                margin-bottom: 20px
+                &:last-child
+                    flex-direction: row
+                    margin-bottom: 0
+                    gap: 0
+                button
+                    width: auto
+                    height: auto
+                    padding: 5px 50px
+                    font-size: 16px
+            select
+                width: 250px
+
+.close
+    color: #aaa
+    float: right
+    font-size: 28px
+    font-weight: bold
+
+.close:hover,
+.close:focus
+    color: black
+    text-decoration: none
+    cursor: pointer
+
 .overlay
     position: fixed
     top: 0
@@ -553,6 +620,7 @@ body
                     top: 15%
         .add-users
             display: none
+
     .btn
         display: flex
         justify-content: center
@@ -625,8 +693,9 @@ body
             .title
                 width: 230px
             .description
-                width: 280px
-                text-align: left
+                max-width: 280px
+                width: 100%
+                display: flex
             .dosage
                 width: 123px
             .supplier
@@ -738,64 +807,50 @@ body
                 td:nth-child(2)
                     padding-right: 120px
 
-.container__btn-filter
-    box-sizing: border-box
-    display: flex
-    align-items: center
-    height: 103%
-    padding: 0 20px
-    // border: 2px solid #2C6369
-    border-radius: 30px 30px 0 0
-    border-bottom: 0
-    z-index: 86
-    // background: #A2D6CA
-.container__filter
-    box-sizing: border-box
+.modal-confirm
     display: none
-    background: #A2D6CA
-    position: absolute
-    border: 2px solid #2C6369
-    flex-direction: column
-    padding: 40px 30px
-    // max-width: 400px
-    width: 30%
-    height: 0px
-    gap: 15px
-    top: 63px
-    right: 0
-    z-index: 85
-    border-radius: 30px 0 30px 30px
-    transform: 1s
-    div
-        box-sizing: border-box
-        display: flex
-        justify-content: space-between
-        gap: 20px
-        button
-            display: flex
-            justify-content: center
-            align-items: center
-            padding: 0 30px
-            width: auto
-            height: 30px
-            background: #21484D
-            color: #fff
-            font-size: 20px
-            border-radius: 10px
-            border: none
-    select
-        padding: 5px 10px
-        box-sizing: border-box
-        border-radius: 30px
-        outline: none
-        &::before
-            border-radius: 30px
-    span
-        display: flex
-        justify-content: center
-        width: 100%
+    position: fixed
+    z-index: 1000
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,0.4)
+
+    .modal-content-confirm
+        background-color: #fefefe
+        margin: 15% auto
+        text-align: center
+        padding: 20px
+        border: 1px solid #888
+        width: 30%
+        border-radius: 10px
         font-size: 20px
-        color: #21484D
+        h2
+            margin-top: 60px
+        .btn
+            width: auto
+            height: auto
+            padding: 5px 60px
+        div
+            display: flex
+            width: 100%
+            margin-top: 40px
+            justify-content: space-around
+
+.close-confirm
+    color: #aaa
+    float: right
+    font-size: 28px
+    font-weight: bold
+
+.close-confirm:hover,
+.close-confirm:focus
+    color: black
+    text-decoration: none
+    cursor: pointer
 
 .container__users-table,
 .container__cancellation-table,

@@ -43,7 +43,7 @@
                 <thead class="roboto-bold">
                     <tr>
                         <td>Уведомления</td>
-                        <td class="notify-len">3</td>
+                        <td>3</td>
                     </tr>
                 </thead>
 
@@ -93,25 +93,25 @@
 
             <!-- Форма продуктов -->
 
-            <form action="" class="form__add-product roboto-regular">
+            <form action="" class="form__add-product roboto-regular" data-id="">
 
                 <div class="input-group">
 
                     <label for="addproduct-form__name" class="label label__add-product">Наименование:
                         <input type="text" name="addproduct-form__name" id="addproduct-form__name"
-                            class="input input__add-product" required>
+                            class="input input__add-product">
                     </label>
 
                     <label for="addproduct-form__dosage" class="label label__add-product">Дозировка:
                         <input type="text" name="addproduct-form__dosage" id="addproduct-form__dosage"
-                            class="input input__add-product" required>
+                            class="input input__add-product">
                     </label>
 
                 </div>
 
                 <label for="addproduct-form__description" class="label label__add-product">Описание:
                     <textarea name="addproduct-form__description" id="addproduct-form__description"
-                        class="input input__add-product" required></textarea>
+                        class="input input__add-product"></textarea>
                 </label>
 
 
@@ -120,12 +120,12 @@
                     <label for="addproduct-form__date-of-manufacture" class="label label__add-product">Дата
                         изготовления:
                         <input type="date" name="addproduct-form__date-of-manufacture"
-                            id="addproduct-form__date-of-manufacture" class="input input__add-product" required>
+                            id="addproduct-form__date-of-manufacture" class="input input__add-product">
                     </label>
 
                     <label for="addproduct-form__expiration-date" class="label label__add-product">Дата истечения срока:
                         <input type="date" name="addproduct-form__expiration-date" id="addproduct-form__expiration-date"
-                            class="input input__add-product" required>
+                            class="input input__add-product">
                     </label>
 
                 </div>
@@ -134,19 +134,19 @@
 
                     <label for="addproduct-form__quantity" class="label label__add-product">Количество:
                         <input type="number" name="addproduct-form__quantity" id="addproduct-form__quantity"
-                            class="input input__add-product" required>
+                            class="input input__add-product">
                     </label>
 
                     <div class="input-group__into">
 
                         <label for="addproduct-form__rack" class="label label__add-product">Стеллаж:
                             <input type="text" name="addproduct-form__rack" id="addproduct-form__rack"
-                                class="input input__add-product" required>
+                                class="input input__add-product">
                         </label>
 
                         <label for="addproduct-form__shelf" class="label label__add-product">Полка:
                             <input type="text" name="addproduct-form__shelf" id="addproduct-form__shelf"
-                                class="input input__add-product" required>
+                                class="input input__add-product">
                         </label>
 
                     </div>
@@ -156,12 +156,16 @@
 
                     <label for="addproduct-form__price" class="label label__add-product">Цена:
                         <input type="text" name="addproduct-form__price" id="addproduct-form__price"
-                            class="input input__add-product" required>
+                            class="input input__add-product">
                     </label>
 
                     <label for="addproduct-form__provider" class="label label__add-product">Поставщик:
                         <select type="text" name="addproduct-form__provider" id="addproduct-form__provider"
-                            class="input input__add-product" required>
+                            class="input input__add-product">
+                            <option value="">Выберите поставщика</option>
+                            <option value="newProvider">Добавить поставщика</option>
+                            <option value="diamed">ООО "ДИАМЕД"</option>
+                            <option value="diamed">ООО "ДИАМЕД"</option>
                         </select>
                     </label>
 
@@ -185,12 +189,10 @@
                 <fieldset>
                     <span class="roboto-regular">Рецепт:</span>
                     <div>
-                        <input type="radio" id="addproduct-form__recept1" name="addproduct-form__recept" value="yes"
-                            required />
+                        <input type="radio" id="addproduct-form__recept1" name="addproduct-form__recept" value="yes" />
                         <label for="addproduct-form__recept1">Нужен</label>
 
-                        <input type="radio" id="addproduct-form__recept2" name="addproduct-form__recept" value="no"
-                            required />
+                        <input type="radio" id="addproduct-form__recept2" name="addproduct-form__recept" value="no" />
                         <label for="addproduct-form__recept2">Не нужен</label>
                     </div>
                 </fieldset>
@@ -202,7 +204,7 @@
 
             <!-- Форма пользователей -->
 
-            <form action="" class="form__add-user roboto-regular" id="addUserForm">
+            <form action="" class="form__add-user roboto-regular" id="adduser-form" data-id="">
                 <div class="input-group">
                     <div class="input-group__group">
                         <label for="user-name" class="label label__add-user">Имя:
@@ -254,7 +256,7 @@
                     </label>
                 </div>
 
-                <div class="input-group">
+                <div class="input-group btn-wrap">
                     <button class="btn" type="submit">Добавить пользователя</button>
                 </div>
 
@@ -266,31 +268,36 @@
 
     <section class="table-position inventory-page__admin">
 
-
         <div class="container__btn-search">
             <button class="btn add-product roboto-bold">Добавить продукт</button>
             <button class="btn add-users roboto-bold">Добавить пользователя</button>
             <div class="search-filter">
                 <div class="search-container">
-                    <input class="search" placeholder="Поиск" type="text">
+                    <input class="search" placeholder="Поиск" type="text" id="search-input">
                     <button class="search-loop"><img src="icons/search.svg" alt=""></button>
                 </div>
-                <div class="container__btn-filter">
-                    <img src="icons/filter.svg" alt="" class="filter">
+                <div class="wrapp-filter">
+                    <img src="icons/filter.svg" alt="Фильтр" class="filter" id="filter-icon">
                 </div>
-            </div>
 
-
-            <div class="container__filter">
-                <span class="roboto-medium">Фильтрация</span>
-                <select id="filter-column-select"></select>
-                <select id="sort-select">
-                    <option value="asc">Сортировка по возрастанию</option>
-                    <option value="desc">Сортировка по убыванию</option>
-                </select>
-                <div>
-                    <button id="apply-filter-sort">Применить</button>
-                    <button id="reset-filter-sort">Сбросить</button>
+                <div class="modal" id="filter-modal">
+                    <div class="modal-content">
+                        <span class="close" id="close-modal">&times;</span>
+                        <div class="container__filter">
+                            <span class="roboto-medium">Фильтрация</span>
+                            <div>
+                                <select id="filter-column-select"></select>
+                                <select id="sort-select">
+                                    <option value="asc">Сортировка по возрастанию</option>
+                                    <option value="desc">Сортировка по убыванию</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button id="apply-filter-sort" class="btn">Применить</button>
+                                <button id="reset-filter-sort" class="btn">Сбросить</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -305,28 +312,40 @@
         <div class="container__order-check">
             <button class="btn  back-receipt roboto-bold">Вернуться к чекам</button>
             <div class="order-check__cap roboto-regular">Информация о чеке:
-                <!-- <span class="roboto-bold">710241</span>
+                <span class="roboto-bold">710241</span>
                 <span class="roboto-bold">Галенко Виталий Русланович</span>
                 <span class="roboto-bold">07.10.2024 10:31</span>
-                <span class="roboto-bold">1200.00</span> -->
+                <span class="roboto-bold">1200.00</span>
+            </div>
+        </div>
+
+        <div id="confirmation-modal" class="modal-confirm">
+            <div class="modal-content-confirm">
+                <span class="close-confirm" id="modal-close">&times;</span>
+                <h2 class="roboto-bold">Подтверждение</h2>
+                <p class="roboto-regular" id="text-confirm">Вы уверены, что хотите удалить этого пользователя?</p>
+                <div>
+                    <button id="confirm-delete" class="btn">Да</button>
+                    <button id="cancel-delete" class="btn">Нет</button>
+                </div>
             </div>
         </div>
 
         <!-- Запасы -->
 
         <div class="container__inventory-table table" style="display: none;">
-            <table id="medicines-table">
+            <table id="table-inventory">
                 <thead class="roboto-bold">
                     <tr>
-                        <td class="id id-inventory">ID</td>
-                        <td class="title">Наименование</td>
-                        <td class="description">Описание</td>
-                        <td class="dosage">Дозировка</td>
+                        <td class="id id-inventory" data-name="ID">ID</td>
+                        <td class="title" data-name="Name">Наименование</td>
+                        <td class="description" data-name="Description">Описание</td>
+                        <td class="dosage" data-name="Dosage">Дозировка</td>
                         <td class="supplier">Поставщик</td>
-                        <td class="shelflife">Срок годности</td>
+                        <td class="shelflife" data-name="EndDate">Срок годности</td>
                         <td class="shelf">Полка/Стеллаж</td>
-                        <td class="price">Цена</td>
-                        <td class="stock">В наличии</td>
+                        <td class="price" data-name="Price">Цена</td>
+                        <td class="stock" data-name="Quantity">В наличии</td>
                         <td class="icons"></td>
                     </tr>
                 </thead>
@@ -351,17 +370,25 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold" id="pagination-inventory">
+                <tfoot class="roboto-bold">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span></td>
-                        <td id="pagination-controls">
-                            <span class="previous-page" style="cursor:pointer;"></span>
-                            <span class="active-page"></span>
-                            <span class="next-page" style="cursor:pointer;"></span>
-                            <span class="ellipsis">...</span>
-                            <span class="last-page" style="cursor:pointer;"></span>
+                                class="roboto-regular twenty">20</span>
                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <span></span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>...</span>
+                            <span>5</span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
                             <img src="icons/strela-right.svg" alt="">
@@ -377,12 +404,12 @@
             <table id="users-table">
                 <thead class="roboto-bold">
                     <tr>
-                        <td class="id id-inventory">ID</td>
-                        <td class="name">ФИО</td>
-                        <td class="role">Роль</td>
-                        <td class="login">Логин</td>
-                        <td class="password">Пароль</td>
-                        <td class="phone">Телефон</td>
+                        <td class="id id-inventory" data-name="ID">ID</td>
+                        <td class="name" data-name="FullName">ФИО</td>
+                        <td class="role" data-name="Role">Роль</td>
+                        <td class="login" data-name="Username">Логин</td>
+                        <td class="password" data-name="Password">Пароль</td>
+                        <td class="phone" data-name="Phone">Телефон</td>
                         <td class="icons"></td>
                     </tr>
                 </thead>
@@ -405,7 +432,7 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold" id="pagination-users">
+                <tfoot class="roboto-bold">
                     <tr>
                         <td>На странице: <span id="ten" class="roboto-regular">10</span> <span class="roboto-regular"
                                 id="twenty">20</span></td>
@@ -428,7 +455,7 @@
         <!-- Списание -->
 
         <div class="container__cancellation-table table" style="display: none;">
-            <table id="cancellation-table">
+            <table id="medicines-table">
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-inventory">ID</td>
@@ -443,7 +470,7 @@
                     </tr>
                 </thead>
 
-                <tbody class="roboto-regular" id="cancellation-table-body">
+                <tbody class="roboto-regular" id="medicines-write-off-table-body">
 
                     <!-- <tr>
                         <td class="id id-inventory">710241</td>
@@ -462,16 +489,16 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold" id="pagination-cancellation">
+                <tfoot class="roboto-bold">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span class="previous-page"></span>
-                            <span class="active-page">1</span>
-                            <span class="next page">2</span>
-                            <span class="ellipsis">...</span>
-                            <span class="last-page">5</span>
+                            <span></span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>...</span>
+                            <span>5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
@@ -485,14 +512,14 @@
         <!-- Журнал заказов -->
 
         <div class="container__order-log-table table" style="display: none;">
-            <table id="order-log-table">
+            <table>
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-orderlog">ID</td>
-                        <td class="name">ФИО</td>
-                        <td class="data">Дата</td>
+                        <td class="name" data-name="User">ФИО</td>
+                        <td class="data" data-name="Date">Дата</td>
                         <td class="total-amount">Общая сумма(руб.)</td>
-                        <td class="id id-order">ID заказа</td>
+                        <td class="id id-order" data-name="OrderID">ID заказа</td>
                         <td class="order-cap">Просмотр заказа</td>
                         <td class="icons"></td>
                     </tr>
@@ -515,16 +542,16 @@
 
                 </tbody>
 
-                <tfoot class="roboto-bold" id="pagination-orderlog">
+                <tfoot class="roboto-bold">
                     <tr>
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span class="previous-page"></span>
-                            <span class="active-page">1</span>
-                            <span class="next page">2</span>
-                            <span class="ellipsis">...</span>
-                            <span class="last-page">5</span>
+                            <span></span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>...</span>
+                            <span>5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
@@ -577,11 +604,11 @@
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span class="previous-page"></span>
-                            <span class="active-page">1</span>
-                            <span class="next page">2</span>
-                            <span class="ellipsis">...</span>
-                            <span class="last-page">5</span>
+                            <span></span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>...</span>
+                            <span>5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
@@ -598,22 +625,19 @@
             <table>
                 <thead class="roboto-bold">
                     <tr>
-                        <td class="id id-orderlog">ID</td>
                         <td class="title">Наименование</td>
                         <td class="price">Цена(за ед.)</td>
                         <td class="stock">Количество</td>
                         <td class="price">Цена</td>
-                        <td class="icons"></td>
                     </tr>
                 </thead>
 
-                <tbody class="roboto-regular">
+                <tbody class="roboto-regular" id="order-chek-table-body">
 
 
                     <!-- <tr>
                         <td class="id id-orderlog">432</td>
                         <td class="title">Парацетамол</td>
-                        <td class="shelflife">07.10.2025</td>
                         <td class="price">50.00</td>
                         <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
                         <td class="price">200.00</td>
@@ -630,11 +654,11 @@
                         <td>На странице: <span class="roboto-regular ten">10</span> <span
                                 class="roboto-regular twenty">20</span></td>
                         <td>
-                            <span class="previous-page"></span>
-                            <span class="active-page">1</span>
-                            <span class="next page">2</span>
-                            <span class="ellipsis">...</span>
-                            <span class="last-page">5</span>
+                            <span></span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>...</span>
+                            <span>5</span>
                         </td>
                         <td>
                             <img src="icons/strela-left.svg" alt="">
