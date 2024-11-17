@@ -596,6 +596,31 @@ body {
   margin-top: 40px;
 }
 
+.ten,
+.twenty {
+  cursor: pointer;
+}
+
+.start-page,
+.dood-one,
+.dood-two,
+.last-page {
+  cursor: pointer;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.now-page {
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.arrow-back,
+.arrow-next {
+  pointer-events: all;
+  cursor: pointer;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -799,7 +824,8 @@ body {
 .table-position .table table .order,
 .table-position .table table .icons,
 .table-position .table table .total-amount,
-.table-position .table table .order-cap {
+.table-position .table table .order-cap,
+.table-position .table table .receipt {
   display: flex;
   justify-content: center;
   white-space: normal;
@@ -872,6 +898,9 @@ body {
 .table-position .table table .total-amount {
   width: 220px;
 }
+.table-position .table table .receipt {
+  width: 95px;
+}
 .table-position .table table thead {
   width: 100%;
   display: flex;
@@ -887,17 +916,15 @@ body {
 .table-position .table table thead tr {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-}
-.table-position .table table thead tr td:last-child {
-  width: 100px;
 }
 .table-position .table table tbody {
   height: 70%;
   width: 100%;
   color: #2c6369;
   overflow-y: auto;
+  border-radius: 10px;
 }
 .table-position .table table tbody::-webkit-scrollbar {
   width: 7px;
@@ -916,7 +943,7 @@ body {
 .table-position .table table tbody tr {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: 67px;
   margin-bottom: 10px;
@@ -927,7 +954,6 @@ body {
 .table-position .table table tbody tr td:last-child {
   display: flex;
   gap: 20px;
-  padding-right: 5px;
 }
 .table-position .table table tbody tr:hover {
   background: rgba(102, 168, 166, 0.3);
@@ -953,10 +979,22 @@ body {
 .table-position .table table tfoot td {
   box-sizing: border-box;
   display: flex;
-  gap: 19px;
+  gap: 7px;
+}
+.table-position .table table tfoot td:last-child {
+  gap: 17px;
+}
+.table-position .table table tfoot td span:hover {
+  font-size: 18px;
 }
 .table-position .table table tfoot td:nth-child(2) {
   padding-right: 120px;
+}
+
+.edit-btn__product,
+.delete-btn__product,
+.basket-btn__product {
+  cursor: pointer;
 }
 
 .modal-confirm {

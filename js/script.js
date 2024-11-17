@@ -479,6 +479,8 @@ const startProgram = (jsonData) => {
   const capContainerLogOut = document.querySelector(".cap-container__log-out");
   const openExit = document.querySelector(".open__exit");
 
+  const startPages = document.querySelectorAll('.start-page')
+
 
   // Кнопки 
   const addProductBtn = document.querySelector(".add-product");
@@ -490,9 +492,40 @@ const startProgram = (jsonData) => {
   const deleteBtn = document.querySelectorAll(".delete-btn");
   const gebridMenuClose = document.querySelector(".gebrid-menu__close");
   const exitBtn = document.querySelector(".exit");
+
+  const arrowsBack = document.querySelectorAll('.arrow-back')
+  const arrowsNext = document.querySelectorAll('.arrow-next')
   // Формы
   const formAddProduct = document.querySelector(".form__add-product");
   const formAddUser = document.querySelector(".form__add-user");
+
+  // Переменные
+  let restrictionOfElements
+  if (localStorage.getItem('restrictionOfElements')) {
+    restrictionOfElements = localStorage.getItem('restrictionOfElements')
+    const tens = document.querySelectorAll('.ten');
+    const twentys = document.querySelectorAll('.twenty');
+    if (restrictionOfElements == 10) {
+      tens.forEach((t) => {
+        t.style.textDecoration = 'underline';
+      });
+      twentys.forEach((tw) => {
+        tw.style.textDecoration = 'none';
+      });
+    } else {
+      tens.forEach((t) => {
+        t.style.textDecoration = 'none';
+      });
+      twentys.forEach((tw) => {
+        tw.style.textDecoration = 'underline';
+      });
+    }
+  } else {
+    restrictionOfElements = 10
+  }
+  let nowPageOnTable = 1
+  let maxPageOnTable = 0
+
 
   // Универсальная функция для переключения страниц
   function toggleVisibility(elementsToShow, elementsToHide) {
@@ -500,6 +533,11 @@ const startProgram = (jsonData) => {
     elementsToShow.forEach(el => el.style.display = 'flex');
     containerBtnSearch.style.display = 'flex';
     containerBtnSearch.style.justifyContent = 'space-between';
+    nowPageOnTable = 1
+    arrowsNext.forEach(a => {
+      a.style.visibility = 'visible'
+      a.style.pointerEvents = 'all'
+    })
     navMenu.forEach(el => {
       el.classList.toggle('roboto-bold', el.textContent === elementsToShow[0].textContent);
       el.classList.toggle('roboto-light', el.textContent !== elementsToShow[0].textContent);
@@ -567,6 +605,7 @@ const startProgram = (jsonData) => {
     containerBtnSearch.style.display = 'none'
     highlightActivePage('Оформить заказ');
     document.querySelector('.search').value = ''
+    loadOrderPage()
   });
 
 
@@ -720,6 +759,92 @@ const startProgram = (jsonData) => {
     return data ? JSON.parse(data) : null;
   }
 
+  const restrictionOfElementsFunction = () => {
+    const tens = document.querySelectorAll('.ten');
+    const twentys = document.querySelectorAll('.twenty');
+    tens.forEach((ten) => {
+      ten.addEventListener('click', () => {
+        restrictionOfElements = 10;
+
+        tens.forEach((t) => {
+          t.style.textDecoration = 'underline';
+        });
+        twentys.forEach((tw) => {
+          tw.style.textDecoration = 'none';
+        });
+
+        populateOrderLogTable();
+        populateTable();
+        populateUsersTable();
+        populateWriteOffMedicines();
+        localStorage.setItem('restrictionOfElements', 10)
+      });
+    });
+
+    twentys.forEach((twenty) => {
+      twenty.addEventListener('click', () => {
+        restrictionOfElements = 20;
+        console.log(tens);
+
+        twentys.forEach((tw) => {
+          tw.style.textDecoration = 'underline';
+        });
+        tens.forEach((t) => {
+          t.style.textDecoration = 'none';
+        });
+
+        populateOrderLogTable();
+        populateTable();
+        populateUsersTable();
+        populateWriteOffMedicines();
+        localStorage.setItem('restrictionOfElements', 20)
+      });
+    });
+  }
+
+  restrictionOfElementsFunction()
+
+  const nowPageOnTableFunctionStart = () => {
+    arrowsBack.forEach((arrowBack) => {
+      arrowBack.addEventListener('click', () => {
+        nowPageOnTableFunction('back')
+        populateTable()
+      })
+    })
+    arrowsNext.forEach((arrowNext) => {
+      arrowNext.addEventListener('click', () => {
+        nowPageOnTableFunction('next')
+        populateTable()
+      })
+    })
+  }
+
+  const nowPageOnTableFunction = (justdoit) => {
+    if (justdoit == 'back') {
+      nowPageOnTable -= 1
+
+      if (nowPageOnTable == 1) {
+        arrowsBack.forEach(a => {
+          a.style.visibility = 'hidden'
+          a.style.pointerEvents = 'none'
+        })
+      }
+
+      arrowsNext.forEach(a => {
+        a.style.visibility = 'visible'
+        a.style.pointerEvents = 'all'
+      })
+
+    } else if (justdoit == 'next') {
+      nowPageOnTable += 1
+      arrowsBack.forEach(a => {
+        a.style.visibility = 'visible'
+        a.style.pointerEvents = 'all'
+      })
+    }
+  }
+
+
 
   //                                                          ЗАПАСЫ ПОЛНАЯ РАБОТА
   const getSupplierName = (supplierId, suppliers) => {
@@ -800,36 +925,361 @@ const startProgram = (jsonData) => {
     });
   }
 
+  const paginationNumberCreate = (startPage, doodOne, nowPage, doodTwo, lastPage) => {
+
+    if (nowPageOnTable == 1) {
+      startPage.style.visibility = 'hidden'
+      startPage.style.pointerEvents = 'none'
+    } else {
+      startPage.style.visibility = 'visible'
+      startPage.style.pointerEvents = 'all'
+      startPage.textContent = 1
+    }
+    if (maxPageOnTable > 1) {
+      lastPage.style.visibility = 'visible'
+      lastPage.style.pointerEvents = 'all'
+      lastPage.textContent = maxPageOnTable
+    } else {
+      lastPage.style.visibility = 'hidden'
+      lastPage.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable > 2) {
+      doodTwo.style.visibility = 'visible'
+    } else {
+      doodTwo.style.visibility = 'hidden'
+    }
+    if (nowPageOnTable > 2) {
+      doodOne.style.visibility = 'visible'
+    } else {
+      doodOne.style.visibility = 'hidden'
+    }
+    if (nowPageOnTable !== 1 && maxPageOnTable !== 1) {
+      startPage.style.visibility = 'visible'
+      startPage.style.pointerEvents = 'all'
+    }
+    if (nowPageOnTable == maxPageOnTable) {
+      lastPage.style.visibility = 'hidden'
+      lastPage.style.pointerEvents = 'none'
+      doodTwo.style.visibility = 'hidden'
+    }
+
+  }
+
+  const addProductInOrder = (id) => {
+    let orderItem = []
+    if (localStorage.getItem('orderItem')) {
+      orderItem = JSON.parse(localStorage.getItem('orderItem'))
+    }
+    let per = orderItem.find(obj => obj.ID === id) !== undefined;
+
+    if (per) {
+      orderItem.forEach((med) => {
+        if (med.ID == id) {
+          med.Quality += 1
+        }
+      })
+    } else {
+      orderItem.push({
+        ID: id,
+        Quality: 1
+      })
+    }
+    localStorage.setItem('orderItem', JSON.stringify(orderItem))
+    loadOrderPage()
+  }
+
+  const loadOrderPage = () => {
+    const orderItem = JSON.parse(localStorage.getItem('orderItem'));
+    const jsonData = getDataFromLocalStorage();
+    const tableBody = document.querySelector('#order-staff-table tbody')
+    tableBody.innerHTML = ''
+    let totalPrice = 0
+    orderItem.forEach(medicine => {
+      let product = jsonData.Medicines.find((med) => med.ID == medicine.ID)
+      if (medicine.Quality < 1) return
+      const row = document.createElement('tr');
+      totalPrice += product.Price * medicine.Quality
+      row.innerHTML = `
+              <td class="id id-orderlog">${product.ID}</td>
+              <td class="title">${product.Name}</td>
+              <td class="shelflife">${product.EndDate}</td>
+              <td class="supplier">${getSupplierName(product.SupplierID, jsonData.Suppliers)}</td>
+              <td class="price">${product.Price}</td>
+              <td class="stock">
+                <span span class="minus" data-id='${medicine.ID}'>-</span> 
+                <span class="quality" >${medicine.Quality}</span> 
+                <span class="plus" data-id='${medicine.ID}' style='visibility:${medicine.Quality == product.Quantity ? 'hidden' : 'visible'}; pointerEvents:${medicine.Quality == product.Quantity ? 'none' : 'all'}'>+</span>
+              </td>
+              <td class="price">${product.Price * medicine.Quality}</td>
+              <td class="icons">
+                  <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn" data-id='${medicine.ID}'>
+              </td>
+        `
+      tableBody.appendChild(row);
+    })
+
+    document.querySelector('.container__order-btn .sum').textContent = totalPrice != 0 ? totalPrice.toFixed(2) : '0.00';
+
+    document.querySelector('.container__order-btn .delete-order').addEventListener('click', () => {
+      localStorage.setItem('orderItem', JSON.stringify([]))
+      loadOrderPage()
+    })
+
+    document.querySelector('.container__order-btn .add-order').addEventListener('click', () => {
+      let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+      let jsonData = getDataFromLocalStorage()
+      let medicament
+      let medicines = []
+      orderItem.forEach((product) => {
+        medicament = jsonData.Medicines.filter(obj => Number(obj.ID) == Number(product.ID));
+        console.log(medicament);
+        medicines.push({
+          "MedicineName": medicament.Name,
+          "Price": medicament.Price,
+          "Quantity": product.Quality
+        })
+        medicament.Quality -= product.Quality
+        console.log(medicines);
+      })
+      
+      const now = new Date();
+
+      const orderItems = {
+        "ID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
+        "Medicines": medicines
+      }
+      
+      if (jsonData.Orders.filter(obj => Number(obj.ID) == Number(orderItems.ID)).length !== 0) return
+
+      jsonData.Orders.push(orderItems)
+
+      const jurnalItem = {
+        "ID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
+        "OrderID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
+        "User": localStorage.getItem('userSession').FullName,
+        "Date": now.toISOString().split('T')[0],
+        "Time": [
+          String(now.getHours()).padStart(2, '0'),
+          String(now.getMinutes()).padStart(2, '0'),
+          String(now.getSeconds()).padStart(2, '0')
+        ].join(':')
+      }
+
+      if (jsonData.ReceiptJournal.filter(obj => Number(obj.ID) == Number(jurnalItem.ID)).length !== 0) return
+      
+      jsonData.ReceiptJournal.push(jurnalItem)
+      tableBody.innerHTML = ''
+      localStorage.setItem('appData', JSON.stringify(jsonData))
+      localStorage.setItem('orderItem', JSON.stringify([]))
+    })
+
+    const btnsDelete = tableBody.querySelectorAll('.delete-btn')
+    btnsDelete.forEach((btnDelete) => {
+      btnDelete.addEventListener('click', (e) => {
+        const productID = Number(e.target.dataset.id)
+        let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+        let UpdeatOrderItem = orderItem.filter(obj => Number(obj.ID) !== productID);
+        localStorage.setItem('orderItem', JSON.stringify(UpdeatOrderItem))
+        loadOrderPage()
+      })
+    })
+
+    const btnsMinus = tableBody.querySelectorAll('.minus')
+    btnsMinus.forEach((btnMinus) => {
+      btnMinus.addEventListener('click', (e) => {
+        const productID = Number(e.target.dataset.id)
+        let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+        orderItem.forEach((med) => {
+          if (Number(med.ID) == productID) {
+            med.Quality -= 1
+          }
+        })
+        localStorage.setItem('orderItem', JSON.stringify(orderItem))
+        loadOrderPage()
+      })
+    })
+
+    const btnsPlus = tableBody.querySelectorAll('.plus')
+    btnsPlus.forEach((btnPlus) => {
+      btnPlus.addEventListener('click', (e) => {
+        const productID = Number(e.target.dataset.id)
+        let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+        orderItem.forEach((med) => {
+          if (Number(med.ID) == productID) {
+            med.Quality += 1
+          }
+        })
+        localStorage.setItem('orderItem', JSON.stringify(orderItem))
+        loadOrderPage()
+      })
+    })
+
+  }
+
   // Заполнение таблицы медикаментов
   const populateTable = () => {
     const jsonData = getDataFromLocalStorage();
     if (!jsonData) return;
-
+    const tableHead = document.querySelector('#table-inventory thead');
     const tableBody = document.getElementById('medicines-table-body');
-    tableBody.innerHTML = ''; // Очищаем предыдущие данные
+    tableBody.innerHTML = '';
+    maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
 
-    jsonData.Medicines.forEach(medicine => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-            <td class="id id-inventory">${medicine.ID}</td>
-            <td class="title">${medicine.Name}</td>
-            <td class="description">${medicine.Description}</td>
-            <td class="dosage">${medicine.Dosage}</td>
-            <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
-            <td class="shelflife">${medicine.EndDate}</td> 
-            <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
-            <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
-            <td class="stock">${medicine.Quantity}</td> 
-            <td class="icons">
-                <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product" data-id='${medicine.ID}'>
-                <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__product" data-id='${medicine.ID}'>
-            </td>
-        `;
-      tableBody.appendChild(row);
-    });
+    const userSession = JSON.parse(localStorage.getItem('userSession'))
 
-    addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
-    addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
+    let pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
+
+    const arrowBack = document.querySelector(`#table-inventory .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`#table-inventory .start-page`)
+    const doodOne = document.querySelector(`#table-inventory .dood-one`)
+    const nowPage = document.querySelector(`#table-inventory .now-page`)
+    const doodTwo = document.querySelector(`#table-inventory .dood-two`)
+    const lastPage = document.querySelector(`#table-inventory .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`#table-inventory .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
+    if (pageMed.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
+      pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
+    }
+    // if (nowPageOnTable === maxPageOnTable) {
+    //   arrowsNext.forEach(a => {
+    //     a.style.visibility = 'hidden'
+    //     a.style.pointerEvents = 'none'
+    //   })
+    // }
+
+    if (userSession.Role === 'staff') {
+      tableHead.innerHTML = `
+        <tr>
+            <td class="id id-inventory" data-name="ID">ID</td>
+            <td class="title" data-name="Name">Наименование</td>
+            <td class="description" data-name="Description">Описание</td>
+            <td class="dosage" data-name="Dosage">Дозировка</td>
+            <td class="supplier">Поставщик</td>
+            <td class="shelflife" data-name="EndDate">Срок годности</td>
+            <td class="shelf">Полка/Стеллаж</td>
+            <td class="price" data-name="Price">Цена</td>
+            <td class="stock" data-name="Quantity">В наличии</td>
+            <td class="receipt">Рецепт</td>
+            <td class="icons"></td>
+        </tr>
+      `
+      pageMed.forEach(medicine => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+              <td class="id id-inventory">${medicine.ID}</td>
+              <td class="title">${medicine.Name}</td>
+              <td class="description">${medicine.Description}</td>
+              <td class="dosage">${medicine.Dosage}</td>
+              <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
+              <td class="shelflife">${medicine.EndDate}</td> 
+              <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
+              <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
+              <td class="stock">${medicine.Quantity}</td> 
+              <td class="receipt">
+                ${medicine.PrescriptionRequired === false ? '' : '<input type="checkbox" class="receipt-check">'}
+              </td> 
+              <td class="icons">
+                <img src="icons/basket.svg" alt="иконка редактирования" class="basket-btn__product" data-id='${medicine.ID}' style="display:${medicine.PrescriptionRequired === false ? 'flex' : 'none'}">
+              </td>
+          `
+        tableBody.appendChild(row);
+      });
+
+      const baskets = tableBody.querySelectorAll('.basket-btn__product')
+      const receipts = tableBody.querySelectorAll('.receipt-check')
+
+      receipts.forEach(receipt => {
+        receipt.addEventListener('change', () => {
+          if (receipt.checked) {
+            receipt.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'flex'
+          } else {
+            receipt.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'none'
+          }
+        })
+      })
+
+      baskets.forEach(basket => {
+        basket.addEventListener('click', (e) => {
+          addProductInOrder(e.target.dataset.id)
+        })
+      })
+    } else {
+      tableHead.innerHTML = `
+        <tr>
+            <td class="id id-inventory" data-name="ID">ID</td>
+            <td class="title" data-name="Name">Наименование</td>
+            <td class="description" data-name="Description">Описание</td>
+            <td class="dosage" data-name="Dosage">Дозировка</td>
+            <td class="supplier">Поставщик</td>
+            <td class="shelflife" data-name="EndDate">Срок годности</td>
+            <td class="shelf">Полка/Стеллаж</td>
+            <td class="price" data-name="Price">Цена</td>
+            <td class="stock" data-name="Quantity">В наличии</td>
+            <td class="icons"></td>
+        </tr>
+      `
+      pageMed.forEach(medicine => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+              <td class="id id-inventory">${medicine.ID}</td>
+              <td class="title">${medicine.Name}</td>
+              <td class="description">${medicine.Description}</td>
+              <td class="dosage">${medicine.Dosage}</td>
+              <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
+              <td class="shelflife">${medicine.EndDate}</td> 
+              <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
+              <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
+              <td class="stock">${medicine.Quantity}</td> 
+              <td class="icons">
+                  <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product" data-id='${medicine.ID}'>
+                  <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__product" data-id='${medicine.ID}'>
+              </td>
+          `
+        tableBody.appendChild(row);
+      });
+
+      addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
+      addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
+    }
+
     sortMedicineOptionCreate();
   }
 
@@ -1032,7 +1482,7 @@ const startProgram = (jsonData) => {
     const sortContainer = document.getElementById('filter-column-select');
     console.log(sortContainer);
 
-    sortContainer.innerHTML = ''; 
+    sortContainer.innerHTML = '';
 
     tableUsersHead.forEach(name => {
       if (name.textContent === '' || name.textContent === 'ID') {
@@ -1040,8 +1490,8 @@ const startProgram = (jsonData) => {
       }
 
       const option = document.createElement('option');
-      option.value = name.dataset.name; 
-      option.textContent = name.textContent; 
+      option.value = name.dataset.name;
+      option.textContent = name.textContent;
       sortContainer.append(option);
     });
 
@@ -1064,18 +1514,18 @@ const startProgram = (jsonData) => {
 
       jsonData.Users = sortedData;
 
-      saveDataToLocalStorage(jsonData); 
+      saveDataToLocalStorage(jsonData);
       populateUsersTable();
       filterModal.style.display = "none";
     });
 
     document.getElementById('reset-filter-sort').addEventListener('click', () => {
       let jsonData = getDataFromLocalStorage();
-      const sortedData = sortTableUsers(jsonData.Users, 'ID', 'asc'); 
+      const sortedData = sortTableUsers(jsonData.Users, 'ID', 'asc');
 
       jsonData.Users = sortedData;
 
-      saveDataToLocalStorage(jsonData); 
+      saveDataToLocalStorage(jsonData);
       populateUsersTable();
       filterModal.style.display = "none";
     });
@@ -1211,14 +1661,68 @@ const startProgram = (jsonData) => {
   }
 
   const populateUsersTable = () => {
-    const jsonData = getDataFromLocalStorage(); // Получаем данные из локального хранилища
-    if (!jsonData) return; // Если данных нет, выходим из функции
+    const jsonData = getDataFromLocalStorage();
+    if (!jsonData) return;
 
-    const tableBody = document.getElementById('users-table-body'); // Получаем тело таблицы
-    tableBody.innerHTML = ''; // Очищаем предыдущие данные
+    const tableBody = document.getElementById('users-table-body');
+    tableBody.innerHTML = '';
+    maxPageOnTable = Math.ceil(jsonData.Users.length / restrictionOfElements)
 
-    jsonData.Users.forEach(user => {
-      const row = document.createElement('tr'); // Создаем новую строку
+    let pageUser = jsonData.Users.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Users.length : (restrictionOfElements * nowPageOnTable))
+
+    if (pageUser.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(jsonData.Users.length / restrictionOfElements)
+      pageUser = jsonData.Users.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Users.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    const arrowBack = document.querySelector(`#users-table .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`#users-table .start-page`)
+    const doodOne = document.querySelector(`#users-table .dood-one`)
+    const nowPage = document.querySelector(`#users-table .now-page`)
+    const doodTwo = document.querySelector(`#users-table .dood-two`)
+    const lastPage = document.querySelector(`#users-table .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`#users-table .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
+    pageUser.forEach(user => {
+
+      const row = document.createElement('tr');
 
       row.innerHTML = `
             <td class="id id-inventory">${user.ID}</td>
@@ -1233,11 +1737,11 @@ const startProgram = (jsonData) => {
             </td>
         `;
 
-      tableBody.appendChild(row); // Добавляем строку в тело таблицы
+      tableBody.appendChild(row);
     });
 
-    addEventListenerCreateEditUser(tableBody.querySelectorAll('.edit-btn__user')); // Добавляем обработчики событий для кнопок редактирования
-    addEventListenerDeleteUser(tableBody.querySelectorAll('.delete-btn__user')); // Добавляем обработчики событий для кнопок удаления
+    addEventListenerCreateEditUser(tableBody.querySelectorAll('.edit-btn__user'));
+    addEventListenerDeleteUser(tableBody.querySelectorAll('.delete-btn__user'));
   }
 
   // Функция для добавления обработчиков событий на кнопки редактирования
@@ -1469,7 +1973,7 @@ const startProgram = (jsonData) => {
   }
 
 
-  //   //                                                     РАБОТА С ЖУРНАЛОМ ПОЛНАЯ
+  //   //                                               РАБОТА С ЖУРНАЛОМ ПОЛНАЯ
   // Заполнение таблицы журнала заказов
   const populateOrderLogTable = () => {
     const jsonData = getDataFromLocalStorage();
@@ -1480,8 +1984,64 @@ const startProgram = (jsonData) => {
     // Очищаем предыдущие данные
     tableBody.innerHTML = '';
 
-    jsonData.ReceiptJournal.forEach(receipt => {
+    maxPageOnTable = Math.ceil(jsonData.ReceiptJournal.length / restrictionOfElements)
+
+    let pageReceiptJournal = jsonData.ReceiptJournal.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.ReceiptJournal.length : (restrictionOfElements * nowPageOnTable))
+
+    if (pageReceiptJournal.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(jsonData.ReceiptJournal.length / restrictionOfElements)
+      pageReceiptJournal = jsonData.ReceiptJournal.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.ReceiptJournal.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    const arrowBack = document.querySelector(`.container__order-log-table .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`.container__order-log-table .start-page`)
+    const doodOne = document.querySelector(`.container__order-log-table .dood-one`)
+    const nowPage = document.querySelector(`.container__order-log-table .now-page`)
+    const doodTwo = document.querySelector(`.container__order-log-table .dood-two`)
+    const lastPage = document.querySelector(`.container__order-log-table .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`.container__order-log-table .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
+    pageReceiptJournal.forEach(receipt => {
+
       const row = document.createElement('tr');
+
       const order = jsonData.Orders.find((el) => el.ID == receipt.OrderID)
       let TotalAmount = 0
       order.Medicines.forEach((el) => {
@@ -1581,19 +2141,35 @@ const startProgram = (jsonData) => {
 
     const tableBody = document.getElementById('order-chek-table-body')
     const orderCheckInfo = document.querySelector('.order-check__cap');
-    
+
 
     // Очищаем предыдущие данные в таблице чека
     tableBody.innerHTML = '';
 
     // Заполнение таблицы медикаментов
     let totalPriceOrder = 0
-    order.Medicines.forEach(medicine => {
+
+    maxPageOnTable = Math.ceil(order.Medicines.length / restrictionOfElements)
+
+    let pageOrder = order.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? order.Medicines.length : (restrictionOfElements * nowPageOnTable))
+    if (pageOrder.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(order.Medicines.length / restrictionOfElements)
+      pageOrder = order.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? order.Medicines.length : (restrictionOfElements * nowPageOnTable))
+    }
+    if (nowPageOnTable === maxPageOnTable) {
+      arrowsNext.forEach(a => {
+        a.style.visibility = 'hidden'
+        a.style.pointerEvents = 'none'
+      })
+    }
+
+    pageOrder.forEach(medicine => {
       const row = document.createElement('tr');
 
       const totalPrice = Number((medicine.Price * medicine.Quantity).toFixed(2));
       totalPriceOrder += totalPrice
-      
+
       row.innerHTML = `
           <td class="title">${medicine.MedicineName}</td>
           <td class="price">${medicine.Price} ₽</td>
@@ -1656,7 +2232,7 @@ const startProgram = (jsonData) => {
       option.value = name.dataset.name; // Устанавливаем значение
       option.textContent = name.textContent; // Устанавливаем текст
       sortContainer.append(option); // Добавляем опцию в select
-      
+
     });
 
     document.getElementById('apply-filter-sort').addEventListener('click', () => {
@@ -1694,7 +2270,7 @@ const startProgram = (jsonData) => {
     });
   };
 
-  //                                                         РАБОТА СО СПИСАНИЕМ ПОЛНАЯ
+  //                                                   РАБОТА СО СПИСАНИЕМ ПОЛНАЯ
 
   const populateWriteOffMedicines = () => {
     const jsonData = getDataFromLocalStorage();
@@ -1709,7 +2285,62 @@ const startProgram = (jsonData) => {
       return expirationDate < currentDate || medicine.Quantity === 0;
     });
 
-    filteredMedicines.forEach(medicine => {
+    maxPageOnTable = Math.ceil(filteredMedicines.length / restrictionOfElements)
+
+    let pageFilteredMedicines = filteredMedicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? filteredMedicines.length : (restrictionOfElements * nowPageOnTable))
+
+    if (filteredMedicines.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(filteredMedicines.length / restrictionOfElements)
+      pageFilteredMedicines = filteredMedicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? filteredMedicines.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    const arrowBack = document.querySelector(`#medicines-table .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`#medicines-table .start-page`)
+    const doodOne = document.querySelector(`#medicines-table .dood-one`)
+    const nowPage = document.querySelector(`#medicines-table .now-page`)
+    const doodTwo = document.querySelector(`#medicines-table .dood-two`)
+    const lastPage = document.querySelector(`#medicines-table .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`#medicines-table .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
+    pageFilteredMedicines.forEach(medicine => {
+
       const row = document.createElement('tr');
 
       row.innerHTML = `
@@ -1800,10 +2431,7 @@ const startProgram = (jsonData) => {
 
   //                                                         РАБОТА С ЗАКАЗОМ
 
-  
 
-  // Работа с формами
-  // Пользователи 
 
 
 
@@ -1816,6 +2444,9 @@ const startProgram = (jsonData) => {
     searchReceipt()
     searchMedicinesWriteOff()
   });
+
+
+  nowPageOnTableFunctionStart()
 
 }
 const buttonLogin = () => {
@@ -1871,7 +2502,7 @@ const definingTheRole = (userNow) => {
 
   let parts = userNow.FullName.split(' '); // Разделяем строку по пробелам
   let lastName = parts[0]; // Фамилия - первое слово
-  let firstInitial = parts[1][0]; 
+  let firstInitial = parts[1][0];
   document.getElementById('name-user').textContent = `${lastName} ${firstInitial}.`
   switch (userNow.Role) {
     case 'superAdmin':

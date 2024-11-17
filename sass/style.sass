@@ -507,6 +507,23 @@ body
 
 #adduser-form .input-group .btn
     margin-top: 40px
+.ten,
+.twenty
+    cursor: pointer
+.start-page,
+.dood-one,
+.dood-two,
+.last-page
+    cursor: pointer
+    visibility: hidden
+    pointer-events: none
+.now-page
+    pointer-events: none
+    cursor: pointer
+.arrow-back,
+.arrow-next
+    pointer-events: all
+    cursor: pointer
 
 .modal
     display: none
@@ -683,7 +700,8 @@ body
             .order,
             .icons,
             .total-amount,
-            .order-cap
+            .order-cap,
+            .receipt
                 display: flex
                 justify-content: center
                 white-space: normal
@@ -735,6 +753,8 @@ body
                 width: 95px
             .total-amount
                 width: 220px
+            .receipt
+                width: 95px
             thead
                 width: 100%
                 display: flex
@@ -749,15 +769,15 @@ body
                 tr
                     width: 100%
                     display: flex
-                    justify-content: space-around
+                    justify-content: space-evenly
                     align-items: center
                     & td:last-child
-                        width: 100px
             tbody
                 height: 70%
                 width: 100%
                 color: #2c6369
                 overflow-y: auto
+                border-radius: 10px
                 &::-webkit-scrollbar
                     width: 7px
                 &::-webkit-scrollbar-track
@@ -772,7 +792,7 @@ body
                 tr
                     width: 100%
                     display: flex
-                    justify-content: space-around
+                    justify-content: space-evenly
                     align-items: center
                     height: 67px
                     margin-bottom: 10px
@@ -781,7 +801,7 @@ body
                     & td:last-child
                         display: flex
                         gap: 20px
-                        padding-right: 5px
+                        // padding-right: 5px
                 tr:hover
                     background: rgba(102, 168, 166, 0.3)
                     border-radius: 10px
@@ -803,9 +823,17 @@ body
                 td
                     box-sizing: border-box
                     display: flex
-                    gap: 19px
+                    gap: 7px
+                    &:last-child
+                        gap: 17px
+                    span:hover
+                        font-size: 18px
                 td:nth-child(2)
                     padding-right: 120px
+.edit-btn__product,
+.delete-btn__product,
+.basket-btn__product
+    cursor: pointer
 
 .modal-confirm
     display: none

@@ -304,7 +304,7 @@
 
         <div class="container__order-btn">
             <button class="btn delete-order roboto-bold">Удалить заказ</button>
-            <div class="order-sum roboto-regular">Общая сумма заказа: <span class="sum roboto-bold">200.00</span> ₽
+            <div class="order-sum roboto-regular">Общая сумма заказа: <span class="sum roboto-bold"></span> ₽
             </div>
             <button class="btn add-order roboto-bold">Списать товары</button>
         </div>
@@ -372,31 +372,82 @@
 
                 <tfoot class="roboto-bold">
                     <tr>
-                        <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
                         </td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td>
                             <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
                         </td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td>
-                            <img src="icons/strela-left.svg" alt="">
-                            <img src="icons/strela-right.svg" alt="">
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
                         </td>
                     </tr>
                 </tfoot>
             </table>
         </div>
+
+        <!-- <div class="container__inventory-table table" style="display: none;">
+            <table id="table-inventory-staff">
+                <thead class="roboto-bold">
+                    <tr>
+                        <td class="id id-inventory" data-name="ID">ID</td>
+                        <td class="title" data-name="Name">Наименование</td>
+                        <td class="description" data-name="Description">Описание</td>
+                        <td class="dosage" data-name="Dosage">Дозировка</td>
+                        <td class="supplier">Поставщик</td>
+                        <td class="shelflife" data-name="EndDate">Срок годности</td>
+                        <td class="shelf">Полка/Стеллаж</td>
+                        <td class="price" data-name="Price">Цена</td>
+                        <td class="stock" data-name="Quantity">В наличии</td>
+                        <td class="icons"></td>
+                    </tr>
+                </thead>
+
+                <tbody class="roboto-regular" id="medicines-table-body">
+
+                </tbody>
+
+                <tfoot class="roboto-bold">
+                    <tr>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <span></span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div> -->
 
         <!-- Пользователи -->
 
@@ -434,18 +485,24 @@
 
                 <tfoot class="roboto-bold">
                     <tr>
-                        <td>На странице: <span id="ten" class="roboto-regular">10</span> <span class="roboto-regular"
-                                id="twenty">20</span></td>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
                         </td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <img src="icons/strela-left.svg" alt="">
-                            <img src="icons/strela-right.svg" alt="">
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
                         </td>
                     </tr>
                 </tfoot>
@@ -491,18 +548,24 @@
 
                 <tfoot class="roboto-bold">
                     <tr>
-                        <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span></td>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
                         </td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <img src="icons/strela-left.svg" alt="">
-                            <img src="icons/strela-right.svg" alt="">
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
                         </td>
                     </tr>
                 </tfoot>
@@ -544,18 +607,27 @@
 
                 <tfoot class="roboto-bold">
                     <tr>
-                        <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span></td>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <img src="icons/strela-left.svg" alt="">
-                            <img src="icons/strela-right.svg" alt="">
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
                         </td>
                     </tr>
                 </tfoot>
@@ -565,7 +637,7 @@
         <!-- Заказ (сотрудники) -->
 
         <div class="container__order-staff-table table" style="display: none;">
-            <table>
+            <table id="order-staff-table">
                 <thead class="roboto-bold">
                     <tr>
                         <td class="id id-orderlog">ID</td>
@@ -582,37 +654,45 @@
 
                 <tbody class="roboto-regular">
 
-                    <tr>
+                    <!-- <tr>
                         <td class="id id-orderlog">432</td>
                         <td class="title">Парацетамол</td>
                         <td class="shelflife">07.10.2025</td>
                         <td class="supplier">ООО “ДИАМЕД”</td>
                         <td class="price">50.00</td>
-                        <!-- <td class="total-amount">Общая сумма(руб.)</td> -->
                         <td class="stock"><span class="minus">-</span> 4 <span class="plus">+</span></td>
                         <td class="price">200.00</td>
                         <td class="icons">
                             <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn">
                             <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn">
                         </td>
-                    </tr>
+                    </tr> -->
 
                 </tbody>
 
                 <tfoot class="roboto-bold">
                     <tr>
-                        <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span></td>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <img src="icons/strela-left.svg" alt="">
-                            <img src="icons/strela-right.svg" alt="">
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
                         </td>
                     </tr>
                 </tfoot>
@@ -651,18 +731,27 @@
 
                 <tfoot class="roboto-bold">
                     <tr>
-                        <td>На странице: <span class="roboto-regular ten">10</span> <span
-                                class="roboto-regular twenty">20</span></td>
+                        <td>На странице: <span class="roboto-regular ten" style="text-decoration:underline;">10</span>
+                            <span class="roboto-regular twenty">20</span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <span></span>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>...</span>
-                            <span>5</span>
+                            <span class="start-page"></span>
+                            <span class="dood-one">...</span>
+                            <span class="now-page" style="text-decoration:underline;">1</span>
+                            <span class="dood-two">...</span>
+                            <span class="last-page"></span>
                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <img src="icons/strela-left.svg" alt="">
-                            <img src="icons/strela-right.svg" alt="">
+                            <img src="icons/strela-left.svg" alt="" class="arrow-back" style="visibility: hidden;">
+                            <img src="icons/strela-right.svg" alt="" class="arrow-next">
                         </td>
                     </tr>
                 </tfoot>
