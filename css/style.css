@@ -276,6 +276,7 @@ body {
   background: #75C1BF;
   color: #fff;
   transition: max-height 0.5s ease;
+  border-radius: 0 0 10px 10px;
 }
 .container__notifications table {
   box-sizing: border-box;
@@ -300,7 +301,7 @@ body {
   height: 15px;
 }
 .container__notifications table .notifications-date {
-  font-size: 14p;
+  font-size: 14px;
   padding: 10px 5px;
 }
 
@@ -590,6 +591,11 @@ body {
   background-image: url("/icons/strela-bottom.svg");
   background-repeat: no-repeat;
   background-position: right 10px center;
+}
+
+.cap-container__notify {
+  width: 41px;
+  height: 100px;
 }
 
 #adduser-form .input-group .btn {

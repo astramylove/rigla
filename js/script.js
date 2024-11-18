@@ -417,16 +417,16 @@ let data = {
     {
       "ID": 1,
       "MedicineID": 1,
-      "UserID": 2,
-      "Message": "У препарата 'Парацетамол' закончился срок годности!",
-      "Priority": "red"
+      "Data": '10.10.2024',
+      "UserID": [2, 3],
+      "Message": "У препарата 'Парацетамол' закончился срок годности!"
     },
     {
       "ID": 2,
       "MedicineID": 1,
-      "UserID": 2,
-      "Message": "Ты чмо",
-      "Priority": "red"
+      "Data": '10.10.2024',
+      "UserID": [1, 2, 3],
+      "Message": "Ты чмо"
     }
   ]
 }
@@ -845,6 +845,88 @@ const startProgram = (jsonData) => {
   }
 
 
+  //                                                           УВЕДОМЛЕНИЯ
+
+  const NotificationsGenerate = () => {
+    const userNow = JSON.parse(localStorage.getItem('userSession'))
+    const jsonData = getDataFromLocalStorage()
+    const notifyCont = document.querySelector('#notify-table tbody')
+    const notifyQuality = document.querySelector('#notify-table .quality-notify')
+    let quality = 0
+    notifyCont.innerHTML = ''
+    jsonData.Notifications.forEach((notify) => {
+      if (notify.UserID.includes(userNow.ID)) {
+        const row = document.createElement('tr');
+        quality += 1
+        row.innerHTML = `
+          <td>${notify.Message}<br> 
+          <span class="notifications-date">${notify.Data}</span></td>
+          <td><img src="icons/crest.svg" alt="" class='btn-delete-notify' data-id='${notify.ID}'></td>
+          `
+        notifyCont.appendChild(row);
+      }
+    })
+    const btnsDeleteNotify = notifyCont.querySelectorAll('.btn-delete-notify')
+    btnsDeleteNotify.forEach((btnDeleteNotify) => {
+      btnDeleteNotify.addEventListener('click', (e) => {
+        const notifyID = Number(e.target.dataset.id) 
+        const jsonData = getDataFromLocalStorage()
+        const userNow = JSON.parse(localStorage.getItem('userSession'))
+        
+        jsonData.Notifications.forEach((notify) => {
+          console.log((notify.ID == notifyID), notify.ID, notifyID, notify.UserID);
+          
+          if (!(notify.ID == notifyID)) return
+          notify.UserID = notify.UserID.filter(num => num !== userNow.ID)
+          console.log(notify.UserID);
+          
+        })
+
+        localStorage.setItem('appData', JSON.stringify(jsonData))
+        NotificationsGenerate()
+      })
+    })
+
+    const btnClear = document.querySelector('#notify-table .btn-clear')
+    btnClear.addEventListener('click', () => {
+      const jsonData = getDataFromLocalStorage()
+      jsonData.Notifications.forEach((notify) => {
+        const userNow = JSON.parse(localStorage.getItem('userSession'))
+        if (!(notify.UserID.includes(userNow.ID))) return
+        notify.UserID = notify.UserID.filter(num => num !== userNow.ID)
+        console.log(notify.UserID);
+        
+      })
+      localStorage.setItem('appData', JSON.stringify(jsonData))
+      NotificationsGenerate()
+    })
+
+    notifyQuality.textContent = quality
+
+  }
+  NotificationsGenerate()
+
+  const NotificationsCreate = (specific, med) => {
+    const jsonData = getDataFromLocalStorage()
+    let arrayID = []
+    jsonData.Users.forEach((user) => {
+      if (user.Role == 'staff' || user.Role == 'admin') {
+        arrayID.push(Number(user.ID))
+      }
+    })
+    if (specific == 'data') {
+      const notify = {
+        "ID": jsonData.Notifications[-1].ID + 1,
+        "MedicineID": 1,
+        "Data": '10.10.2024',
+        "UserID": [2,3],
+        "Message": "У препарата 'Парацетамол' закончился срок годности!"
+      }
+    } else if (specific == 'quality') {
+
+    }
+  }
+
 
   //                                                          ЗАПАСЫ ПОЛНАЯ РАБОТА
   const getSupplierName = (supplierId, suppliers) => {
@@ -1041,14 +1123,14 @@ const startProgram = (jsonData) => {
         medicament.Quality -= product.Quality
         console.log(medicines);
       })
-      
+
       const now = new Date();
 
       const orderItems = {
         "ID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
         "Medicines": medicines
       }
-      
+
       if (jsonData.Orders.filter(obj => Number(obj.ID) == Number(orderItems.ID)).length !== 0) return
 
       jsonData.Orders.push(orderItems)
@@ -1066,7 +1148,7 @@ const startProgram = (jsonData) => {
       }
 
       if (jsonData.ReceiptJournal.filter(obj => Number(obj.ID) == Number(jurnalItem.ID)).length !== 0) return
-      
+
       jsonData.ReceiptJournal.push(jurnalItem)
       tableBody.innerHTML = ''
       localStorage.setItem('appData', JSON.stringify(jsonData))
@@ -1178,14 +1260,10 @@ const startProgram = (jsonData) => {
       maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
       pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
     }
-    // if (nowPageOnTable === maxPageOnTable) {
-    //   arrowsNext.forEach(a => {
-    //     a.style.visibility = 'hidden'
-    //     a.style.pointerEvents = 'none'
-    //   })
-    // }
 
     if (userSession.Role === 'staff') {
+      document.querySelector('.container__btn-search .add-product').style.display = 'none'
+      document.querySelector('.container__btn-search').style.justifyContent = 'right'
       tableHead.innerHTML = `
         <tr>
             <td class="id id-inventory" data-name="ID">ID</td>
@@ -1201,8 +1279,13 @@ const startProgram = (jsonData) => {
             <td class="icons"></td>
         </tr>
       `
-      pageMed.forEach(medicine => {
+      jsonData.Medicines.forEach(medicine => {
         const row = document.createElement('tr');
+        if (pageMed.includes(medicine)) {
+          row.style.display = 'flex'
+        } else {
+          row.style.display = 'none'
+        }
         row.innerHTML = `
               <td class="id id-inventory">${medicine.ID}</td>
               <td class="title">${medicine.Name}</td>
@@ -1242,6 +1325,8 @@ const startProgram = (jsonData) => {
         })
       })
     } else {
+      document.querySelector('.container__btn-search .add-product').style.display = 'flex'
+      document.querySelector('.container__btn-search').style.justifyContent = 'space-between'
       tableHead.innerHTML = `
         <tr>
             <td class="id id-inventory" data-name="ID">ID</td>
@@ -1256,8 +1341,13 @@ const startProgram = (jsonData) => {
             <td class="icons"></td>
         </tr>
       `
-      pageMed.forEach(medicine => {
+      jsonData.Medicines.forEach(medicine => {
         const row = document.createElement('tr');
+        if (pageMed.includes(medicine)) {
+          row.style.display = 'flex'
+        } else {
+          row.style.display = 'none'
+        }
         row.innerHTML = `
               <td class="id id-inventory">${medicine.ID}</td>
               <td class="title">${medicine.Name}</td>
@@ -1303,7 +1393,7 @@ const startProgram = (jsonData) => {
       providerNewSection.style.display = providerSelect.value === 'newProvider' ? 'flex' : 'none';
     });
   }
-
+  
   const sortMedicineOptionCreate = () => {
     const tableInventoryHead = document.getElementById('table-inventory').querySelectorAll('thead tr td');
     const sortContainer = document.getElementById('filter-column-select');
@@ -1379,27 +1469,23 @@ const startProgram = (jsonData) => {
 
   const searchMedicines = () => {
     const searchInput = document.getElementById('search-input');
-    const filter = searchInput.value.toLowerCase().trim(); // Получаем текст для поиска
+    const filter = searchInput.value.toLowerCase().trim();
     const tableBody = document.getElementById('medicines-table-body');
-    const rows = tableBody.getElementsByTagName('tr'); // Получаем все строки таблицы
+    const rows = tableBody.getElementsByTagName('tr');
 
-    // Перебираем строки и скрываем/показываем их в зависимости от соответствия
     Array.from(rows).forEach(row => {
       const cells = row.getElementsByTagName('td');
       let rowContainsSearchTerm = false;
 
-      // Проверяем каждую ячейку в строке
       Array.from(cells).forEach(cell => {
         if (cell.textContent.toLowerCase().replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, '').includes(filter.replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, ''))) {
-          rowContainsSearchTerm = true; // Если найдено совпадение
+          rowContainsSearchTerm = true;
         }
       });
 
-      // Показываем или скрываем строку в зависимости от результата поиска
       row.style.display = rowContainsSearchTerm ? '' : 'none';
     });
   };
-
 
   if (window.location.pathname.includes('inventoryPage.html')) {
     populateTable();
@@ -1473,8 +1559,6 @@ const startProgram = (jsonData) => {
 
 
   //                                                   РАБОТА С ПОЛЬЗОВАТЕЛЯМИ ПОЛНАЯ
-  // Заполнение таблицы пользователей
-
   const sortUserOptionCreate = () => {
     const tableUsersHead = document.getElementById('users-table').querySelectorAll('thead tr td');
     console.log(tableUsersHead);
@@ -1720,9 +1804,14 @@ const startProgram = (jsonData) => {
 
     paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
 
-    pageUser.forEach(user => {
+    jsonData.Users.forEach(user => {
 
       const row = document.createElement('tr');
+      if (pageUser.includes(user)) {
+        row.style.display = 'flex'
+      } else {
+        row.style.display = 'none'
+      }
 
       row.innerHTML = `
             <td class="id id-inventory">${user.ID}</td>
@@ -1888,8 +1977,6 @@ const startProgram = (jsonData) => {
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   }
-
-  // Запрет ввода цифр в поля имени, фамилии и отчества
   const nameInputs = ['user-name', 'user-surname', 'user-patronymic'];
 
   nameInputs.forEach(inputId => {
@@ -1972,6 +2059,12 @@ const startProgram = (jsonData) => {
     return formattedValue;
   }
 
+  
+  if (JSON.parse(localStorage.getItem('userSession')).Role === 'superAdmin') {
+    populateUsersTable()
+    document.querySelector('.container__btn-search .add-product').style.display = 'none'
+  }
+
 
   //   //                                               РАБОТА С ЖУРНАЛОМ ПОЛНАЯ
   // Заполнение таблицы журнала заказов
@@ -2038,9 +2131,14 @@ const startProgram = (jsonData) => {
 
     paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
 
-    pageReceiptJournal.forEach(receipt => {
+    jsonData.ReceiptJournal.forEach(receipt => {
 
       const row = document.createElement('tr');
+      if (pageReceiptJournal.includes(user)) {
+        row.style.display = 'flex'
+      } else {
+        row.style.display = 'none'
+      }
 
       const order = jsonData.Orders.find((el) => el.ID == receipt.OrderID)
       let TotalAmount = 0
@@ -2339,9 +2437,14 @@ const startProgram = (jsonData) => {
 
     paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
 
-    pageFilteredMedicines.forEach(medicine => {
+    filteredMedicines.forEach(medicine => {
 
       const row = document.createElement('tr');
+      if (pageFilteredMedicines.includes(user)) {
+        row.style.display = 'flex'
+      } else {
+        row.style.display = 'none'
+      }
 
       row.innerHTML = `
             <td class="id id-inventory">${medicine.ID}</td>
@@ -2429,15 +2532,7 @@ const startProgram = (jsonData) => {
     });
   };
 
-  //                                                         РАБОТА С ЗАКАЗОМ
 
-
-
-
-
-
-  // Запуск поиска
-  // Добавляем обработчик события для поля ввода
   document.getElementById('search-input').addEventListener('input', () => {
     searchMedicines()
     searchUsers()
@@ -2445,10 +2540,10 @@ const startProgram = (jsonData) => {
     searchMedicinesWriteOff()
   });
 
-
   nowPageOnTableFunctionStart()
 
 }
+
 const buttonLogin = () => {
   const loginInput = document.getElementById('loginInput');
   const passwordInput = document.getElementById('PasswordInput'); // Исправлено имя переменной
@@ -2521,6 +2616,7 @@ const definingTheRole = (userNow) => {
 
       addProductBtn.style.display = 'none';
       addUsersBtn.style.display = 'flex';
+      startProgram(jsonData); 
       break;
 
     case 'admin':
@@ -2536,7 +2632,7 @@ const definingTheRole = (userNow) => {
         }
       });
 
-      startProgram(jsonData); // Запуск программы для администраторов
+      startProgram(jsonData);
       break;
 
     case 'staff':
@@ -2552,7 +2648,7 @@ const definingTheRole = (userNow) => {
         }
       });
 
-      startProgram(jsonData); // Запуск программы для сотрудников
+      startProgram(jsonData); 
       break;
 
     default:

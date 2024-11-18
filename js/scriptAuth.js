@@ -417,16 +417,16 @@ let data = {
     {
       "ID": 1,
       "MedicineID": 1,
-      "UserID": 2,
-      "Message": "У препарата 'Парацетамол' закончился срок годности!",
-      "Priority": "red"
+      "Data": '10.10.2024',
+      "UserID": [2,3],
+      "Message": "У препарата 'Парацетамол' закончился срок годности!"
     },
     {
       "ID": 2,
       "MedicineID": 1,
-      "UserID": 2,
-      "Message": "Ты чмо",
-      "Priority": "red"
+      "Data": '10.10.2024',
+      "UserID": [1,2,3],
+      "Message": "Ты чмо"
     }
   ]
 }
