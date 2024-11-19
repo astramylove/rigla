@@ -414,20 +414,6 @@ let data = {
     }
   ],
   "Notifications": [
-    {
-      "ID": 1,
-      "MedicineID": 1,
-      "Data": '10.10.2024',
-      "UserID": [2, 3],
-      "Message": "У препарата 'Парацетамол' закончился срок годности!"
-    },
-    {
-      "ID": 2,
-      "MedicineID": 1,
-      "Data": '10.10.2024',
-      "UserID": [1, 2, 3],
-      "Message": "Ты чмо"
-    }
   ]
 }
 const saveDataToLocalStorage = (Data) => {
@@ -869,17 +855,17 @@ const startProgram = (jsonData) => {
     const btnsDeleteNotify = notifyCont.querySelectorAll('.btn-delete-notify')
     btnsDeleteNotify.forEach((btnDeleteNotify) => {
       btnDeleteNotify.addEventListener('click', (e) => {
-        const notifyID = Number(e.target.dataset.id) 
+        const notifyID = Number(e.target.dataset.id)
         const jsonData = getDataFromLocalStorage()
         const userNow = JSON.parse(localStorage.getItem('userSession'))
-        
+
         jsonData.Notifications.forEach((notify) => {
           console.log((notify.ID == notifyID), notify.ID, notifyID, notify.UserID);
-          
+
           if (!(notify.ID == notifyID)) return
           notify.UserID = notify.UserID.filter(num => num !== userNow.ID)
           console.log(notify.UserID);
-          
+
         })
 
         localStorage.setItem('appData', JSON.stringify(jsonData))
@@ -895,7 +881,7 @@ const startProgram = (jsonData) => {
         if (!(notify.UserID.includes(userNow.ID))) return
         notify.UserID = notify.UserID.filter(num => num !== userNow.ID)
         console.log(notify.UserID);
-        
+
       })
       localStorage.setItem('appData', JSON.stringify(jsonData))
       NotificationsGenerate()
@@ -908,23 +894,30 @@ const startProgram = (jsonData) => {
 
   const NotificationsCreate = (specific, med) => {
     const jsonData = getDataFromLocalStorage()
+    console.log();
+    
     let arrayID = []
     jsonData.Users.forEach((user) => {
       if (user.Role == 'staff' || user.Role == 'admin') {
         arrayID.push(Number(user.ID))
       }
     })
-    if (specific == 'data') {
-      const notify = {
-        "ID": jsonData.Notifications[-1].ID + 1,
-        "MedicineID": 1,
-        "Data": '10.10.2024',
-        "UserID": [2,3],
-        "Message": "У препарата 'Парацетамол' закончился срок годности!"
-      }
-    } else if (specific == 'quality') {
+    const today = new Date();
+    const formattedDate = `${String(today.getDate()).padStart(2, '0')}.${String(today.getMonth() + 1).padStart(2, '0')}.${today.getFullYear()}`;
 
+    let notify = {
+      "ID": jsonData.Notifications.length > 0 ? jsonData.Notifications[jsonData.Notifications.length - 1].ID + 1 : 1,
+      "MedicineID": med.ID,
+      "Data": formattedDate,
+      "UserID": arrayID,
+      "Message": ""
     }
+    if (specific == 'date') {
+      notify.Message = `У препарата '${med.Name}' закончился срок годности!`
+    } else if (specific == 'quality') {
+      notify.Message = `Препарат '${med.Name}' закончился, нужно заказать!`
+    }
+    return notify
   }
 
 
@@ -1370,6 +1363,29 @@ const startProgram = (jsonData) => {
       addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
     }
 
+    jsonData.Medicines.forEach(medicine => {
+      const expirationDate = new Date(medicine.EndDate);
+      const currentDate = new Date();
+      let notify;
+  
+      if (expirationDate < currentDate) {
+          notify = NotificationsCreate('date', medicine);
+      } else if (medicine.Quantity === 0) {
+          notify = NotificationsCreate('quality', medicine);
+      }
+      console.log(notify);
+      
+      if (notify) {
+          const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+          
+          if (!exists) {
+              jsonData.Notifications.push(notify);
+              localStorage.setItem('appData', JSON.stringify(jsonData));
+              NotificationsGenerate();
+          }
+      }
+  });
+
     sortMedicineOptionCreate();
   }
 
@@ -1393,7 +1409,7 @@ const startProgram = (jsonData) => {
       providerNewSection.style.display = providerSelect.value === 'newProvider' ? 'flex' : 'none';
     });
   }
-  
+
   const sortMedicineOptionCreate = () => {
     const tableInventoryHead = document.getElementById('table-inventory').querySelectorAll('thead tr td');
     const sortContainer = document.getElementById('filter-column-select');
@@ -2059,7 +2075,7 @@ const startProgram = (jsonData) => {
     return formattedValue;
   }
 
-  
+
   if (JSON.parse(localStorage.getItem('userSession')).Role === 'superAdmin') {
     populateUsersTable()
     document.querySelector('.container__btn-search .add-product').style.display = 'none'
@@ -2440,7 +2456,7 @@ const startProgram = (jsonData) => {
     filteredMedicines.forEach(medicine => {
 
       const row = document.createElement('tr');
-      if (pageFilteredMedicines.includes(user)) {
+      if (pageFilteredMedicines.includes(medicine)) {
         row.style.display = 'flex'
       } else {
         row.style.display = 'none'
@@ -2616,7 +2632,7 @@ const definingTheRole = (userNow) => {
 
       addProductBtn.style.display = 'none';
       addUsersBtn.style.display = 'flex';
-      startProgram(jsonData); 
+      startProgram(jsonData);
       break;
 
     case 'admin':
@@ -2648,7 +2664,7 @@ const definingTheRole = (userNow) => {
         }
       });
 
-      startProgram(jsonData); 
+      startProgram(jsonData);
       break;
 
     default:

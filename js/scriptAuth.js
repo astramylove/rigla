@@ -414,20 +414,6 @@ let data = {
     }
   ],
   "Notifications": [
-    {
-      "ID": 1,
-      "MedicineID": 1,
-      "Data": '10.10.2024',
-      "UserID": [2,3],
-      "Message": "У препарата 'Парацетамол' закончился срок годности!"
-    },
-    {
-      "ID": 2,
-      "MedicineID": 1,
-      "Data": '10.10.2024',
-      "UserID": [1,2,3],
-      "Message": "Ты чмо"
-    }
   ]
 }
 const saveDataToLocalStorage = (Data) => {
