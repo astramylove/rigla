@@ -55,7 +55,7 @@ let data = {
       "StartDate": "2023-01-01",
       "EndDate": "2025-01-01",
       "Quantity": 100,
-      "Description": "Обезболивающее средство.",
+      "Description": "Аспирин — это анальгетик и противовоспалительное средство, применяемое для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мышечных и суставных болях, а также при лихорадке. Состав препарата включает ацетилсалициловую кислоту 500 мг в одной таблетке. Противопоказания: аллергия на салицилаты, язвы желудка и двенадцатиперстной кишки, геморрагические диатезы. Побочные действия могут включать тошноту, рвоту, головокружение и аллергические реакции. Разрешен детям старше 15 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 1,
       "PrescriptionRequired": false,
       "Price": 50.00,
@@ -69,7 +69,7 @@ let data = {
       "StartDate": "2023-06-01",
       "EndDate": "2025-06-01",
       "Quantity": 200,
-      "Description": "Жаропонижающее средство.",
+      "Description": "Парацетамол — это анальгетик и жаропонижающее средство, используемое для лечения боли и лихорадки. Он эффективен при головной боли, зубной боли, мигрени и простудах. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм. Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 2,
       "PrescriptionRequired": false,
       "Price": 30.00,
@@ -83,7 +83,7 @@ let data = {
       "StartDate": "2022-01-01",
       "EndDate": "2024-10-30",
       "Quantity": 100,
-      "Description": "Обезболивающее средство.",
+      "Description": "Лотатин — это обезболивающее средство, применяемое для облегчения боли различной локализации. Он эффективен при головной боли, зубной боли и послеоперационных болях. Состав препарата включает лотатин 500 мг в одной таблетке. Противопоказания: аллергия на компоненты препарата. Побочные действия могут включать тошноту и головную боль. Разрешен взрослым и детям старше 12 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 1,
       "PrescriptionRequired": false,
       "Price": 50.00,
@@ -97,7 +97,7 @@ let data = {
       "StartDate": "2023-06-01",
       "EndDate": "2025-06-01",
       "Quantity": 0,
-      "Description": "Жаропонижающее средство.",
+      "Description": "Парацетамол — это анальгетик и антипиретик, применяемый для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мигрени и лихорадке. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм, беременность (особенно в первом триместре). Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 2,
       "PrescriptionRequired": false,
       "Price": 30.00,
@@ -111,7 +111,7 @@ let data = {
       "StartDate": "2023-01-15",
       "EndDate": "2025-01-15",
       "Quantity": 150,
-      "Description": "Противовоспалительное средство.",
+      "Description": "Ибупрофен — это противовоспалительное средство, применяемое для уменьшения боли и воспаления. Он эффективен при головной боли, зубной боли, болях в спине и менструальных болях. Состав препарата включает ибупрофен 400 мг в одной таблетке. Противопоказания: язвы желудка и двенадцатиперстной кишки, аллергия на НПВС, тяжелые заболевания печени и почек. Побочные действия могут включать головную боль, расстройства ЖКТ и аллергические реакции. Разрешен детям старше 6 лет. Максимальная доза для взрослых — 1,2 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 3,
       "PrescriptionRequired": false,
       "Price": 45.00,
@@ -123,9 +123,9 @@ let data = {
       "Name": "Анальгин",
       "Dosage": "500 мг",
       "StartDate": "2023-02-01",
-      "EndDate": "2024-12-31",
+      "EndDate": "2024 - 12 - 31",
       "Quantity": 80,
-      "Description": "Обезболивающее средство.",
+      "Description": "Анальгин — это анальгезирующее ненаркотическое средство, обладающее обезболивающим и жаропонижающим действием.Применяется при болях различного происхождения: головная боль, зубная боль, послеоперационная боль и колики.Состав препарата включает метамизол натрия 500 мг в одной таблетке.Противопоказания: аллергия на метамизол натрия, тяжелые заболевания печени и почек.Побочные действия могут включать аллергические реакции и снижение давления.Разрешен взрослым и детям старше 3 месяцев с соблюдением дозировки.Максимальная доза для взрослых — 3 г в сутки.Использовать по рекомендации врача.",
       "SupplierID": 4,
       "PrescriptionRequired": false,
       "Price": 25.00,
@@ -133,172 +133,172 @@ let data = {
       "Rack": "2"
     },
     {
-      "ID": 7,
-      "Name": "Цитрамон",
+      ID: 7,
+      Name: 'Цитрамон',
+      Dosage: '500 мг',
+      StartDate: '2023-03-01',
+      EndDate: '2025-03-01',
+      Quantity: 120,
+      Description: 'Цитрамон — это комбинированное обезболивающее и жаропонижающее средство, применяемое при головной боли и простудах. Он эффективен при легкой и умеренной боли, а также при повышенной температуре тела. Состав препарата включает парацетамол, ацетилсалициловую кислоту и кофеин в одной таблетке (500 мг). Противопоказания: аллергия на компоненты препарата, язвы желудка и двенадцатиперстной кишки, заболевания печени и почек. Побочные действия могут включать тошноту, головную боль и аллергические реакции. Разрешен взрослым и детям старше 15 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.',
+      SupplierID: 1,
+      PrescriptionRequired: false,
+      Price: 20.00,
+      Shelf: 'A',
+      Rack: '3'
+    },
+    {
+      ID: 8,
+      Name: 'Кеторолак',
+      Dosage: '10 мг / мл',
+      StartDate: '2023-04-01',
+      EndDate: '2025-04-01',
+      Quantity: 60,
+      Description: 'Кеторолак — это сильное обезболивающее средство, используемое для лечения острого болевого синдрома после операций или травм. Он эффективен при сильных болях различного происхождения. Состав препарата включает кеторолак трометамин в дозировке 10 мг/мл во флаконе или ампуле (в зависимости от формы выпуска). Противопоказания: язвы желудка или двенадцатиперстной кишки, тяжелые заболевания почек или печени, аллергия на НПВС. Побочные действия могут включать головную боль, тошноту и расстройства ЖКТ. Разрешен взрослым только по рецепту врача с соблюдением дозировки; не рекомендуется детям до 16 лет.',
+      SupplierID: 2,
+      PrescriptionRequired: true,
+      Price: 70.00,
+      Shelf: 'E',
+      Rack: '4'
+    },
+    {
+      ID: 9,
+      Name: 'Амоксициллин',
+      Dosage: '500 мг',
+      StartDate: '2023-05-01',
+      EndDate: '2025-05-01',
+      Quantity: 200,
+      Description: 'Амоксициллин — это антибиотик широкого спектра действия, применяемый для лечения бактериальных инфекций дыхательных путей, мочевыводящих путей и других инфекций организма. Состав препарата включает амоксициллин тригидрат в дозировке 500 мг в одной таблетке или капсуле (в зависимости от формы выпуска). Противопоказания: аллергия на пенициллины или другие бета-лактамные антибиотики; тяжелые заболевания печени или почек; инфекционный мононуклеоз; лимфоцитарная лейкозы; беременность (особенно в первом триместре). Побочные действия могут включать диарею, сыпь или аллергические реакции (в редких случаях анафилаксия). Разрешен детям старше трех месяцев с соблюдением дозировки; максимальная доза для взрослых — до 6 г в сутки в зависимости от инфекции.',
+      SupplierID: 3,
+      PrescriptionRequired: true,
+      Price: 55.00,
+      Shelf: 'F',
+      Rack: '1'
+    },
+    {
+      ID: 10,
+      Name: 'Лоратадин',
+      Dosage: '10 мг',
+      StartDate: '2023-06-01',
+      EndDate: '2025-06-01',
+      Quantity: 180,
+      Description: 'Лоратадин — это антигистаминное средство второго поколения для лечения аллергических реакций таких как ринит или крапивница у взрослых и детей старше двух лет. Состав препарата включает лоратадин в дозировке 10 мг в одной таблетке или сиропе (в зависимости от формы выпуска). Противопоказания: гиперчувствительность к лоратадину или другим компонентам препарата; беременность (особенно в первом триместре) следует использовать с осторожностью; не рекомендуется применять одновременно с другими антигистаминными средствами без консультации врача; не рекомендуется детям младше двух лет без назначения врача; побочные эффекты могут включать головную боль, сухость во рту или сонливость (в редких случаях). Максимальная доза для взрослых составляет до двух таблеток (20 мг) в сутки.',
+      SupplierID: 4,
+      PrescriptionRequired: false,
+      Price: 35.00,
+      Shelf: 'G',
+      Rack: '2'
+    },
+    {
+      "ID": 11,
+      "Name": "Метформин",
       "Dosage": "500 мг",
-      "StartDate": "2023-03-01",
-      "EndDate": "2025-03-01",
-      "Quantity": 120,
-      "Description": "Обезболивающее и жаропонижающее средство.",
+      "StartDate": "2023-07-01",
+      "EndDate": "2025-07-01",
+      "Quantity": 130,
+      "Description": "Метформин — это препарат, применяемый для лечения диабета второго типа. Он помогает контролировать уровень сахара в крови, улучшая чувствительность клеток к инсулину и уменьшая выработку глюкозы в печени. Состав препарата включает метформин 500 мг в одной таблетке. Противопоказания: почечная недостаточность, тяжелые заболевания печени, аллергия на метформин, а также состояние, связанное с повышенным уровнем молочной кислоты в крови (лактатный ацидоз). Побочные действия могут включать тошноту, диарею, боли в животе и потерю аппетита. Разрешен взрослым и детям старше 10 лет. Максимальная доза для взрослых — 2 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 1,
-      "PrescriptionRequired": false,
-      "Price": 20.00,
-      "Shelf": "A",
+      "PrescriptionRequired": true,
+      "Price": 40.00,
+      "Shelf": "H",
       "Rack": "3"
     },
     {
-      "ID": 8,
-      "Name": "Кеторолак",
-      "Dosage": "10 мг/мл",
-      "StartDate": "2023-04-01",
-      "EndDate": "2025-04-01",
-      "Quantity": 60,
-      "Description": "Сильное обезболивающее.",
+      "ID": 12,
+      "Name": "Симвастатин",
+      "Dosage": "20 мг",
+      "StartDate": "2023-08-01",
+      "EndDate": "2025-08-01",
+      "Quantity": 90,
+      "Description": "Симвастатин — это средство для снижения уровня холестерина в крови. Он используется для лечения гиперхолестеринемии и профилактики сердечно-сосудистых заболеваний. Состав препарата включает симвастатин 20 мг в одной таблетке. Противопоказания: активные заболевания печени, беременность и лактация, аллергия на симвастатин или другие статины. Побочные действия могут включать головную боль, расстройства ЖКТ (тошнота, запор), мышечные боли и слабость. Разрешен взрослым только по рецепту врача. Максимальная доза для взрослых — до 80 мг в сутки, в зависимости от состояния пациента и уровня холестерина.",
       "SupplierID": 2,
       "PrescriptionRequired": true,
-      "Price": 70.00,
-      "Shelf": "E",
+      "Price": 60.00,
+      "Shelf": "I",
       "Rack": "4"
     },
     {
-      "ID": 9,
-      "Name": "Амоксициллин",
-      "Dosage": "500 мг",
-      "StartDate": "2023-05-01",
-      "EndDate": "2025-05-01",
-      "Quantity": 200,
-      "Description": ".Антибиотик широкого спектра действия.",
+      "ID": 13,
+      "Name": "Флуоксетин",
+      "Dosage": "20 мг",
+      "StartDate": "2023-09-01",
+      "EndDate": "2025-09-01",
+      "Quantity": 75,
+      "Description": "Флуоксетин — это антидепрессант, применяемый для лечения депрессий и тревожных расстройств. Он относится к группе селективных ингибиторов обратного захвата серотонина (СИОЗС), что способствует повышению уровня серотонина в мозге. Состав препарата включает флуоксетин 20 мг в одной капсуле. Противопоказания: аллергия на флуоксетин, использование вместе с моноаминоксидазными ингибиторами (МАО), беременность и лактация (требуется осторожность). Побочные действия могут включать головную боль, бессонницу, тошноту и снижение либидо. Разрешен взрослым и детям старше 8 лет с соблюдением дозировки; максимальная доза для взрослых составляет до 80 мг в сутки.",
       "SupplierID": 3,
       "PrescriptionRequired": true,
-      "Price": 55.00,
-      "Shelf": 'F',
-      'Rack': '1'
+      "Price": 65,
+      "Shelf": "J",
+      "Rack": "1"
     },
     {
-      'ID': 10,
-      'Name': 'Лоратадин',
-      'Dosage': '10 мг',
-      'StartDate': '2023-06-01',
-      'EndDate': '2025-06-01',
-      'Quantity': 180,
-      'Description': 'Антигистаминное средство.',
-      'SupplierID': 4,
-      'PrescriptionRequired': false,
-      'Price': 35.00,
-      'Shelf': 'G',
-      'Rack': '2'
-    },
-    {
-      'ID': 11,
-      'Name': 'Метформин',
-      'Dosage': '500 мг',
-      'StartDate': '2023-07-01',
-      'EndDate': '2025-07-01',
-      'Quantity': 130,
-      'Description': 'Препарат для лечения диабета.',
-      'SupplierID': 1,
-      'PrescriptionRequired': true,
-      'Price': 40.00,
-      'Shelf': 'H',
-      'Rack': '3'
-    },
-    {
-      'ID': 12,
-      'Name': 'Симвастатин',
-      'Dosage': '20 мг',
-      'StartDate': '2023-08-01',
-      'EndDate': '2025-08-01',
-      'Quantity': 90,
-      'Description': 'Средство для снижения уровня холестерина.',
-      'SupplierID': 2,
-      'PrescriptionRequired': true,
-      'Price': 60.00,
-      'Shelf': 'I',
-      'Rack': '4'
-    },
-    {
-      ID: 13,
-      Name: "Флуоксетин",
-      Dosage: "20 мг",
-      StartDate: "2023-09-01",
-      EndDate: "2025-09-01",
-      Quantity: 75,
-      Description: "Антидепрессант.",
-      SupplierID: 3,
-      PrescriptionRequired: true,
-      Price: 65.00,
-      Shelf: "J",
-      Rack: "1"
-    },
-    {
-      ID: 14,
-      Name: "Лизиноприл",
-      Dosage: "10 мг",
-      StartDate: "2023-10-01",
-      EndDate: "2025-10-01",
-      Quantity: 110,
-      Description: "Препарат для лечения гипертонии.",
+      "ID": 14,
+      "Name": "Лизиноприл",
+      "Dosage": "10 мг",
+      "StartDate": "2023-10-01",
+      "EndDate": "2025-10-01",
+      "Quantity": 110,
+      "Description": 'Лизиноприл — это препарат для лечения гипертонии и сердечной недостаточности. Он является ингибитором ангиотензин-превращающего фермента (АПФ), что приводит к снижению уровня ангиотензина II и расширению сосудов. Состав препарата включает лизиноприл 10 мг в одной таблетке. Противопоказания: аллергия на лизиноприл или другие ингибиторы АПФ; беременность; тяжелые нарушения функции почек; стеноз почечной артерии. Побочные действия могут включать головокружение, кашель, повышение уровня калия в крови и аллергические реакции. Разрешен взрослым; максимальная доза для взрослых составляет до 40 мг в сутки.',
       SupplierID: 4,
       PrescriptionRequired: true,
-      Price: 50.00,
-      Shelf: "K",
-      Rack: "2"
+      Price: 50,
+      Shelf: 'K',
+      Rack: '2'
     },
     {
       ID: 15,
-      Name: "Аторвастатин",
-      Dosage: "40 мг",
-      StartDate: "2023-11-01",
-      EndDate: "2025-11-01",
+      Name: 'Аторвастатин',
+      Dosage: '40 мг',
+      StartDate: '2023-11-01',
+      EndDate: '2025-11-01',
       Quantity: 140,
-      Description: "Средство для снижения уровня холестерина.",
+      Description: 'Аторвастатин — это средство для снижения уровня холестерина в крови, используемое при гиперхолестеринемии и для профилактики сердечно-сосудистых заболеваний. Он ингибирует фермент ГМГ-КоА редуктазу, что снижает уровень холестерина липопротеидов низкой плотности (ЛПНП). Состав препарата включает аторвастатин 40 мг в одной таблетке. Противопоказания: активные заболевания печени, беременность и лактация, аллергия на аторвастатин или другие статины. Побочные действия могут включать головную боль, расстройства ЖКТ (тошнота, запор), мышечные боли и слабость. Разрешен взрослым только по рецепту врача; максимальная доза для взрослых составляет до 80 мг в сутки.',
       SupplierID: 1,
       PrescriptionRequired: true,
-      Price: 55.00,
-      Shelf: "L",
-      Rack: "3"
+      Price: 55,
+      Shelf: 'L',
+      Rack: '3'
     },
     {
       ID: 16,
-      Name: "Омепразол",
-      Dosage: "20 мг",
-      StartDate: "2023-12-01",
-      EndDate: "2025-12-01",
+      Name: 'Омепразол',
+      Dosage: '20 мг',
+      StartDate: '2023-12-01',
+      EndDate: '2025-12-01',
       Quantity: 160,
-      Description: "Препарат для лечения язвы желудка.",
+      Description: 'Омепразол — это препарат для лечения язвы желудка и гастрита, а также при рефлюксной болезни. Он является ингибитором протонной помпы, что снижает выработку желудочной кислоты. Состав препарата включает омепразол 20 мг в одной капсуле или таблетке (в зависимости от формы выпуска). Противопоказания: аллергия на омепразол или другие ингибиторы протонной помпы; тяжелые заболевания печени; беременность (особенно в первом триместре). Побочные действия могут включать головную боль, тошноту и расстройства ЖКТ (диарея или запор). Разрешен взрослым и детям старше 1 года с соблюдением дозировки; максимальная доза для взрослых составляет до 40 мг в сутки.',
       SupplierID: 2,
       PrescriptionRequired: false,
-      Price: 45.00,
-      Shelf: "M",
-      Rack: "4"
+      Price: 45,
+      Shelf: 'M',
+      Rack: '4'
     },
     {
       ID: 17,
-      Name: "Дексаметазон",
-      Dosage: "4 мг",
-      StartDate: "2024-01-01",
-      EndDate: "2026-01-01",
+      Name: 'Дексаметазон',
+      Dosage: '4 мг',
+      StartDate: '2024-01-01',
+      EndDate: '2026-01-01',
       Quantity: 50,
-      Description: "Кортикостероид.",
+      Description: 'Дексаметазон — это кортикостероидный препарат для лечения воспалительных заболеваний и аллергических реакций. Он уменьшает воспаление и подавляет иммунный ответ организма. Состав препарата включает дексаметазон 4 мг в одной таблетке или ампуле (в зависимости от формы выпуска). Противопоказания: системные грибковые инфекции, тяжелые вирусные инфекции, гиперчувствительность к дексаметазону; необходимо с осторожностью применять при инфекциях или при наличии других заболеваний эндокринной системы. Побочные действия могут включать увеличение веса, повышение артериального давления и изменения настроения. Разрешен взрослым только по рецепту врача; максимальная доза зависит от состояния пациента.',
       SupplierID: 3,
       PrescriptionRequired: true,
-      Price: 80.00,
-      Shelf: "N",
-      Rack: "1"
+      Price: 80,
+      Shelf: 'N',
+      Rack: '1'
     },
     {
       ID: 18,
-      Name: "Кларитромицин",
-      Dosage: "250 мг",
-      StartDate: "2024-02-01",
-      EndDate: "2026-02-01",
+      Name: 'Кларитромицин',
+      Dosage: '250 мг',
+      StartDate: '2024-02-01',
+      EndDate: '2026-02-01',
       Quantity: 100,
-      Description: "Антибиотик.",
+      Description: 'Кларитромицин — это антибиотик для лечения бактериальных инфекций дыхательных путей, кожи и мягких тканей. Он относится к группе макролидов и подавляет синтез белка бактерий. Состав препарата включает кларитромицин 250 мг в одной таблетке или капсуле (в зависимости от формы выпуска). Противопоказания: аллергия на кларитромицин или другие макролиды; тяжелые заболевания печени; беременность (особенно в первом триместре) следует использовать с осторожностью; не рекомендуется применять одновременно с другими антибиотиками без консультации врача; побочные действия могут включать диарею, тошноту или аллергические реакции (в редких случаях анафилаксия). Разрешен взрослым и детям старше шести месяцев с соблюдением дозировки; максимальная доза для взрослых составляет до 1 г в сутки.',
       SupplierID: 4,
       PrescriptionRequired: true,
-      Price: 70.00,
-      Shelf: "O",
-      Rack: "2"
+      Price: 70,
+      Shelf: 'O',
+      Rack: '2'
     },
     {
       ID: 19,
@@ -307,10 +307,10 @@ let data = {
       StartDate: "2024-03-01",
       EndDate: "2026-03-01",
       Quantity: 90,
-      Description: "Антибиотик.",
+      Description: "Триметоприм — это антибиотик для лечения инфекций мочевыводящих путей и некоторых других бактериальных инфекций. Он блокирует синтез фолата у бактерий, что приводит к их гибели. Состав препарата включает триметоприм в дозировке 100 мг в одной таблетке или капсуле (в зависимости от формы выпуска). Противопоказания включают аллергическую реакцию на триметоприм или другие компоненты препарата; тяжелые нарушения функции почек; беременность (особенно первый триместр) следует использовать с осторожностью; побочные действия могут включать тошноту, рвоту и кожные высыпания. Разрешен взрослым и детям старше двух месяцев с соблюдением дозировки; максимальная доза для взрослых составляет до 320 мг в сутки.",
       SupplierID: 1,
       PrescriptionRequired: true,
-      Price: 38.00,
+      Price: 38,
       Shelf: "P",
       Rack: "3"
     },
@@ -321,10 +321,10 @@ let data = {
       StartDate: "2024-04-01",
       EndDate: "2026-04-01",
       Quantity: 110,
-      Description: "Средство для суставов.",
+      Description: "Глюкозамин — это средство для поддержания здоровья суставов и хрящей. Он используется при остеоартрите и других заболеваниях суставов для уменьшения боли и улучшения подвижности суставов. Состав препарата включает глюкозамин сульфат в дозировке 500 мг в одной капсуле или таблетке (в зависимости от формы выпуска). Противопоказания включают аллергию на морепродукты (так как глюкозамин часто получают из раковин) и беременность (особенно первый триместр); побочные действия могут включать расстройства желудка или диарею. Разрешен взрослым только по рекомендации врача; максимальная доза зависит от состояния пациента.",
       SupplierID: 2,
       PrescriptionRequired: false,
-      Price: 55.00,
+      Price: 55,
       Shelf: "Q",
       Rack: "4"
     },
@@ -335,10 +335,10 @@ let data = {
       StartDate: "2024-05-01",
       EndDate: "2026-05-01",
       Quantity: 120,
-      Description: "Добавка к пище.",
+      Description: "Кальций Д3 — это добавка к пище для укрепления костей и зубов. Она содержит кальций карбонат и витамин D3 для улучшения усвоения кальция организмом. Состав препарата включает кальций карбонат в дозировке 500 мг и витамин D3 во флаконе или таблетках (в зависимости от формы выпуска). Противопоказания включают гиперкальциемию (повышенный уровень кальция в крови) и аллергические реакции на компоненты препарата; побочные действия могут включать запоры или расстройства пищеварения. Разрешен взрослым и детям старше трех лет; максимальная доза зависит от возраста пациента.",
       SupplierID: 3,
       PrescriptionRequired: false,
-      Price: 25.00,
+      Price: 25,
       Shelf: "R",
       Rack: "1"
     }
@@ -837,7 +837,7 @@ const startProgram = (jsonData) => {
     const userNow = JSON.parse(localStorage.getItem('userSession'))
     const jsonData = getDataFromLocalStorage()
     const notifyCont = document.querySelector('#notify-table tbody')
-    const notifyQuality = document.querySelector('#notify-table .quality-notify')
+    const notifyQuantity = document.querySelector('#notify-table .quality-notify')
     let quality = 0
     notifyCont.innerHTML = ''
     jsonData.Notifications.forEach((notify) => {
@@ -887,7 +887,7 @@ const startProgram = (jsonData) => {
       NotificationsGenerate()
     })
 
-    notifyQuality.textContent = quality
+    notifyQuantity.textContent = quality
 
   }
   NotificationsGenerate()
@@ -895,7 +895,7 @@ const startProgram = (jsonData) => {
   const NotificationsCreate = (specific, med) => {
     const jsonData = getDataFromLocalStorage()
     console.log();
-    
+
     let arrayID = []
     jsonData.Users.forEach((user) => {
       if (user.Role == 'staff' || user.Role == 'admin') {
@@ -1040,6 +1040,16 @@ const startProgram = (jsonData) => {
 
   }
 
+  const getOrderCountForToday = (jsonData) => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    const todayDate = Number(`${year}${month}${day}`);
+    return jsonData.Orders.filter(order => order.ID.toString().startsWith(todayDate)).length;
+  }
+
   const addProductInOrder = (id) => {
     let orderItem = []
     if (localStorage.getItem('orderItem')) {
@@ -1050,13 +1060,13 @@ const startProgram = (jsonData) => {
     if (per) {
       orderItem.forEach((med) => {
         if (med.ID == id) {
-          med.Quality += 1
+          med.Quantity += 1
         }
       })
     } else {
       orderItem.push({
         ID: id,
-        Quality: 1
+        Quantity: 1
       })
     }
     localStorage.setItem('orderItem', JSON.stringify(orderItem))
@@ -1071,9 +1081,9 @@ const startProgram = (jsonData) => {
     let totalPrice = 0
     orderItem.forEach(medicine => {
       let product = jsonData.Medicines.find((med) => med.ID == medicine.ID)
-      if (medicine.Quality < 1) return
+      if (medicine.Quantity < 1) return
       const row = document.createElement('tr');
-      totalPrice += product.Price * medicine.Quality
+      totalPrice += product.Price * medicine.Quantity
       row.innerHTML = `
               <td class="id id-orderlog">${product.ID}</td>
               <td class="title">${product.Name}</td>
@@ -1082,10 +1092,10 @@ const startProgram = (jsonData) => {
               <td class="price">${product.Price}</td>
               <td class="stock">
                 <span span class="minus" data-id='${medicine.ID}'>-</span> 
-                <span class="quality" >${medicine.Quality}</span> 
-                <span class="plus" data-id='${medicine.ID}' style='visibility:${medicine.Quality == product.Quantity ? 'hidden' : 'visible'}; pointerEvents:${medicine.Quality == product.Quantity ? 'none' : 'all'}'>+</span>
+                <span class="quality" >${medicine.Quantity}</span> 
+                <span class="plus" data-id='${medicine.ID}' style='visibility:${medicine.Quantity == product.Quantity ? 'hidden' : 'visible'}; pointerEvents:${medicine.Quantity == product.Quantity ? 'none' : 'all'}'>+</span>
               </td>
-              <td class="price">${product.Price * medicine.Quality}</td>
+              <td class="price">${product.Price * medicine.Quantity}</td>
               <td class="icons">
                   <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn" data-id='${medicine.ID}'>
               </td>
@@ -1101,51 +1111,80 @@ const startProgram = (jsonData) => {
     })
 
     document.querySelector('.container__order-btn .add-order').addEventListener('click', () => {
+      if (tableBody.innerHTML == '') return
       let orderItem = JSON.parse(localStorage.getItem('orderItem'));
-      let jsonData = getDataFromLocalStorage()
-      let medicament
-      let medicines = []
+      let jsonData = getDataFromLocalStorage();
+      let medicines = [];
+
       orderItem.forEach((product) => {
-        medicament = jsonData.Medicines.filter(obj => Number(obj.ID) == Number(product.ID));
-        console.log(medicament);
-        medicines.push({
-          "MedicineName": medicament.Name,
-          "Price": medicament.Price,
-          "Quantity": product.Quality
-        })
-        medicament.Quality -= product.Quality
-        console.log(medicines);
-      })
+        jsonData.Medicines.forEach(medicament => {
+          if (Number(medicament.ID) !== Number(product.ID)) return
+          medicines.push({
+            "MedicineName": medicament.Name,
+            "Price": medicament.Price,
+            "Quantity": product.Quantity
+          });
+          medicament.Quantity -= product.Quantity;
+
+          if (medicament.Quantity == 0) {
+            const notify = NotificationsCreate('quality', medicament);
+            console.log(notify);
+
+            const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+            if (!exists) {
+              jsonData.Notifications.push(notify);
+              localStorage.setItem('appData', JSON.stringify(jsonData));
+              NotificationsGenerate();
+            }
+          }
+        });
+      });
 
       const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+
+      const todayDate = Number(`${year}${month}${day}`);
+      const orderCountToday = getOrderCountForToday(jsonData);
+      const orderID = Number(`${todayDate}${orderCountToday + 1}`);
+
+      const userSession = JSON.parse(localStorage.getItem('userSession'));
 
       const orderItems = {
-        "ID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
+        "ID": orderID,
         "Medicines": medicines
+      };
+
+      if (jsonData.Orders.some(obj => obj.ID === orderItems.ID)) {
+        return;
       }
 
-      if (jsonData.Orders.filter(obj => Number(obj.ID) == Number(orderItems.ID)).length !== 0) return
-
-      jsonData.Orders.push(orderItems)
+      jsonData.Orders.push(orderItems);
 
       const jurnalItem = {
-        "ID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
-        "OrderID": now.toISOString().replace(/[-:.]/g, '').slice(0, 15),
-        "User": localStorage.getItem('userSession').FullName,
+        "ID": orderID,
+        "OrderID": orderID,
+        "User": userSession ? userSession.FullName : 'Неизвестный пользователь',
         "Date": now.toISOString().split('T')[0],
         "Time": [
           String(now.getHours()).padStart(2, '0'),
           String(now.getMinutes()).padStart(2, '0'),
           String(now.getSeconds()).padStart(2, '0')
         ].join(':')
+      };
+
+      if (jsonData.ReceiptJournal.some(obj => obj.ID === jurnalItem.ID)) {
+        return;
       }
 
-      if (jsonData.ReceiptJournal.filter(obj => Number(obj.ID) == Number(jurnalItem.ID)).length !== 0) return
+      jsonData.ReceiptJournal.push(jurnalItem);
 
-      jsonData.ReceiptJournal.push(jurnalItem)
-      tableBody.innerHTML = ''
+      tableBody.innerHTML = '';
+
       localStorage.setItem('appData', JSON.stringify(jsonData))
       localStorage.setItem('orderItem', JSON.stringify([]))
+      loadOrderPage()
     })
 
     const btnsDelete = tableBody.querySelectorAll('.delete-btn')
@@ -1166,7 +1205,7 @@ const startProgram = (jsonData) => {
         let orderItem = JSON.parse(localStorage.getItem('orderItem'));
         orderItem.forEach((med) => {
           if (Number(med.ID) == productID) {
-            med.Quality -= 1
+            med.Quantity -= 1
           }
         })
         localStorage.setItem('orderItem', JSON.stringify(orderItem))
@@ -1181,7 +1220,7 @@ const startProgram = (jsonData) => {
         let orderItem = JSON.parse(localStorage.getItem('orderItem'));
         orderItem.forEach((med) => {
           if (Number(med.ID) == productID) {
-            med.Quality += 1
+            med.Quantity += 1
           }
         })
         localStorage.setItem('orderItem', JSON.stringify(orderItem))
@@ -1189,6 +1228,23 @@ const startProgram = (jsonData) => {
       })
     })
 
+  }
+
+  const truncateDescription = (medicine, maxLength = 50) => {
+    let description = medicine.Description;
+    if (description.length > maxLength) {
+      // Находим индекс последнего пробела перед пределом
+      let lastSpaceIndex = description.lastIndexOf(' ', maxLength - 3);
+      // Если пробел найден, обрезаем строку до этого места
+      if (lastSpaceIndex !== -1) {
+        description = description.substring(0, lastSpaceIndex);
+      } else {
+        // Если пробела нет, просто обрезаем до максимальной длины
+        description = description.substring(0, maxLength - 3);
+      }
+      description += '...'; // Добавляем многоточие
+    }
+    return description;
   }
 
   // Заполнение таблицы медикаментов
@@ -1279,10 +1335,11 @@ const startProgram = (jsonData) => {
         } else {
           row.style.display = 'none'
         }
+        let description = truncateDescription(medicine)
         row.innerHTML = `
               <td class="id id-inventory">${medicine.ID}</td>
               <td class="title">${medicine.Name}</td>
-              <td class="description">${medicine.Description}</td>
+              <td class="description">${description}</td>
               <td class="dosage">${medicine.Dosage}</td>
               <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
               <td class="shelflife">${medicine.EndDate}</td> 
@@ -1341,10 +1398,12 @@ const startProgram = (jsonData) => {
         } else {
           row.style.display = 'none'
         }
+        let description = truncateDescription(medicine)
+
         row.innerHTML = `
               <td class="id id-inventory">${medicine.ID}</td>
               <td class="title">${medicine.Name}</td>
-              <td class="description">${medicine.Description}</td>
+              <td class="description">${description}</td>
               <td class="dosage">${medicine.Dosage}</td>
               <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
               <td class="shelflife">${medicine.EndDate}</td> 
@@ -1367,24 +1426,23 @@ const startProgram = (jsonData) => {
       const expirationDate = new Date(medicine.EndDate);
       const currentDate = new Date();
       let notify;
-  
+
       if (expirationDate < currentDate) {
-          notify = NotificationsCreate('date', medicine);
+        notify = NotificationsCreate('date', medicine);
       } else if (medicine.Quantity === 0) {
-          notify = NotificationsCreate('quality', medicine);
+        notify = NotificationsCreate('quality', medicine);
       }
-      console.log(notify);
-      
+
       if (notify) {
-          const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
-          
-          if (!exists) {
-              jsonData.Notifications.push(notify);
-              localStorage.setItem('appData', JSON.stringify(jsonData));
-              NotificationsGenerate();
-          }
+        const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+
+        if (!exists) {
+          jsonData.Notifications.push(notify);
+          localStorage.setItem('appData', JSON.stringify(jsonData));
+          NotificationsGenerate();
+        }
       }
-  });
+    });
 
     sortMedicineOptionCreate();
   }
@@ -1508,66 +1566,109 @@ const startProgram = (jsonData) => {
     populateSupplierDropdown(getDataFromLocalStorage().Suppliers)
   }
 
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const maxDate = `${year}-${month}-${day}`;
+  document.querySelector('#addproduct-form__date-of-manufacture').setAttribute('max', maxDate);
+
   const addOrUpdateMedicine = (event) => {
     event.preventDefault();
-    let errorMessage = ''
-    if (errorMessage) {
+    let errorMessage = '';
 
-    } else {
+    const name = document.querySelector('#addproduct-form__name').value.trim();
+    const dosage = document.querySelector('#addproduct-form__dosage').value.trim();
+    const description = document.querySelector('#addproduct-form__description').value.trim();
+    const startDate = document.querySelector('#addproduct-form__date-of-manufacture').value;
+    const endDate = document.querySelector('#addproduct-form__expiration-date').value;
+    const quantity = parseInt(document.querySelector('#addproduct-form__quantity').value);
+    const rack = document.querySelector('#addproduct-form__rack').value.trim();
+    const shelf = document.querySelector('#addproduct-form__shelf').value.trim();
+    const price = parseFloat(document.querySelector('#addproduct-form__price').value);
+    const supplierID = parseInt(document.querySelector('#addproduct-form__provider').value);
+    const prescriptionRequired = document.querySelector('#addproduct-form__recept1').checked || false;
 
-      setTimeout(() => {
-        gebridMenu.style.width = '133px';
-        gebridMenuClose.style.display = 'none';
-        formAddProduct.style.display = 'none';
-        formTitle.style.display = 'none';
-        overlay.style.display = 'none';
-        document.getElementById('error-message__user').style.display = 'none';
-        document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
-        formAddProduct.reset()
-      }, 2000);
-
-      const jsonData = getDataFromLocalStorage();
-
-      const formElement = document.querySelector('.form__add-product');
-      const dataId = formElement.getAttribute('data-id');
-
-      const newMedicine = {
-        ID: dataId ? parseInt(dataId) : jsonData.Medicines.length + 1,
-        Name: document.querySelector('#addproduct-form__name').value,
-        Dosage: document.querySelector('#addproduct-form__dosage').value,
-        Description: document.querySelector('#addproduct-form__description').value,
-        StartDate: document.querySelector('#addproduct-form__date-of-manufacture').value,
-        EndDate: document.querySelector('#addproduct-form__expiration-date').value,
-        Quantity: parseInt(document.querySelector('#addproduct-form__quantity').value),
-        Rack: document.querySelector('#addproduct-form__rack').value,
-        Shelf: document.querySelector('#addproduct-form__shelf').value,
-        Price: parseFloat(document.querySelector('#addproduct-form__price').value),
-        SupplierID: parseInt(document.querySelector('#addproduct-form__provider').value),
-        PrescriptionRequired: document.querySelector('#addproduct-form__recept1').checked
-      };
-
-      if (dataId) {
-        const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
-        if (index !== -1) {
-          jsonData.Medicines[index] = newMedicine;
-          alert('Медикамент успешно обновлён!');
-        } else {
-          console.error('Медикамент не найден:', dataId);
-        }
-      } else {
-        jsonData.Medicines.push(newMedicine);
-        alert('Медикамент успешно добавлен!');
-      }
-
-      saveDataToLocalStorage(jsonData);
-
-      formElement.reset();
-      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
-      formElement.removeAttribute('data-id');
-      populateTable()
-      searchMedicines()
-      populateWriteOffMedicines()
+    // Валидация
+    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) || isNaN(supplierID)) {
+      errorMessage += 'Пожалуйста, заполните все обязательные поля.<br>';
     }
+
+    if (quantity <= 0) {
+      errorMessage += 'Количество должно быть больше 0.<br>';
+    }
+
+    if (price <= 0) {
+      errorMessage += 'Цена должна быть больше 0.<br>';
+    }
+
+    // Отображение ошибок
+    const errorDisplay = document.getElementById('error-message__user');
+
+    if (errorMessage) {
+      errorDisplay.innerHTML = errorMessage;
+      errorDisplay.style.color = '#21484D';
+      errorDisplay.style.display = 'flex';
+      return;
+    } else {
+      errorDisplay.style.display = 'none';
+    }
+    setTimeout(() => {
+      gebridMenu.style.width = '133px';
+      gebridMenuClose.style.display = 'none';
+      formAddProduct.style.display = 'none';
+      formTitle.style.display = 'none';
+      overlay.style.display = 'none';
+      document.getElementById('error-message__user').style.display = 'none';
+      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+      formAddProduct.reset()
+    }, 2000);
+
+    const jsonData = getDataFromLocalStorage();
+
+    const formElement = document.querySelector('.form__add-product');
+    const dataId = formElement.getAttribute('data-id');
+
+    const maxIdObject = jsonData.Medicines.reduce((prev, current) => {
+      return (prev.id > current.id) ? prev : current;
+    });
+
+    const newMedicine = {
+      ID: dataId ? parseInt(dataId) : maxIdObject.ID + 1,
+      Name: name,
+      Dosage: dosage,
+      Description: description,
+      StartDate: startDate,
+      EndDate: endDate,
+      Quantity: quantity,
+      Rack: rack,
+      Shelf: shelf.toUpperCase(),
+      Price: price,
+      SupplierID: supplierID,
+      PrescriptionRequired: prescriptionRequired 
+    };
+
+    if (dataId) {
+      const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
+      if (index !== -1) {
+        jsonData.Medicines[index] = newMedicine;
+        alert('Медикамент успешно обновлён!');
+      } else {
+        console.error('Медикамент не найден:', dataId);
+      }
+    } else {
+      jsonData.Medicines.push(newMedicine);
+      alert('Медикамент успешно добавлен!');
+    }
+
+    saveDataToLocalStorage(jsonData);
+
+    formElement.reset();
+    document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+    formElement.removeAttribute('data-id');
+    populateTable()
+    searchMedicines()
+    populateWriteOffMedicines()
   };
 
   formAddProduct.addEventListener('submit', addOrUpdateMedicine)
@@ -2150,7 +2251,7 @@ const startProgram = (jsonData) => {
     jsonData.ReceiptJournal.forEach(receipt => {
 
       const row = document.createElement('tr');
-      if (pageReceiptJournal.includes(user)) {
+      if (pageReceiptJournal.includes(receipt)) {
         row.style.display = 'flex'
       } else {
         row.style.display = 'none'

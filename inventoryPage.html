@@ -88,12 +88,12 @@
                 <div class="input-group">
 
                     <label for="addproduct-form__name" class="label label__add-product">Наименование:
-                        <input type="text" name="addproduct-form__name" id="addproduct-form__name"
+                        <input type="text" name="addproduct-form__name" id="addproduct-form__name" maxlength="30"
                             class="input input__add-product">
                     </label>
 
                     <label for="addproduct-form__dosage" class="label label__add-product">Дозировка:
-                        <input type="text" name="addproduct-form__dosage" id="addproduct-form__dosage"
+                        <input type="text" name="addproduct-form__dosage" maxlength="15" id="addproduct-form__dosage"
                             class="input input__add-product">
                     </label>
 
@@ -101,7 +101,7 @@
 
                 <label for="addproduct-form__description" class="label label__add-product">Описание:
                     <textarea name="addproduct-form__description" id="addproduct-form__description"
-                        class="input input__add-product"></textarea>
+                        class="input input__add-product" maxlength="600"></textarea>
                 </label>
 
 
@@ -123,20 +123,22 @@
                 <div class="input-group">
 
                     <label for="addproduct-form__quantity" class="label label__add-product">Количество:
-                        <input type="number" name="addproduct-form__quantity" id="addproduct-form__quantity"
-                            class="input input__add-product">
+                        <input type="text" maxlength="4" name="addproduct-form__quantity" id="addproduct-form__quantity"
+                            class="input input__add-product" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     </label>
 
                     <div class="input-group__into">
 
                         <label for="addproduct-form__rack" class="label label__add-product">Стеллаж:
-                            <input type="text" name="addproduct-form__rack" id="addproduct-form__rack"
-                                class="input input__add-product">
+                            <input type="text" maxlength="1" pattern="[0-9]" name="addproduct-form__rack"
+                                id="addproduct-form__rack" class="input input__add-product"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                         </label>
 
                         <label for="addproduct-form__shelf" class="label label__add-product">Полка:
-                            <input type="text" name="addproduct-form__shelf" id="addproduct-form__shelf"
-                                class="input input__add-product">
+                            <input type="text" maxlength="1" pattern="[A-Za-z]" name="addproduct-form__shelf"
+                                id="addproduct-form__shelf" class="input input__add-product"
+                                oninput="this.value = this.value.replace(/[^A-Za-z]/g, '')">
                         </label>
 
                     </div>
@@ -145,7 +147,7 @@
                 <div class="input-group">
 
                     <label for="addproduct-form__price" class="label label__add-product">Цена:
-                        <input type="text" name="addproduct-form__price" id="addproduct-form__price"
+                        <input type="number" name="addproduct-form__price" id="addproduct-form__price"
                             class="input input__add-product">
                     </label>
 
