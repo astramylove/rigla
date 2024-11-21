@@ -123,7 +123,7 @@ let data = {
       "Name": "Анальгин",
       "Dosage": "500 мг",
       "StartDate": "2023-02-01",
-      "EndDate": "2024 - 12 - 31",
+      "EndDate": "2024-12-31",
       "Quantity": 80,
       "Description": "Анальгин — это анальгезирующее ненаркотическое средство, обладающее обезболивающим и жаропонижающим действием.Применяется при болях различного происхождения: головная боль, зубная боль, послеоперационная боль и колики.Состав препарата включает метамизол натрия 500 мг в одной таблетке.Противопоказания: аллергия на метамизол натрия, тяжелые заболевания печени и почек.Побочные действия могут включать аллергические реакции и снижение давления.Разрешен взрослым и детям старше 3 месяцев с соблюдением дозировки.Максимальная доза для взрослых — 3 г в сутки.Использовать по рекомендации врача.",
       "SupplierID": 4,
@@ -841,7 +841,7 @@ const startProgram = (jsonData) => {
     let quality = 0
     notifyCont.innerHTML = ''
     jsonData.Notifications.forEach((notify) => {
-      if (notify.UserID.includes(userNow.ID)) {
+      if (notify.UserID.some(n => n === userNow.ID)) {
         const row = document.createElement('tr');
         quality += 1
         row.innerHTML = `
@@ -1254,11 +1254,15 @@ const startProgram = (jsonData) => {
     const tableHead = document.querySelector('#table-inventory thead');
     const tableBody = document.getElementById('medicines-table-body');
     tableBody.innerHTML = '';
+
     maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
 
     const userSession = JSON.parse(localStorage.getItem('userSession'))
 
     let pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
+
+
+    console.log(pageMed);
 
     const arrowBack = document.querySelector(`#table-inventory .arrow-back`)
     arrowBack.style.visibility = 'hidden'
@@ -1309,6 +1313,7 @@ const startProgram = (jsonData) => {
       maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
       pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
     }
+    console.log(pageMed);
 
     if (userSession.Role === 'staff') {
       document.querySelector('.container__btn-search .add-product').style.display = 'none'
@@ -1332,6 +1337,7 @@ const startProgram = (jsonData) => {
         const row = document.createElement('tr');
         if (pageMed.includes(medicine)) {
           row.style.display = 'flex'
+
         } else {
           row.style.display = 'none'
         }
@@ -1393,11 +1399,6 @@ const startProgram = (jsonData) => {
       `
       jsonData.Medicines.forEach(medicine => {
         const row = document.createElement('tr');
-        if (pageMed.includes(medicine)) {
-          row.style.display = 'flex'
-        } else {
-          row.style.display = 'none'
-        }
         let description = truncateDescription(medicine)
 
         row.innerHTML = `
@@ -1415,7 +1416,17 @@ const startProgram = (jsonData) => {
                   <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__product" data-id='${medicine.ID}'>
               </td>
           `
+
+        if (pageMed.includes(medicine)) {
+          row.style.display = 'flex'
+          console.log('flex');
+        } else {
+          row.style.display = 'none'
+          console.log('none');
+        }
+        console.log(row);
         tableBody.appendChild(row);
+        console.log(tableBody);
       });
 
       addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
@@ -1517,8 +1528,6 @@ const startProgram = (jsonData) => {
   };
 
   const sortTableMedecine = (medicines, column, order) => {
-    console.log(column);
-
     return medicines.sort((a, b) => {
       let aValue = a[column];
       let bValue = b[column];
@@ -1590,20 +1599,21 @@ const startProgram = (jsonData) => {
     const prescriptionRequired = document.querySelector('#addproduct-form__recept1').checked || false;
 
     // Валидация
-    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) || isNaN(supplierID)) {
-      errorMessage += 'Пожалуйста, заполните все обязательные поля.<br>';
+
+    if (price <= 0) {
+      errorMessage = 'Цена должна быть больше 0.<br>';
     }
 
     if (quantity <= 0) {
-      errorMessage += 'Количество должно быть больше 0.<br>';
+      errorMessage = 'Количество должно быть больше 0.<br>';
     }
 
-    if (price <= 0) {
-      errorMessage += 'Цена должна быть больше 0.<br>';
+    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) || isNaN(supplierID)) {
+      errorMessage = 'Пожалуйста, заполните все обязательные поля.<br>';
     }
 
     // Отображение ошибок
-    const errorDisplay = document.getElementById('error-message__user');
+    const errorDisplay = document.getElementById('error-message__product');
 
     if (errorMessage) {
       errorDisplay.innerHTML = errorMessage;
@@ -1612,63 +1622,67 @@ const startProgram = (jsonData) => {
       return;
     } else {
       errorDisplay.style.display = 'none';
-    }
-    setTimeout(() => {
-      gebridMenu.style.width = '133px';
-      gebridMenuClose.style.display = 'none';
-      formAddProduct.style.display = 'none';
-      formTitle.style.display = 'none';
-      overlay.style.display = 'none';
-      document.getElementById('error-message__user').style.display = 'none';
-      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
-      formAddProduct.reset()
-    }, 2000);
 
-    const jsonData = getDataFromLocalStorage();
+      const jsonData = getDataFromLocalStorage();
 
-    const formElement = document.querySelector('.form__add-product');
-    const dataId = formElement.getAttribute('data-id');
+      const formElement = document.querySelector('.form__add-product');
+      const dataId = formElement.getAttribute('data-id');
 
-    const maxIdObject = jsonData.Medicines.reduce((prev, current) => {
-      return (prev.id > current.id) ? prev : current;
-    });
+      const maxIdObject = jsonData.Medicines.reduce((prev, current) => {
+        return (prev.id > current.id) ? prev : current;
+      });
 
-    const newMedicine = {
-      ID: dataId ? parseInt(dataId) : maxIdObject.ID + 1,
-      Name: name,
-      Dosage: dosage,
-      Description: description,
-      StartDate: startDate,
-      EndDate: endDate,
-      Quantity: quantity,
-      Rack: rack,
-      Shelf: shelf.toUpperCase(),
-      Price: price,
-      SupplierID: supplierID,
-      PrescriptionRequired: prescriptionRequired 
-    };
+      const newMedicine = {
+        ID: dataId ? parseInt(dataId) : maxIdObject.ID + 1,
+        Name: name,
+        Dosage: dosage,
+        Description: description,
+        StartDate: startDate,
+        EndDate: endDate,
+        Quantity: quantity,
+        Rack: rack,
+        Shelf: shelf.toUpperCase(),
+        Price: price,
+        SupplierID: supplierID,
+        PrescriptionRequired: prescriptionRequired
+      };
 
-    if (dataId) {
-      const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
-      if (index !== -1) {
-        jsonData.Medicines[index] = newMedicine;
-        alert('Медикамент успешно обновлён!');
+      if (dataId) {
+        const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
+        if (index !== -1) {
+          jsonData.Medicines[index] = newMedicine;
+          errorDisplay.innerHTML = 'Медикамент успешно обновлён!';
+        } else {
+          console.error('Медикамент не найден:', dataId);
+        }
       } else {
-        console.error('Медикамент не найден:', dataId);
+        jsonData.Medicines.push(newMedicine);
+        errorDisplay.innerHTML = 'Медикамент успешно добавлен!';
       }
-    } else {
-      jsonData.Medicines.push(newMedicine);
-      alert('Медикамент успешно добавлен!');
+
+      saveDataToLocalStorage(jsonData);
+      maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements);
+      errorDisplay.style.display = 'flex';
+
+      setTimeout(() => {
+        gebridMenu.style.width = '133px';
+        gebridMenuClose.style.display = 'none';
+        formAddProduct.style.display = 'none';
+        formTitle.style.display = 'none';
+        overlay.style.display = 'none';
+        errorDisplay.style.display = 'none';
+        document.getElementById('error-message__user').style.display = 'none';
+        document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+        formAddProduct.reset()
+        formElement.removeAttribute('data-id');
+        searchMedicines()
+        populateWriteOffMedicines()
+      }, 2000);
+
+      populateTable()
+
+
     }
-
-    saveDataToLocalStorage(jsonData);
-
-    formElement.reset();
-    document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
-    formElement.removeAttribute('data-id');
-    populateTable()
-    searchMedicines()
-    populateWriteOffMedicines()
   };
 
   formAddProduct.addEventListener('submit', addOrUpdateMedicine)

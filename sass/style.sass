@@ -1,3 +1,4 @@
+
 .roboto-thin
     font-family: "Roboto", sans-serif
     font-weight: 100
@@ -283,13 +284,17 @@ body
         padding: 30px 20px
         transform: 1s
 
-#error-message__user
+#error-message__user,
+#error-message__product
+    box-sizing: border-box
     position: absolute
     top: 20px
-    left: 33%
+    left: calc( 78% - 500px )
     display: none
     padding: 15px 30px
     border-radius: 30px
+    width: 500px
+    justify-content: center
     background: #75C1BF
 .gebrid-menu
     box-sizing: border-box

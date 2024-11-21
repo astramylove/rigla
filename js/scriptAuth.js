@@ -55,7 +55,7 @@ let data = {
       "StartDate": "2023-01-01",
       "EndDate": "2025-01-01",
       "Quantity": 100,
-      "Description": "Обезболивающее средство.",
+      "Description": "Аспирин — это анальгетик и противовоспалительное средство, применяемое для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мышечных и суставных болях, а также при лихорадке. Состав препарата включает ацетилсалициловую кислоту 500 мг в одной таблетке. Противопоказания: аллергия на салицилаты, язвы желудка и двенадцатиперстной кишки, геморрагические диатезы. Побочные действия могут включать тошноту, рвоту, головокружение и аллергические реакции. Разрешен детям старше 15 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 1,
       "PrescriptionRequired": false,
       "Price": 50.00,
@@ -69,7 +69,7 @@ let data = {
       "StartDate": "2023-06-01",
       "EndDate": "2025-06-01",
       "Quantity": 200,
-      "Description": "Жаропонижающее средство.",
+      "Description": "Парацетамол — это анальгетик и жаропонижающее средство, используемое для лечения боли и лихорадки. Он эффективен при головной боли, зубной боли, мигрени и простудах. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм. Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 2,
       "PrescriptionRequired": false,
       "Price": 30.00,
@@ -83,7 +83,7 @@ let data = {
       "StartDate": "2022-01-01",
       "EndDate": "2024-10-30",
       "Quantity": 100,
-      "Description": "Обезболивающее средство.",
+      "Description": "Лотатин — это обезболивающее средство, применяемое для облегчения боли различной локализации. Он эффективен при головной боли, зубной боли и послеоперационных болях. Состав препарата включает лотатин 500 мг в одной таблетке. Противопоказания: аллергия на компоненты препарата. Побочные действия могут включать тошноту и головную боль. Разрешен взрослым и детям старше 12 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 1,
       "PrescriptionRequired": false,
       "Price": 50.00,
@@ -97,7 +97,7 @@ let data = {
       "StartDate": "2023-06-01",
       "EndDate": "2025-06-01",
       "Quantity": 0,
-      "Description": "Жаропонижающее средство.",
+      "Description": "Парацетамол — это анальгетик и антипиретик, применяемый для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мигрени и лихорадке. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм, беременность (особенно в первом триместре). Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 2,
       "PrescriptionRequired": false,
       "Price": 30.00,
@@ -111,7 +111,7 @@ let data = {
       "StartDate": "2023-01-15",
       "EndDate": "2025-01-15",
       "Quantity": 150,
-      "Description": "Противовоспалительное средство.",
+      "Description": "Ибупрофен — это противовоспалительное средство, применяемое для уменьшения боли и воспаления. Он эффективен при головной боли, зубной боли, болях в спине и менструальных болях. Состав препарата включает ибупрофен 400 мг в одной таблетке. Противопоказания: язвы желудка и двенадцатиперстной кишки, аллергия на НПВС, тяжелые заболевания печени и почек. Побочные действия могут включать головную боль, расстройства ЖКТ и аллергические реакции. Разрешен детям старше 6 лет. Максимальная доза для взрослых — 1,2 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 3,
       "PrescriptionRequired": false,
       "Price": 45.00,
@@ -123,9 +123,9 @@ let data = {
       "Name": "Анальгин",
       "Dosage": "500 мг",
       "StartDate": "2023-02-01",
-      "EndDate": "2024-12-31",
+      "EndDate": "2024 - 12 - 31",
       "Quantity": 80,
-      "Description": "Обезболивающее средство.",
+      "Description": "Анальгин — это анальгезирующее ненаркотическое средство, обладающее обезболивающим и жаропонижающим действием.Применяется при болях различного происхождения: головная боль, зубная боль, послеоперационная боль и колики.Состав препарата включает метамизол натрия 500 мг в одной таблетке.Противопоказания: аллергия на метамизол натрия, тяжелые заболевания печени и почек.Побочные действия могут включать аллергические реакции и снижение давления.Разрешен взрослым и детям старше 3 месяцев с соблюдением дозировки.Максимальная доза для взрослых — 3 г в сутки.Использовать по рекомендации врача.",
       "SupplierID": 4,
       "PrescriptionRequired": false,
       "Price": 25.00,
@@ -133,172 +133,172 @@ let data = {
       "Rack": "2"
     },
     {
-      "ID": 7,
-      "Name": "Цитрамон",
+      ID: 7,
+      Name: 'Цитрамон',
+      Dosage: '500 мг',
+      StartDate: '2023-03-01',
+      EndDate: '2025-03-01',
+      Quantity: 120,
+      Description: 'Цитрамон — это комбинированное обезболивающее и жаропонижающее средство, применяемое при головной боли и простудах. Он эффективен при легкой и умеренной боли, а также при повышенной температуре тела. Состав препарата включает парацетамол, ацетилсалициловую кислоту и кофеин в одной таблетке (500 мг). Противопоказания: аллергия на компоненты препарата, язвы желудка и двенадцатиперстной кишки, заболевания печени и почек. Побочные действия могут включать тошноту, головную боль и аллергические реакции. Разрешен взрослым и детям старше 15 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.',
+      SupplierID: 1,
+      PrescriptionRequired: false,
+      Price: 20.00,
+      Shelf: 'A',
+      Rack: '3'
+    },
+    {
+      ID: 8,
+      Name: 'Кеторолак',
+      Dosage: '10 мг / мл',
+      StartDate: '2023-04-01',
+      EndDate: '2025-04-01',
+      Quantity: 60,
+      Description: 'Кеторолак — это сильное обезболивающее средство, используемое для лечения острого болевого синдрома после операций или травм. Он эффективен при сильных болях различного происхождения. Состав препарата включает кеторолак трометамин в дозировке 10 мг/мл во флаконе или ампуле (в зависимости от формы выпуска). Противопоказания: язвы желудка или двенадцатиперстной кишки, тяжелые заболевания почек или печени, аллергия на НПВС. Побочные действия могут включать головную боль, тошноту и расстройства ЖКТ. Разрешен взрослым только по рецепту врача с соблюдением дозировки; не рекомендуется детям до 16 лет.',
+      SupplierID: 2,
+      PrescriptionRequired: true,
+      Price: 70.00,
+      Shelf: 'E',
+      Rack: '4'
+    },
+    {
+      ID: 9,
+      Name: 'Амоксициллин',
+      Dosage: '500 мг',
+      StartDate: '2023-05-01',
+      EndDate: '2025-05-01',
+      Quantity: 200,
+      Description: 'Амоксициллин — это антибиотик широкого спектра действия, применяемый для лечения бактериальных инфекций дыхательных путей, мочевыводящих путей и других инфекций организма. Состав препарата включает амоксициллин тригидрат в дозировке 500 мг в одной таблетке или капсуле (в зависимости от формы выпуска). Противопоказания: аллергия на пенициллины или другие бета-лактамные антибиотики; тяжелые заболевания печени или почек; инфекционный мононуклеоз; лимфоцитарная лейкозы; беременность (особенно в первом триместре). Побочные действия могут включать диарею, сыпь или аллергические реакции (в редких случаях анафилаксия). Разрешен детям старше трех месяцев с соблюдением дозировки; максимальная доза для взрослых — до 6 г в сутки в зависимости от инфекции.',
+      SupplierID: 3,
+      PrescriptionRequired: true,
+      Price: 55.00,
+      Shelf: 'F',
+      Rack: '1'
+    },
+    {
+      ID: 10,
+      Name: 'Лоратадин',
+      Dosage: '10 мг',
+      StartDate: '2023-06-01',
+      EndDate: '2025-06-01',
+      Quantity: 180,
+      Description: 'Лоратадин — это антигистаминное средство второго поколения для лечения аллергических реакций таких как ринит или крапивница у взрослых и детей старше двух лет. Состав препарата включает лоратадин в дозировке 10 мг в одной таблетке или сиропе (в зависимости от формы выпуска). Противопоказания: гиперчувствительность к лоратадину или другим компонентам препарата; беременность (особенно в первом триместре) следует использовать с осторожностью; не рекомендуется применять одновременно с другими антигистаминными средствами без консультации врача; не рекомендуется детям младше двух лет без назначения врача; побочные эффекты могут включать головную боль, сухость во рту или сонливость (в редких случаях). Максимальная доза для взрослых составляет до двух таблеток (20 мг) в сутки.',
+      SupplierID: 4,
+      PrescriptionRequired: false,
+      Price: 35.00,
+      Shelf: 'G',
+      Rack: '2'
+    },
+    {
+      "ID": 11,
+      "Name": "Метформин",
       "Dosage": "500 мг",
-      "StartDate": "2023-03-01",
-      "EndDate": "2025-03-01",
-      "Quantity": 120,
-      "Description": "Обезболивающее и жаропонижающее средство.",
+      "StartDate": "2023-07-01",
+      "EndDate": "2025-07-01",
+      "Quantity": 130,
+      "Description": "Метформин — это препарат, применяемый для лечения диабета второго типа. Он помогает контролировать уровень сахара в крови, улучшая чувствительность клеток к инсулину и уменьшая выработку глюкозы в печени. Состав препарата включает метформин 500 мг в одной таблетке. Противопоказания: почечная недостаточность, тяжелые заболевания печени, аллергия на метформин, а также состояние, связанное с повышенным уровнем молочной кислоты в крови (лактатный ацидоз). Побочные действия могут включать тошноту, диарею, боли в животе и потерю аппетита. Разрешен взрослым и детям старше 10 лет. Максимальная доза для взрослых — 2 г в сутки. Использовать по рекомендации врача.",
       "SupplierID": 1,
-      "PrescriptionRequired": false,
-      "Price": 20.00,
-      "Shelf": "A",
+      "PrescriptionRequired": true,
+      "Price": 40.00,
+      "Shelf": "H",
       "Rack": "3"
     },
     {
-      "ID": 8,
-      "Name": "Кеторолак",
-      "Dosage": "10 мг/мл",
-      "StartDate": "2023-04-01",
-      "EndDate": "2025-04-01",
-      "Quantity": 60,
-      "Description": "Сильное обезболивающее.",
+      "ID": 12,
+      "Name": "Симвастатин",
+      "Dosage": "20 мг",
+      "StartDate": "2023-08-01",
+      "EndDate": "2025-08-01",
+      "Quantity": 90,
+      "Description": "Симвастатин — это средство для снижения уровня холестерина в крови. Он используется для лечения гиперхолестеринемии и профилактики сердечно-сосудистых заболеваний. Состав препарата включает симвастатин 20 мг в одной таблетке. Противопоказания: активные заболевания печени, беременность и лактация, аллергия на симвастатин или другие статины. Побочные действия могут включать головную боль, расстройства ЖКТ (тошнота, запор), мышечные боли и слабость. Разрешен взрослым только по рецепту врача. Максимальная доза для взрослых — до 80 мг в сутки, в зависимости от состояния пациента и уровня холестерина.",
       "SupplierID": 2,
       "PrescriptionRequired": true,
-      "Price": 70.00,
-      "Shelf": "E",
+      "Price": 60.00,
+      "Shelf": "I",
       "Rack": "4"
     },
     {
-      "ID": 9,
-      "Name": "Амоксициллин",
-      "Dosage": "500 мг",
-      "StartDate": "2023-05-01",
-      "EndDate": "2025-05-01",
-      "Quantity": 200,
-      "Description": ".Антибиотик широкого спектра действия.",
+      "ID": 13,
+      "Name": "Флуоксетин",
+      "Dosage": "20 мг",
+      "StartDate": "2023-09-01",
+      "EndDate": "2025-09-01",
+      "Quantity": 75,
+      "Description": "Флуоксетин — это антидепрессант, применяемый для лечения депрессий и тревожных расстройств. Он относится к группе селективных ингибиторов обратного захвата серотонина (СИОЗС), что способствует повышению уровня серотонина в мозге. Состав препарата включает флуоксетин 20 мг в одной капсуле. Противопоказания: аллергия на флуоксетин, использование вместе с моноаминоксидазными ингибиторами (МАО), беременность и лактация (требуется осторожность). Побочные действия могут включать головную боль, бессонницу, тошноту и снижение либидо. Разрешен взрослым и детям старше 8 лет с соблюдением дозировки; максимальная доза для взрослых составляет до 80 мг в сутки.",
       "SupplierID": 3,
       "PrescriptionRequired": true,
-      "Price": 55.00,
-      "Shelf": 'F',
-      'Rack': '1'
+      "Price": 65,
+      "Shelf": "J",
+      "Rack": "1"
     },
     {
-      'ID': 10,
-      'Name': 'Лоратадин',
-      'Dosage': '10 мг',
-      'StartDate': '2023-06-01',
-      'EndDate': '2025-06-01',
-      'Quantity': 180,
-      'Description': 'Антигистаминное средство.',
-      'SupplierID': 4,
-      'PrescriptionRequired': false,
-      'Price': 35.00,
-      'Shelf': 'G',
-      'Rack': '2'
-    },
-    {
-      'ID': 11,
-      'Name': 'Метформин',
-      'Dosage': '500 мг',
-      'StartDate': '2023-07-01',
-      'EndDate': '2025-07-01',
-      'Quantity': 130,
-      'Description': 'Препарат для лечения диабета.',
-      'SupplierID': 1,
-      'PrescriptionRequired': true,
-      'Price': 40.00,
-      'Shelf': 'H',
-      'Rack': '3'
-    },
-    {
-      'ID': 12,
-      'Name': 'Симвастатин',
-      'Dosage': '20 мг',
-      'StartDate': '2023-08-01',
-      'EndDate': '2025-08-01',
-      'Quantity': 90,
-      'Description': 'Средство для снижения уровня холестерина.',
-      'SupplierID': 2,
-      'PrescriptionRequired': true,
-      'Price': 60.00,
-      'Shelf': 'I',
-      'Rack': '4'
-    },
-    {
-      ID: 13,
-      Name: "Флуоксетин",
-      Dosage: "20 мг",
-      StartDate: "2023-09-01",
-      EndDate: "2025-09-01",
-      Quantity: 75,
-      Description: "Антидепрессант.",
-      SupplierID: 3,
-      PrescriptionRequired: true,
-      Price: 65.00,
-      Shelf: "J",
-      Rack: "1"
-    },
-    {
-      ID: 14,
-      Name: "Лизиноприл",
-      Dosage: "10 мг",
-      StartDate: "2023-10-01",
-      EndDate: "2025-10-01",
-      Quantity: 110,
-      Description: "Препарат для лечения гипертонии.",
+      "ID": 14,
+      "Name": "Лизиноприл",
+      "Dosage": "10 мг",
+      "StartDate": "2023-10-01",
+      "EndDate": "2025-10-01",
+      "Quantity": 110,
+      "Description": 'Лизиноприл — это препарат для лечения гипертонии и сердечной недостаточности. Он является ингибитором ангиотензин-превращающего фермента (АПФ), что приводит к снижению уровня ангиотензина II и расширению сосудов. Состав препарата включает лизиноприл 10 мг в одной таблетке. Противопоказания: аллергия на лизиноприл или другие ингибиторы АПФ; беременность; тяжелые нарушения функции почек; стеноз почечной артерии. Побочные действия могут включать головокружение, кашель, повышение уровня калия в крови и аллергические реакции. Разрешен взрослым; максимальная доза для взрослых составляет до 40 мг в сутки.',
       SupplierID: 4,
       PrescriptionRequired: true,
-      Price: 50.00,
-      Shelf: "K",
-      Rack: "2"
+      Price: 50,
+      Shelf: 'K',
+      Rack: '2'
     },
     {
       ID: 15,
-      Name: "Аторвастатин",
-      Dosage: "40 мг",
-      StartDate: "2023-11-01",
-      EndDate: "2025-11-01",
+      Name: 'Аторвастатин',
+      Dosage: '40 мг',
+      StartDate: '2023-11-01',
+      EndDate: '2025-11-01',
       Quantity: 140,
-      Description: "Средство для снижения уровня холестерина.",
+      Description: 'Аторвастатин — это средство для снижения уровня холестерина в крови, используемое при гиперхолестеринемии и для профилактики сердечно-сосудистых заболеваний. Он ингибирует фермент ГМГ-КоА редуктазу, что снижает уровень холестерина липопротеидов низкой плотности (ЛПНП). Состав препарата включает аторвастатин 40 мг в одной таблетке. Противопоказания: активные заболевания печени, беременность и лактация, аллергия на аторвастатин или другие статины. Побочные действия могут включать головную боль, расстройства ЖКТ (тошнота, запор), мышечные боли и слабость. Разрешен взрослым только по рецепту врача; максимальная доза для взрослых составляет до 80 мг в сутки.',
       SupplierID: 1,
       PrescriptionRequired: true,
-      Price: 55.00,
-      Shelf: "L",
-      Rack: "3"
+      Price: 55,
+      Shelf: 'L',
+      Rack: '3'
     },
     {
       ID: 16,
-      Name: "Омепразол",
-      Dosage: "20 мг",
-      StartDate: "2023-12-01",
-      EndDate: "2025-12-01",
+      Name: 'Омепразол',
+      Dosage: '20 мг',
+      StartDate: '2023-12-01',
+      EndDate: '2025-12-01',
       Quantity: 160,
-      Description: "Препарат для лечения язвы желудка.",
+      Description: 'Омепразол — это препарат для лечения язвы желудка и гастрита, а также при рефлюксной болезни. Он является ингибитором протонной помпы, что снижает выработку желудочной кислоты. Состав препарата включает омепразол 20 мг в одной капсуле или таблетке (в зависимости от формы выпуска). Противопоказания: аллергия на омепразол или другие ингибиторы протонной помпы; тяжелые заболевания печени; беременность (особенно в первом триместре). Побочные действия могут включать головную боль, тошноту и расстройства ЖКТ (диарея или запор). Разрешен взрослым и детям старше 1 года с соблюдением дозировки; максимальная доза для взрослых составляет до 40 мг в сутки.',
       SupplierID: 2,
       PrescriptionRequired: false,
-      Price: 45.00,
-      Shelf: "M",
-      Rack: "4"
+      Price: 45,
+      Shelf: 'M',
+      Rack: '4'
     },
     {
       ID: 17,
-      Name: "Дексаметазон",
-      Dosage: "4 мг",
-      StartDate: "2024-01-01",
-      EndDate: "2026-01-01",
+      Name: 'Дексаметазон',
+      Dosage: '4 мг',
+      StartDate: '2024-01-01',
+      EndDate: '2026-01-01',
       Quantity: 50,
-      Description: "Кортикостероид.",
+      Description: 'Дексаметазон — это кортикостероидный препарат для лечения воспалительных заболеваний и аллергических реакций. Он уменьшает воспаление и подавляет иммунный ответ организма. Состав препарата включает дексаметазон 4 мг в одной таблетке или ампуле (в зависимости от формы выпуска). Противопоказания: системные грибковые инфекции, тяжелые вирусные инфекции, гиперчувствительность к дексаметазону; необходимо с осторожностью применять при инфекциях или при наличии других заболеваний эндокринной системы. Побочные действия могут включать увеличение веса, повышение артериального давления и изменения настроения. Разрешен взрослым только по рецепту врача; максимальная доза зависит от состояния пациента.',
       SupplierID: 3,
       PrescriptionRequired: true,
-      Price: 80.00,
-      Shelf: "N",
-      Rack: "1"
+      Price: 80,
+      Shelf: 'N',
+      Rack: '1'
     },
     {
       ID: 18,
-      Name: "Кларитромицин",
-      Dosage: "250 мг",
-      StartDate: "2024-02-01",
-      EndDate: "2026-02-01",
+      Name: 'Кларитромицин',
+      Dosage: '250 мг',
+      StartDate: '2024-02-01',
+      EndDate: '2026-02-01',
       Quantity: 100,
-      Description: "Антибиотик.",
+      Description: 'Кларитромицин — это антибиотик для лечения бактериальных инфекций дыхательных путей, кожи и мягких тканей. Он относится к группе макролидов и подавляет синтез белка бактерий. Состав препарата включает кларитромицин 250 мг в одной таблетке или капсуле (в зависимости от формы выпуска). Противопоказания: аллергия на кларитромицин или другие макролиды; тяжелые заболевания печени; беременность (особенно в первом триместре) следует использовать с осторожностью; не рекомендуется применять одновременно с другими антибиотиками без консультации врача; побочные действия могут включать диарею, тошноту или аллергические реакции (в редких случаях анафилаксия). Разрешен взрослым и детям старше шести месяцев с соблюдением дозировки; максимальная доза для взрослых составляет до 1 г в сутки.',
       SupplierID: 4,
       PrescriptionRequired: true,
-      Price: 70.00,
-      Shelf: "O",
-      Rack: "2"
+      Price: 70,
+      Shelf: 'O',
+      Rack: '2'
     },
     {
       ID: 19,
@@ -307,10 +307,10 @@ let data = {
       StartDate: "2024-03-01",
       EndDate: "2026-03-01",
       Quantity: 90,
-      Description: "Антибиотик.",
+      Description: "Триметоприм — это антибиотик для лечения инфекций мочевыводящих путей и некоторых других бактериальных инфекций. Он блокирует синтез фолата у бактерий, что приводит к их гибели. Состав препарата включает триметоприм в дозировке 100 мг в одной таблетке или капсуле (в зависимости от формы выпуска). Противопоказания включают аллергическую реакцию на триметоприм или другие компоненты препарата; тяжелые нарушения функции почек; беременность (особенно первый триместр) следует использовать с осторожностью; побочные действия могут включать тошноту, рвоту и кожные высыпания. Разрешен взрослым и детям старше двух месяцев с соблюдением дозировки; максимальная доза для взрослых составляет до 320 мг в сутки.",
       SupplierID: 1,
       PrescriptionRequired: true,
-      Price: 38.00,
+      Price: 38,
       Shelf: "P",
       Rack: "3"
     },
@@ -321,10 +321,10 @@ let data = {
       StartDate: "2024-04-01",
       EndDate: "2026-04-01",
       Quantity: 110,
-      Description: "Средство для суставов.",
+      Description: "Глюкозамин — это средство для поддержания здоровья суставов и хрящей. Он используется при остеоартрите и других заболеваниях суставов для уменьшения боли и улучшения подвижности суставов. Состав препарата включает глюкозамин сульфат в дозировке 500 мг в одной капсуле или таблетке (в зависимости от формы выпуска). Противопоказания включают аллергию на морепродукты (так как глюкозамин часто получают из раковин) и беременность (особенно первый триместр); побочные действия могут включать расстройства желудка или диарею. Разрешен взрослым только по рекомендации врача; максимальная доза зависит от состояния пациента.",
       SupplierID: 2,
       PrescriptionRequired: false,
-      Price: 55.00,
+      Price: 55,
       Shelf: "Q",
       Rack: "4"
     },
@@ -335,10 +335,10 @@ let data = {
       StartDate: "2024-05-01",
       EndDate: "2026-05-01",
       Quantity: 120,
-      Description: "Добавка к пище.",
+      Description: "Кальций Д3 — это добавка к пище для укрепления костей и зубов. Она содержит кальций карбонат и витамин D3 для улучшения усвоения кальция организмом. Состав препарата включает кальций карбонат в дозировке 500 мг и витамин D3 во флаконе или таблетках (в зависимости от формы выпуска). Противопоказания включают гиперкальциемию (повышенный уровень кальция в крови) и аллергические реакции на компоненты препарата; побочные действия могут включать запоры или расстройства пищеварения. Разрешен взрослым и детям старше трех лет; максимальная доза зависит от возраста пациента.",
       SupplierID: 3,
       PrescriptionRequired: false,
-      Price: 25.00,
+      Price: 25,
       Shelf: "R",
       Rack: "1"
     }
@@ -465,6 +465,8 @@ const startProgram = (jsonData) => {
   const capContainerLogOut = document.querySelector(".cap-container__log-out");
   const openExit = document.querySelector(".open__exit");
 
+  const startPages = document.querySelectorAll('.start-page')
+
 
   // Кнопки 
   const addProductBtn = document.querySelector(".add-product");
@@ -476,6 +478,9 @@ const startProgram = (jsonData) => {
   const deleteBtn = document.querySelectorAll(".delete-btn");
   const gebridMenuClose = document.querySelector(".gebrid-menu__close");
   const exitBtn = document.querySelector(".exit");
+
+  const arrowsBack = document.querySelectorAll('.arrow-back')
+  const arrowsNext = document.querySelectorAll('.arrow-next')
   // Формы
   const formAddProduct = document.querySelector(".form__add-product");
   const formAddUser = document.querySelector(".form__add-user");
@@ -505,6 +510,8 @@ const startProgram = (jsonData) => {
     restrictionOfElements = 10
   }
   let nowPageOnTable = 1
+  let maxPageOnTable = 0
+
 
   // Универсальная функция для переключения страниц
   function toggleVisibility(elementsToShow, elementsToHide) {
@@ -513,6 +520,10 @@ const startProgram = (jsonData) => {
     containerBtnSearch.style.display = 'flex';
     containerBtnSearch.style.justifyContent = 'space-between';
     nowPageOnTable = 1
+    arrowsNext.forEach(a => {
+      a.style.visibility = 'visible'
+      a.style.pointerEvents = 'all'
+    })
     navMenu.forEach(el => {
       el.classList.toggle('roboto-bold', el.textContent === elementsToShow[0].textContent);
       el.classList.toggle('roboto-light', el.textContent !== elementsToShow[0].textContent);
@@ -580,6 +591,7 @@ const startProgram = (jsonData) => {
     containerBtnSearch.style.display = 'none'
     highlightActivePage('Оформить заказ');
     document.querySelector('.search').value = ''
+    loadOrderPage()
   });
 
 
@@ -736,8 +748,6 @@ const startProgram = (jsonData) => {
   const restrictionOfElementsFunction = () => {
     const tens = document.querySelectorAll('.ten');
     const twentys = document.querySelectorAll('.twenty');
-    console.log(tens, twentys);
-
     tens.forEach((ten) => {
       ten.addEventListener('click', () => {
         restrictionOfElements = 10;
@@ -779,6 +789,136 @@ const startProgram = (jsonData) => {
   }
 
   restrictionOfElementsFunction()
+
+  const nowPageOnTableFunctionStart = () => {
+    arrowsBack.forEach((arrowBack) => {
+      arrowBack.addEventListener('click', () => {
+        nowPageOnTableFunction('back')
+        populateTable()
+      })
+    })
+    arrowsNext.forEach((arrowNext) => {
+      arrowNext.addEventListener('click', () => {
+        nowPageOnTableFunction('next')
+        populateTable()
+      })
+    })
+  }
+
+  const nowPageOnTableFunction = (justdoit) => {
+    if (justdoit == 'back') {
+      nowPageOnTable -= 1
+
+      if (nowPageOnTable == 1) {
+        arrowsBack.forEach(a => {
+          a.style.visibility = 'hidden'
+          a.style.pointerEvents = 'none'
+        })
+      }
+
+      arrowsNext.forEach(a => {
+        a.style.visibility = 'visible'
+        a.style.pointerEvents = 'all'
+      })
+
+    } else if (justdoit == 'next') {
+      nowPageOnTable += 1
+      arrowsBack.forEach(a => {
+        a.style.visibility = 'visible'
+        a.style.pointerEvents = 'all'
+      })
+    }
+  }
+
+
+  //                                                           УВЕДОМЛЕНИЯ
+
+  const NotificationsGenerate = () => {
+    const userNow = JSON.parse(localStorage.getItem('userSession'))
+    const jsonData = getDataFromLocalStorage()
+    const notifyCont = document.querySelector('#notify-table tbody')
+    const notifyQuantity = document.querySelector('#notify-table .quality-notify')
+    let quality = 0
+    notifyCont.innerHTML = ''
+    jsonData.Notifications.forEach((notify) => {
+      if (notify.UserID.some(n => n === userNow.ID)) {
+        const row = document.createElement('tr');
+        quality += 1
+        row.innerHTML = `
+          <td>${notify.Message}<br> 
+          <span class="notifications-date">${notify.Data}</span></td>
+          <td><img src="icons/crest.svg" alt="" class='btn-delete-notify' data-id='${notify.ID}'></td>
+          `
+        notifyCont.appendChild(row);
+      }
+    })
+    const btnsDeleteNotify = notifyCont.querySelectorAll('.btn-delete-notify')
+    btnsDeleteNotify.forEach((btnDeleteNotify) => {
+      btnDeleteNotify.addEventListener('click', (e) => {
+        const notifyID = Number(e.target.dataset.id)
+        const jsonData = getDataFromLocalStorage()
+        const userNow = JSON.parse(localStorage.getItem('userSession'))
+
+        jsonData.Notifications.forEach((notify) => {
+          console.log((notify.ID == notifyID), notify.ID, notifyID, notify.UserID);
+
+          if (!(notify.ID == notifyID)) return
+          notify.UserID = notify.UserID.filter(num => num !== userNow.ID)
+          console.log(notify.UserID);
+
+        })
+
+        localStorage.setItem('appData', JSON.stringify(jsonData))
+        NotificationsGenerate()
+      })
+    })
+
+    const btnClear = document.querySelector('#notify-table .btn-clear')
+    btnClear.addEventListener('click', () => {
+      const jsonData = getDataFromLocalStorage()
+      jsonData.Notifications.forEach((notify) => {
+        const userNow = JSON.parse(localStorage.getItem('userSession'))
+        if (!(notify.UserID.includes(userNow.ID))) return
+        notify.UserID = notify.UserID.filter(num => num !== userNow.ID)
+        console.log(notify.UserID);
+
+      })
+      localStorage.setItem('appData', JSON.stringify(jsonData))
+      NotificationsGenerate()
+    })
+
+    notifyQuantity.textContent = quality
+
+  }
+  NotificationsGenerate()
+
+  const NotificationsCreate = (specific, med) => {
+    const jsonData = getDataFromLocalStorage()
+    console.log();
+
+    let arrayID = []
+    jsonData.Users.forEach((user) => {
+      if (user.Role == 'staff' || user.Role == 'admin') {
+        arrayID.push(Number(user.ID))
+      }
+    })
+    const today = new Date();
+    const formattedDate = `${String(today.getDate()).padStart(2, '0')}.${String(today.getMonth() + 1).padStart(2, '0')}.${today.getFullYear()}`;
+
+    let notify = {
+      "ID": jsonData.Notifications.length > 0 ? jsonData.Notifications[jsonData.Notifications.length - 1].ID + 1 : 1,
+      "MedicineID": med.ID,
+      "Data": formattedDate,
+      "UserID": arrayID,
+      "Message": ""
+    }
+    if (specific == 'date') {
+      notify.Message = `У препарата '${med.Name}' закончился срок годности!`
+    } else if (specific == 'quality') {
+      notify.Message = `Препарат '${med.Name}' закончился, нужно заказать!`
+    }
+    return notify
+  }
 
 
   //                                                          ЗАПАСЫ ПОЛНАЯ РАБОТА
@@ -860,39 +1000,450 @@ const startProgram = (jsonData) => {
     });
   }
 
+  const paginationNumberCreate = (startPage, doodOne, nowPage, doodTwo, lastPage) => {
+
+    if (nowPageOnTable == 1) {
+      startPage.style.visibility = 'hidden'
+      startPage.style.pointerEvents = 'none'
+    } else {
+      startPage.style.visibility = 'visible'
+      startPage.style.pointerEvents = 'all'
+      startPage.textContent = 1
+    }
+    if (maxPageOnTable > 1) {
+      lastPage.style.visibility = 'visible'
+      lastPage.style.pointerEvents = 'all'
+      lastPage.textContent = maxPageOnTable
+    } else {
+      lastPage.style.visibility = 'hidden'
+      lastPage.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable > 2) {
+      doodTwo.style.visibility = 'visible'
+    } else {
+      doodTwo.style.visibility = 'hidden'
+    }
+    if (nowPageOnTable > 2) {
+      doodOne.style.visibility = 'visible'
+    } else {
+      doodOne.style.visibility = 'hidden'
+    }
+    if (nowPageOnTable !== 1 && maxPageOnTable !== 1) {
+      startPage.style.visibility = 'visible'
+      startPage.style.pointerEvents = 'all'
+    }
+    if (nowPageOnTable == maxPageOnTable) {
+      lastPage.style.visibility = 'hidden'
+      lastPage.style.pointerEvents = 'none'
+      doodTwo.style.visibility = 'hidden'
+    }
+
+  }
+
+  const getOrderCountForToday = (jsonData) => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    const todayDate = Number(`${year}${month}${day}`);
+    return jsonData.Orders.filter(order => order.ID.toString().startsWith(todayDate)).length;
+  }
+
+  const addProductInOrder = (id) => {
+    let orderItem = []
+    if (localStorage.getItem('orderItem')) {
+      orderItem = JSON.parse(localStorage.getItem('orderItem'))
+    }
+    let per = orderItem.find(obj => obj.ID === id) !== undefined;
+
+    if (per) {
+      orderItem.forEach((med) => {
+        if (med.ID == id) {
+          med.Quantity += 1
+        }
+      })
+    } else {
+      orderItem.push({
+        ID: id,
+        Quantity: 1
+      })
+    }
+    localStorage.setItem('orderItem', JSON.stringify(orderItem))
+    loadOrderPage()
+  }
+
+  const loadOrderPage = () => {
+    const orderItem = JSON.parse(localStorage.getItem('orderItem'));
+    const jsonData = getDataFromLocalStorage();
+    const tableBody = document.querySelector('#order-staff-table tbody')
+    tableBody.innerHTML = ''
+    let totalPrice = 0
+    orderItem.forEach(medicine => {
+      let product = jsonData.Medicines.find((med) => med.ID == medicine.ID)
+      if (medicine.Quantity < 1) return
+      const row = document.createElement('tr');
+      totalPrice += product.Price * medicine.Quantity
+      row.innerHTML = `
+              <td class="id id-orderlog">${product.ID}</td>
+              <td class="title">${product.Name}</td>
+              <td class="shelflife">${product.EndDate}</td>
+              <td class="supplier">${getSupplierName(product.SupplierID, jsonData.Suppliers)}</td>
+              <td class="price">${product.Price}</td>
+              <td class="stock">
+                <span span class="minus" data-id='${medicine.ID}'>-</span> 
+                <span class="quality" >${medicine.Quantity}</span> 
+                <span class="plus" data-id='${medicine.ID}' style='visibility:${medicine.Quantity == product.Quantity ? 'hidden' : 'visible'}; pointerEvents:${medicine.Quantity == product.Quantity ? 'none' : 'all'}'>+</span>
+              </td>
+              <td class="price">${product.Price * medicine.Quantity}</td>
+              <td class="icons">
+                  <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn" data-id='${medicine.ID}'>
+              </td>
+        `
+      tableBody.appendChild(row);
+    })
+
+    document.querySelector('.container__order-btn .sum').textContent = totalPrice != 0 ? totalPrice.toFixed(2) : '0.00';
+
+    document.querySelector('.container__order-btn .delete-order').addEventListener('click', () => {
+      localStorage.setItem('orderItem', JSON.stringify([]))
+      loadOrderPage()
+    })
+
+    document.querySelector('.container__order-btn .add-order').addEventListener('click', () => {
+      if (tableBody.innerHTML == '') return
+      let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+      let jsonData = getDataFromLocalStorage();
+      let medicines = [];
+
+      orderItem.forEach((product) => {
+        jsonData.Medicines.forEach(medicament => {
+          if (Number(medicament.ID) !== Number(product.ID)) return
+          medicines.push({
+            "MedicineName": medicament.Name,
+            "Price": medicament.Price,
+            "Quantity": product.Quantity
+          });
+          medicament.Quantity -= product.Quantity;
+
+          if (medicament.Quantity == 0) {
+            const notify = NotificationsCreate('quality', medicament);
+            console.log(notify);
+
+            const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+            if (!exists) {
+              jsonData.Notifications.push(notify);
+              localStorage.setItem('appData', JSON.stringify(jsonData));
+              NotificationsGenerate();
+            }
+          }
+        });
+      });
+
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+
+      const todayDate = Number(`${year}${month}${day}`);
+      const orderCountToday = getOrderCountForToday(jsonData);
+      const orderID = Number(`${todayDate}${orderCountToday + 1}`);
+
+      const userSession = JSON.parse(localStorage.getItem('userSession'));
+
+      const orderItems = {
+        "ID": orderID,
+        "Medicines": medicines
+      };
+
+      if (jsonData.Orders.some(obj => obj.ID === orderItems.ID)) {
+        return;
+      }
+
+      jsonData.Orders.push(orderItems);
+
+      const jurnalItem = {
+        "ID": orderID,
+        "OrderID": orderID,
+        "User": userSession ? userSession.FullName : 'Неизвестный пользователь',
+        "Date": now.toISOString().split('T')[0],
+        "Time": [
+          String(now.getHours()).padStart(2, '0'),
+          String(now.getMinutes()).padStart(2, '0'),
+          String(now.getSeconds()).padStart(2, '0')
+        ].join(':')
+      };
+
+      if (jsonData.ReceiptJournal.some(obj => obj.ID === jurnalItem.ID)) {
+        return;
+      }
+
+      jsonData.ReceiptJournal.push(jurnalItem);
+
+      tableBody.innerHTML = '';
+
+      localStorage.setItem('appData', JSON.stringify(jsonData))
+      localStorage.setItem('orderItem', JSON.stringify([]))
+      loadOrderPage()
+    })
+
+    const btnsDelete = tableBody.querySelectorAll('.delete-btn')
+    btnsDelete.forEach((btnDelete) => {
+      btnDelete.addEventListener('click', (e) => {
+        const productID = Number(e.target.dataset.id)
+        let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+        let UpdeatOrderItem = orderItem.filter(obj => Number(obj.ID) !== productID);
+        localStorage.setItem('orderItem', JSON.stringify(UpdeatOrderItem))
+        loadOrderPage()
+      })
+    })
+
+    const btnsMinus = tableBody.querySelectorAll('.minus')
+    btnsMinus.forEach((btnMinus) => {
+      btnMinus.addEventListener('click', (e) => {
+        const productID = Number(e.target.dataset.id)
+        let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+        orderItem.forEach((med) => {
+          if (Number(med.ID) == productID) {
+            med.Quantity -= 1
+          }
+        })
+        localStorage.setItem('orderItem', JSON.stringify(orderItem))
+        loadOrderPage()
+      })
+    })
+
+    const btnsPlus = tableBody.querySelectorAll('.plus')
+    btnsPlus.forEach((btnPlus) => {
+      btnPlus.addEventListener('click', (e) => {
+        const productID = Number(e.target.dataset.id)
+        let orderItem = JSON.parse(localStorage.getItem('orderItem'));
+        orderItem.forEach((med) => {
+          if (Number(med.ID) == productID) {
+            med.Quantity += 1
+          }
+        })
+        localStorage.setItem('orderItem', JSON.stringify(orderItem))
+        loadOrderPage()
+      })
+    })
+
+  }
+
+  const truncateDescription = (medicine, maxLength = 50) => {
+    let description = medicine.Description;
+    if (description.length > maxLength) {
+      // Находим индекс последнего пробела перед пределом
+      let lastSpaceIndex = description.lastIndexOf(' ', maxLength - 3);
+      // Если пробел найден, обрезаем строку до этого места
+      if (lastSpaceIndex !== -1) {
+        description = description.substring(0, lastSpaceIndex);
+      } else {
+        // Если пробела нет, просто обрезаем до максимальной длины
+        description = description.substring(0, maxLength - 3);
+      }
+      description += '...'; // Добавляем многоточие
+    }
+    return description;
+  }
+
   // Заполнение таблицы медикаментов
   const populateTable = () => {
     const jsonData = getDataFromLocalStorage();
     if (!jsonData) return;
-
+    const tableHead = document.querySelector('#table-inventory thead');
     const tableBody = document.getElementById('medicines-table-body');
-    tableBody.innerHTML = ''; // Очищаем предыдущие данные
-    let flag = 0
-    let pageMed = jsonData.Medicines.slice(0, restrictionOfElements)
+    tableBody.innerHTML = '';
+    maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
+
+    const userSession = JSON.parse(localStorage.getItem('userSession'))
+
+    let pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
+
+    const arrowBack = document.querySelector(`#table-inventory .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`#table-inventory .start-page`)
+    const doodOne = document.querySelector(`#table-inventory .dood-one`)
+    const nowPage = document.querySelector(`#table-inventory .now-page`)
+    const doodTwo = document.querySelector(`#table-inventory .dood-two`)
+    const lastPage = document.querySelector(`#table-inventory .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`#table-inventory .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
+    if (pageMed.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
+      pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    if (userSession.Role === 'staff') {
+      document.querySelector('.container__btn-search .add-product').style.display = 'none'
+      document.querySelector('.container__btn-search').style.justifyContent = 'right'
+      tableHead.innerHTML = `
+        <tr>
+            <td class="id id-inventory" data-name="ID">ID</td>
+            <td class="title" data-name="Name">Наименование</td>
+            <td class="description" data-name="Description">Описание</td>
+            <td class="dosage" data-name="Dosage">Дозировка</td>
+            <td class="supplier">Поставщик</td>
+            <td class="shelflife" data-name="EndDate">Срок годности</td>
+            <td class="shelf">Полка/Стеллаж</td>
+            <td class="price" data-name="Price">Цена</td>
+            <td class="stock" data-name="Quantity">В наличии</td>
+            <td class="receipt">Рецепт</td>
+            <td class="icons"></td>
+        </tr>
+      `
+      jsonData.Medicines.forEach(medicine => {
+        const row = document.createElement('tr');
+        if (pageMed.includes(medicine)) {
+          row.style.display = 'flex'
+        } else {
+          row.style.display = 'none'
+        }
+        let description = truncateDescription(medicine)
+        row.innerHTML = `
+              <td class="id id-inventory">${medicine.ID}</td>
+              <td class="title">${medicine.Name}</td>
+              <td class="description">${description}</td>
+              <td class="dosage">${medicine.Dosage}</td>
+              <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
+              <td class="shelflife">${medicine.EndDate}</td> 
+              <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
+              <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
+              <td class="stock">${medicine.Quantity}</td> 
+              <td class="receipt">
+                ${medicine.PrescriptionRequired === false ? '' : '<input type="checkbox" class="receipt-check">'}
+              </td> 
+              <td class="icons">
+                <img src="icons/basket.svg" alt="иконка редактирования" class="basket-btn__product" data-id='${medicine.ID}' style="display:${medicine.PrescriptionRequired === false ? 'flex' : 'none'}">
+              </td>
+          `
+        tableBody.appendChild(row);
+      });
+
+      const baskets = tableBody.querySelectorAll('.basket-btn__product')
+      const receipts = tableBody.querySelectorAll('.receipt-check')
+
+      receipts.forEach(receipt => {
+        receipt.addEventListener('change', () => {
+          if (receipt.checked) {
+            receipt.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'flex'
+          } else {
+            receipt.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'none'
+          }
+        })
+      })
+
+      baskets.forEach(basket => {
+        basket.addEventListener('click', (e) => {
+          addProductInOrder(e.target.dataset.id)
+        })
+      })
+    } else {
+      document.querySelector('.container__btn-search .add-product').style.display = 'flex'
+      document.querySelector('.container__btn-search').style.justifyContent = 'space-between'
+      tableHead.innerHTML = `
+        <tr>
+            <td class="id id-inventory" data-name="ID">ID</td>
+            <td class="title" data-name="Name">Наименование</td>
+            <td class="description" data-name="Description">Описание</td>
+            <td class="dosage" data-name="Dosage">Дозировка</td>
+            <td class="supplier">Поставщик</td>
+            <td class="shelflife" data-name="EndDate">Срок годности</td>
+            <td class="shelf">Полка/Стеллаж</td>
+            <td class="price" data-name="Price">Цена</td>
+            <td class="stock" data-name="Quantity">В наличии</td>
+            <td class="icons"></td>
+        </tr>
+      `
+      jsonData.Medicines.forEach(medicine => {
+        const row = document.createElement('tr');
+        if (pageMed.includes(medicine)) {
+          row.style.display = 'flex'
+        } else {
+          row.style.display = 'none'
+        }
+        let description = truncateDescription(medicine)
+
+        row.innerHTML = `
+              <td class="id id-inventory">${medicine.ID}</td>
+              <td class="title">${medicine.Name}</td>
+              <td class="description">${description}</td>
+              <td class="dosage">${medicine.Dosage}</td>
+              <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
+              <td class="shelflife">${medicine.EndDate}</td> 
+              <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
+              <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
+              <td class="stock">${medicine.Quantity}</td> 
+              <td class="icons">
+                  <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product" data-id='${medicine.ID}'>
+                  <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__product" data-id='${medicine.ID}'>
+              </td>
+          `
+        tableBody.appendChild(row);
+      });
+
+      addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
+      addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
+    }
+
     jsonData.Medicines.forEach(medicine => {
-      if (flag == restrictionOfElements) return
-      flag += 1
-      const row = document.createElement('tr');
-      row.innerHTML = `
-            <td class="id id-inventory">${medicine.ID}</td>
-            <td class="title">${medicine.Name}</td>
-            <td class="description">${medicine.Description}</td>
-            <td class="dosage">${medicine.Dosage}</td>
-            <td class="supplier">${getSupplierName(medicine.SupplierID, jsonData.Suppliers)}</td> 
-            <td class="shelflife">${medicine.EndDate}</td> 
-            <td class="shelf">${medicine.Shelf}/${medicine.Rack}</td>
-            <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
-            <td class="stock">${medicine.Quantity}</td> 
-            <td class="icons">
-                <img src="icons/editor.svg" alt="иконка редактирования" class="edit-btn__product" data-id='${medicine.ID}'>
-                <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__product" data-id='${medicine.ID}'>
-            </td>
-        `;
-      tableBody.appendChild(row);
+      const expirationDate = new Date(medicine.EndDate);
+      const currentDate = new Date();
+      let notify;
+
+      if (expirationDate < currentDate) {
+        notify = NotificationsCreate('date', medicine);
+      } else if (medicine.Quantity === 0) {
+        notify = NotificationsCreate('quality', medicine);
+      }
+
+      if (notify) {
+        const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+
+        if (!exists) {
+          jsonData.Notifications.push(notify);
+          localStorage.setItem('appData', JSON.stringify(jsonData));
+          NotificationsGenerate();
+        }
+      }
     });
 
-    addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
-    addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
     sortMedicineOptionCreate();
   }
 
@@ -992,93 +1543,132 @@ const startProgram = (jsonData) => {
 
   const searchMedicines = () => {
     const searchInput = document.getElementById('search-input');
-    const filter = searchInput.value.toLowerCase().trim(); // Получаем текст для поиска
+    const filter = searchInput.value.toLowerCase().trim();
     const tableBody = document.getElementById('medicines-table-body');
-    const rows = tableBody.getElementsByTagName('tr'); // Получаем все строки таблицы
+    const rows = tableBody.getElementsByTagName('tr');
 
-    // Перебираем строки и скрываем/показываем их в зависимости от соответствия
     Array.from(rows).forEach(row => {
       const cells = row.getElementsByTagName('td');
       let rowContainsSearchTerm = false;
 
-      // Проверяем каждую ячейку в строке
       Array.from(cells).forEach(cell => {
         if (cell.textContent.toLowerCase().replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, '').includes(filter.replace(/[^a-zA-Zа-яА-Я0-9ёЁ]/g, ''))) {
-          rowContainsSearchTerm = true; // Если найдено совпадение
+          rowContainsSearchTerm = true;
         }
       });
 
-      // Показываем или скрываем строку в зависимости от результата поиска
       row.style.display = rowContainsSearchTerm ? '' : 'none';
     });
   };
-
 
   if (window.location.pathname.includes('inventoryPage.html')) {
     populateTable();
     populateSupplierDropdown(getDataFromLocalStorage().Suppliers)
   }
 
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const maxDate = `${year}-${month}-${day}`;
+  document.querySelector('#addproduct-form__date-of-manufacture').setAttribute('max', maxDate);
+
   const addOrUpdateMedicine = (event) => {
     event.preventDefault();
-    let errorMessage = ''
-    if (errorMessage) {
+    let errorMessage = '';
 
-    } else {
+    const name = document.querySelector('#addproduct-form__name').value.trim();
+    const dosage = document.querySelector('#addproduct-form__dosage').value.trim();
+    const description = document.querySelector('#addproduct-form__description').value.trim();
+    const startDate = document.querySelector('#addproduct-form__date-of-manufacture').value;
+    const endDate = document.querySelector('#addproduct-form__expiration-date').value;
+    const quantity = parseInt(document.querySelector('#addproduct-form__quantity').value);
+    const rack = document.querySelector('#addproduct-form__rack').value.trim();
+    const shelf = document.querySelector('#addproduct-form__shelf').value.trim();
+    const price = parseFloat(document.querySelector('#addproduct-form__price').value);
+    const supplierID = parseInt(document.querySelector('#addproduct-form__provider').value);
+    const prescriptionRequired = document.querySelector('#addproduct-form__recept1').checked || false;
 
-      setTimeout(() => {
-        gebridMenu.style.width = '133px';
-        gebridMenuClose.style.display = 'none';
-        formAddProduct.style.display = 'none';
-        formTitle.style.display = 'none';
-        overlay.style.display = 'none';
-        document.getElementById('error-message__user').style.display = 'none';
-        document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
-        formAddProduct.reset()
-      }, 2000);
-
-      const jsonData = getDataFromLocalStorage();
-
-      const formElement = document.querySelector('.form__add-product');
-      const dataId = formElement.getAttribute('data-id');
-
-      const newMedicine = {
-        ID: dataId ? parseInt(dataId) : jsonData.Medicines.length + 1,
-        Name: document.querySelector('#addproduct-form__name').value,
-        Dosage: document.querySelector('#addproduct-form__dosage').value,
-        Description: document.querySelector('#addproduct-form__description').value,
-        StartDate: document.querySelector('#addproduct-form__date-of-manufacture').value,
-        EndDate: document.querySelector('#addproduct-form__expiration-date').value,
-        Quantity: parseInt(document.querySelector('#addproduct-form__quantity').value),
-        Rack: document.querySelector('#addproduct-form__rack').value,
-        Shelf: document.querySelector('#addproduct-form__shelf').value,
-        Price: parseFloat(document.querySelector('#addproduct-form__price').value),
-        SupplierID: parseInt(document.querySelector('#addproduct-form__provider').value),
-        PrescriptionRequired: document.querySelector('#addproduct-form__recept1').checked
-      };
-
-      if (dataId) {
-        const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
-        if (index !== -1) {
-          jsonData.Medicines[index] = newMedicine;
-          alert('Медикамент успешно обновлён!');
-        } else {
-          console.error('Медикамент не найден:', dataId);
-        }
-      } else {
-        jsonData.Medicines.push(newMedicine);
-        alert('Медикамент успешно добавлен!');
-      }
-
-      saveDataToLocalStorage(jsonData);
-
-      formElement.reset();
-      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
-      formElement.removeAttribute('data-id');
-      populateTable()
-      searchMedicines()
-      populateWriteOffMedicines()
+    // Валидация
+    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) || isNaN(supplierID)) {
+      errorMessage += 'Пожалуйста, заполните все обязательные поля.<br>';
     }
+
+    if (quantity <= 0) {
+      errorMessage += 'Количество должно быть больше 0.<br>';
+    }
+
+    if (price <= 0) {
+      errorMessage += 'Цена должна быть больше 0.<br>';
+    }
+
+    // Отображение ошибок
+    const errorDisplay = document.getElementById('error-message__user');
+
+    if (errorMessage) {
+      errorDisplay.innerHTML = errorMessage;
+      errorDisplay.style.color = '#21484D';
+      errorDisplay.style.display = 'flex';
+      return;
+    } else {
+      errorDisplay.style.display = 'none';
+    }
+    setTimeout(() => {
+      gebridMenu.style.width = '133px';
+      gebridMenuClose.style.display = 'none';
+      formAddProduct.style.display = 'none';
+      formTitle.style.display = 'none';
+      overlay.style.display = 'none';
+      document.getElementById('error-message__user').style.display = 'none';
+      document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+      formAddProduct.reset()
+    }, 2000);
+
+    const jsonData = getDataFromLocalStorage();
+
+    const formElement = document.querySelector('.form__add-product');
+    const dataId = formElement.getAttribute('data-id');
+
+    const maxIdObject = jsonData.Medicines.reduce((prev, current) => {
+      return (prev.id > current.id) ? prev : current;
+    });
+
+    const newMedicine = {
+      ID: dataId ? parseInt(dataId) : maxIdObject.ID + 1,
+      Name: name,
+      Dosage: dosage,
+      Description: description,
+      StartDate: startDate,
+      EndDate: endDate,
+      Quantity: quantity,
+      Rack: rack,
+      Shelf: shelf.toUpperCase(),
+      Price: price,
+      SupplierID: supplierID,
+      PrescriptionRequired: prescriptionRequired 
+    };
+
+    if (dataId) {
+      const index = jsonData.Medicines.findIndex(medicine => medicine.ID === parseInt(dataId));
+      if (index !== -1) {
+        jsonData.Medicines[index] = newMedicine;
+        alert('Медикамент успешно обновлён!');
+      } else {
+        console.error('Медикамент не найден:', dataId);
+      }
+    } else {
+      jsonData.Medicines.push(newMedicine);
+      alert('Медикамент успешно добавлен!');
+    }
+
+    saveDataToLocalStorage(jsonData);
+
+    formElement.reset();
+    document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
+    formElement.removeAttribute('data-id');
+    populateTable()
+    searchMedicines()
+    populateWriteOffMedicines()
   };
 
   formAddProduct.addEventListener('submit', addOrUpdateMedicine)
@@ -1086,8 +1676,6 @@ const startProgram = (jsonData) => {
 
 
   //                                                   РАБОТА С ПОЛЬЗОВАТЕЛЯМИ ПОЛНАЯ
-  // Заполнение таблицы пользователей
-
   const sortUserOptionCreate = () => {
     const tableUsersHead = document.getElementById('users-table').querySelectorAll('thead tr td');
     console.log(tableUsersHead);
@@ -1274,17 +1862,73 @@ const startProgram = (jsonData) => {
   }
 
   const populateUsersTable = () => {
-    const jsonData = getDataFromLocalStorage(); // Получаем данные из локального хранилища
-    if (!jsonData) return; // Если данных нет, выходим из функции
+    const jsonData = getDataFromLocalStorage();
+    if (!jsonData) return;
 
-    const tableBody = document.getElementById('users-table-body'); // Получаем тело таблицы
-    tableBody.innerHTML = ''; // Очищаем предыдущие данные
-    let flag = 0
+    const tableBody = document.getElementById('users-table-body');
+    tableBody.innerHTML = '';
+    maxPageOnTable = Math.ceil(jsonData.Users.length / restrictionOfElements)
+
+    let pageUser = jsonData.Users.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Users.length : (restrictionOfElements * nowPageOnTable))
+
+    if (pageUser.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(jsonData.Users.length / restrictionOfElements)
+      pageUser = jsonData.Users.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Users.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    const arrowBack = document.querySelector(`#users-table .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`#users-table .start-page`)
+    const doodOne = document.querySelector(`#users-table .dood-one`)
+    const nowPage = document.querySelector(`#users-table .now-page`)
+    const doodTwo = document.querySelector(`#users-table .dood-two`)
+    const lastPage = document.querySelector(`#users-table .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`#users-table .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
     jsonData.Users.forEach(user => {
-      
-      if (flag == restrictionOfElements) return
-      flag += 1
-      const row = document.createElement('tr'); // Создаем новую строку
+
+      const row = document.createElement('tr');
+      if (pageUser.includes(user)) {
+        row.style.display = 'flex'
+      } else {
+        row.style.display = 'none'
+      }
 
       row.innerHTML = `
             <td class="id id-inventory">${user.ID}</td>
@@ -1299,11 +1943,11 @@ const startProgram = (jsonData) => {
             </td>
         `;
 
-      tableBody.appendChild(row); // Добавляем строку в тело таблицы
+      tableBody.appendChild(row);
     });
 
-    addEventListenerCreateEditUser(tableBody.querySelectorAll('.edit-btn__user')); // Добавляем обработчики событий для кнопок редактирования
-    addEventListenerDeleteUser(tableBody.querySelectorAll('.delete-btn__user')); // Добавляем обработчики событий для кнопок удаления
+    addEventListenerCreateEditUser(tableBody.querySelectorAll('.edit-btn__user'));
+    addEventListenerDeleteUser(tableBody.querySelectorAll('.delete-btn__user'));
   }
 
   // Функция для добавления обработчиков событий на кнопки редактирования
@@ -1450,8 +2094,6 @@ const startProgram = (jsonData) => {
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   }
-
-  // Запрет ввода цифр в поля имени, фамилии и отчества
   const nameInputs = ['user-name', 'user-surname', 'user-patronymic'];
 
   nameInputs.forEach(inputId => {
@@ -1535,7 +2177,13 @@ const startProgram = (jsonData) => {
   }
 
 
-  //   //                                                     РАБОТА С ЖУРНАЛОМ ПОЛНАЯ
+  if (JSON.parse(localStorage.getItem('userSession')).Role === 'superAdmin') {
+    populateUsersTable()
+    document.querySelector('.container__btn-search .add-product').style.display = 'none'
+  }
+
+
+  //   //                                               РАБОТА С ЖУРНАЛОМ ПОЛНАЯ
   // Заполнение таблицы журнала заказов
   const populateOrderLogTable = () => {
     const jsonData = getDataFromLocalStorage();
@@ -1545,14 +2193,70 @@ const startProgram = (jsonData) => {
 
     // Очищаем предыдущие данные
     tableBody.innerHTML = '';
-    let flag = 0
+
+    maxPageOnTable = Math.ceil(jsonData.ReceiptJournal.length / restrictionOfElements)
+
+    let pageReceiptJournal = jsonData.ReceiptJournal.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.ReceiptJournal.length : (restrictionOfElements * nowPageOnTable))
+
+    if (pageReceiptJournal.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(jsonData.ReceiptJournal.length / restrictionOfElements)
+      pageReceiptJournal = jsonData.ReceiptJournal.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.ReceiptJournal.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    const arrowBack = document.querySelector(`.container__order-log-table .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`.container__order-log-table .start-page`)
+    const doodOne = document.querySelector(`.container__order-log-table .dood-one`)
+    const nowPage = document.querySelector(`.container__order-log-table .now-page`)
+    const doodTwo = document.querySelector(`.container__order-log-table .dood-two`)
+    const lastPage = document.querySelector(`.container__order-log-table .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`.container__order-log-table .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
     jsonData.ReceiptJournal.forEach(receipt => {
-      
-      if (flag == restrictionOfElements) return
-      flag += 1
 
       const row = document.createElement('tr');
-      
+      if (pageReceiptJournal.includes(receipt)) {
+        row.style.display = 'flex'
+      } else {
+        row.style.display = 'none'
+      }
+
       const order = jsonData.Orders.find((el) => el.ID == receipt.OrderID)
       let TotalAmount = 0
       order.Medicines.forEach((el) => {
@@ -1659,7 +2363,23 @@ const startProgram = (jsonData) => {
 
     // Заполнение таблицы медикаментов
     let totalPriceOrder = 0
-    order.Medicines.forEach(medicine => {
+
+    maxPageOnTable = Math.ceil(order.Medicines.length / restrictionOfElements)
+
+    let pageOrder = order.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? order.Medicines.length : (restrictionOfElements * nowPageOnTable))
+    if (pageOrder.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(order.Medicines.length / restrictionOfElements)
+      pageOrder = order.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? order.Medicines.length : (restrictionOfElements * nowPageOnTable))
+    }
+    if (nowPageOnTable === maxPageOnTable) {
+      arrowsNext.forEach(a => {
+        a.style.visibility = 'hidden'
+        a.style.pointerEvents = 'none'
+      })
+    }
+
+    pageOrder.forEach(medicine => {
       const row = document.createElement('tr');
 
       const totalPrice = Number((medicine.Price * medicine.Quantity).toFixed(2));
@@ -1765,7 +2485,7 @@ const startProgram = (jsonData) => {
     });
   };
 
-  //                                                         РАБОТА СО СПИСАНИЕМ ПОЛНАЯ
+  //                                                   РАБОТА СО СПИСАНИЕМ ПОЛНАЯ
 
   const populateWriteOffMedicines = () => {
     const jsonData = getDataFromLocalStorage();
@@ -1779,13 +2499,69 @@ const startProgram = (jsonData) => {
       const expirationDate = new Date(medicine.EndDate);
       return expirationDate < currentDate || medicine.Quantity === 0;
     });
-    let flag = 0
+
+    maxPageOnTable = Math.ceil(filteredMedicines.length / restrictionOfElements)
+
+    let pageFilteredMedicines = filteredMedicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? filteredMedicines.length : (restrictionOfElements * nowPageOnTable))
+
+    if (filteredMedicines.length == 0 && nowPageOnTable !== 1) {
+      nowPageOnTable -= 1
+      maxPageOnTable = Math.ceil(filteredMedicines.length / restrictionOfElements)
+      pageFilteredMedicines = filteredMedicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? filteredMedicines.length : (restrictionOfElements * nowPageOnTable))
+    }
+
+    const arrowBack = document.querySelector(`#medicines-table .arrow-back`)
+    arrowBack.style.visibility = 'hidden'
+    arrowBack.style.pointerEvents = 'none'
+
+    const startPage = document.querySelector(`#medicines-table .start-page`)
+    const doodOne = document.querySelector(`#medicines-table .dood-one`)
+    const nowPage = document.querySelector(`#medicines-table .now-page`)
+    const doodTwo = document.querySelector(`#medicines-table .dood-two`)
+    const lastPage = document.querySelector(`#medicines-table .last-page`)
+
+    startPage.textContent = ''
+    nowPage.textContent = nowPageOnTable
+
+    startPage.addEventListener('click', () => {
+      nowPageOnTable = 1
+      populateTable()
+    })
+    lastPage.addEventListener('click', () => {
+      nowPageOnTable = maxPageOnTable
+      populateTable()
+    })
+
+    const arrowNext = document.querySelector(`#medicines-table .arrow-next`)
+    if (maxPageOnTable > 1) {
+      arrowNext.style.visibility = 'visible'
+      arrowNext.style.pointerEvents = 'all'
+    } else {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (maxPageOnTable == nowPageOnTable) {
+      arrowNext.style.visibility = 'hidden'
+      arrowNext.style.pointerEvents = 'none'
+    }
+    if (nowPageOnTable > 1) {
+      arrowBack.style.visibility = 'visible'
+      arrowBack.style.pointerEvents = 'all'
+    } else {
+      arrowBack.style.visibility = 'hidden'
+      arrowBack.style.pointerEvents = 'none'
+    }
+
+    paginationNumberCreate(startPage, doodOne, nowPage, doodTwo, lastPage)
+
     filteredMedicines.forEach(medicine => {
-      
-      if (flag == restrictionOfElements) return
-      flag += 1
 
       const row = document.createElement('tr');
+      if (pageFilteredMedicines.includes(medicine)) {
+        row.style.display = 'flex'
+      } else {
+        row.style.display = 'none'
+      }
 
       row.innerHTML = `
             <td class="id id-inventory">${medicine.ID}</td>
@@ -1873,18 +2649,7 @@ const startProgram = (jsonData) => {
     });
   };
 
-  //                                                         РАБОТА С ЗАКАЗОМ
 
-
-
-  // Работа с формами
-  // Пользователи 
-
-
-
-
-  // Запуск поиска
-  // Добавляем обработчик события для поля ввода
   document.getElementById('search-input').addEventListener('input', () => {
     searchMedicines()
     searchUsers()
@@ -1892,7 +2657,10 @@ const startProgram = (jsonData) => {
     searchMedicinesWriteOff()
   });
 
+  nowPageOnTableFunctionStart()
+
 }
+
 const buttonLogin = () => {
   const loginInput = document.getElementById('loginInput');
   const passwordInput = document.getElementById('PasswordInput'); // Исправлено имя переменной
@@ -1965,6 +2733,7 @@ const definingTheRole = (userNow) => {
 
       addProductBtn.style.display = 'none';
       addUsersBtn.style.display = 'flex';
+      startProgram(jsonData);
       break;
 
     case 'admin':
@@ -1980,7 +2749,7 @@ const definingTheRole = (userNow) => {
         }
       });
 
-      startProgram(jsonData); // Запуск программы для администраторов
+      startProgram(jsonData);
       break;
 
     case 'staff':
@@ -1996,7 +2765,7 @@ const definingTheRole = (userNow) => {
         }
       });
 
-      startProgram(jsonData); // Запуск программы для сотрудников
+      startProgram(jsonData);
       break;
 
     default:
