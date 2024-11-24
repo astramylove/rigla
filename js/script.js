@@ -512,7 +512,6 @@ const startProgram = (jsonData) => {
   let nowPageOnTable = 1
   let maxPageOnTable = 0
 
-
   // Универсальная функция для переключения страниц
   function toggleVisibility(elementsToShow, elementsToHide) {
     elementsToHide.forEach(el => el.style.display = 'none');
@@ -532,6 +531,9 @@ const startProgram = (jsonData) => {
 
   // Переключение страниц
   pageInventory.addEventListener("click", () => {
+    pageInventoryLoad()
+  });
+  const pageInventoryLoad = () => {
     toggleVisibility([inventoryTable, addProductBtn], [
       usersTable, addUsersBtn, cancellationTable,
       orderLogTable, containerOrderBtn, orderStaffTable,
@@ -540,9 +542,13 @@ const startProgram = (jsonData) => {
     highlightActivePage('Запасы');
     populateTable()
     document.querySelector('.search').value = ''
-  });
+    localStorage.setItem('page', 'nventory')
+  }
 
   pageUsers.addEventListener("click", () => {
+    pageUsersLoad()
+  });
+  const pageUsersLoad = () => {
     toggleVisibility([usersTable, addUsersBtn], [
       inventoryTable, addProductBtn, cancellationTable,
       orderLogTable, containerOrderBtn, orderStaffTable,
@@ -552,9 +558,13 @@ const startProgram = (jsonData) => {
     populateUsersTable();
     sortUserOptionCreate()
     document.querySelector('.search').value = ''
-  });
+    localStorage.setItem('page', 'users')
+  }
 
   pageCancellation.addEventListener("click", () => {
+    pageCancellationLoad()
+  });
+  const pageCancellationLoad = () => {
     toggleVisibility([cancellationTable], [
       usersTable, addUsersBtn, inventoryTable,
       addProductBtn, orderLogTable, containerOrderBtn,
@@ -565,9 +575,13 @@ const startProgram = (jsonData) => {
     highlightActivePage('Списание');
     populateWriteOffMedicines()
     document.querySelector('.search').value = ''
-  });
+    localStorage.setItem('page', 'cancellation')
+  }
 
   pageOrderLog.addEventListener("click", () => {
+    pageOrderLogLoad()
+  });
+  const pageOrderLogLoad = () => {
     toggleVisibility([orderLogTable], [
       usersTable, addUsersBtn, inventoryTable,
       addProductBtn, cancellationTable, containerOrderBtn,
@@ -579,9 +593,13 @@ const startProgram = (jsonData) => {
     populateOrderLogTable()
     document.querySelector('.search').value = ''
     sortReceiptOptionCreate()
-  });
+    localStorage.setItem('page', 'orderLog')
+  }
 
   pageOrder.addEventListener("click", (e) => {
+    pageOrderLoad()
+  });
+  const pageOrderLoad = () => {
     toggleVisibility([orderStaffTable, containerOrderBtn], [
       usersTable, addUsersBtn, inventoryTable,
       addProductBtn, cancellationTable, orderLogTable,
@@ -592,7 +610,9 @@ const startProgram = (jsonData) => {
     highlightActivePage('Оформить заказ');
     document.querySelector('.search').value = ''
     loadOrderPage()
-  });
+    localStorage.setItem('page', 'order')
+  }
+
 
 
 
@@ -673,6 +693,7 @@ const startProgram = (jsonData) => {
     formAddUser.reset()
     formAddProduct.reset()
     document.getElementById('error-message__user').style.display = 'none';
+    document.querySelector('.provider-add').style.display =  'none';
     formAddProduct.dataset.id = ''
     formAddUser.dataset.id = ''
 
@@ -694,9 +715,18 @@ const startProgram = (jsonData) => {
       capContainerNotify.parentElement.style.backgroundColor = '#75C1BF'
     }
   }
+  document.addEventListener('click', (event) => {
+    const isClickInside = containerNotifications.contains(event.target) || capContainerNotify.contains(event.target);
+
+    if (!isClickInside && containerNotifications.style.height === 'auto') {
+      containerNotifications.style.height = '0px';
+      capContainerNotify.parentElement.style.backgroundColor = '#66A8A6';
+    }
+  });
   // exitBtn
   exitBtn.addEventListener('click', () => {
     localStorage.setItem('userSession', JSON.stringify(''));
+    localStorage.setItem('page', '')
     window.location.href = 'index.html';
   })
   capContainerLogOut.addEventListener('click', () => {
@@ -715,6 +745,14 @@ const startProgram = (jsonData) => {
       openExit.style.transform = 'rotate(180deg)'
     }
   }
+  document.addEventListener('click', (event) => {
+    const isClickInside = containerExit.contains(event.target) || capContainerLogOut.contains(event.target);
+    if (!isClickInside && containerExit.style.height === 'auto') {
+      containerExit.style.height = '0px';
+      capContainerLogOut.style.backgroundColor = '#66A8A6';
+      openExit.style.transform = 'rotate(0deg)';
+    }
+  });
   // Открытие фильтра
   const filterIcon = document.getElementById('filter-icon');
   const filterModal = document.getElementById('filter-modal');
@@ -963,10 +1001,15 @@ const startProgram = (jsonData) => {
       document.querySelector('#addproduct-form__shelf').value = medicine.Shelf || '';
       document.querySelector('#addproduct-form__price').value = medicine.Price.toFixed(2) || '';
 
-      console.log(medicine.SupplierID, jsonData.Suppliers);
+      document.querySelector('.provider-add').style.display =  'flex';
 
       const providerSelect = document.querySelector('#addproduct-form__provider');
       providerSelect.value = medicine.SupplierID;
+      let sup = jsonData.Suppliers.find(s =>  s.ID == Number(providerSelect.value))
+      console.log(sup);
+      
+      document.querySelector('#addproduct-form__provider-name').value = sup.Name
+      document.querySelector('#addproduct-form__provider-phone').value = sup.ContactInfo
 
       if (medicine.PrescriptionRequired) {
         document.querySelector('#addproduct-form__recept1').checked = true; // Нужен
@@ -975,6 +1018,22 @@ const startProgram = (jsonData) => {
         document.querySelector('#addproduct-form__recept1').checked = false; // Нужен
         document.querySelector('#addproduct-form__recept2').checked = true; // Не нужен
       }
+
+      providerSelect.addEventListener('change', (e) => {
+        if (providerSelect.value === 'newProvider') {
+            document.querySelector('#addproduct-form__provider-name').value = '';
+            document.querySelector('#addproduct-form__provider-phone').value = '';
+        } else {
+            let selectedSupplierId = Number(providerSelect.value);
+            let supplier = jsonData.Suppliers.find(s => s.ID === selectedSupplierId);
+    
+            if (supplier) {
+                document.querySelector('#addproduct-form__provider-name').value = supplier.Name || '';
+                document.querySelector('#addproduct-form__provider-phone').value = supplier.ContactInfo || '';
+                document.querySelector('.provider-add').style.display = 'flex';
+            } 
+        }
+    });
     } else {
       console.error('Медикамент не найден:', dataId);
     }
@@ -1089,13 +1148,13 @@ const startProgram = (jsonData) => {
               <td class="title">${product.Name}</td>
               <td class="shelflife">${product.EndDate}</td>
               <td class="supplier">${getSupplierName(product.SupplierID, jsonData.Suppliers)}</td>
-              <td class="price">${product.Price}</td>
+              <td class="price">${product.Price.toFixed(2)}</td>
               <td class="stock">
                 <span span class="minus" data-id='${medicine.ID}'>-</span> 
                 <span class="quality" >${medicine.Quantity}</span> 
                 <span class="plus" data-id='${medicine.ID}' style='visibility:${medicine.Quantity == product.Quantity ? 'hidden' : 'visible'}; pointerEvents:${medicine.Quantity == product.Quantity ? 'none' : 'all'}'>+</span>
               </td>
-              <td class="price">${product.Price * medicine.Quantity}</td>
+              <td class="price">${(product.Price * medicine.Quantity).toFixed(2)}</td>
               <td class="icons">
                   <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn" data-id='${medicine.ID}'>
               </td>
@@ -1247,10 +1306,12 @@ const startProgram = (jsonData) => {
     return description;
   }
 
+
   // Заполнение таблицы медикаментов
   const populateTable = () => {
     const jsonData = getDataFromLocalStorage();
     if (!jsonData) return;
+    document.querySelector('#table-inventory tfoot tr').style.display = 'flex'
     const tableHead = document.querySelector('#table-inventory thead');
     const tableBody = document.getElementById('medicines-table-body');
     tableBody.innerHTML = '';
@@ -1260,9 +1321,6 @@ const startProgram = (jsonData) => {
     const userSession = JSON.parse(localStorage.getItem('userSession'))
 
     let pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
-
-
-    console.log(pageMed);
 
     const arrowBack = document.querySelector(`#table-inventory .arrow-back`)
     arrowBack.style.visibility = 'hidden'
@@ -1313,7 +1371,6 @@ const startProgram = (jsonData) => {
       maxPageOnTable = Math.ceil(jsonData.Medicines.length / restrictionOfElements)
       pageMed = jsonData.Medicines.slice(((restrictionOfElements * nowPageOnTable) - restrictionOfElements), nowPageOnTable === maxPageOnTable ? jsonData.Medicines.length : (restrictionOfElements * nowPageOnTable))
     }
-    console.log(pageMed);
 
     if (userSession.Role === 'staff') {
       document.querySelector('.container__btn-search .add-product').style.display = 'none'
@@ -1353,7 +1410,7 @@ const startProgram = (jsonData) => {
               <td class="price">${medicine.Price.toFixed(2)} ₽</td> 
               <td class="stock">${medicine.Quantity}</td> 
               <td class="receipt">
-                ${medicine.PrescriptionRequired === false ? '' : '<input type="checkbox" class="receipt-check">'}
+                ${medicine.PrescriptionRequired === false ? '' : '<label class="custom-checkbox"><input type="checkbox" class="receipt-check"><span class="checkmark"></span></label>'}
               </td> 
               <td class="icons">
                 <img src="icons/basket.svg" alt="иконка редактирования" class="basket-btn__product" data-id='${medicine.ID}' style="display:${medicine.PrescriptionRequired === false ? 'flex' : 'none'}">
@@ -1368,9 +1425,9 @@ const startProgram = (jsonData) => {
       receipts.forEach(receipt => {
         receipt.addEventListener('change', () => {
           if (receipt.checked) {
-            receipt.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'flex'
+            receipt.parentElement.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'flex'
           } else {
-            receipt.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'none'
+            receipt.parentElement.parentElement.parentElement.querySelector('.icons .basket-btn__product').style.display = 'none'
           }
         })
       })
@@ -1419,14 +1476,10 @@ const startProgram = (jsonData) => {
 
         if (pageMed.includes(medicine)) {
           row.style.display = 'flex'
-          console.log('flex');
         } else {
           row.style.display = 'none'
-          console.log('none');
         }
-        console.log(row);
         tableBody.appendChild(row);
-        console.log(tableBody);
       });
 
       addEventListenerCreateEdit(tableBody.querySelectorAll('.edit-btn__product'));
@@ -1445,8 +1498,17 @@ const startProgram = (jsonData) => {
       }
 
       if (notify) {
-        const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+        // const exists = jsonData.Notifications.some(n => n.Message === notify.Message);
+        // if (exists) {
 
+        // }
+        let exists = jsonData.Notifications.some(n => n.Message === notify.Message)
+        jsonData.Notifications.forEach((n) => {
+          if (n.Message === notify.Message && n.UserID.length == 0) {
+            jsonData.Notifications = jsonData.Notifications.filter(n => { n.Message !== notify.Message })
+            exists = n
+          }
+        })
         if (!exists) {
           jsonData.Notifications.push(notify);
           localStorage.setItem('appData', JSON.stringify(jsonData));
@@ -1568,6 +1630,10 @@ const startProgram = (jsonData) => {
 
       row.style.display = rowContainsSearchTerm ? '' : 'none';
     });
+    document.querySelector('#table-inventory tfoot tr').style.display = 'none'
+    if (filter == '') {
+      populateTable()
+    }
   };
 
   if (window.location.pathname.includes('inventoryPage.html')) {
@@ -1595,8 +1661,14 @@ const startProgram = (jsonData) => {
     const rack = document.querySelector('#addproduct-form__rack').value.trim();
     const shelf = document.querySelector('#addproduct-form__shelf').value.trim();
     const price = parseFloat(document.querySelector('#addproduct-form__price').value);
-    const supplierID = parseInt(document.querySelector('#addproduct-form__provider').value);
+    let supplierID = document.querySelector('#addproduct-form__provider').value;
+    const supplierName = document.querySelector('#addproduct-form__provider-name').value;
+    const supplierPhone = document.querySelector('#addproduct-form__provider-phone').value.replace(/\D/g, '');
     const prescriptionRequired = document.querySelector('#addproduct-form__recept1').checked || false;
+
+    
+    const providerSelect = document.getElementById('addproduct-form__provider');
+    
 
     // Валидация
 
@@ -1607,13 +1679,25 @@ const startProgram = (jsonData) => {
     if (quantity <= 0) {
       errorMessage = 'Количество должно быть больше 0.<br>';
     }
-
-    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) || isNaN(supplierID)) {
+    if (supplierID == 'newProvider') {
+      if (!supplierName || !supplierPhone) {
+        errorMessage = 'Пожалуйста, заполните все обязательные поля.<br>';
+      }
+      if (supplierPhone.length !== 11) {
+        errorMessage = 'Введите полный телефон.<br>';
+      }
+    }
+    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) ) {
       errorMessage = 'Пожалуйста, заполните все обязательные поля.<br>';
     }
 
     // Отображение ошибок
     const errorDisplay = document.getElementById('error-message__product');
+
+    const formElement = document.querySelector('.form__add-product');
+    const dataId = formElement.getAttribute('data-id');
+    console.log(dataId == 0);
+    
 
     if (errorMessage) {
       errorDisplay.innerHTML = errorMessage;
@@ -1623,10 +1707,34 @@ const startProgram = (jsonData) => {
     } else {
       errorDisplay.style.display = 'none';
 
+      if (providerSelect.value == 'newProvider') {
+        const providerName = document.getElementById('addproduct-form__provider-name').value
+        const providerPhone = document.getElementById('addproduct-form__provider-phone').value
+        const jsonData = getDataFromLocalStorage()
+        const maxIdObject = jsonData.Suppliers.reduce((prev, current) => {
+          return (prev.id > current.id) ? prev : current;
+        });
+        const newSuppler = {
+          "ID": maxIdObject.ID + 1,
+          "Name": providerName,
+          "ContactInfo": providerPhone.replace(/\D/g, '')
+        }
+        supplierID = newSuppler.ID
+        jsonData.Suppliers.push(newSuppler)
+        localStorage.setItem('appData', JSON.stringify(jsonData))
+      } else if (document.querySelector('.form-title').textContent == 'Редактирование информации о продукте') {
+        const jsonData = getDataFromLocalStorage()
+        jsonData.Suppliers.forEach((s) => {
+          if (s.ID == Number(providerSelect.value)) {
+            s.Name = document.querySelector('#addproduct-form__provider-name').value
+            s.ContactInfo = document.querySelector('#addproduct-form__provider-phone').value.replace(/\D/g, '')
+          }
+        })
+        localStorage.setItem('appData', JSON.stringify(jsonData))
+      }
+
       const jsonData = getDataFromLocalStorage();
 
-      const formElement = document.querySelector('.form__add-product');
-      const dataId = formElement.getAttribute('data-id');
 
       const maxIdObject = jsonData.Medicines.reduce((prev, current) => {
         return (prev.id > current.id) ? prev : current;
@@ -1643,7 +1751,7 @@ const startProgram = (jsonData) => {
         Rack: rack,
         Shelf: shelf.toUpperCase(),
         Price: price,
-        SupplierID: supplierID,
+        SupplierID: parseInt(supplierID),
         PrescriptionRequired: prescriptionRequired
       };
 
@@ -1675,15 +1783,61 @@ const startProgram = (jsonData) => {
         document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
         formAddProduct.reset()
         formElement.removeAttribute('data-id');
-        searchMedicines()
-        populateWriteOffMedicines()
+        document.querySelector('.provider-add').style.display =  'none';
       }, 2000);
 
       populateTable()
-
-
+      populateWriteOffMedicines()
     }
   };
+
+  document.getElementById('addproduct-form__provider-phone').addEventListener('input', function (e) {
+    let value = this.value.replace(/\D/g, '');
+
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+    }
+
+    let formattedValue = '+7 (';
+
+    if (value.length > 1) {
+      formattedValue += value.substring(1, 4);
+    }
+
+    if (value.length >= 4) {
+      formattedValue += ') ' + value.substring(4, 7);
+    }
+
+    if (value.length >= 7) {
+      formattedValue += '-' + value.substring(7, 9);
+    }
+
+    if (value.length >= 9) {
+      formattedValue += '-' + value.substring(9, 11);
+    }
+
+    this.value = formattedValue;
+
+    this.setSelectionRange(formattedValue.length, formattedValue.length);
+  });
+
+  document.getElementById('addproduct-form__provider-phone').addEventListener('keydown', function (e) {
+    const cursorPosition = this.selectionStart;
+
+    if (cursorPosition <= 4 && (e.key === 'ArrowLeft' || e.key === 'Backspace')) {
+      e.preventDefault();
+    }
+
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+      let value = this.value.replace(/\D/g, '');
+      if (value.length > 0) {
+        value = value.slice(0, -1);
+      }
+      this.value = formatPhoneNumber(value);
+      this.setSelectionRange(this.value.length, this.value.length);
+    }
+  });
 
   formAddProduct.addEventListener('submit', addOrUpdateMedicine)
 
@@ -1956,7 +2110,18 @@ const startProgram = (jsonData) => {
                 <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__user" data-id='${user.ID}'>
             </td>
         `;
-
+      
+      if (JSON.parse(localStorage.getItem('userSession')).Role == 'admin' && (user.Role == 'admin' || user.Role == 'superAdmin')) {
+        row.querySelector('.icons').style.visibility = 'hidden'
+        row.querySelector('.icons').style.pointerEvents = 'none'
+        if (user.Role == 'superAdmin') {
+          row.querySelector('.password').textContent = '********'
+          row.querySelector('.login').textContent = '********'
+        }
+      } else {
+        row.querySelector('.icons').style.visibility = 'visible'
+        row.querySelector('.icons').style.pointerEvents = 'all'
+      }
       tableBody.appendChild(row);
     });
 
@@ -2018,8 +2183,10 @@ const startProgram = (jsonData) => {
   }
 
   document.getElementById('adduser-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+    addUserOnTable()
+  });
 
+  const addUserOnTable = () => {
     const userName = document.getElementById('user-name').value.trim();
     const userSurname = document.getElementById('user-surname').value.trim();
     const userPatronymic = document.getElementById('user-patronymic').value.trim();
@@ -2097,14 +2264,12 @@ const startProgram = (jsonData) => {
       errorDisplay.style.display = 'flex';
       errorDisplay.style.color = 'white';
       populateUsersTable()
-      searchUsers()
       event.target.dataset.id = ''
 
       this.reset(); // Очищаем форму
     }
-  });
+  }
 
-  // Функция для преобразования первой буквы в заглавную, остальные — строчные
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   }
@@ -2283,9 +2448,9 @@ const startProgram = (jsonData) => {
           <td class="data">${receipt.Date} ${receipt.Time}</td>
           <td class="total-amount">${TotalAmount.toFixed(2)} руб.</td> 
           <td class="id id-order">${receipt.OrderID}</td> 
-          <td class="order">Перейти к заказу</td> 
+          <td class="order" style='font-weight:500'>Перейти к заказу</td> 
           <td class="icons">
-              <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn" data-id='${receipt.ID}'>
+              <img src="icons/delete.svg" alt="иконка удаления" style='cursor:pointer' class="delete-btn" data-id='${receipt.ID}'>
           </td>
       `;
 
@@ -2673,6 +2838,41 @@ const startProgram = (jsonData) => {
 
   nowPageOnTableFunctionStart()
 
+  if (JSON.parse(localStorage.getItem('userSession')).Role == 'admin') {
+    document.querySelector('#roleAdmin').parentElement.style.display = 'none'
+  } else if ((JSON.parse(localStorage.getItem('userSession')).Role == 'superAdmin')){
+    document.querySelector('#roleAdmin').parentElement.style.display = 'flex'
+  }
+
+  if (!localStorage.getItem('page')) {
+    if (JSON.parse(localStorage.getItem('userSession')).Role == 'superAdmin') {
+      localStorage.setItem('page', 'users')
+      pageUsersLoad()
+    } else {
+      localStorage.setItem('page', 'inventory')
+      pageInventoryLoad()
+    }
+  } else {
+    switch (localStorage.getItem('page')) {
+      case 'inventory':
+        pageInventoryLoad()
+        break
+      case 'users':
+        pageUsersLoad()
+        break
+      case 'cancellation':
+        pageCancellationLoad()
+        break
+      case 'orderLog':
+        pageOrderLogLoad()
+        break
+      case 'order':
+        pageOrderLoad()
+        break
+      default:
+        break
+    }
+  }
 }
 
 const buttonLogin = () => {
@@ -2684,7 +2884,7 @@ const buttonLogin = () => {
   // Проверка на пустые поля ввода
   if (loginInput.value === '' || passwordInput.value === '') {
     error.textContent = 'Заполните пустые поля';
-    errorMessage.style.display = 'flex';
+    errorMessage.style.visibility = 'visible';
     return;
   }
 
@@ -2692,25 +2892,23 @@ const buttonLogin = () => {
   const userNow = jsonData.Users.find(el => el.Username === loginInput.value && el.Password === passwordInput.value);
 
   if (userNow) {
-    errorMessage.style.display = 'none';
+    errorMessage.style.visibility = 'hidden';
     localStorage.setItem('userSession', JSON.stringify(userNow)); // Сохранение данных пользователя в localStorage
     window.location.href = 'inventoryPage.html'; // Переход на страницу инвентаря
   } else {
     error.textContent = 'Неверный логин или пароль';
-    errorMessage.style.display = 'flex';
+    errorMessage.style.visibility = 'visible';
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Проверка, если пользователь находится на странице inventoryPage.html
   if (window.location.pathname.includes('inventoryPage.html')) {
-    const savedUser = JSON.parse(localStorage.getItem('userSession')); // Получение сохраненного пользователя из localStorage
+    const savedUser = JSON.parse(localStorage.getItem('userSession'));
 
     if (savedUser) {
-      definingTheRole(savedUser); // Определение роли пользователя
+      definingTheRole(savedUser);
     } else {
-      // Если пользователь не найден, можно перенаправить на страницу логина
-      window.location.href = 'loginPage.html'; // Перенаправление на страницу логина
+      window.location.href = 'loginPage.html';
     }
   }
 });
@@ -2788,3 +2986,4 @@ const definingTheRole = (userNow) => {
 
   }
 }
+

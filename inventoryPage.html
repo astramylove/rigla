@@ -100,8 +100,10 @@
                 </div>
 
                 <label for="addproduct-form__description" class="label label__add-product">Описание:
-                    <textarea name="addproduct-form__description" id="addproduct-form__description"
-                        class="input input__add-product" maxlength="600"></textarea>
+                    <div class="textarea-wrapper">
+                        <textarea name="addproduct-form__description" id="addproduct-form__description"
+                            class="input input__add-product" maxlength="600"></textarea>
+                    </div>
                 </label>
 
 
@@ -130,8 +132,8 @@
                     <div class="input-group__into">
 
                         <label for="addproduct-form__rack" class="label label__add-product">Стеллаж:
-                            <input type="text" maxlength="1" pattern="[0-9]" name="addproduct-form__rack"
-                                id="addproduct-form__rack" class="input input__add-product"
+                            <input type="text" maxlength="2" name="addproduct-form__rack" id="addproduct-form__rack"
+                                class="input input__add-product"
                                 oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                         </label>
 
@@ -152,13 +154,13 @@
                     </label>
 
                     <label for="addproduct-form__provider" class="label label__add-product">Поставщик:
-                        <select type="text" name="addproduct-form__provider" id="addproduct-form__provider"
-                            class="input input__add-product">
-                            <option value="">Выберите поставщика</option>
-                            <option value="newProvider">Добавить поставщика</option>
-                            <option value="diamed">ООО "ДИАМЕД"</option>
-                            <option value="diamed">ООО "ДИАМЕД"</option>
-                        </select>
+                        <div class="custom-select">
+                            <select name="addproduct-form__provider" id="addproduct-form__provider"
+                                style="border-radius: 30px;" class="input input__add-product">
+                                <option value="">Выберите поставщика</option>
+                                <option value="newProvider">Добавить поставщика</option>
+                            </select>
+                        </div>
                     </label>
 
                 </div>
@@ -167,12 +169,12 @@
 
                     <label for="addproduct-form__provider-name" class="label label__add-product">Название поставщика:
                         <input type="text" name="addproduct-form__provider-name" id="addproduct-form__provider-name"
-                            class="input input__add-product">
+                            class="input input__add-product" maxlength="30">
                     </label>
 
                     <label for="addproduct-form__provider-phone" class="label label__add-product">Телефон поставщика:
                         <input type="text" name="addproduct-form__provider-phone" id="addproduct-form__provider-phone"
-                            class="input input__add-product">
+                            class="input input__add-product" placeholder="+7 ">
                     </label>
 
 

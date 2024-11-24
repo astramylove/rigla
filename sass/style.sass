@@ -53,8 +53,9 @@ body
     align-items: center
     align-content: center
     .error-message
-        display: none
+        display: flex
         justify-content: center
+        visibility: hidden
         align-items: center
         width: 100%
         height: auto
@@ -151,7 +152,8 @@ body
                         & input::placeholder
                             color: rgba(213, 250, 240, 0.3)
                             font-size: 20px
-                        & input[type='text']
+                        & input[type='text'],
+                        & input[type='password']
                             outline: none
                             transition: transform 0.3s ease
                         & input[type='text']:hover
@@ -390,16 +392,9 @@ body
                 color: #fff
                 padding-left: 15px
                 position: relative
-            #addproduct-form__description
-                width: 715px
-                height: 138px
-                padding: 14px 20px 0 20px
-                box-sizing: border-box
-                appearance: none
 
             input,
-            select,
-            textarea
+            select
                 position: relative
                 box-sizing: border-box
                 outline: none
@@ -413,22 +408,44 @@ body
                 padding: 10px 20px
                 color: #2C6369
                 resize: none
+            .textarea-wrapper
+                display: flex
+                align-items: center
+                margin-top: 14px
+                box-sizing: border-box
+                position: relative
+                background: #ffffff
+                width: 715px
+                height: 138px
+                overflow: hidden
+                border: 1px solid #ccc
+                border-radius: 30px
+                #addproduct-form__description
+                    box-sizing: border-box
+                    width: 100%
+                    padding: 14px 20px 0 20px
+                    position: relative
+                    height: calc(100% - 20px)
+                    border: none
+                    outline: none
+                    resize: none
+                    box-sizing: border-box
+                    margin-right: 5px
             input::-webkit-scrollbar,
             select::-webkit-scrollbar,
-            textarea::-webkit-scrollbar
+            #addproduct-form__description::-webkit-scrollbar
                 width: 10px
+                height: 1px
             input::-webkit-scrollbar-track,
             select::-webkit-scrollbar-track,
-            textarea::-webkit-scrollbar-track
+            #addproduct-form__description::-webkit-scrollbar-track
                 background: #EBE9E9
                 border-radius: 50px
             input::-webkit-scrollbar-thumb,
             select::-webkit-scrollbar-thumb,
-            textarea::-webkit-scrollbar-thumb
+            #addproduct-form__description::-webkit-scrollbar-thumb
                 background: #66A8A6
                 border-radius: 50px
-                height: 10px
-            #addproduct-form__description::-webkit-scrollbar-thumb
                 height: 10px
             input[type="radio"]
                 appearance: none
@@ -495,6 +512,7 @@ body
                 appearance: none
                 max-height: 200px
                 overflow-y: auto
+
                 option
                     border: 1px solid #66A8A6
                     border-top: 0
@@ -504,12 +522,15 @@ body
                     background-color: #ffffff
                     resize: none
                     cursor: pointer
+                    &:hover
 
+                        background: #000
                 &::after
                     content: ''
                     background-image: url('/icons/strela-bottom.svg')
                     background-repeat: no-repeat
                     background-position: right 10px center
+                    border-radius: 30px 30px 0 0
 
 .cap-container__notify
     width: 41px
@@ -584,7 +605,14 @@ body
                     font-size: 16px
             select
                 width: 250px
-
+img
+    cursor: pointer
+.plus,
+.minus
+    font-size: 24px
+.stock
+    display: flex
+    align-items: center
 .close
     color: #aaa
     float: right
@@ -606,6 +634,40 @@ body
     background-color: rgba(0, 0, 0, 0.5)
     z-index: 93
     transition: width 3s
+
+.wrapp-filter
+    display: flex
+    align-items: center
+.receipt-check
+    display: none
+.custom-checkbox
+    display: flex
+    align-items: center
+    cursor: pointer
+.checkmark
+    width: 20px
+    height: 20px
+    border: 2px solid #66A8A6
+    border-radius: 4px
+    background-color: #fff
+    margin-right: 10px
+    position: relative
+    .receipt-check:checked + &
+        background-color: #66A8A6
+        border-color: #66A8A6
+    &::after
+        content: ""
+        position: absolute
+        left: 6px
+        top: 2px
+        width: 6px
+        height: 10px
+        border: solid white
+        border-width: 0 2px 2px 0
+        transform: rotate(45deg)
+        opacity: 0
+    .receipt-check:checked + &::after
+        opacity: 1
 
 .table-position
     position: relative
