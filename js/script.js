@@ -49,88 +49,88 @@ let data = {
   ],
   "Medicines": [
     {
-      "ID": 1,
-      "Name": "Аспирин",
-      "Dosage": "500 мг",
-      "StartDate": "2023-01-01",
-      "EndDate": "2025-01-01",
-      "Quantity": 100,
-      "Description": "Аспирин — это анальгетик и противовоспалительное средство, применяемое для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мышечных и суставных болях, а также при лихорадке. Состав препарата включает ацетилсалициловую кислоту 500 мг в одной таблетке. Противопоказания: аллергия на салицилаты, язвы желудка и двенадцатиперстной кишки, геморрагические диатезы. Побочные действия могут включать тошноту, рвоту, головокружение и аллергические реакции. Разрешен детям старше 15 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
-      "SupplierID": 1,
-      "PrescriptionRequired": false,
-      "Price": 50.00,
-      "Shelf": "A",
-      "Rack": "1"
+      ID: 1,
+      Name: "Аспирин",
+      Dosage: "500 мг",
+      StartDate: "2023-01-01",
+      EndDate: "2025-01-01",
+      Quantity: 100,
+      Description: "Аспирин — это анальгетик и противовоспалительное средство, применяемое для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мышечных и суставных болях, а также при лихорадке. Состав препарата включает ацетилсалициловую кислоту 500 мг в одной таблетке. Противопоказания: аллергия на салицилаты, язвы желудка и двенадцатиперстной кишки, геморрагические диатезы. Побочные действия могут включать тошноту, рвоту, головокружение и аллергические реакции. Разрешен детям старше 15 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
+      SupplierID: 1,
+      PrescriptionRequired: false,
+      Price: 50.00,
+      Shelf: "A",
+      Rack: "1"
     },
     {
-      "ID": 2,
-      "Name": "Парацетамол",
-      "Dosage": "500 мг",
-      "StartDate": "2023-06-01",
-      "EndDate": "2025-06-01",
-      "Quantity": 200,
-      "Description": "Парацетамол — это анальгетик и жаропонижающее средство, используемое для лечения боли и лихорадки. Он эффективен при головной боли, зубной боли, мигрени и простудах. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм. Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
-      "SupplierID": 2,
-      "PrescriptionRequired": false,
-      "Price": 30.00,
-      "Shelf": "B",
-      "Rack": "2"
+      ID: 2,
+      Name: "Парацетамол",
+      Dosage: "500 мг",
+      StartDate: "2023-06-01",
+      EndDate: "2025-06-01",
+      Quantity: 200,
+      Description: "Парацетамол — это анальгетик и жаропонижающее средство, используемое для лечения боли и лихорадки. Он эффективен при головной боли, зубной боли, мигрени и простудах. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм. Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
+      SupplierID: 2,
+      PrescriptionRequired: false,
+      Price: 30.00,
+      Shelf: "B",
+      Rack: "2"
     },
     {
-      "ID": 3,
-      "Name": "Лотатин",
-      "Dosage": "500 мг",
-      "StartDate": "2022-01-01",
-      "EndDate": "2024-10-30",
-      "Quantity": 100,
-      "Description": "Лотатин — это обезболивающее средство, применяемое для облегчения боли различной локализации. Он эффективен при головной боли, зубной боли и послеоперационных болях. Состав препарата включает лотатин 500 мг в одной таблетке. Противопоказания: аллергия на компоненты препарата. Побочные действия могут включать тошноту и головную боль. Разрешен взрослым и детям старше 12 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
-      "SupplierID": 1,
-      "PrescriptionRequired": false,
-      "Price": 50.00,
-      "Shelf": "A",
-      "Rack": "1"
+      ID: 3,
+      Name: "Лотатин",
+      Dosage: "500 мг",
+      StartDate: "2022-01-01",
+      EndDate: "2024-10-30",
+      Quantity: 100,
+      Description: "Лотатин — это обезболивающее средство, применяемое для облегчения боли различной локализации. Он эффективен при головной боли, зубной боли и послеоперационных болях. Состав препарата включает лотатин 500 мг в одной таблетке. Противопоказания: аллергия на компоненты препарата. Побочные действия могут включать тошноту и головную боль. Разрешен взрослым и детям старше 12 лет. Максимальная доза для взрослых — 3 г в сутки. Использовать по рекомендации врача.",
+      SupplierID: 1,
+      PrescriptionRequired: false,
+      Price: 50.00,
+      Shelf: "A",
+      Rack: "1"
     },
     {
-      "ID": 4,
-      "Name": "Парацетамол",
-      "Dosage": "500 мг",
-      "StartDate": "2023-06-01",
-      "EndDate": "2025-06-01",
-      "Quantity": 0,
-      "Description": "Парацетамол — это анальгетик и антипиретик, применяемый для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мигрени и лихорадке. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм, беременность (особенно в первом триместре). Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
-      "SupplierID": 2,
-      "PrescriptionRequired": false,
-      "Price": 30.00,
-      "Shelf": "B",
-      "Rack": "2"
+      ID: 4,
+      Name: "Парацетамол",
+      Dosage: "500 мг",
+      StartDate: "2023-06-01",
+      EndDate: "2025-06-01",
+      Quantity: 0,
+      Description: "Парацетамол — это анальгетик и антипиретик, применяемый для облегчения боли и снижения температуры. Он эффективен при головной боли, зубной боли, мигрени и лихорадке. Состав препарата включает парацетамол 500 мг в одной таблетке. Противопоказания: аллергия на парацетамол, тяжелые заболевания печени и почек, хронический алкоголизм, беременность (особенно в первом триместре). Побочные действия могут включать аллергические реакции и нарушения функции печени. Разрешен детям старше 3 месяцев. Максимальная доза для взрослых — 4 г в сутки. Использовать по рекомендации врача.",
+      SupplierID: 2,
+      PrescriptionRequired: false,
+      Price: 30.00,
+      Shelf: "B",
+      Rack: "2"
     },
     {
-      "ID": 5,
-      "Name": "Ибупрофен",
-      "Dosage": "400 мг",
-      "StartDate": "2023-01-15",
-      "EndDate": "2025-01-15",
-      "Quantity": 150,
-      "Description": "Ибупрофен — это противовоспалительное средство, применяемое для уменьшения боли и воспаления. Он эффективен при головной боли, зубной боли, болях в спине и менструальных болях. Состав препарата включает ибупрофен 400 мг в одной таблетке. Противопоказания: язвы желудка и двенадцатиперстной кишки, аллергия на НПВС, тяжелые заболевания печени и почек. Побочные действия могут включать головную боль, расстройства ЖКТ и аллергические реакции. Разрешен детям старше 6 лет. Максимальная доза для взрослых — 1,2 г в сутки. Использовать по рекомендации врача.",
-      "SupplierID": 3,
-      "PrescriptionRequired": false,
-      "Price": 45.00,
-      "Shelf": "C",
-      "Rack": "1"
+      ID: 5,
+      Name: "Ибупрофен",
+      Dosage: "400 мг",
+      StartDate: "2023-01-15",
+      EndDate: "2025-01-15",
+      Quantity: 150,
+      Description: "Ибупрофен — это противовоспалительное средство, применяемое для уменьшения боли и воспаления. Он эффективен при головной боли, зубной боли, болях в спине и менструальных болях. Состав препарата включает ибупрофен 400 мг в одной таблетке. Противопоказания: язвы желудка и двенадцатиперстной кишки, аллергия на НПВС, тяжелые заболевания печени и почек. Побочные действия могут включать головную боль, расстройства ЖКТ и аллергические реакции. Разрешен детям старше 6 лет. Максимальная доза для взрослых — 1,2 г в сутки. Использовать по рекомендации врача.",
+      SupplierID: 3,
+      PrescriptionRequired: false,
+      Price: 45.00,
+      Shelf: "C",
+      Rack: "1"
     },
     {
-      "ID": 6,
-      "Name": "Анальгин",
-      "Dosage": "500 мг",
-      "StartDate": "2023-02-01",
-      "EndDate": "2024-12-31",
-      "Quantity": 80,
-      "Description": "Анальгин — это анальгезирующее ненаркотическое средство, обладающее обезболивающим и жаропонижающим действием.Применяется при болях различного происхождения: головная боль, зубная боль, послеоперационная боль и колики.Состав препарата включает метамизол натрия 500 мг в одной таблетке.Противопоказания: аллергия на метамизол натрия, тяжелые заболевания печени и почек.Побочные действия могут включать аллергические реакции и снижение давления.Разрешен взрослым и детям старше 3 месяцев с соблюдением дозировки.Максимальная доза для взрослых — 3 г в сутки.Использовать по рекомендации врача.",
-      "SupplierID": 4,
-      "PrescriptionRequired": false,
-      "Price": 25.00,
-      "Shelf": "D",
-      "Rack": "2"
+      ID: 6,
+      Name: "Анальгин",
+      Dosage: "500 мг",
+      StartDate: "2023-02-01",
+      EndDate: "2024-12-31",
+      Quantity: 80,
+      Description: "Анальгин — это анальгезирующее ненаркотическое средство, обладающее обезболивающим и жаропонижающим действием.Применяется при болях различного происхождения: головная боль, зубная боль, послеоперационная боль и колики.Состав препарата включает метамизол натрия 500 мг в одной таблетке.Противопоказания: аллергия на метамизол натрия, тяжелые заболевания печени и почек.Побочные действия могут включать аллергические реакции и снижение давления.Разрешен взрослым и детям старше 3 месяцев с соблюдением дозировки.Максимальная доза для взрослых — 3 г в сутки.Использовать по рекомендации врача.",
+      SupplierID: 4,
+      PrescriptionRequired: false,
+      Price: 25.00,
+      Shelf: "D",
+      Rack: "2"
     },
     {
       ID: 7,
@@ -189,55 +189,55 @@ let data = {
       Rack: '2'
     },
     {
-      "ID": 11,
-      "Name": "Метформин",
-      "Dosage": "500 мг",
-      "StartDate": "2023-07-01",
-      "EndDate": "2025-07-01",
-      "Quantity": 130,
-      "Description": "Метформин — это препарат, применяемый для лечения диабета второго типа. Он помогает контролировать уровень сахара в крови, улучшая чувствительность клеток к инсулину и уменьшая выработку глюкозы в печени. Состав препарата включает метформин 500 мг в одной таблетке. Противопоказания: почечная недостаточность, тяжелые заболевания печени, аллергия на метформин, а также состояние, связанное с повышенным уровнем молочной кислоты в крови (лактатный ацидоз). Побочные действия могут включать тошноту, диарею, боли в животе и потерю аппетита. Разрешен взрослым и детям старше 10 лет. Максимальная доза для взрослых — 2 г в сутки. Использовать по рекомендации врача.",
-      "SupplierID": 1,
-      "PrescriptionRequired": true,
-      "Price": 40.00,
-      "Shelf": "H",
-      "Rack": "3"
+      ID: 11,
+      Name: "Метформин",
+      Dosage: "500 мг",
+      StartDate: "2023-07-01",
+      EndDate: "2025-07-01",
+      Quantity: 130,
+      Description: "Метформин — это препарат, применяемый для лечения диабета второго типа. Он помогает контролировать уровень сахара в крови, улучшая чувствительность клеток к инсулину и уменьшая выработку глюкозы в печени. Состав препарата включает метформин 500 мг в одной таблетке. Противопоказания: почечная недостаточность, тяжелые заболевания печени, аллергия на метформин, а также состояние, связанное с повышенным уровнем молочной кислоты в крови (лактатный ацидоз). Побочные действия могут включать тошноту, диарею, боли в животе и потерю аппетита. Разрешен взрослым и детям старше 10 лет. Максимальная доза для взрослых — 2 г в сутки. Использовать по рекомендации врача.",
+      SupplierID: 1,
+      PrescriptionRequired: true,
+      Price: 40.00,
+      Shelf: "H",
+      Rack: "3"
     },
     {
-      "ID": 12,
-      "Name": "Симвастатин",
-      "Dosage": "20 мг",
-      "StartDate": "2023-08-01",
-      "EndDate": "2025-08-01",
-      "Quantity": 90,
-      "Description": "Симвастатин — это средство для снижения уровня холестерина в крови. Он используется для лечения гиперхолестеринемии и профилактики сердечно-сосудистых заболеваний. Состав препарата включает симвастатин 20 мг в одной таблетке. Противопоказания: активные заболевания печени, беременность и лактация, аллергия на симвастатин или другие статины. Побочные действия могут включать головную боль, расстройства ЖКТ (тошнота, запор), мышечные боли и слабость. Разрешен взрослым только по рецепту врача. Максимальная доза для взрослых — до 80 мг в сутки, в зависимости от состояния пациента и уровня холестерина.",
-      "SupplierID": 2,
-      "PrescriptionRequired": true,
-      "Price": 60.00,
-      "Shelf": "I",
-      "Rack": "4"
+      ID: 12,
+      Name: "Симвастатин",
+      Dosage: "20 мг",
+      StartDate: "2023-08-01",
+      EndDate: "2025-08-01",
+      Quantity: 90,
+      Description: "Симвастатин — это средство для снижения уровня холестерина в крови. Он используется для лечения гиперхолестеринемии и профилактики сердечно-сосудистых заболеваний. Состав препарата включает симвастатин 20 мг в одной таблетке. Противопоказания: активные заболевания печени, беременность и лактация, аллергия на симвастатин или другие статины. Побочные действия могут включать головную боль, расстройства ЖКТ (тошнота, запор), мышечные боли и слабость. Разрешен взрослым только по рецепту врача. Максимальная доза для взрослых — до 80 мг в сутки, в зависимости от состояния пациента и уровня холестерина.",
+      SupplierID: 2,
+      PrescriptionRequired: true,
+      Price: 60.00,
+      Shelf: "I",
+      Rack: "4"
     },
     {
-      "ID": 13,
-      "Name": "Флуоксетин",
-      "Dosage": "20 мг",
-      "StartDate": "2023-09-01",
-      "EndDate": "2025-09-01",
-      "Quantity": 75,
-      "Description": "Флуоксетин — это антидепрессант, применяемый для лечения депрессий и тревожных расстройств. Он относится к группе селективных ингибиторов обратного захвата серотонина (СИОЗС), что способствует повышению уровня серотонина в мозге. Состав препарата включает флуоксетин 20 мг в одной капсуле. Противопоказания: аллергия на флуоксетин, использование вместе с моноаминоксидазными ингибиторами (МАО), беременность и лактация (требуется осторожность). Побочные действия могут включать головную боль, бессонницу, тошноту и снижение либидо. Разрешен взрослым и детям старше 8 лет с соблюдением дозировки; максимальная доза для взрослых составляет до 80 мг в сутки.",
-      "SupplierID": 3,
-      "PrescriptionRequired": true,
-      "Price": 65,
-      "Shelf": "J",
-      "Rack": "1"
+      ID: 13,
+      Name: "Флуоксетин",
+      Dosage: "20 мг",
+      StartDate: "2023-09-01",
+      EndDate: "2025-09-01",
+      Quantity: 75,
+      Description: "Флуоксетин — это антидепрессант, применяемый для лечения депрессий и тревожных расстройств. Он относится к группе селективных ингибиторов обратного захвата серотонина (СИОЗС), что способствует повышению уровня серотонина в мозге. Состав препарата включает флуоксетин 20 мг в одной капсуле. Противопоказания: аллергия на флуоксетин, использование вместе с моноаминоксидазными ингибиторами (МАО), беременность и лактация (требуется осторожность). Побочные действия могут включать головную боль, бессонницу, тошноту и снижение либидо. Разрешен взрослым и детям старше 8 лет с соблюдением дозировки; максимальная доза для взрослых составляет до 80 мг в сутки.",
+      SupplierID: 3,
+      PrescriptionRequired: true,
+      Price: 65,
+      Shelf: "J",
+      Rack: "1"
     },
     {
-      "ID": 14,
-      "Name": "Лизиноприл",
-      "Dosage": "10 мг",
-      "StartDate": "2023-10-01",
-      "EndDate": "2025-10-01",
-      "Quantity": 110,
-      "Description": 'Лизиноприл — это препарат для лечения гипертонии и сердечной недостаточности. Он является ингибитором ангиотензин-превращающего фермента (АПФ), что приводит к снижению уровня ангиотензина II и расширению сосудов. Состав препарата включает лизиноприл 10 мг в одной таблетке. Противопоказания: аллергия на лизиноприл или другие ингибиторы АПФ; беременность; тяжелые нарушения функции почек; стеноз почечной артерии. Побочные действия могут включать головокружение, кашель, повышение уровня калия в крови и аллергические реакции. Разрешен взрослым; максимальная доза для взрослых составляет до 40 мг в сутки.',
+      ID: 14,
+      Name: "Лизиноприл",
+      Dosage: "10 мг",
+      StartDate: "2023-10-01",
+      EndDate: "2025-10-01",
+      Quantity: 110,
+      Description: 'Лизиноприл — это препарат для лечения гипертонии и сердечной недостаточности. Он является ингибитором ангиотензин-превращающего фермента (АПФ), что приводит к снижению уровня ангиотензина II и расширению сосудов. Состав препарата включает лизиноприл 10 мг в одной таблетке. Противопоказания: аллергия на лизиноприл или другие ингибиторы АПФ; беременность; тяжелые нарушения функции почек; стеноз почечной артерии. Побочные действия могут включать головокружение, кашель, повышение уровня калия в крови и аллергические реакции. Разрешен взрослым; максимальная доза для взрослых составляет до 40 мг в сутки.',
       SupplierID: 4,
       PrescriptionRequired: true,
       Price: 50,
@@ -486,6 +486,10 @@ const startProgram = (jsonData) => {
   const formAddUser = document.querySelector(".form__add-user");
 
   // Переменные
+  let isSortMedicineOptionCreated = false;
+  let isSortUserOptionCreated = false;
+  let isSortJurnalOptionCreated = false;
+
   let restrictionOfElements
   if (localStorage.getItem('restrictionOfElements')) {
     restrictionOfElements = localStorage.getItem('restrictionOfElements')
@@ -543,6 +547,8 @@ const startProgram = (jsonData) => {
     populateTable()
     document.querySelector('.search').value = ''
     localStorage.setItem('page', 'nventory')
+    isSortUserOptionCreated = false;
+    isSortJurnalOptionCreated = false;
   }
 
   pageUsers.addEventListener("click", () => {
@@ -559,6 +565,8 @@ const startProgram = (jsonData) => {
     sortUserOptionCreate()
     document.querySelector('.search').value = ''
     localStorage.setItem('page', 'users')
+    isSortMedicineOptionCreated = false;
+    isSortJurnalOptionCreated = false;
   }
 
   pageCancellation.addEventListener("click", () => {
@@ -576,6 +584,9 @@ const startProgram = (jsonData) => {
     populateWriteOffMedicines()
     document.querySelector('.search').value = ''
     localStorage.setItem('page', 'cancellation')
+    isSortMedicineOptionCreated = false;
+    isSortUserOptionCreated = false;
+    isSortJurnalOptionCreated = false;
   }
 
   pageOrderLog.addEventListener("click", () => {
@@ -594,6 +605,8 @@ const startProgram = (jsonData) => {
     document.querySelector('.search').value = ''
     sortReceiptOptionCreate()
     localStorage.setItem('page', 'orderLog')
+    isSortMedicineOptionCreated = false;
+    isSortUserOptionCreated = false;
   }
 
   pageOrder.addEventListener("click", (e) => {
@@ -611,6 +624,9 @@ const startProgram = (jsonData) => {
     document.querySelector('.search').value = ''
     loadOrderPage()
     localStorage.setItem('page', 'order')
+    isSortMedicineOptionCreated = false;
+    isSortUserOptionCreated = false;
+    isSortJurnalOptionCreated = false;
   }
 
 
@@ -693,7 +709,7 @@ const startProgram = (jsonData) => {
     formAddUser.reset()
     formAddProduct.reset()
     document.getElementById('error-message__user').style.display = 'none';
-    document.querySelector('.provider-add').style.display =  'none';
+    document.querySelector('.provider-add').style.display = 'none';
     formAddProduct.dataset.id = ''
     formAddUser.dataset.id = ''
 
@@ -701,53 +717,69 @@ const startProgram = (jsonData) => {
 
   // Уведомления
   capContainerNotify.addEventListener('click', () => {
-    contNotifyFunction()
+    contNotifyFunction();
     containerExit.style.height = '0px';
-    capContainerLogOut.style.backgroundColor = '#66A8A6'
-    openExit.style.transform = 'rotate(0deg)'
+    capContainerLogOut.style.backgroundColor = '#66A8A6';
+    openExit.style.transform = 'rotate(0deg)';
   });
   const contNotifyFunction = () => {
-    if (containerNotifications.style.height == 'auto') {
+    if (containerNotifications.style.height === 'auto') {
+      containerNotifications.style.transition = 'height 0.5s ease';
       containerNotifications.style.height = '0px';
-      capContainerNotify.parentElement.style.backgroundColor = '#66A8A6'
+      capContainerNotify.parentElement.style.backgroundColor = '#66A8A6';
     } else {
-      containerNotifications.style.height = 'auto';
-      capContainerNotify.parentElement.style.backgroundColor = '#75C1BF'
+      containerNotifications.style.transition = 'height 0.5s ease';
+      containerNotifications.style.height = containerNotifications.scrollHeight + 'px';
+      capContainerNotify.parentElement.style.backgroundColor = '#75C1BF';
+      setTimeout(() => {
+        containerNotifications.style.height = 'auto';
+      }, 500);
     }
-  }
+  };
   document.addEventListener('click', (event) => {
     const isClickInside = containerNotifications.contains(event.target) || capContainerNotify.contains(event.target);
 
     if (!isClickInside && containerNotifications.style.height === 'auto') {
+      containerNotifications.style.transition = 'height 0.5s ease';
       containerNotifications.style.height = '0px';
       capContainerNotify.parentElement.style.backgroundColor = '#66A8A6';
     }
   });
+
   // exitBtn
   exitBtn.addEventListener('click', () => {
     localStorage.setItem('userSession', JSON.stringify(''));
-    localStorage.setItem('page', '')
+    localStorage.setItem('page', '');
     window.location.href = 'index.html';
-  })
+  });
   capContainerLogOut.addEventListener('click', () => {
-    contLogOutFunction()
+    contLogOutFunction();
     containerNotifications.style.height = '0px';
-    capContainerNotify.parentElement.style.backgroundColor = '#66A8A6'
+    capContainerNotify.parentElement.style.backgroundColor = '#66A8A6';
   });
   const contLogOutFunction = () => {
-    if (containerExit.style.height == 'auto') {
-      containerExit.style.height = '0px';
-      capContainerLogOut.style.backgroundColor = '#66A8A6'
-      openExit.style.transform = 'rotate(0deg)'
+    if (containerExit.style.height === '80px') {
+        containerExit.style.height = '0px';
+        capContainerLogOut.style.backgroundColor = '#66A8A6';
+        openExit.style.transform = 'rotate(0deg)';
+        containerExit.style.display = 'none';
     } else {
-      containerExit.style.height = 'auto';
-      capContainerLogOut.style.backgroundColor = '#75C1BF'
-      openExit.style.transform = 'rotate(180deg)'
+        containerExit.style.display = 'flex';
+        setTimeout(() => {
+          containerExit.style.transition = 'height 0.1s ease';
+          containerExit.style.height = '80px';
+          capContainerLogOut.style.backgroundColor = '#75C1BF';
+          openExit.style.transform = 'rotate(180deg)';
+      }, 100);
     }
-  }
+};
+
   document.addEventListener('click', (event) => {
     const isClickInside = containerExit.contains(event.target) || capContainerLogOut.contains(event.target);
-    if (!isClickInside && containerExit.style.height === 'auto') {
+    if (!isClickInside && containerExit.style.height === '80px') {
+      containerExit.style.boxSizing = 'border-box'
+      containerExit.style.transition = 'height 0s ease';
+      containerExit.style.display = 'none';
       containerExit.style.height = '0px';
       capContainerLogOut.style.backgroundColor = '#66A8A6';
       openExit.style.transform = 'rotate(0deg)';
@@ -1001,13 +1033,13 @@ const startProgram = (jsonData) => {
       document.querySelector('#addproduct-form__shelf').value = medicine.Shelf || '';
       document.querySelector('#addproduct-form__price').value = medicine.Price.toFixed(2) || '';
 
-      document.querySelector('.provider-add').style.display =  'flex';
+      document.querySelector('.provider-add').style.display = 'flex';
 
       const providerSelect = document.querySelector('#addproduct-form__provider');
       providerSelect.value = medicine.SupplierID;
-      let sup = jsonData.Suppliers.find(s =>  s.ID == Number(providerSelect.value))
+      let sup = jsonData.Suppliers.find(s => s.ID == Number(providerSelect.value))
       console.log(sup);
-      
+
       document.querySelector('#addproduct-form__provider-name').value = sup.Name
       document.querySelector('#addproduct-form__provider-phone').value = sup.ContactInfo
 
@@ -1021,19 +1053,19 @@ const startProgram = (jsonData) => {
 
       providerSelect.addEventListener('change', (e) => {
         if (providerSelect.value === 'newProvider') {
-            document.querySelector('#addproduct-form__provider-name').value = '';
-            document.querySelector('#addproduct-form__provider-phone').value = '';
+          document.querySelector('#addproduct-form__provider-name').value = '';
+          document.querySelector('#addproduct-form__provider-phone').value = '';
         } else {
-            let selectedSupplierId = Number(providerSelect.value);
-            let supplier = jsonData.Suppliers.find(s => s.ID === selectedSupplierId);
-    
-            if (supplier) {
-                document.querySelector('#addproduct-form__provider-name').value = supplier.Name || '';
-                document.querySelector('#addproduct-form__provider-phone').value = supplier.ContactInfo || '';
-                document.querySelector('.provider-add').style.display = 'flex';
-            } 
+          let selectedSupplierId = Number(providerSelect.value);
+          let supplier = jsonData.Suppliers.find(s => s.ID === selectedSupplierId);
+
+          if (supplier) {
+            document.querySelector('#addproduct-form__provider-name').value = supplier.Name || '';
+            document.querySelector('#addproduct-form__provider-phone').value = supplier.ContactInfo || '';
+            document.querySelector('.provider-add').style.display = 'flex';
+          }
         }
-    });
+      });
     } else {
       console.error('Медикамент не найден:', dataId);
     }
@@ -1134,6 +1166,7 @@ const startProgram = (jsonData) => {
 
   const loadOrderPage = () => {
     const orderItem = JSON.parse(localStorage.getItem('orderItem'));
+    if (!orderItem) return
     const jsonData = getDataFromLocalStorage();
     const tableBody = document.querySelector('#order-staff-table tbody')
     tableBody.innerHTML = ''
@@ -1399,6 +1432,9 @@ const startProgram = (jsonData) => {
           row.style.display = 'none'
         }
         let description = truncateDescription(medicine)
+        const currentDate = new Date()
+        const expirationDate = new Date(medicine.EndDate);
+
         row.innerHTML = `
               <td class="id id-inventory">${medicine.ID}</td>
               <td class="title">${medicine.Name}</td>
@@ -1413,9 +1449,16 @@ const startProgram = (jsonData) => {
                 ${medicine.PrescriptionRequired === false ? '' : '<label class="custom-checkbox"><input type="checkbox" class="receipt-check"><span class="checkmark"></span></label>'}
               </td> 
               <td class="icons">
-                <img src="icons/basket.svg" alt="иконка редактирования" class="basket-btn__product" data-id='${medicine.ID}' style="display:${medicine.PrescriptionRequired === false ? 'flex' : 'none'}">
+                <img src="icons/basket.svg" alt="иконка корзины" class="basket-btn__product" data-id='${medicine.ID}' style="display:${medicine.PrescriptionRequired === false ? 'flex' : 'none'}">
               </td>
           `
+
+        // if (expirationDate < currentDate || medicine.Quantity === 0) {
+        //   row.querySelector('.receipt').style.visibility = 'hidden'
+        //   row.querySelector('.receipt').style.pointerEvents = 'none'
+        //   row.querySelector('.basket-btn__product').style.visibility = 'hidden'
+        //   row.querySelector('.basket-btn__product').style.pointerEvents = 'none'
+        // }
         tableBody.appendChild(row);
       });
 
@@ -1486,6 +1529,48 @@ const startProgram = (jsonData) => {
       addEventListenerCreateDel(tableBody.querySelectorAll('.delete-btn__product'))
     }
 
+    tableBody.querySelectorAll('tr').forEach(row => {
+      row.addEventListener('click', (e) => {
+        if (e.target.closest('.icons')) return
+
+        const clickedRow = e.currentTarget;
+        const index = clickedRow.lastElementChild.lastElementChild.dataset.id
+        const jsonData = getDataFromLocalStorage()
+        const medicine = jsonData.Medicines.find(m => m.ID == index)
+        const suppler = jsonData.Suppliers.find(s => s.ID == medicine.SupplierID)
+
+        const modalProduct = document.getElementById('product-modal')
+        modalProduct.style.display = 'flex'
+
+        const titleProduct = document.querySelector('.title-product');
+        const descriptionProduct = document.querySelector('.description-product');
+        const nameSupplier = document.querySelector('.name-suppler-product');
+        const phoneSupplier = document.querySelector('.phone-suppler-product');
+        const startDateProduct = document.querySelector('.startdate-product');
+        const endDateProduct = document.querySelector('.enddate-product');
+        const priceProduct = document.querySelector('.price-product');
+        const quantityProduct = document.querySelector('.quantity-product');
+        const rackProduct = document.querySelector('.rack-product');
+        const shelfProduct = document.querySelector('.shelf-product');
+        const dosageProduct = document.querySelector('.dosage-product');
+        const receiptProduct = document.querySelector('.receipt-product');
+
+        titleProduct.textContent = medicine.Name;
+        descriptionProduct.textContent = medicine.Description;
+        nameSupplier.textContent = suppler.Name;
+        phoneSupplier.textContent = formatPhoneNumberTable(suppler.ContactInfo);
+        startDateProduct.textContent = medicine.StartDate;
+        endDateProduct.textContent = medicine.EndDate;
+        priceProduct.textContent = medicine.Price.toFixed(2) + ' ₽';
+        quantityProduct.textContent = medicine.Quantity;
+        rackProduct.textContent = medicine.Rack;
+        shelfProduct.textContent = medicine.Shelf;
+        dosageProduct.textContent = medicine.Dosage;
+        receiptProduct.textContent = medicine.PrescriptionRequired ? 'Нужен' : 'Не нужен';
+
+      });
+    });
+
     jsonData.Medicines.forEach(medicine => {
       const expirationDate = new Date(medicine.EndDate);
       const currentDate = new Date();
@@ -1517,7 +1602,19 @@ const startProgram = (jsonData) => {
       }
     });
 
+    populateSupplierDropdown(getDataFromLocalStorage().Suppliers)
     sortMedicineOptionCreate();
+  }
+
+  document.getElementById('close-modal-product').addEventListener('click', () => {
+    document.getElementById('product-modal').style.display = 'none'
+  })
+
+  const modalProduct = document.getElementById('product-modal')
+  window.onclick = function (event) {
+    if (event.target === modalProduct) {
+      modalProduct.style.display = "none";
+    }
   }
 
   const populateSupplierDropdown = (suppliers) => {
@@ -1542,13 +1639,15 @@ const startProgram = (jsonData) => {
   }
 
   const sortMedicineOptionCreate = () => {
+    if (isSortMedicineOptionCreated) return;
+    isSortMedicineOptionCreated = true;
     const tableInventoryHead = document.getElementById('table-inventory').querySelectorAll('thead tr td');
     const sortContainer = document.getElementById('filter-column-select');
 
     sortContainer.innerHTML = '';
 
     tableInventoryHead.forEach(name => {
-      if (name.textContent === '' || name.textContent === 'ID' || name.textContent === 'Описание' || name.textContent === 'Дозировка' || name.textContent === 'Полка/Стеллаж' || name.textContent === 'Поставщик') return;
+      if (name.textContent === '' || name.textContent === 'ID' || name.textContent === 'Описание' || name.textContent === 'Дозировка' || name.textContent === 'Полка/Стеллаж' || name.textContent === 'Поставщик' || name.textContent === 'Рецепт') return;
 
       const option = document.createElement('option');
       option.value = name.dataset.name;
@@ -1560,6 +1659,7 @@ const startProgram = (jsonData) => {
       if (!document.querySelector('.page__inventory').classList.contains('roboto-bold')) return
       const selectedColumn = sortContainer.value;
       const selectedOrder = document.getElementById('sort-select').value;
+
 
       let jsonData = getDataFromLocalStorage();
 
@@ -1594,22 +1694,37 @@ const startProgram = (jsonData) => {
       let aValue = a[column];
       let bValue = b[column];
 
-
       if (aValue === undefined || bValue === undefined) {
         console.error(`Неизвестный столбец: ${column}`);
         return 0;
       }
 
+      // Обработка строковых значений
       if (typeof aValue === 'string') {
+        // Проверка на формат даты и времени
+        if (isValidDateTime(aValue) && isValidDateTime(bValue)) {
+          // Если оба значения - даты, сортируем их как даты
+          const dateA = new Date(aValue);
+          const dateB = new Date(bValue);
+          return order === 'asc' ? dateA - dateB : dateB - dateA;
+        }
+        // В противном случае сортируем как строки
         aValue = aValue.toLowerCase();
         bValue = bValue.toLowerCase();
         return order === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
-      } else if (typeof aValue === 'number') {
+      }
+      // Обработка числовых значений
+      else if (typeof aValue === 'number' && typeof bValue === 'number') {
         return order === 'asc' ? aValue - bValue : bValue - aValue;
       }
 
-      return 0;
+      return 0; // Если тип не распознан, не меняем порядок
     });
+  };
+
+  const isValidDateTime = (dateTimeString) => {
+    const regex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/;
+    return regex.test(dateTimeString);
   };
 
   const searchMedicines = () => {
@@ -1666,9 +1781,9 @@ const startProgram = (jsonData) => {
     const supplierPhone = document.querySelector('#addproduct-form__provider-phone').value.replace(/\D/g, '');
     const prescriptionRequired = document.querySelector('#addproduct-form__recept1').checked || false;
 
-    
+
     const providerSelect = document.getElementById('addproduct-form__provider');
-    
+
 
     // Валидация
 
@@ -1687,7 +1802,7 @@ const startProgram = (jsonData) => {
         errorMessage = 'Введите полный телефон.<br>';
       }
     }
-    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price) ) {
+    if (!name || !dosage || !startDate || !endDate || isNaN(quantity) || !rack || !shelf || isNaN(price)) {
       errorMessage = 'Пожалуйста, заполните все обязательные поля.<br>';
     }
 
@@ -1697,7 +1812,7 @@ const startProgram = (jsonData) => {
     const formElement = document.querySelector('.form__add-product');
     const dataId = formElement.getAttribute('data-id');
     console.log(dataId == 0);
-    
+
 
     if (errorMessage) {
       errorDisplay.innerHTML = errorMessage;
@@ -1736,12 +1851,15 @@ const startProgram = (jsonData) => {
       const jsonData = getDataFromLocalStorage();
 
 
-      const maxIdObject = jsonData.Medicines.reduce((prev, current) => {
-        return (prev.id > current.id) ? prev : current;
-      });
+      const maxIdObject = jsonData.Medicines.reduce((maxId, current) => {
+        return (current.ID > maxId) ? current.ID : maxId;
+      }, 0);
+
+      console.log(maxIdObject);
+
 
       const newMedicine = {
-        ID: dataId ? parseInt(dataId) : maxIdObject.ID + 1,
+        ID: dataId ? parseInt(dataId) : maxIdObject + 1,
         Name: name,
         Dosage: dosage,
         Description: description,
@@ -1783,7 +1901,7 @@ const startProgram = (jsonData) => {
         document.querySelector('.form__add-product .btn').textContent = 'Добавить продукт'
         formAddProduct.reset()
         formElement.removeAttribute('data-id');
-        document.querySelector('.provider-add').style.display =  'none';
+        document.querySelector('.provider-add').style.display = 'none';
       }, 2000);
 
       populateTable()
@@ -1845,6 +1963,8 @@ const startProgram = (jsonData) => {
 
   //                                                   РАБОТА С ПОЛЬЗОВАТЕЛЯМИ ПОЛНАЯ
   const sortUserOptionCreate = () => {
+    if (isSortUserOptionCreated) return;
+    isSortUserOptionCreated = true;
     const tableUsersHead = document.getElementById('users-table').querySelectorAll('thead tr td');
     console.log(tableUsersHead);
 
@@ -2110,7 +2230,7 @@ const startProgram = (jsonData) => {
                 <img src="icons/delete.svg" alt="иконка удаления" class="delete-btn__user" data-id='${user.ID}'>
             </td>
         `;
-      
+
       if (JSON.parse(localStorage.getItem('userSession')).Role == 'admin' && (user.Role == 'admin' || user.Role == 'superAdmin')) {
         row.querySelector('.icons').style.visibility = 'hidden'
         row.querySelector('.icons').style.pointerEvents = 'none'
@@ -2516,11 +2636,6 @@ const startProgram = (jsonData) => {
     receiptIdToDelete = null
   };
 
-  // Функция для получения полного имени пользователя по его ID
-  const getFullName = (userId, users) => {
-    const user = users.find(u => u.ID === userId);
-    return user ? user.FullName : 'Удаленный пользователь';
-  }
 
   // Функция для загрузки данных в таблицу и информацию о чеке
   const loadOrderData = (orderID) => {
@@ -2611,21 +2726,23 @@ const startProgram = (jsonData) => {
   };
 
   const sortReceiptOptionCreate = () => {
+    if (isSortJurnalOptionCreated) return;
+    isSortJurnalOptionCreated = true;
     const tableHead = document.querySelector('.container__order-log-table').querySelectorAll('table thead tr td');
 
     const sortContainer = document.getElementById('filter-column-select');
 
-    sortContainer.innerHTML = ''; // Очищаем предыдущие опции
+    sortContainer.innerHTML = '';
 
     tableHead.forEach(name => {
       if (name.textContent === '' || name.textContent === 'ID' || name.textContent === 'Общая сумма(руб.)' || name.textContent === 'Просмотр заказа') {
-        return; // Пропускаем пустые заголовки и ID
+        return;
       }
 
       const option = document.createElement('option');
-      option.value = name.dataset.name; // Устанавливаем значение
-      option.textContent = name.textContent; // Устанавливаем текст
-      sortContainer.append(option); // Добавляем опцию в select
+      option.value = name.dataset.name;
+      option.textContent = name.textContent;
+      sortContainer.append(option);
 
     });
 
@@ -2635,6 +2752,8 @@ const startProgram = (jsonData) => {
       const selectedColumn = sortContainer.value;
 
       const selectedOrder = document.getElementById('sort-select').value;
+
+      console.log(selectedColumn, selectedOrder);
 
       let jsonData = getDataFromLocalStorage();
 
@@ -2840,7 +2959,7 @@ const startProgram = (jsonData) => {
 
   if (JSON.parse(localStorage.getItem('userSession')).Role == 'admin') {
     document.querySelector('#roleAdmin').parentElement.style.display = 'none'
-  } else if ((JSON.parse(localStorage.getItem('userSession')).Role == 'superAdmin')){
+  } else if ((JSON.parse(localStorage.getItem('userSession')).Role == 'superAdmin')) {
     document.querySelector('#roleAdmin').parentElement.style.display = 'flex'
   }
 

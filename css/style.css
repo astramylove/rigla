@@ -265,7 +265,7 @@ body {
 .container__notifications {
   box-sizing: border-box;
   overflow-y: auto;
-  transform: 1s;
+  transition: height 0.5s ease;
   position: absolute;
   right: 0;
   top: 100px;
@@ -327,8 +327,89 @@ body {
   font-size: 20px;
 }
 .container__exit span {
-  padding: 30px 20px;
+  box-sizing: border-box;
   transform: 1s;
+}
+.container__exit.open {
+  max-height: 400px;
+}
+
+#product-modal {
+  display: none;
+}
+#product-modal .modal-content {
+  box-sizing: border-box;
+  padding: 20px;
+  height: 500px;
+  width: 50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+#product-modal .container__product {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#product-modal .title-product {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+#product-modal .cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#product-modal .cont div {
+  display: flex;
+  justify-content: space-between;
+}
+#product-modal .cont div span {
+  margin: 10px;
+}
+#product-modal .cont div div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+#product-modal .cont div div:first-child {
+  margin-left: 0;
+}
+#product-modal .h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+#product-modal .description-product {
+  font-size: 16px;
+  color: #666;
+}
+#product-modal .product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#product-modal .supplier-info, #product-modal .expiry-info, #product-modal .price-info, #product-modal .location-info, #product-modal .dosage-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+#product-modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+#product-modal .close:hover {
+  color: black;
+  text-decoration: none;
 }
 
 #error-message__user,
@@ -668,7 +749,7 @@ body {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 25%;
+  width: 35%;
   border-radius: 8px;
 }
 .modal-content .container__filter {
@@ -685,7 +766,6 @@ body {
 .modal-content .container__filter div {
   display: flex;
   width: 100%;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
@@ -703,7 +783,16 @@ body {
   font-size: 16px;
 }
 .modal-content .container__filter select {
-  width: 250px;
+  width: 300px;
+  border: none;
+  border: 1px solid #66A8A6;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: #2C6369;
+  outline: none;
+}
+.modal-content .container__filter select option {
+  height: 40px;
 }
 
 img {
@@ -1101,7 +1190,7 @@ img {
   text-align: center;
   padding: 20px;
   border: 1px solid #888;
-  width: 30%;
+  width: 50%;
   border-radius: 10px;
   font-size: 20px;
 }

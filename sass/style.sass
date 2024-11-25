@@ -228,7 +228,7 @@ body
 .container__notifications
     box-sizing: border-box
     overflow-y: auto
-    transform: 1s
+    transition: height 0.5s ease
     position: absolute
     right: 0
     top: 100px
@@ -279,12 +279,84 @@ body
     display: flex
     justify-content: center
     align-items: center
-    // transition: max-height 0.50s ease-out
     border-radius: 0 0 0 10px
     font-size: 20px
     span
-        padding: 30px 20px
+        box-sizing: border-box
         transform: 1s
+    &.open
+        max-height: 400px
+
+#product-modal
+    display: none
+    .modal-content
+        box-sizing: border-box
+        padding: 20px
+        height: 500px
+        width: 50%
+        background-color: #ffffff
+        border-radius: 10px
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1)
+
+    .container__product
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    .title-product
+        font-size: 24px
+        font-weight: bold
+        margin-bottom: 15px
+        color: #333
+
+    .cont
+        display: flex
+        flex-direction: column
+        gap: 10px
+        width: 100%
+        margin-bottom: 20px
+        div
+            display: flex
+            justify-content: space-between
+            span
+                margin: 10px
+            div
+                display: flex
+                flex-direction: column
+                margin-left: 20px
+                &:first-child
+                    margin-left: 0
+    .h2
+        font-size: 18px
+        font-weight: bold
+        color: #555
+
+    .description-product
+        font-size: 16px
+        color: #666
+
+    .product-details
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+    .supplier-info, .expiry-info, .price-info, .location-info, .dosage-info
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 10px
+        border-bottom: 1px solid #eaeaea
+
+    .close
+        color: #aaa
+        float: right
+        font-size: 28px
+        cursor: pointer
+
+        &:hover
+            color: black
+            text-decoration: none
 
 #error-message__user,
 #error-message__product
@@ -575,7 +647,7 @@ body
         margin: 15% auto
         padding: 20px
         border: 1px solid #888
-        width: 25%
+        width: 35%
         border-radius: 8px
         .container__filter
             width: 100%
@@ -589,7 +661,6 @@ body
             div
                 display: flex
                 width: 100%
-                flex-direction: column
                 justify-content: space-around
                 align-items: center
                 gap: 20px
@@ -604,7 +675,15 @@ body
                     padding: 5px 50px
                     font-size: 16px
             select
-                width: 250px
+                width: 300px
+                border: none
+                border: 1px solid #66A8A6
+                border-radius: 30px
+                padding: 10px 20px
+                color: #2C6369
+                outline: none
+                option
+                    height: 40px
 img
     cursor: pointer
 .plus,
@@ -924,7 +1003,7 @@ img
         text-align: center
         padding: 20px
         border: 1px solid #888
-        width: 30%
+        width: 50%
         border-radius: 10px
         font-size: 20px
         h2
